@@ -9,8 +9,8 @@ Before executing the application package with a CWL runner, the user must first 
 ```
 cd training/app-package
 VERSION="0.0.2"
-curl -L -o "tile-sat-training.${VERSION}.cwl" \
-  "https://github.com/parham-membari-terradue/machine-learning-process-new/releases/download/${VERSION}/tile-sat-training.${VERSION}.cwl"
+curl -L -o "tile-sat-training.cwl" \
+  "https://github.com/parham-membari-terradue/machine-learning-process/releases/download/${VERSION}/tile-sat-training.${VERSION}.cwl"
 
 ```
 
