@@ -1,0 +1,19 @@
+name: make_inference
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.8
+  - numpy
+  - pip
+  - pip:
+    - tf2onnx
+    - georeader-spaceml
+    - rasterio
+    - loguru
+    - tqdm
+    - click
+    - rio_stac
+    - onnxmltools
+    - onnxruntime
+    - onnx
