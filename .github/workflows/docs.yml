@@ -14,7 +14,7 @@ on:
 permissions:
   contents: write  # ✅ This is required to push to gh-pages
 
-jobs:
+jobs: 
   deploy:
     runs-on: ubuntu-latest
     steps:
