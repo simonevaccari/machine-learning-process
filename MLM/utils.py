@@ -256,7 +256,7 @@ class CustomStacIO(DefaultStacIO):
         parsed = urlparse(source)
         if parsed.scheme == "s3":
             # read the user settings file from the environment variable
-            s3_settings = UserSettings("/etc/Stars/appsettings.json")
+            s3_settings = UserSettings("/workspace/appsettings.json")
             s3_settings.set_s3_environment(source)
 
             s3_client = self.session.create_client(
