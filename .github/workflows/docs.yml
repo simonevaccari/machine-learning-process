@@ -8,7 +8,7 @@ on:
       - master
     paths:
       - 'docs'
-      - 'mkdocs.yml'
+      - 'mkdocs.yaml'
       - .github/**
 
 permissions:
