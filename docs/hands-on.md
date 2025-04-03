@@ -8,3 +8,5 @@ Open the [documention](../training/make-ml-model/README.md) of training componen
 Open the [documentation](../inference/app-package/stage-in/README.md) to learn how to stage-in the Sentinel-2 L1C products. 
 - Inference implementation:
 Open the [documention](../inference/make-inference/README.md) of inference component and execute different runs with different staged-in products.
+- Describing the ML model:
+Open the [documentation](../MLM/README.md) of MLM component and execute the notebook.
