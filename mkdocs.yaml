@@ -1,5 +1,4 @@
-site_name: Event driven Earth Observation Application Package with Argo
-
+site_name: Machine Learning Process
 theme:
     logo: imgs/icon-eoap.png
     name: material
