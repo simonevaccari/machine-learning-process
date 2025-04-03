@@ -1,0 +1,56 @@
+{
+  "type": "Collection",
+  "id": "ML-Models_EO",
+  "stac_version": "1.1.0",
+  "description": "A collection for ML Models",
+  "links": [
+    {
+      "rel": "root",
+      "href": "../catalog.json",
+      "type": "application/json",
+      "title": "ML Models"
+    },
+    {
+      "rel": "item",
+      "href": "./Tile-based-ML-Models/Tile-based-ML-Models.json",
+      "type": "application/geo+json"
+    },
+    {
+      "rel": "parent",
+      "href": "../catalog.json",
+      "type": "application/json",
+      "title": "ML Models"
+    }
+  ],
+  "title": "ML-Models_EO",
+  "extent": {
+    "spatial": {
+      "bbox": [
+        [
+          -180,
+          -90,
+          180,
+          90
+        ]
+      ]
+    },
+    "temporal": {
+      "interval": [
+        [
+          "2015-06-27T00:00:01Z",
+          null
+        ]
+      ]
+    }
+  },
+  "license": "proprietary",
+  "providers": [
+    {
+      "name": "AI-Extensions Project",
+      "roles": [
+        "producer"
+      ],
+      "url": "https://ai-extensions.github.io/docs"
+    }
+  ]
+}
