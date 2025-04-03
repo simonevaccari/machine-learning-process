@@ -3,7 +3,7 @@ name: build
 on:
   push:
     branches:
-      - main
+      - dev
       - master
     paths:
       - 'inference/**'
