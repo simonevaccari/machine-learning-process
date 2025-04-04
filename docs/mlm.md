@@ -5,4 +5,13 @@ The main objectives of the extension are:
 
 - to enable building model collections that can be searched alongside associated STAC datasets
 - record all necessary bands, parameters, modeling artifact locations, and high-level processing steps to deploy an inference service.
+
 For additional information please follow this [notebook](../MLM/Describe-MLmodel.ipynb).
+
+## For developers:
+To run the notebook successfully, you must install the dependencies with hatch:
+
+```
+hatch shell prod
+hatch -e prod run python -m ipykernel install --user --name=mlm --display-name "mlm"
+```
