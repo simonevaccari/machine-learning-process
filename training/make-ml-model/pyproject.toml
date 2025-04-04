@@ -6,7 +6,6 @@ build-backend = "hatchling.build"
 name = "tile-based-training"
 dynamic = ["version"]
 description = "Training module for the Tile-Based classification on Sentinel-2 data"
-readme = "README.md"
 requires-python = ">=3.10"
 license = "Apache-2.0"
 keywords = ["training", "Sentinel-2", "CNN", "EuroSAT"]
