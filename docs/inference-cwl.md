@@ -31,7 +31,7 @@ Before executing the application package with a CWL runner, the user must first 
 ```
 cd inference/app-package
 VERSION="0.0.2"
-curl -L -o "tile-sat-inference.${VERSION}.cwl" \
+curl -L -o "tile-sat-inference.cwl" \
   "https://github.com/eoap/machine-learning-process/releases/download/${VERSION}/tile-sat-inference.${VERSION}.cwl"
 
 ```
