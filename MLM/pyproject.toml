@@ -36,7 +36,7 @@ allow-direct-references = true
 path = "hatch/envs/mlm"
 
 [tool.hatch.envs.prod]
-path = "/code/envs/mlm"
+path = "hatch/envs/mlm"
 dependencies = [
     "pystac",
     "pystac-client",
@@ -49,6 +49,7 @@ dependencies = [
     "botocore",
     "geojson",
     "tqdm",
+    "ipykernel",
 ]
 
 
@@ -64,25 +65,7 @@ omit = [
     "src/tile_based_training/__about__.py",
 ]
 
-[tool.coverage.paths]
-tile_based_training = ["src/tile_based_training", "*/tile_based_training/src/tile_based_training"]
 
-
-[tool.hatch.build.targets.wheel]
-data-files = [
-  { from = "config.yaml", to = "." },
-  { from = "params.yaml", to = "." },
-  { from = "src/tile_based_training/config/config.yaml", to = "config.yaml" },
-  { from = "src/tile_based_training/config/config.yaml", to = "params.yaml" },
-  "src/tile_based_training/config/params.yaml",
-  "src/tile_based_training/config/config.yaml",
-]
-
-artifacts = [
-  "*.yaml",
-  "*.yml",
-  "*.json",
-]
 
 [tool.coverage.report]
 exclude_lines = [
