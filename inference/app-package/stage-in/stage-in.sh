@@ -21,4 +21,4 @@ docker run --rm \
              -r '4' \
              -si CDS1 \
              -o /mounted_dir/stars_out \
-             'https://catalogue.dataspace.copernicus.eu/stac/collections/SENTINEL-2/items/S2A_MSIL1C_20250318T101751_N0511_R065_T32UPE_20250318T140212.SAFE'
+             'https://catalogue.dataspace.copernicus.eu/stac/collections/SENTINEL-2/items/S2B_MSIL1C_20250404T081609_N0511_R121_T37UFQ_20250404T101456.SAFE'

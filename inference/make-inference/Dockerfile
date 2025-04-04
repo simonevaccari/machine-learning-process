@@ -1,54 +1,59 @@
-FROM ubuntu:20.04
-ARG DEBIAN_FRONTEND=noninteractive
-ENV APP_ENV=make_inference
+# Stage 1: Build stage
+FROM rockylinux:9.3-minimal AS build
 
-SHELL ["/bin/bash", "-c"]
+# Install necessary build tools
+RUN microdnf install -y curl tar
 
-# Define the default user
-ARG USERNAME=neo
-ARG USER_GID=1000
+# Download the hatch tar.gz file from GitHub
+RUN curl -L https://github.com/pypa/hatch/releases/download/hatch-v1.14.0/hatch-x86_64-unknown-linux-gnu.tar.gz -o /tmp/hatch-x86_64-unknown-linux-gnu.tar.gz
 
-# Update package lists and install necessary utilities
+# Extract the hatch binary
+RUN tar -xzf /tmp/hatch-x86_64-unknown-linux-gnu.tar.gz -C /tmp/
 
-RUN apt-get update && apt-get install -y \
+# Stage 2: Final stage
+FROM rockylinux:9.3-minimal
+
+# Set up a default user and home directory
+ENV HOME=/home/neo
+
+# Install essential libraries including expat and python3 without `config` commands
+RUN microdnf install -y \
+    expat \
+    libpq \
     curl \
+    git \
+    wget \
     tar \
-    bzip2 \
-    libexpat1 \
-    && apt-get clean && rm -rf /var/lib/apt/lists/*
+    && microdnf install -y python3 \
+    && microdnf clean all
 
-# Create a non-root user
-RUN groupadd --gid $USER_GID $USERNAME && \
-    useradd --uid $USER_GID --gid $USER_GID --create-home $USERNAME
+# Create a user with UID 1001, group root, and a home directory
+RUN useradd -u 1001 -g 100 -m -d ${HOME} -s /sbin/nologin \
+         -c "Default Neo User" neo && \
+    mkdir -p /code /prod ${HOME}/.cache /home/neo/.local/share/hatch && \
+    chown -R neo:100 /code ${HOME} /home/neo/.local/share/hatch && \
+    chmod -R 775 /code ${HOME}
 
-# Install micromamba
-RUN curl -Ls https://micro.mamba.pm/api/micromamba/linux-64/latest -o /tmp/micromamba.tar.bz2 && \
-    bzip2 -t /tmp/micromamba.tar.bz2 && \
-    tar -xvjf /tmp/micromamba.tar.bz2 -C /tmp && \
-    mv /tmp/bin/micromamba /bin/micromamba
+# Copy the hatch binary from the build stage
+COPY --from=build /tmp/hatch /usr/bin/hatch
 
-# Initialize micromamba
-RUN micromamba shell init -s bash
+# Ensure the hatch binary is executable
+RUN chmod +x /usr/bin/hatch
 
-# Set up the environment
-ENV MAMBA_ROOT_PREFIX=/home/$USERNAME/conda
-ENV PATH=$PATH:/home/$USERNAME/conda/envs/$APP_ENV/bin:/home/$USERNAME/conda/envs/$APP_ENV/snap/bin
+# Switch to the non-root user
+USER neo
 
-# Change ownership of /home/$USERNAME
-RUN chown -R $USERNAME:$USER_GID /home/$USERNAME
+# Copy the application files into the /code directory
+COPY --chown=1001:100 . /code
 
-# Copy application files with correct ownership
-COPY --chown=$USERNAME:$USER_GID . /tmp
+WORKDIR /code
 
-# Create the environment and install dependencies
-RUN micromamba create -f /tmp/environment.yml && \
-    cd /tmp && \
-    $MAMBA_ROOT_PREFIX/envs/$APP_ENV/bin/python setup.py install
+# Set up virtual environment paths
+ENV VIRTUAL_ENV=/code/envs/make_inference
+ENV PATH="$VIRTUAL_ENV/bin:$PATH"
+ENV HATCH_PYTHON_VARIANT_LINUX=v2
 
-# Set user to non-root for security
-USER $USERNAME
-
-# Set working directory
-WORKDIR /home/$USERNAME
-
-CMD ["/bin/bash"]
+# Prune any existing environments and create a new production environment
+RUN hatch env prune && \
+    hatch env create prod && \
+    hatch run prod:make-inference --help

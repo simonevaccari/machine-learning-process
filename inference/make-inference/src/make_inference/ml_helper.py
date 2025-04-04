@@ -253,31 +253,33 @@ def get_asset(item, common_name):
             continue
         for b in eo_asset.bands:
 
-            if "common_name" in b.properties.keys() and common_name in b.properties["common_name"]:
+            if "name" in b.properties.keys() and common_name in b.properties["name"]:
 
-                return asset.get_absolute_href()
+                return asset.get_absolute_href(), key
 
 
 def item_filter_assets(item):
 
     common_names = [
-        "coastal",
-        "blue",
-        "green",
-        "red",
-        "rededge",
-        "nir",
-        "nir08",
-        "nir09",
-        "cirrus",
-        "swir16",
-        "swir22",
+        "coastal", # B01
+        "blue", #   B02
+        "green", # B03
+        "red", #   B04
+        "rededge70", # B05
+        "rededge74", # B06
+        "rededge78", # B07
+        "nir", # B08
+        "nir08", # B8A
+        "nir09", # B09
+        "cirrus", # B10
+        "swir16", # B11
+        "swir22", # B12
     ]
     desirable_assets = {}
     for common_name in common_names:
 
-        desirable_assets[common_name] = get_asset(item, common_name)
-
+        desirable_assets[common_name], key = get_asset(item, common_name)
+        print(f"Asset {key} with common name {common_name} found")
     assert len(desirable_assets) > 0, "Item has no desirable asset"
     return desirable_assets
 

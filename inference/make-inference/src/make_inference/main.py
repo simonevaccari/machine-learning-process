@@ -36,12 +36,12 @@ def run_inference(ctx, **params):
     else:
         item = pystac.read_file(params["input_reference"])
         filtered_assets = item_filter_assets(item)
-    for key, asset in item.get_assets().items():
-        print(key)
+   
     logger.info(f"Read {item.get_self_href()}")
     window_size = 64
+    logger.info(f"Item assets keys are: {item.get_assets().keys()} \n\nFiltered assets: {filtered_assets.keys()}")
     for key, asset_href in filtered_assets.items():
-        print(asset_href)
+        print(key)
         updated_asset_href = resize_and_convert_to_cog(asset_href)
         filtered_assets[key] = updated_asset_href
     ### Open the tif file
@@ -101,7 +101,7 @@ def run_inference(ctx, **params):
     create_stac_catalog(item)
     del arr_block, prediction
     for file in os.listdir():
-        if file.endswith("tiff") or file.endswith("tif"):
+        if file.endswith("tiff") or file.endswith("tif") or file.endswith("jp2"):
             os.remove(file)
     logger.info("Done!")
 

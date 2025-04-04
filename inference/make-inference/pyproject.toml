@@ -1,0 +1,103 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "make-inference"
+dynamic = ["version"]
+description = "Inference module for the Tile-Based classification on Sentinel-2 data"
+requires-python = ">=3.10"
+license = "Apache-2.0"
+keywords = ["inference", "Sentinel-2", "CNN", "EuroSAT"]
+authors = [
+    { name = "Parham Membari", email = "parham.membari@terradue.com" }
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3.10",
+]
+
+dependencies = []  
+
+[project.urls]
+Documentation = "https://github.com/eoap/machine-learning-process/docs/inference-container.md"
+Issues = "https://github.com/eoap/machine-learning-process/issues"
+Source = "https://github.com/eoap/machine-learning-process/inference/make-inference/src/make_inference"
+
+[tool.hatch.version]
+path = "src/make_inference/__about__.py"
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
+[tool.hatch.build]
+packages = ["src/make_inference"]
+include = [
+  "src/make_inference/model/model.onnx",
+]
+
+
+
+[project.scripts]
+make-inference = "make_inference.main:main"
+
+[tool.hatch.envs.default]
+path = "/code/envs/make_inference"
+
+[tool.hatch.envs.prod]
+path = "/code/envs/make_inference"
+dependencies = [
+    "click",
+    "pystac>=1.4.0",
+    "pystac_client",
+    "numpy",
+    "tf2onnx",
+    "georeader-spaceml",
+    "rasterio",
+    "loguru",
+    "tqdm",
+    "rio_stac",
+    "onnxmltools",
+    "onnxruntime",
+    "onnx",
+]
+
+[tool.hatch.envs.prod.scripts]
+inference = "python -m make_inference.main"
+
+[tool.hatch.build.targets.sdist]
+include = ["src/make_inference"]
+
+[tool.hatch.build.targets.wheel]
+include = ["src/make_inference"]
+
+
+
+[[tool.hatch.envs.test.matrix]]
+python = ["3.10"]
+
+# Coverage settings
+[tool.coverage.run]
+source_pkgs = ["make_inference"]
+branch = true
+parallel = true
+omit = [
+    "src/make_inference/__about__.py",
+]
+
+[tool.coverage.paths]
+make_inference = ["src/make_inference", "*/make_inference/src/make_inference"]
+
+
+
+artifacts = [
+  "*.onnx",
+]
+
+[tool.coverage.report]
+exclude_lines = [
+    "no cov",
+    "if __name__ == .__main__.:",
+    "if TYPE_CHECKING:",
+]
