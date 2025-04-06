@@ -7,7 +7,7 @@ on:
       - main
       - master
     paths:
-      - 'docs'
+      - 'docs/**'
       - 'mkdocs.yaml'
       - .github/**
 
