@@ -36,6 +36,7 @@ cd inference/app-package/stage-in/
 } 
 ```
 3- Update the product reference in `stage-in.sh` with your desired product.
+
 4- Make the bash script executable:
 ```
 chmod +x stage-in.sh
