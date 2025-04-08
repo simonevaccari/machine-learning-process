@@ -29,4 +29,6 @@ jobs:
       - run: pip install mkdocs-material mkdocs-mermaid2-plugin mkdocs_puml
 
       - name: Deploy to GitHub Pages
-        run: mkdocs gh-deploy --force
+        run: |
+          cp MLM/Describe-MLmodel.ipynb docs/Describe-MLmodel.ipynb
+          mkdocs gh-deploy --force
