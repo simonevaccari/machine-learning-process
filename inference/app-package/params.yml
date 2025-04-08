@@ -1,0 +1,5 @@
+input_reference:
+  # - class: Directory
+  #   path: ./data/s2-no-cal
+  class: Directory
+  path: stage-in/stars_out

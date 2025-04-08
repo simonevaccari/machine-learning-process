@@ -1,0 +1,130 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "tile-based-training"
+dynamic = ["version"]
+description = "Training module for the Tile-Based classification on Sentinel-2 data"
+requires-python = ">=3.10"
+license = "Apache-2.0"
+keywords = ["training", "Sentinel-2", "CNN", "EuroSAT"]
+authors = [
+    { name = "Parham Membari", email = "parham.membari@terradue.com" }
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3.10",
+]
+
+dependencies = []  
+
+[project.urls]
+Documentation = "https://github.com/ai-extensions/notebooks/tree/main/scenario-5/training#readme"
+Issues = "https://github.com/ai-extensions/notebooks/issues"
+Source = "https://github.com/ai-extensions/notebooks/tree/main/scenario-5/training/src/tile_based_training"
+
+[tool.hatch.version]
+path = "src/tile_based_training/__about__.py"
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
+[tool.hatch.build]
+packages = ["src/tile_based_training"]
+include = [
+  "src/tile_based_training/config/config.yaml",
+  "src/tile_based_training/config/params.yaml",
+  "*.yaml",
+  "*.yml",
+  "*.json",
+  "config.yaml",
+  "params.yaml",
+  "output/data_ingestion/splited_data.json"
+]
+
+
+
+[project.scripts]
+tile-based-training = "tile_based_training.main:main"
+
+[tool.hatch.envs.default]
+path = "/code/envs/env_5"
+
+[tool.hatch.envs.prod]
+path = "/code/envs/env_5"
+dependencies = [
+    "click",
+    "pystac>=1.4.0",
+    "pystac_client",
+    "numpy",
+    "scikit-learn",
+    "ipykernel",
+    "pandas",
+    "matplotlib",
+    "notebook",
+    "joblib",
+    "pyYAML",
+    "python-box",
+    "tensorflow",
+    "mlflow",
+    "seaborn",
+    "rasterio",
+    "loguru",
+    "boto3",
+    "botocore",
+    "ensure",
+    "pathlib",
+    "dataclasses",
+    "tqdm",
+    "fs_s3fs",
+    "pygeofilter",
+    "duckdb",
+    "shapely",
+    "stac-geoparquet",
+    "tzdata",
+    "pygeofilter_duckdb @ git+https://github.com/parham-membari-terradue/pygeofilter-duckdb"
+]
+
+[tool.hatch.envs.prod.scripts]
+train = "python -m tile_based_training.main"
+
+[[tool.hatch.envs.test.matrix]]
+python = ["3.10"]
+
+# Coverage settings
+[tool.coverage.run]
+source_pkgs = ["tile_based_training"]
+branch = true
+parallel = true
+omit = [
+    "src/tile_based_training/__about__.py",
+]
+
+[tool.coverage.paths]
+tile_based_training = ["src/tile_based_training", "*/tile_based_training/src/tile_based_training"]
+
+
+[tool.hatch.build.targets.wheel]
+data-files = [
+  { from = "config.yaml", to = "." },
+  { from = "params.yaml", to = "." },
+  { from = "src/tile_based_training/config/config.yaml", to = "config.yaml" },
+  { from = "src/tile_based_training/config/config.yaml", to = "params.yaml" },
+  "src/tile_based_training/config/params.yaml",
+  "src/tile_based_training/config/config.yaml",
+]
+
+artifacts = [
+  "*.yaml",
+  "*.yml",
+  "*.json",
+]
+
+[tool.coverage.report]
+exclude_lines = [
+    "no cov",
+    "if __name__ == .__main__.:",
+    "if TYPE_CHECKING:",
+]

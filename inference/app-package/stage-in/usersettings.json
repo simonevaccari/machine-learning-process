@@ -1,0 +1,21 @@
+{
+    "Plugins": {
+        "Terradue": {
+            "Suppliers": {
+                "CDS1": {
+                    "Type": "Terradue.Stars.Data.Suppliers.DataHubSourceSupplier",
+                    "ServiceUrl": "https://catalogue.dataspace.copernicus.eu/odata/v1",
+                    "Priority": 1
+                }
+            }
+        }
+    },
+    "Credentials": {
+        "CDS1": {
+            "AuthType": "basic",
+            "UriPrefix": "https://identity.dataspace.copernicus.eu",
+            "Username": "",
+            "Password": ""
+        }
+    }
+} 

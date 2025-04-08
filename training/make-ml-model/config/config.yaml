@@ -1,0 +1,28 @@
+data_ingestion:
+  DATA_CLASSES:
+  - AnnualCrop
+  - Forest
+  - HerbaceousVegetation
+  - Highway
+  - Industrial
+  - Pasture
+  - PermanentCrop
+  - Residential
+  - River
+  - SeaLake
+  local_data_file: src/tile_based_training/output/data_ingestion
+  root_dir: src/tile_based_training/output/data_ingestion
+evaluation:
+  all_data_urls: src/tile_based_training/output/data_ingestion/
+  data_dir: src/tile_based_training/output/data_ingestion/test
+  trained_model_path: src/tile_based_training/output/training/trained_model.keras
+output_root: output
+prepare_base_model:
+  model_path: src/tile_based_training/output/prepare_base_model/base_model.keras
+  root_dir: src/tile_based_training/output/prepare_base_model
+  updated_model_path: src/tile_based_training/output/prepare_base_model/updated_model.keras
+training:
+  all_data_urls: src/tile_based_training/output/data_ingestion/
+  train_data_dir: src/tile_based_training/output/data_ingestion/train
+  trained_model_path: src/tile_based_training/output/training/
+  val_data_dir: src/tile_based_training/output/data_ingestion/val

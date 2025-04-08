@@ -1,0 +1,16 @@
+BATCH_SIZE: 4
+CLASSES: 10
+DECAY: 0.1
+EPOCHS: 10
+EPSILON: 1.0e-06
+IMAGE_SIZE:
+- 64
+- 64
+- 13
+LEARNING_RATE: 0.0001
+LOSS: categorical_crossentropy
+MEMENTUM: 0.95
+OPTIMIZER: Adam
+REGULIZER: None
+SAMPLES_PER_CLASS: 500
+stac_endpoint_url: https://ai-extensions-stac.terradue.com/collections/EUROSAT-Training-Dataset

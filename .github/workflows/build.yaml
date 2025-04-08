@@ -1,0 +1,177 @@
+name: build
+
+on:
+  push:
+    branches:
+      - main
+      - master
+    paths:
+      - 'inference/**'
+      - 'training/**'
+      - 'inference/app-package/**'
+      - 'training/app-package/**'
+      - '.github/**'
+      - 'codemeta.json'
+
+env:
+  GHCR_REPO: ghcr.io/parham-membari-terradue/machine-learning-process
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: actions/setup-python@v2
+        with:
+          python-version: 3.x
+
+      - run: pip install cwltool
+
+      - run: cwltool --validate training/app-package/tile-sat-training.cwl
+      - run: cwltool --validate inference/app-package/tile-sat-inference.cwl
+
+  version:
+    needs: validate
+    runs-on: ubuntu-latest
+    outputs:
+      app-version: ${{ steps.set-version.outputs.version }}
+    steps:
+      - uses: actions/checkout@v2
+
+      - id: set-version
+        run: |
+          version=$(jq -r .version codemeta.json)
+          if [[ -z "$version" || "$version" == "null" ]]; then
+            echo "❌ ERROR: Version is missing in codemeta.json"
+            exit 1
+          fi
+          echo "version=$version" >> $GITHUB_OUTPUT
+          echo "📦 App version: $version"
+
+  container-build:
+    needs: version
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+    strategy:
+      matrix:
+        include:
+          - name: training
+            path: make-ml-model
+          - name: inference
+            path: make-inference
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Log in to GHCR
+        run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
+
+      - name: Build and Push Docker Image
+        run: |
+          IMAGE_NAME=${{ env.GHCR_REPO }}/${{ matrix.name }}
+          VERSION=${{ needs.version.outputs.app-version }}
+          DOCKERFILE=${{ matrix.name }}/${{ matrix.path }}/Dockerfile
+          CONTEXT=${{ matrix.name }}/${{ matrix.path }}
+
+          echo "🔨 Building $IMAGE_NAME:$VERSION"
+          docker build "$CONTEXT" -f "$DOCKERFILE" -t "$IMAGE_NAME:$VERSION"
+
+          echo "📤 Pushing $IMAGE_NAME:$VERSION"
+          docker push "$IMAGE_NAME:$VERSION"
+
+  create-release:
+    needs: [container-build, version]
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    outputs:
+      upload_url: ${{ steps.create.outputs.upload_url }}
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Create GitHub Release
+        id: create
+        uses: actions/create-release@v1
+        with:
+          tag_name: ${{ needs.version.outputs.app-version }}
+          release_name: Release ${{ needs.version.outputs.app-version }}
+          draft: false
+          prerelease: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  publish-artifacts:
+    needs: [create-release, version]
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write  
+      packages: write
+      
+    strategy:
+      matrix:
+        include:
+          - name: tile-sat-training
+            step: training
+            cwl_path: training/app-package/tile-sat-training.cwl
+          - name: tile-sat-inference
+            step: inference
+            cwl_path: inference/app-package/tile-sat-inference.cwl
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Pull Image and Extract Digest
+        id: digest
+        run: |
+          IMAGE="${{ env.GHCR_REPO }}/${{ matrix.step }}:${{ needs.version.outputs.app-version }}"
+          echo "📥 Pulling image: $IMAGE"
+          docker pull "$IMAGE"
+          SHA_TAG=$(docker inspect "$IMAGE" | jq -r '.[0].RepoDigests[0]')
+          echo "digest=$SHA_TAG" >> $GITHUB_OUTPUT
+          echo "🔑 Image digest: $SHA_TAG"
+
+      - name: Update Docker Image in CWL
+        run: |
+          yq -i '(.["$graph"][] | select(.class == "CommandLineTool")).hints.DockerRequirement.dockerPull = "${{ steps.digest.outputs.digest }}"' "${{ matrix.cwl_path }}"
+
+          echo "✅ Updated Docker image in CWL"
+
+      - name: Update Metadata in CWL
+        run: |
+          VERSION="${{ needs.version.outputs.app-version }}"          
+          AUTHOR_NAME=$(jq -r '.author[0].givenName + " " + .author[0].familyName' codemeta.json)
+          AUTHOR_EMAIL=$(jq -r '.author[0].email' codemeta.json)
+          AUTHOR_AFFIL=$(jq -r '.author[0].affiliation.name' codemeta.json)
+          REPO_URL=$(jq -r '.codeRepository' codemeta.json)
+        
+          echo "📎 REPO_URL: $REPO_URL"
+        
+          yq -i ".\"s:codeRepository\" = {\"URL\": \"$REPO_URL\"}" "${{ matrix.cwl_path }}"
+          yq -i ".\"s:softwareVersion\" = \"$VERSION\"" "${{ matrix.cwl_path }}"
+          yq -i ".\"s:author\" = [{\"class\": \"s:Person\", \"s.name\": \"$AUTHOR_NAME\", \"s.email\": \"$AUTHOR_EMAIL\", \"s.affiliation\": \"$AUTHOR_AFFIL\"}]" "${{ matrix.cwl_path }}"
+        
+          echo "✅ Updated metadata in ${{ matrix.cwl_path }}"
+        
+
+      - name: Prepare Artifacts
+        run: |
+          mkdir -p downloads
+          cp "${{ matrix.cwl_path }}" "downloads/${{ matrix.name }}.${{ needs.version.outputs.app-version }}.cwl"
+
+      - name: Upload CWL as Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: application-package-${{ matrix.name }}
+          path: downloads
+          overwrite: true
+
+      - name: Upload to GitHub Release
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ needs.create-release.outputs.upload_url }}
+          asset_path: downloads/${{ matrix.name }}.${{ needs.version.outputs.app-version }}.cwl
+          asset_name: ${{ matrix.name }}.${{ needs.version.outputs.app-version }}.cwl
+          asset_content_type: text/yaml

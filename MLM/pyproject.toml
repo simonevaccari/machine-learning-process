@@ -1,0 +1,74 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "mlm"
+dynamic = ["version"]
+description = "Describes a trained machine learning model"
+requires-python = ">=3.10"
+license = "Apache-2.0"
+version="0.0.1"
+keywords = ["pystac","MLM extension","inference","training", "Sentinel-2", "CNN", "EuroSAT"]
+authors = [
+    { name = "Parham Membari", email = "parham.membari@terradue.com" }
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3.10",
+]
+
+dependencies = []  
+
+[project.urls]
+Documentation = "https://github.com/eoap/machine-learning-process/MLM#readme"
+Issues = "https://github.com/eoap/machine-learning-process/issues"
+Source = "https://github.com/eoap/machine-learning-process/"
+
+
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
+[tool.hatch.envs.default]
+path = "hatch/envs/mlm"
+
+[tool.hatch.envs.prod]
+path = "hatch/envs/mlm"
+dependencies = [
+    "pystac",
+    "pystac-client",
+    "black[jupyter]",
+    "loguru",
+    "boto3",
+    "folium",
+    "pandas",
+    "geopandas",
+    "botocore",
+    "geojson",
+    "tqdm",
+    "ipykernel",
+]
+
+
+[[tool.hatch.envs.test.matrix]]
+python = ["3.10"]
+
+# Coverage settings
+[tool.coverage.run]
+source_pkgs = ["tile_based_training"]
+branch = true
+parallel = true
+omit = [
+    "src/tile_based_training/__about__.py",
+]
+
+
+
+[tool.coverage.report]
+exclude_lines = [
+    "no cov",
+    "if __name__ == .__main__.:",
+    "if TYPE_CHECKING:",
+]
