@@ -82,7 +82,11 @@ There are two methods to execute the application:
 
 ## Additional Resources
 Please see below for additional resources and tutorials for developing Earth Observation (EO) Application Packages using the CWL:
+
 * [Application Package and CWL as a solution for EO portability](https://eoap.github.io/cwl-eoap/)
+
 * [A simple EO Application Package for getting started](https://eoap.github.io/quickwin/)
+
 * [Mastering EO Application Packaging with CWL](https://eoap.github.io/mastering-app-package/)
+
 * [Inference with the EO Application Package](https://eoap.github.io/inference-eoap/)

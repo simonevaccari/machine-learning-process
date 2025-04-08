@@ -93,10 +93,6 @@ MLflow tracks the following:
     - <span style="color:gray">**pipeline**</span> /
         - to define the order of executing for each component.
     
-    > Notice: For more information how above units work please check the notebook under `trials` directory.
-2. `output`/: A folder where all intermediate artifacts like references to train and test data, models, etc will be saved here.
-3. `config`/ : A folder containing all configuration needed for the application is stored such as paths, name of classes , etc. 
-4. `pyproject.toml`: installing all dependencies in hatch environment.
-
+    
 
 
