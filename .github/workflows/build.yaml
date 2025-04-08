@@ -14,7 +14,7 @@ on:
       - 'codemeta.json'
 
 env:
-  GHCR_REPO: ghcr.io/parham-membari-terradue/machine-learning-process
+  GHCR_REPO: ghcr.io/eoap/machine-learning-process
 
 jobs:
   validate:
