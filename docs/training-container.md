@@ -52,10 +52,14 @@ MLFLOW_TRACKING_URI: http://my-mlflow:5000
 
 ## How the application structured internally
 The training pipeline for developing the training module encompasses 4 main components including:
-- [Data Ingestion](#data-ingestion)
-- [Based Model Architecture](#based-model-architecture)
-- [Training](#training)
-- [Evaluation](#evaluation)
+
+* [Data Ingestion](#data-ingestion)
+
+* [Based Model Architecture](#based-model-architecture)
+
+* [Training](#training)
+
+* [Evaluation](#evaluation)
 
 The pipeline for this task is illustrated in the diagram below:
 <p align="center"><img src="https://miro.medium.com/v2/resize:fit:1100/format:webp/0*LLe88lTuuvprFvAF.png" alt="Picture" width="40%" height="10%" style="display: block; margin: 20px auto;"/></p>
@@ -90,9 +94,9 @@ MLflow tracks the following:
         - to define the order of executing for each component.
     
     > Notice: For more information how above units work please check the notebook under `trials` directory.
-2. `output`/: A folder where all intermediate artifacts like refrences to train and test data, models, etc will be saved here.
+2. `output`/: A folder where all intermediate artifacts like references to train and test data, models, etc will be saved here.
 3. `config`/ : A folder containing all configuration needed for the application is stored such as paths, name of classes , etc. 
-4. `pyproject.toml`: installing all dependencies in hatch envronment.
+4. `pyproject.toml`: installing all dependencies in hatch environment.
 
 
 

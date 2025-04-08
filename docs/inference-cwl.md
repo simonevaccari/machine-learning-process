@@ -1,10 +1,10 @@
 # Inference Module & CWL Runner
 
-In the [training](training-container.md) mdule, the user trained a CNN model on EuroSAT dataset to classify image chips into 10 different classes and tracked the workflow with MLFlow.
+In the [training](training-container.md) module, the user trained a CNN model on EuroSAT dataset to classify image chips into 10 different classes and tracked the workflow with MLFlow.
 
 In this Application Package, the user provide a cwl document to performs inference by applying the trained model to unseen data to generate a classified image. The cwl document containing one main workflow to execute one CommandLineTool step:
 
-The Application Package takes as input a [staged-in](stage-in.md) Sentinel-2 L1C data and classifies it into 11 land cover classes:
+The Application Package takes as input a [staged-in](./stage-in.md) Sentinel-2 L1C data and classifies it into 11 land cover classes:
 
 | Class ID | Class Name            |
 |----------|-----------------------|
@@ -27,7 +27,7 @@ The CWL file takes as input a reference to a directory containing the staged Sen
 
 ## **How to Execute the Application Package?**
 
-Before executing the application package with a CWL runner, the user must first stage in the Sentinel-2 L1C data. Instructions for doing this can be found in the [stage-in guide](./stage-in/README.md). Then update the latest docker image reference in the cwl file as below:
+Before executing the application package with a CWL runner, the user must first stage in the Sentinel-2 L1C data. Instructions for doing this can be found in the [stage-in guide](./stage-in.md). Then update the latest docker image reference in the cwl file as below:
 ```
 cd inference/app-package
 VERSION="0.0.2"

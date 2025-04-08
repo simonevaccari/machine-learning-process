@@ -6,7 +6,7 @@ The main objectives of the extension are:
 - to enable building model collections that can be searched alongside associated STAC datasets
 - record all necessary bands, parameters, modeling artifact locations, and high-level processing steps to deploy an inference service.
 
-For additional information please follow this [notebook](../MLM/Describe-MLmodel.ipynb).
+For additional information please follow this [Describe-MLmodel.ipynb](./Describe-MLmodel.ipynb) notebook.
 
 ## For developers:
 To run the notebook successfully, you must install the dependencies with hatch:
