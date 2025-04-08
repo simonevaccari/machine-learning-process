@@ -1,12 +1,10 @@
 # Hands-on
-Deployments
-Open [training](../training/) and [inference](../inference/) to learn how to develop and deploy deferent components on a cluster.
 
-- Training implementation:
-Open the [documention](../training/make-ml-model/README.md) of training component and execute different runs with different model's hyperparameter by following [this instructions](../training/app-package/README.md). 
+- Tile-based Training implementation:
+Open the [documention](./training-cwl.md) of training component and execute different runs with different model's hyperparameter by following [this instructions](../training/app-package/README.md). 
 - Run Stage-in:
-Open the [documentation](../inference/app-package/stage-in/README.md) to learn how to stage-in the Sentinel-2 L1C products. 
-- Inference implementation:
-Open the [documention](../inference/make-inference/README.md) of inference component and execute different runs with different staged-in products.
+Open the [documentation](./stage-in.md) to learn how to stage-in the Sentinel-2 L1C products. 
+- Tile-based Inference implementation:
+Open the [documention](./inference-cwl.md) of inference component and execute different runs with different staged-in products.
 - Describing the ML model:
-Open the [documentation](../MLM/README.md) of MLM component and execute the notebook.
+Open the [documentation](./mlm.md.md) of MLM component and execute the notebook.
