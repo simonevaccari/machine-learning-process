@@ -15,12 +15,6 @@
       "href": "https://raw.githubusercontent.com/eoap/machine-learning-process/develop/training/app-package/EUROSAT-Training-Dataset/EUROSAT-Training-Dataset/collection.json",
       "type": "application/json",
       "title": "EUROSAT-Training-Dataset"
-    },
-    {
-      "rel": "child",
-      "href": "https://raw.githubusercontent.com/eoap/machine-learning-process/develop/training/app-package/EUROSAT-Training-Dataset/EUROSAT-Training-Dataset/collection.json",
-      "type": "application/json",
-      "title": "EUROSAT-Training-Dataset"
     }
   ],
   "title": "Euro_SAT"
