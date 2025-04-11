@@ -88,7 +88,7 @@
       ]
     },
     "geoparquet": {
-      "href": "https://github.com/eoap/machine-learning-process/blob/develop/training/app-package/EUROSAT-Training-Dataset/EUROSAT-Training-Dataset/euro-sat.parquet",
+      "href": "https://github.com/eoap/machine-learning-process/raw/refs/heads/develop/training/app-package/EUROSAT-Training-Dataset/EUROSAT-Training-Dataset/euro-sat.parquet?download=",
       "type": "application/vnd.apache.parquet",
       "title": "EuroSAT GeoParquet",
       "description": "GeoParquet representation of the EuroSAT dataset.",
