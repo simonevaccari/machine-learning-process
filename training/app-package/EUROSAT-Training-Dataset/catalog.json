@@ -1,0 +1,27 @@
+{
+  "type": "Catalog",
+  "id": "Euro_SAT",
+  "stac_version": "1.1.0",
+  "description": "A catalog for the EuroSAT",
+  "links": [
+    {
+      "rel": "root",
+      "href": "./catalog.json",
+      "type": "application/json",
+      "title": "Euro_SAT"
+    },
+    {
+      "rel": "child",
+      "href": "./EUROSAT-Training-Dataset/collection.json",
+      "type": "application/json",
+      "title": "EUROSAT-Training-Dataset"
+    },
+    {
+      "rel": "child",
+      "href": "./EUROSAT-Training-Dataset/collection.json",
+      "type": "application/json",
+      "title": "EUROSAT-Training-Dataset"
+    }
+  ],
+  "title": "Euro_SAT"
+}

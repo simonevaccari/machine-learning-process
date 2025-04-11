@@ -1,0 +1,100 @@
+{
+  "type": "Collection",
+  "id": "EUROSAT-Training-Dataset",
+  "stac_version": "1.1.0",
+  "description": "A collection for EuroSAT data",
+  "links": [
+    {
+      "rel": "root",
+      "href": "../catalog.json",
+      "type": "application/json",
+      "title": "Euro_SAT"
+    },
+    {
+      "rel": "parent",
+      "href": "../catalog.json",
+      "type": "application/json",
+      "title": "Euro_SAT"
+    }
+  ],
+  "stac_extensions": [
+    "https://schemas.stacspec.org/v1.0.0/collection-spec/json-schema/collection.json"
+  ],
+  "title": "EUROSAT-Training-Dataset",
+  "extent": {
+    "spatial": {
+      "bbox": [
+        [
+          -180,
+          -90,
+          180,
+          90
+        ]
+      ]
+    },
+    "temporal": {
+      "interval": [
+        [
+          "2015-06-27T10:25:31.000456Z",
+          "2024-07-31T18:12:58.224825Z"
+        ]
+      ]
+    }
+  },
+  "license": "mit",
+  "keywords": [
+    "EuroSAT100",
+    "EuroSAT",
+    "Euro_SAT",
+    "Euro_SAT100"
+  ],
+  "assets": {
+    "source": {
+      "href": "https://github.com/phelber/EuroSAT/",
+      "type": "text/html",
+      "title": "EuroSAT gitHub repository",
+      "description": "Source GitHub repository of the EuroSAT dataset."
+    },
+    "thumbnail": {
+      "href": "https://raw.githubusercontent.com/phelber/EuroSAT/master/eurosat_overview_small.jpg",
+      "type": "image/jpg",
+      "title": "thumbnail",
+      "description": "Preview of dataset samples.",
+      "file:size": 187400,
+      "roles": [
+        "thumbnail"
+      ]
+    },
+    "paper": {
+      "href": "https://www.researchgate.net/publication/319463676",
+      "type": "text/html",
+      "title": "paper",
+      "description": "ResearchGate page with embedded PDF of the scientific paper supporting the dataset.",
+      "file:size": 5600000,
+      "roles": [
+        "paper",
+        "scientific",
+        "citation"
+      ]
+    },
+    "License": {
+      "href": "https://raw.githubusercontent.com/phelber/EuroSAT/master/LICENSE",
+      "type": "text/plain",
+      "title": "License",
+      "description": "License contents associated to the EuroSAT dataset.",
+      "roles": [
+        "legal",
+        "license"
+      ]
+    },
+    "geoparquet": {
+      "href": "euro-sat.parquet",
+      "type": "application/vnd.apache.parquet",
+      "title": "EuroSAT GeoParquet",
+      "description": "GeoParquet representation of the EuroSAT dataset.",
+      "roles": [
+        "data"
+      ]
+    }
+  }
+}
