@@ -4,11 +4,13 @@ from tile_based_training.entity.config_entity import DataIngestionConfig
 import os
 from tqdm import tqdm
 from pystac_client import Client
+import pystac
 from pystac.stac_io import DefaultStacIO, StacIO
 from stac_geoparquet.arrow._api import stac_table_to_items
-import botocore
+# import botocore
+from sklearn.model_selection import train_test_split
 import io
-from tile_based_training.utils.common import duckdb_s3_config, sql_generator
+from tile_based_training.utils.common import duckdb_config, sql_generator
 
 # UPDATING src's component
 class DataIngestion:
@@ -20,45 +22,36 @@ class DataIngestion:
         Fetch data from the endpoint
         """
         try:
-            StacIO.set_default(CustomStacIO)
-            StacIO.read_text_method = CustomStacIO.read_text
-            stac_endpoint = self.config.stac_endpoint
-            self.config.local_data_file
-            collection_name = self.config.collection_name
+            
+            # self.config.local_data_file
+            #collection_name = self.config.collection_name
             samples_per_class = self.config.samples_per_class
             logger.info(f"Accessing STAC endpoint")
             image_urls = []
-            catalog = Client.open(
-                stac_endpoint,
-                ignore_conformance=True,
-            )
-            collection = catalog.get_child(collection_name)
+            catalog = pystac.read_file(self.config.stac_reference) 
+            collection = next(iter(catalog.get_children()))
             for key, asset in collection.get_assets().items():
                 if asset.media_type == "application/vnd.apache.parquet":
                     geoparquet_asset_path = asset.href
             logger.info(f"geoparquet url: {geoparquet_asset_path}")
-            connection = duckdb_s3_config()
+            #connection = duckdb_config()
             for class_name in tqdm(self.config.data_classes):
                 sql_query = sql_generator(
                     class_name=class_name, geoparquet_asset_path=geoparquet_asset_path, samples_per_class=samples_per_class
                 )
-                table = connection.execute(sql_query).fetch_arrow_table()
-
-                params = {
-                    "collections": collection_name,
-                    "max_items": samples_per_class,
-                    "filter": {
-                        "op": "like",
-                        "args": [{"property": "id"}, f"{class_name}%"],
-                    },
-                    "limit": int(samples_per_class * 0.9),
-                }
+                   
+                print("sql_query: ", sql_query)
+                duckdb_config()
+                db = duckdb.query(sql_query)
+                
+                table = db.fetch_arrow_table()
                 try:
                     for item in tqdm(stac_table_to_items(table), desc=f"Fetching data from class {class_name}"):
                         # print(item)
+                        asset = item["assets"]["image"]
                         image_urls.append(
                             {
-                                "url": item["assets"]["image"]["href"],
+                                "url": asset["href"] +"/"+ asset.extra_fields["archive:href"],
                                 "label": class_name,
                             }
                         )
@@ -71,7 +64,7 @@ class DataIngestion:
         return image_urls
 
     def data_spliting(self, full_dataset, split_name="train"):
-        from sklearn.model_selection import train_test_split
+        
 
         X = [x["url"] for x in full_dataset]
         y = [x["label"] for x in full_dataset]
@@ -89,41 +82,41 @@ class DataIngestion:
 
         return dataset
 
-    def data_downloader(self, data, split_name="train"):
-        urls = data["url"]
+    # def data_downloader(self, data, split_name="train"):
+    #     urls = data["url"]
 
-        labels = data["label"]
-        settings = UserSettings("/etc/Stars/appsettings.json")
-        settings.set_s3_environment(f"s3://{bucket_name}/Euro_SAT/Euro_SAT")
-        StacIO.set_default(DefaultStacIO)
-        # reach to bucket name and key
+    #     labels = data["label"]
+    #     settings = UserSettings("/etc/Stars/appsettings.json")
+    #     settings.set_s3_environment(f"s3://{bucket_name}/Euro_SAT/Euro_SAT")
+    #     StacIO.set_default(DefaultStacIO)
+    #     # reach to bucket name and key
 
-        session = botocore.session.Session()
-        s3_client = session.create_client(
-            service_name="s3",
-            use_ssl=True,
-            region_name=os.environ.get("AWS_REGION"),
-            endpoint_url=os.environ.get("AWS_S3_ENDPOINT"),
-            aws_access_key_id=os.environ.get("AWS_ACCESS_KEY_ID"),
-            aws_secret_access_key=os.environ.get("AWS_SECRET_ACCESS_KEY"),
-        )
+    #     session = botocore.session.Session()
+    #     s3_client = session.create_client(
+    #         service_name="s3",
+    #         use_ssl=True,
+    #         region_name=os.environ.get("AWS_REGION"),
+    #         endpoint_url=os.environ.get("AWS_S3_ENDPOINT"),
+    #         aws_access_key_id=os.environ.get("AWS_ACCESS_KEY_ID"),
+    #         aws_secret_access_key=os.environ.get("AWS_SECRET_ACCESS_KEY"),
+    #     )
 
-        try:
-            for url, label in zip(tqdm(urls, desc=f"Downloading {split_name}"), labels):
-                parsed = urlparse(url)
-                bucket = parsed.netloc
-                key = parsed.path[1:]
+    #     try:
+    #         for url, label in zip(tqdm(urls, desc=f"Downloading {split_name}"), labels):
+    #             parsed = urlparse(url)
+    #             bucket = parsed.netloc
+    #             key = parsed.path[1:]
 
-                # retrive the obj which was stored on s3
-                respond = s3_client.get_object(Bucket=bucket, Key=key)
-                content = io.BytesIO(respond["Body"].read())
-                # create trin/test/val directories
-                output_dir = f"output/data_ingestion/{split_name}/{label}"
-                os.makedirs(output_dir, exist_ok=True)
+    #             # retrive the obj which was stored on s3
+    #             respond = s3_client.get_object(Bucket=bucket, Key=key)
+    #             content = io.BytesIO(respond["Body"].read())
+    #             # create trin/test/val directories
+    #             output_dir = f"output/data_ingestion/{split_name}/{label}"
+    #             os.makedirs(output_dir, exist_ok=True)
 
-                # Save the tif content to a local file
-                with open(f'{output_dir}/{url.split("/")[-1].replace(".tif","")}.tif', "wb") as file:
-                    file.write(content.getvalue())
+    #             # Save the tif content to a local file
+    #             with open(f'{output_dir}/{url.split("/")[-1].replace(".tif","")}.tif', "wb") as file:
+    #                 file.write(content.getvalue())
 
-        except Exception as e:
-            raise e
+    #     except Exception as e:
+    #         raise e

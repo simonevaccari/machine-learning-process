@@ -13,7 +13,7 @@ import base64
 import requests
 import random
 import duckdb
-import boto3  # noqa: F401
+# import boto3  # noqa: F401
 from urllib.parse import urlparse
 from loguru import logger
 import requests
@@ -22,7 +22,7 @@ import json
 import os
 import re
 import rasterio
-from fs_s3fs import S3FS
+# from fs_s3fs import S3FS
 import tensorflow as tf
 import logging
 from pygeofilter.parsers.cql2_json import parse as json_parse
@@ -85,20 +85,20 @@ def write_yaml(path_to_yaml: Path, **args) -> None:
 
     # data = dict(args["args"])
     args = args["args"]
+    print(args)
     data = {
         "BATCH_SIZE": args["BATCH_SIZE"],
         "CLASSES": args["CLASSES"],
         "DECAY": args["DECAY"],  ### float
         "EPOCHS": args["EPOCHS"],
         "EPSILON": args["EPSILON"],
-        "IMAGE_SIZE": list(args["IMAGE_SIZE"]),
         "LEARNING_RATE": args["LEARNING_RATE"],
         "LOSS": args["LOSS"],
         "MEMENTUM": args["MEMENTUM"],
         "OPTIMIZER": args["OPTIMIZER"],
         "REGULIZER": args["REGULIZER"],
         "SAMPLES_PER_CLASS": args["SAMPLES_PER_CLASS"],
-        "stac_endpoint_url": args["stac_endpoint_url"],
+        "stac_reference": args["stac_reference"],
     }
     try:
         with path_to_yaml.open("w") as yaml_file:
@@ -325,76 +325,76 @@ class UserSettings:
             #     break
 
 
-class CustomStacIO(DefaultStacIO):
-    def __init__(self):
-        session = boto3.session.Session()
+# class CustomStacIO(DefaultStacIO):
+#     def __init__(self):
+#         session = boto3.session.Session()
 
-        self.s3 = session.client(
-            service_name="s3",
-            region_name=settings.region_name,  # type: ignore
-            use_ssl=True,
-            endpoint_url=f"https://{settings.endpoint_url}",
-            aws_access_key_id=settings.aws_access_key_id,  # type: ignore
-            aws_secret_access_key=settings.aws_secret_access_key,
-        )
+#         self.s3 = session.client(
+#             service_name="s3",
+#             region_name=settings.region_name,  # type: ignore
+#             use_ssl=True,
+#             endpoint_url=f"https://{settings.endpoint_url}",
+#             aws_access_key_id=settings.aws_access_key_id,  # type: ignore
+#             aws_secret_access_key=settings.aws_secret_access_key,
+#         )
 
-    def read_text(self, source, *args, **kwargs):
-        parsed = urlparse(source)
-        if parsed.scheme == "s3":
-            bucket = parsed.netloc
-            key = parsed.path[1:]
+#     def read_text(self, source, *args, **kwargs):
+#         parsed = urlparse(source)
+#         if parsed.scheme == "s3":
+#             bucket = parsed.netloc
+#             key = parsed.path[1:]
 
-            return self.s3.get_object(Bucket=bucket, Key=key)["Body"].read().decode("utf-8")
-        else:
-            return super().read_text(source, *args, **kwargs)
+#             return self.s3.get_object(Bucket=bucket, Key=key)["Body"].read().decode("utf-8")
+#         else:
+#             return super().read_text(source, *args, **kwargs)
 
-    def write_text(self, dest, txt, *args, **kwargs):
-        parsed = urlparse(dest)
-        if parsed.scheme == "s3":
-            bucket = parsed.netloc
-            key = parsed.path[1:]
-            self.s3.put_object(
-                Body=txt.encode("UTF-8"),
-                Bucket=bucket,
-                Key=key,
-                ContentType="application/geo+json",
-            )
-        else:
-            super().write_text(dest, txt, *args, **kwargs)
-
-
-def s3_config_notebook(usersetting_path):
-    user = UserSettings(str(usersetting_path))
-    settings = user.settings
-    # print(settings.settings)
-
-    for key, value in settings["S3"]["Services"].items():
-        bucket_name = urlparse(value["UrlPattern"]).netloc
-        break
-    user.set_s3_environment(f"s3://{bucket_name}")
-    if os.environ.get("AWS_REGION"):
-        logger.info("S3 bucket is configured")
-    else:
-        logger.error("S3 bucket's configuration is failed")
-        sys.exit(1)
+#     def write_text(self, dest, txt, *args, **kwargs):
+#         parsed = urlparse(dest)
+#         if parsed.scheme == "s3":
+#             bucket = parsed.netloc
+#             key = parsed.path[1:]
+#             self.s3.put_object(
+#                 Body=txt.encode("UTF-8"),
+#                 Bucket=bucket,
+#                 Key=key,
+#                 ContentType="application/geo+json",
+#             )
+#         else:
+#             super().write_text(dest, txt, *args, **kwargs)
 
 
-def s3_bucket_config():
-    bucket_name = os.environ.get("BUCKET_NAME")
-    # for key, value in settings.S3.Services.items():
-    #     bucket_name = urlparse(value['UrlPattern']).netloc
-    #     break
+# def s3_config_notebook(usersetting_path):
+#     user = UserSettings(str(usersetting_path))
+#     settings = user.settings
+#     # print(settings.settings)
 
-    logger.info(f"Bucket name is {bucket_name}")
-    ######## Configuration to access aws bucket to read images directly with gdal
+#     for key, value in settings["S3"]["Services"].items():
+#         bucket_name = urlparse(value["UrlPattern"]).netloc
+#         break
+#     user.set_s3_environment(f"s3://{bucket_name}")
+#     if os.environ.get("AWS_REGION"):
+#         logger.info("S3 bucket is configured")
+#     else:
+#         logger.error("S3 bucket's configuration is failed")
+#         sys.exit(1)
 
-    # settings = UserSettings(str(usersetting_path))
-    # settings.set_s3_environment(f"s3://{bucket_name}")
-    if os.environ.get("AWS_REGION"):
-        logger.info("S3 bucket is configured")
-    else:
-        logger.error("S3 bucket's configuration is failed")
-        sys.exit(1)
+
+# def s3_bucket_config():
+#     bucket_name = os.environ.get("BUCKET_NAME")
+#     # for key, value in settings.S3.Services.items():
+#     #     bucket_name = urlparse(value['UrlPattern']).netloc
+#     #     break
+
+#     logger.info(f"Bucket name is {bucket_name}")
+#     ######## Configuration to access aws bucket to read images directly with gdal
+
+#     # settings = UserSettings(str(usersetting_path))
+#     # settings.set_s3_environment(f"s3://{bucket_name}")
+#     if os.environ.get("AWS_REGION"):
+#         logger.info("S3 bucket is configured")
+#     else:
+#         logger.error("S3 bucket's configuration is failed")
+#         sys.exit(1)
 
 
 def rasterio_s3_read(s3_path: str):
@@ -429,14 +429,14 @@ def rasterio_s3_read(s3_path: str):
     image_name = os.path.basename(full_path)
     # Extract directory path using os.path.dirname
     dir_path = os.path.dirname(full_path)
-    fs_opener = S3FS(
-        bucket_name=bucket_name,
-        dir_path=dir_path,
-        aws_access_key_id=aws_access_key_id,
-        aws_secret_access_key=aws_secret_access_key,
-        endpoint_url=endpoint_url,
-        region=region_name,
-    )
+    fs_opener = "" #S3FS(
+    #     bucket_name=bucket_name,
+    #     dir_path=dir_path,
+    #     aws_access_key_id=aws_access_key_id,
+    #     aws_secret_access_key=aws_secret_access_key,
+    #     endpoint_url=endpoint_url,
+    #     region=region_name,
+    # )
 
     if fs_opener.region:
         pass
@@ -465,30 +465,32 @@ def rasterio_s3_read(s3_path: str):
     # gdal.SetConfigOption("AWS_VIRTUAL_HOSTING", "FALSE")
 
 
-def duckdb_s3_config():
-    s3_aws_access_key_id = os.environ.get("AWS_ACCESS_KEY_ID")
-    s3_aws_access_secret_key = os.environ.get("AWS_SECRET_ACCESS_KEY")
-    s3_aws_region = os.environ.get("AWS_REGION")
-    s3_aws_endpoint_url = os.environ.get("AWS_S3_ENDPOINT")
-    duckdb_s3_endpoint_url = s3_aws_endpoint_url.replace("https://", "")
+def duckdb_config():
+    duckdb.install_extension("spatial")
+    duckdb.load_extension("spatial") 
+    # s3_aws_access_key_id = os.environ.get("AWS_ACCESS_KEY_ID")
+    # s3_aws_access_secret_key = os.environ.get("AWS_SECRET_ACCESS_KEY")
+    # s3_aws_region = os.environ.get("AWS_REGION")
+    # s3_aws_endpoint_url = os.environ.get("AWS_S3_ENDPOINT")
+    # duckdb_s3_endpoint_url = s3_aws_endpoint_url.replace("https://", "")
     # Set environment variable for httpfs
     os.environ["BUILD_HTTPFS"] = "1"
 
     # Connect to DuckDB
-    connection = duckdb.connect()
-    connection.execute("INSTALL httpfs")
-    connection.execute("LOAD httpfs")
-    connection.execute("INSTALL spatial")
-    connection.execute("LOAD spatial")
-    # Set correct S3 credentials
-    connection.execute(f"SET s3_region = '{s3_aws_region}';")
-    connection.execute(f"SET s3_access_key_id = '{s3_aws_access_key_id}';")
-    connection.execute(f"SET s3_secret_access_key = '{s3_aws_access_secret_key}';")
-    connection.execute(f"SET s3_endpoint = '{duckdb_s3_endpoint_url}';")  # No extra "https://"
-    connection.execute("SET s3_use_ssl = true;")
-    connection.execute("SET enable_progress_bar = false;")
+    # connection = duckdb.connect()
+    # # connection.execute("INSTALL httpfs")
+    # # connection.execute("LOAD httpfs")
+    # # connection.execute("INSTALL spatial")
+    # # connection.execute("LOAD spatial")
+    # # # Set correct S3 credentials
+    # # connection.execute(f"SET s3_region = '{s3_aws_region}';")
+    # # connection.execute(f"SET s3_access_key_id = '{s3_aws_access_key_id}';")
+    # # connection.execute(f"SET s3_secret_access_key = '{s3_aws_access_secret_key}';")
+    # # connection.execute(f"SET s3_endpoint = '{duckdb_s3_endpoint_url}';")  # No extra "https://"
+    # # connection.execute("SET s3_use_ssl = true;")
+    # connection.execute("SET enable_progress_bar = false;")
 
-    return connection
+    # return connection
 
 
 # def sql_generator(class_name,  geoparquet_asset_path, geometry= None):
@@ -548,4 +550,5 @@ def sql_generator(class_name, geoparquet_asset_path, samples_per_class=100):
     # Define the SQL query with dynamically inserted sql_where
 
     sql_query = f"SELECT * EXCLUDE(geometry), ST_AsWKB(geometry) as geometry FROM read_parquet('{geoparquet_asset_path}') WHERE {sql_where} LIMIT {samples_per_class}"
+    
     return sql_query

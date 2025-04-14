@@ -7,7 +7,6 @@ import warnings
 import click
 from pathlib import Path
 from tile_based_training.utils.common import (
-    s3_bucket_config,
     write_yaml,
     configure_gpu,
 )
@@ -30,14 +29,17 @@ warnings.filterwarnings("ignore")
     help="A selected model with highest evaluation metrics will making an inference on a sentinel-2 L1C data",
 )
 @click.option(
-    "--stac_endpoint_url",
-    "stac_endpoint_url",
-    help="The url which point to STAC endpoint (Catalog)",
+    "--stac_reference",
+    "--sr",
+    "stac_reference",
+    help="The url which point to STAC input reference",
+    default= "https://raw.githubusercontent.com/eoap/machine-learning-process/main/training/app-package/EUROSAT-Training-Dataset/catalog.json",
     required=True,
     show_default=True,
 )
 @click.option(
     "--BATCH_SIZE",
+    "--b",
     "BATCH_SIZE",
     help="BATCH_SIZE",
     required=False,
@@ -47,8 +49,9 @@ warnings.filterwarnings("ignore")
 )
 @click.option(
     "--CLASSES",
+    "--c",
     "CLASSES",
-    help="Number of classes",
+    help="Number of classes to train",
     required=False,
     default=10,
     show_default=True,
@@ -56,6 +59,7 @@ warnings.filterwarnings("ignore")
 )
 @click.option(
     "--DECAY",
+    "--d",
     "DECAY",
     help="DECAY - model metadata",
     required=False,
@@ -63,9 +67,10 @@ warnings.filterwarnings("ignore")
     show_default=True,
     type=float,
 )
-@click.option("--EPOCHS", "EPOCHS", help="Number of epochs", required=False, default=5, type=int)
+@click.option("--EPOCHS", "--ep","EPOCHS", help="Number of epochs", required=False, default=5, type=int)
 @click.option(
     "--EPSILON",
+    "--e",
     "EPSILON",
     help="EPSILON - model metadata",
     required=False,
@@ -74,16 +79,8 @@ warnings.filterwarnings("ignore")
     type=float,
 )
 @click.option(
-    "--IMAGE_SIZE",
-    "IMAGE_SIZE",
-    help="input image size to model",
-    required=False,
-    multiple=True,
-    default=[64, 64, 13],
-    show_default=True,
-)
-@click.option(
     "--LEARNING_RATE",
+    "--lr",
     "LEARNING_RATE",
     help="LEARNING_RATE",
     required=False,
@@ -93,6 +90,7 @@ warnings.filterwarnings("ignore")
 )
 @click.option(
     "--LOSS",
+    "--lo",
     "LOSS",
     help="loss function",
     required=False,
@@ -102,6 +100,7 @@ warnings.filterwarnings("ignore")
 )
 @click.option(
     "--MEMENTUM",
+    "--m",
     "MEMENTUM",
     help="MEMENTUM - model metadata",
     required=False,
@@ -111,6 +110,7 @@ warnings.filterwarnings("ignore")
 )
 @click.option(
     "--OPTIMIZER",
+    "--o",
     "OPTIMIZER",
     help="OPTIMIZER",
     required=False,
@@ -120,6 +120,7 @@ warnings.filterwarnings("ignore")
 )
 @click.option(
     "--REGULIZER",
+    "--r",
     "REGULIZER",
     help="REGULIZER",
     required=False,
@@ -128,16 +129,18 @@ warnings.filterwarnings("ignore")
 )
 @click.option(
     "--SAMPLES_PER_CLASS",
+    "--s",
     "SAMPLES_PER_CLASS",
     help="number of sample for each class to train model based on",
     required=False,
-    default=500,
+    default=10,
     show_default=True,
     type=int,
 )
 @click.option(
-    "--enable_data_ingestion",
-    "enable_data_ingestion",
+    "--indexing_flag",
+    "--idx",
+    "indexing_flag",
     help="A flag to enable data ingestion pipeline",
     required=False,
     is_flag=True,
@@ -153,27 +156,26 @@ def run_tile_based_classification_training(ctx, **kwargs):
     logger.info(
         f"\n=================================================================\nDevice name is: {device_name} \n================================================================="
     )
+    from pprint import pprint
+    pprint(kwargs)
     write_yaml(path_to_yaml=Path("params.yaml"), args=kwargs)
 
-    s3_bucket_config()
+    #s3_bucket_config()
     # First step
     STAGE_NAME = "Data Ingestion stage"
-    if kwargs["enable_data_ingestion"] == True:
-        try:
-            logger.info(f"\n=================================================================\n>>>>>> stage {STAGE_NAME} started <<<<<<")
-            obj = DataIngestionTrainingPipeline()
-            obj.main()
-            logger.info(
-                f"\n=================================================================\n>>>>>> stage {STAGE_NAME} completed <<<<<<\n================================================================="
-            )
-        except Exception as e:
-            logger.exception(e)
-            raise e
-    else:
+   
+    try:
+        logger.info(f"\n=================================================================\n>>>>>> stage {STAGE_NAME} started <<<<<<")
+        obj = DataIngestionTrainingPipeline()
+        obj.main()
         logger.info(
-            f"\n=================================================================\n>>>>>> stage {STAGE_NAME} skipped <<<<<<\n================================================================="
+            f"\n=================================================================\n>>>>>> stage {STAGE_NAME} completed <<<<<<\n================================================================="
         )
-
+    except Exception as e:
+        logger.exception(e)
+        raise e
+    
+    sys.exit(0)
     STAGE_NAME = "Prepare Base Model"
     logger.info(f"\n=================================================================\n>>>>>> stage {STAGE_NAME} started <<<<<<")
 

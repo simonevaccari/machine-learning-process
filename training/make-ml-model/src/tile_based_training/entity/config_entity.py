@@ -6,8 +6,7 @@ from pathlib import Path
 @dataclass(frozen=True)  # for equality checks
 class DataIngestionConfig:
     root_dir: Path
-    stac_endpoint: str
-    collection_name: str
+    stac_reference: str
     local_data_file: Path
     data_classes: list
     samples_per_class: int
