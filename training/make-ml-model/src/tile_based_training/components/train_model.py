@@ -2,7 +2,7 @@ import sys
 import numpy as np
 import tensorflow as tf
 import random
-from tile_based_training.utils.common import rasterio_s3_read
+from tile_based_training.utils.common import rasterio_read, augmentation
 from tile_based_training import logger
 
 
@@ -14,20 +14,16 @@ class Training:
     def get_base_model(self):
         """Load the base model from the given path."""
         self.model = tf.keras.models.load_model(self.config.base_model_path)
-        # if device_name == "/GPU:0":
-        #     with tf.device("/GPU:0"):  # Ensure model is loaded on the GPU
-        #         self.model = tf.keras.models.load_model(self.config.base_model_path)
-        # else:
-        #     with tf.device("/CPU:0"):  # Ensure model is loaded on the CPU
-        #         self.model = tf.keras.models.load_model(self.config.base_model_path)
+    
 
     @staticmethod
     def read_images(file_path, label):
         """Reads images, preprocesses, and returns tensors."""
         try:
             file_path = file_path.numpy().decode("utf-8")
-            data = rasterio_s3_read(file_path)  # Assuming this is correctly defined elsewhere
-            data = data / np.amax(data)  # Normalize
+            data = rasterio_read(file_path)  # Assuming this is correctly defined elsewhere
+            data = augmentation(data)  # Assuming this is correctly defined elsewhere
+            data = data / 10000.0  # Normalize
             # data = data / 10000.0 # Normalize
             image_data = np.transpose(data, (1, 2, 0))  # Transpose for proper shape
             return tf.convert_to_tensor(image_data, dtype=tf.float32), tf.convert_to_tensor(label, dtype=tf.float32)
@@ -62,7 +58,7 @@ class Training:
         )
         dataset = dataset.map(
             lambda x, y: (
-                tf.ensure_shape(x, self.config.params_image_size),
+                tf.ensure_shape(x, [64, 64, 12]),
                 tf.ensure_shape(y, self.config.calsses_number),
             )
         )
@@ -81,11 +77,11 @@ class Training:
         val_paths = self.config.val_data["url"]
 
         val_dataset = self.train_valid_dataloader(val_paths)
-        # for x, y in enumerate(train_dataset):
-        #     print(x)
-        #     print()
-        #     print(y)
-        #     break
+        for x, y in enumerate(train_dataset):
+            print(x)
+            print()
+            print(y)
+            break
         # sys.exit(0)
         # Model checkpointing
         checkpoint = tf.keras.callbacks.ModelCheckpoint(

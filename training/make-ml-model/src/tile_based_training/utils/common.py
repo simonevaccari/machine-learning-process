@@ -23,6 +23,8 @@ import os
 import re
 import rasterio
 # from fs_s3fs import S3FS
+import numpy as np
+import random
 import tensorflow as tf
 import logging
 from pygeofilter.parsers.cql2_json import parse as json_parse
@@ -397,58 +399,36 @@ class UserSettings:
 #         sys.exit(1)
 
 
-def rasterio_s3_read(s3_path: str):
-    os.environ["TF_CPP_MIN_LOG_LEVEL"] = "2"
-    os.environ["TF_CPP_MIN_LOG_LEVEL"] = "3"
-    os.environ["CPL_LOG"] = "DISABLE"
-    os.environ["CPL_DEBUG"] = "OFF"
-    os.environ["GDAL_DISABLE_READDIR_ON_OPEN"] = "EMPTY_DIR"
-    os.environ["AWS_NO_SIGN_REQUEST"] = "YES"
-    os.environ["GTIFF_SRS_SOURCE"] = "EPSG"  # Use official EPSG registry for CRS definitions
-    os.environ["PROJ_DEBUG"] = "0"
-    os.environ["CPL_LOG"] = "DISABLE"
-    os.environ["TF_FORCE_GPU_ALLOW_GROWTH"] = "false"
-    os.environ["AWS_RESPONSE_CHECKSUM_VALIDATION"] = "when_required"
-    # StacIO.set_default(CustomStacIO)
-    # StacIO.read_text_method = CustomStacIO.read_text
-    region_name = os.environ.get("AWS_REGION")
-    endpoint_url = os.environ.get("AWS_S3_ENDPOINT")
-    aws_access_key_id = os.environ.get("AWS_ACCESS_KEY_ID")
-    aws_secret_access_key = os.environ.get("AWS_SECRET_ACCESS_KEY")
-    # print("region_name: ", region_name)
-    # Parse the S3 path using urlparse
-    parsed_url = urlparse(s3_path)
+def rasterio_read(s3_path: str):
+    
+    
 
-    # Extract the bucket name from the "netloc" part
-    bucket_name = parsed_url.netloc
+    
 
-    # Extract the full path (excluding 's3://bucket_name')
-    full_path = parsed_url.path.lstrip("/")
-
-    # Extract image name using os.path.basename
-    image_name = os.path.basename(full_path)
-    # Extract directory path using os.path.dirname
-    dir_path = os.path.dirname(full_path)
-    fs_opener = "" #S3FS(
-    #     bucket_name=bucket_name,
-    #     dir_path=dir_path,
-    #     aws_access_key_id=aws_access_key_id,
-    #     aws_secret_access_key=aws_secret_access_key,
-    #     endpoint_url=endpoint_url,
-    #     region=region_name,
-    # )
-
-    if fs_opener.region:
-        pass
-    else:
-        logger.error("File system opener is not configurated properly to open file from s3 bucket")
-
-    with rasterio.open(image_name, opener=fs_opener.open) as src:
-        data = src.read()
+    with rasterio.open(os.path.join("/vsizip/vsicurl",s3_path)) as src:
+        total_bands = src.count
+        band_index_to_exclude = [11] # Exclude band 11(cirrus band)
+        band_indices = [b for b in range(1, total_bands + 1) if b not in band_index_to_exclude]
+        data = src.read(band_indices)
         data = data.astype("float32")
 
     return data
 
+def augmentation(data):
+    # Random rotation (90, 180, 270 degrees)
+    k = random.choice([0, 1, 2, 3])  # 0 means no rotation
+    data = np.rot90(data, k=k, axes=(1, 2))
+
+    # Random flip
+    if random.choice([True, False]):
+        data = np.flip(data, axis=1)  # vertical flip
+    if random.choice([True, False]):
+        data = np.flip(data, axis=2)  # horizontal flip
+    
+    return data
+    
+    
+    
     #### For GDAL
     # settings = S3Settings(
     #     region_name=region_name,

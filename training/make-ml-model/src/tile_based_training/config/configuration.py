@@ -35,7 +35,6 @@ class ConfigurationManager:
         prepare_base_model_config = PrepareBaseModelConfig(
             root_dir=Path(config.root_dir),
             model_path=Path(config.model_path),
-            params_image_size=self.params.IMAGE_SIZE,
             params_learning_rate=self.params.LEARNING_RATE,
             params_classes=self.params.CLASSES,
             params_decay=self.params.DECAY,
@@ -68,7 +67,6 @@ class ConfigurationManager:
             base_model_path=Path(prepare_base_model.model_path),
             params_epochs=params.EPOCHS,
             params_batch_size=params.BATCH_SIZE,
-            params_image_size=params.IMAGE_SIZE,
             calsses_number=self.params.CLASSES,
         )
 

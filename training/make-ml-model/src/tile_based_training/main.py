@@ -1,5 +1,5 @@
 import os
-
+import sys
 # os.environ['TF_XLA_FLAGS'] = '--tf_xla_enable_xla_devices=0'
 # os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
 from tile_based_training import logger
@@ -175,7 +175,7 @@ def run_tile_based_classification_training(ctx, **kwargs):
         logger.exception(e)
         raise e
     
-    sys.exit(0)
+    
     STAGE_NAME = "Prepare Base Model"
     logger.info(f"\n=================================================================\n>>>>>> stage {STAGE_NAME} started <<<<<<")
 
@@ -200,7 +200,7 @@ def run_tile_based_classification_training(ctx, **kwargs):
     except Exception as e:
         logger.exception(e)
         raise e
-
+    sys.exit(0)
     STAGE_NAME = "Evaluating Model"
 
     try:

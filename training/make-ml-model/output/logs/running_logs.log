@@ -562,3 +562,367 @@ Traceback (most recent call last):
   File "pyarrow/error.pxi", line 92, in pyarrow.lib.check_status
 pyarrow.lib.ArrowInvalid: Cannot locate timezone 'UTC': discover_tz_dir failed to find zoneinfo
 
+[2025-04-14 13:57:01,030: INFO: common: created directory at: config]
+[2025-04-14 13:57:02,675: INFO: main: MLFLOW URI: None]
+[2025-04-14 13:57:02,675: INFO: main: /code]
+[2025-04-14 13:57:02,676: INFO: main: 
+=================================================================
+Device name is: None 
+=================================================================]
+[2025-04-14 13:57:02,677: INFO: common: YAML file: params.yaml written successfully]
+[2025-04-14 13:57:02,677: INFO: main: 
+=================================================================
+>>>>>> stage Data Ingestion stage started <<<<<<]
+[2025-04-14 13:57:02,679: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2025-04-14 13:57:02,681: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-04-14 13:57:02,681: INFO: common: created directory at: output]
+[2025-04-14 13:57:02,681: INFO: common: created directory at: src/tile_based_training/output/data_ingestion]
+[2025-04-14 13:57:02,682: INFO: data_ingestion: Accessing STAC endpoint]
+[2025-04-14 13:57:03,344: INFO: data_ingestion: geoparquet url: https://zenodo.org/records/15209589/files/euro-sat.parquet]
+[2025-04-14 13:57:30,702: ERROR: main: 'dict' object has no attribute 'extra_fields']
+Traceback (most recent call last):
+  File "/code/src/tile_based_training/main.py", line 170, in run_tile_based_classification_training
+    obj.main()
+  File "/code/src/tile_based_training/pipeline/stage_01_data_ingestion.py", line 26, in main
+    raise e
+  File "/code/src/tile_based_training/pipeline/stage_01_data_ingestion.py", line 18, in main
+    all_urls = data_ingestion.stac_loader()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/code/src/tile_based_training/components/data_ingestion.py", line 63, in stac_loader
+    raise e
+  File "/code/src/tile_based_training/components/data_ingestion.py", line 59, in stac_loader
+    raise e
+  File "/code/src/tile_based_training/components/data_ingestion.py", line 54, in stac_loader
+    "url": asset["href"] +"/"+ asset.extra_fields["archive:href"],
+                               ^^^^^^^^^^^^^^^^^^
+AttributeError: 'dict' object has no attribute 'extra_fields'
+[2025-04-14 13:58:17,366: INFO: common: created directory at: config]
+[2025-04-14 13:58:18,401: INFO: main: MLFLOW URI: None]
+[2025-04-14 13:58:18,401: INFO: main: /code]
+[2025-04-14 13:58:18,401: INFO: main: 
+=================================================================
+Device name is: None 
+=================================================================]
+[2025-04-14 13:58:18,402: INFO: common: YAML file: params.yaml written successfully]
+[2025-04-14 13:58:18,402: INFO: main: 
+=================================================================
+>>>>>> stage Data Ingestion stage started <<<<<<]
+[2025-04-14 13:58:18,404: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2025-04-14 13:58:18,405: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-04-14 13:58:18,405: INFO: common: created directory at: output]
+[2025-04-14 13:58:18,405: INFO: common: created directory at: src/tile_based_training/output/data_ingestion]
+[2025-04-14 13:58:18,405: INFO: data_ingestion: Accessing STAC endpoint]
+[2025-04-14 13:58:18,793: INFO: data_ingestion: geoparquet url: https://zenodo.org/records/15209589/files/euro-sat.parquet]
+[2025-04-14 13:58:33,328: ERROR: main: Query interrupted]
+KeyboardInterrupt
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/code/src/tile_based_training/main.py", line 170, in run_tile_based_classification_training
+    obj.main()
+  File "/code/src/tile_based_training/pipeline/stage_01_data_ingestion.py", line 26, in main
+    raise e
+  File "/code/src/tile_based_training/pipeline/stage_01_data_ingestion.py", line 18, in main
+    all_urls = data_ingestion.stac_loader()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/code/src/tile_based_training/components/data_ingestion.py", line 63, in stac_loader
+    raise e
+  File "/code/src/tile_based_training/components/data_ingestion.py", line 47, in stac_loader
+    table = db.fetch_arrow_table()
+            ^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: Query interrupted
+[2025-04-14 13:58:53,020: INFO: common: created directory at: config]
+[2025-04-14 13:58:54,392: INFO: main: MLFLOW URI: None]
+[2025-04-14 13:58:54,392: INFO: main: /code]
+[2025-04-14 13:58:54,392: INFO: main: 
+=================================================================
+Device name is: None 
+=================================================================]
+[2025-04-14 13:58:54,393: INFO: common: YAML file: params.yaml written successfully]
+[2025-04-14 13:58:54,393: INFO: main: 
+=================================================================
+>>>>>> stage Data Ingestion stage started <<<<<<]
+[2025-04-14 13:58:54,395: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2025-04-14 13:58:54,396: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-04-14 13:58:54,396: INFO: common: created directory at: output]
+[2025-04-14 13:58:54,396: INFO: common: created directory at: src/tile_based_training/output/data_ingestion]
+[2025-04-14 13:58:54,396: INFO: data_ingestion: Accessing STAC endpoint]
+[2025-04-14 13:58:54,814: INFO: data_ingestion: geoparquet url: https://zenodo.org/records/15209589/files/euro-sat.parquet]
+[2025-04-14 14:01:55,497: INFO: data_ingestion: 100 items are loaded]
+[2025-04-14 14:01:55,511: INFO: data_ingestion: Train size: 60 , Valid size: 20, Test size: 20]
+[2025-04-14 14:01:55,512: INFO: main: 
+=================================================================
+>>>>>> stage Data Ingestion stage completed <<<<<<
+=================================================================]
+[2025-04-14 14:56:21,222: INFO: common: created directory at: config]
+[2025-04-14 14:56:38,421: INFO: common: created directory at: config]
+[2025-04-14 14:56:39,450: INFO: main: MLFLOW URI: None]
+[2025-04-14 14:56:39,450: INFO: main: /code]
+[2025-04-14 14:56:39,450: INFO: main: 
+=================================================================
+Device name is: None 
+=================================================================]
+[2025-04-14 14:56:39,451: INFO: common: YAML file: params.yaml written successfully]
+[2025-04-14 14:56:39,451: INFO: main: 
+=================================================================
+>>>>>> stage Data Ingestion stage started <<<<<<]
+[2025-04-14 14:56:39,453: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2025-04-14 14:56:39,454: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-04-14 14:56:39,455: INFO: common: created directory at: output]
+[2025-04-14 14:56:39,455: INFO: common: created directory at: src/tile_based_training/output/data_ingestion]
+[2025-04-14 14:56:39,455: INFO: data_ingestion: Accessing STAC endpoint]
+[2025-04-14 14:56:40,182: INFO: data_ingestion: geoparquet url: https://zenodo.org/records/15209589/files/euro-sat.parquet]
+[2025-04-14 14:58:25,778: INFO: data_ingestion: 100 items are loaded]
+[2025-04-14 14:58:25,788: INFO: data_ingestion: Train size: 60 , Valid size: 20, Test size: 20]
+[2025-04-14 14:58:25,788: INFO: main: 
+=================================================================
+>>>>>> stage Data Ingestion stage completed <<<<<<
+=================================================================]
+[2025-04-14 14:58:25,788: INFO: main: 
+=================================================================
+>>>>>> stage Prepare Base Model started <<<<<<]
+[2025-04-14 14:58:25,791: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2025-04-14 14:58:25,792: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-04-14 14:58:25,792: INFO: common: created directory at: output]
+[2025-04-14 14:58:25,792: INFO: common: created directory at: src/tile_based_training/output/prepare_base_model]
+[2025-04-14 14:58:25,792: ERROR: main: "'ConfigBox' object has no attribute 'image_size'"]
+Traceback (most recent call last):
+  File "box/box.py", line 594, in box.box.Box.__getitem__
+KeyError: 'IMAGE_SIZE'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "box/box.py", line 633, in box.box.Box.__getattr__
+  File "box/box.py", line 621, in box.box.Box.__getitem__
+box.exceptions.BoxKeyError: "'IMAGE_SIZE'"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "box/box.py", line 635, in box.box.Box.__getattr__
+AttributeError: 'ConfigBox' object has no attribute 'IMAGE_SIZE'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "box/config_box.py", line 29, in box.config_box.ConfigBox.__getattr__
+  File "box/box.py", line 649, in box.box.Box.__getattr__
+box.exceptions.BoxKeyError: "'ConfigBox' object has no attribute 'IMAGE_SIZE'"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "box/box.py", line 594, in box.box.Box.__getitem__
+KeyError: 'image_size'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "box/box.py", line 633, in box.box.Box.__getattr__
+  File "box/box.py", line 621, in box.box.Box.__getitem__
+box.exceptions.BoxKeyError: "'image_size'"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "box/box.py", line 635, in box.box.Box.__getattr__
+AttributeError: 'ConfigBox' object has no attribute 'image_size'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/code/src/tile_based_training/main.py", line 184, in run_tile_based_classification_training
+    obj.main()
+  File "/code/src/tile_based_training/pipeline/stage_02_prepare_base_model.py", line 15, in main
+    prepare_base_model_config = config.get_prepare_base_model_config()
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/code/src/tile_based_training/config/configuration.py", line 38, in get_prepare_base_model_config
+    params_image_size=self.params.IMAGE_SIZE,
+                      ^^^^^^^^^^^^^^^^^^^^^^
+  File "box/config_box.py", line 31, in box.config_box.ConfigBox.__getattr__
+  File "box/box.py", line 649, in box.box.Box.__getattr__
+box.exceptions.BoxKeyError: "'ConfigBox' object has no attribute 'image_size'"
+[2025-04-14 15:34:16,678: INFO: common: created directory at: config]
+[2025-04-14 15:34:17,974: INFO: main: MLFLOW URI: None]
+[2025-04-14 15:34:17,974: INFO: main: /code]
+[2025-04-14 15:34:17,974: INFO: main: 
+=================================================================
+Device name is: None 
+=================================================================]
+[2025-04-14 15:34:17,976: INFO: common: YAML file: params.yaml written successfully]
+[2025-04-14 15:34:17,976: INFO: main: 
+=================================================================
+>>>>>> stage Data Ingestion stage started <<<<<<]
+[2025-04-14 15:34:17,977: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2025-04-14 15:34:17,979: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-04-14 15:34:17,979: INFO: common: created directory at: output]
+[2025-04-14 15:34:17,979: INFO: common: created directory at: src/tile_based_training/output/data_ingestion]
+[2025-04-14 15:34:17,979: INFO: data_ingestion: Accessing STAC endpoint]
+[2025-04-14 15:34:18,765: INFO: data_ingestion: geoparquet url: https://zenodo.org/records/15209589/files/euro-sat.parquet]
+[2025-04-14 15:36:07,425: INFO: data_ingestion: 100 items are loaded]
+[2025-04-14 15:36:07,438: INFO: data_ingestion: Train size: 60 , Valid size: 20, Test size: 20]
+[2025-04-14 15:36:07,440: INFO: main: 
+=================================================================
+>>>>>> stage Data Ingestion stage completed <<<<<<
+=================================================================]
+[2025-04-14 15:36:07,440: INFO: main: 
+=================================================================
+>>>>>> stage Prepare Base Model started <<<<<<]
+[2025-04-14 15:36:07,444: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2025-04-14 15:36:07,446: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-04-14 15:36:07,446: INFO: common: created directory at: output]
+[2025-04-14 15:36:07,446: INFO: common: created directory at: src/tile_based_training/output/prepare_base_model]
+[2025-04-14 15:36:07,852: INFO: main: 
+=================================================================
+>>>>>> stage Prepare Base Model completed <<<<<<
+=================================================================]
+[2025-04-14 15:36:07,852: INFO: main: 
+=================================================================
+>>>>>> stage Training Model started <<<<<<]
+[2025-04-14 15:36:07,855: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2025-04-14 15:36:07,857: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-04-14 15:36:07,857: INFO: common: created directory at: output]
+[2025-04-14 15:36:07,857: INFO: common: json file loaded succesfully from: src/tile_based_training/output/data_ingestion/splited_data.json]
+[2025-04-14 15:36:07,857: INFO: common: json file loaded succesfully from: src/tile_based_training/output/data_ingestion/splited_data.json]
+[2025-04-14 15:36:07,858: INFO: common: created directory at: src/tile_based_training/output/training]
+[2025-04-14 15:36:08,292: INFO: train_model: Device is: None , Built with CUDA: True]
+[2025-04-14 15:37:57,683: INFO: common: created directory at: config]
+[2025-04-14 15:37:58,913: INFO: main: MLFLOW URI: None]
+[2025-04-14 15:37:58,913: INFO: main: /code]
+[2025-04-14 15:37:58,913: INFO: main: 
+=================================================================
+Device name is: None 
+=================================================================]
+[2025-04-14 15:37:58,914: INFO: common: YAML file: params.yaml written successfully]
+[2025-04-14 15:37:58,914: INFO: main: 
+=================================================================
+>>>>>> stage Data Ingestion stage started <<<<<<]
+[2025-04-14 15:37:58,916: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2025-04-14 15:37:58,917: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-04-14 15:37:58,917: INFO: common: created directory at: output]
+[2025-04-14 15:37:58,917: INFO: common: created directory at: src/tile_based_training/output/data_ingestion]
+[2025-04-14 15:37:58,917: INFO: data_ingestion: Accessing STAC endpoint]
+[2025-04-14 15:37:59,355: INFO: data_ingestion: geoparquet url: https://zenodo.org/records/15209589/files/euro-sat.parquet]
+[2025-04-14 15:39:30,062: INFO: data_ingestion: 100 items are loaded]
+[2025-04-14 15:39:30,082: INFO: data_ingestion: Train size: 60 , Valid size: 20, Test size: 20]
+[2025-04-14 15:39:30,082: INFO: main: 
+=================================================================
+>>>>>> stage Data Ingestion stage completed <<<<<<
+=================================================================]
+[2025-04-14 15:39:30,082: INFO: main: 
+=================================================================
+>>>>>> stage Prepare Base Model started <<<<<<]
+[2025-04-14 15:39:30,085: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2025-04-14 15:39:30,086: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-04-14 15:39:30,086: INFO: common: created directory at: output]
+[2025-04-14 15:39:30,086: INFO: common: created directory at: src/tile_based_training/output/prepare_base_model]
+[2025-04-14 15:39:30,392: INFO: main: 
+=================================================================
+>>>>>> stage Prepare Base Model completed <<<<<<
+=================================================================]
+[2025-04-14 15:39:30,392: INFO: main: 
+=================================================================
+>>>>>> stage Training Model started <<<<<<]
+[2025-04-14 15:39:30,394: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2025-04-14 15:39:30,395: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-04-14 15:39:30,395: INFO: common: created directory at: output]
+[2025-04-14 15:39:30,395: INFO: common: json file loaded succesfully from: src/tile_based_training/output/data_ingestion/splited_data.json]
+[2025-04-14 15:39:30,395: INFO: common: json file loaded succesfully from: src/tile_based_training/output/data_ingestion/splited_data.json]
+[2025-04-14 15:39:30,395: INFO: common: created directory at: src/tile_based_training/output/training]
+[2025-04-14 15:39:30,681: INFO: train_model: Device is: None , Built with CUDA: True]
+[2025-04-14 15:44:29,006: INFO: common: created directory at: config]
+[2025-04-14 15:44:30,231: INFO: main: MLFLOW URI: None]
+[2025-04-14 15:44:30,232: INFO: main: /code]
+[2025-04-14 15:44:30,232: INFO: main: 
+=================================================================
+Device name is: None 
+=================================================================]
+[2025-04-14 15:44:30,232: INFO: common: YAML file: params.yaml written successfully]
+[2025-04-14 15:44:30,233: INFO: main: 
+=================================================================
+>>>>>> stage Data Ingestion stage started <<<<<<]
+[2025-04-14 15:44:30,234: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2025-04-14 15:44:30,235: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-04-14 15:44:30,235: INFO: common: created directory at: output]
+[2025-04-14 15:44:30,235: INFO: common: created directory at: src/tile_based_training/output/data_ingestion]
+[2025-04-14 15:44:30,235: INFO: data_ingestion: Accessing STAC endpoint]
+[2025-04-14 15:44:30,988: INFO: data_ingestion: geoparquet url: https://zenodo.org/records/15209589/files/euro-sat.parquet]
+[2025-04-14 15:46:06,120: INFO: data_ingestion: 100 items are loaded]
+[2025-04-14 15:46:06,133: INFO: data_ingestion: Train size: 60 , Valid size: 20, Test size: 20]
+[2025-04-14 15:46:06,137: INFO: main: 
+=================================================================
+>>>>>> stage Data Ingestion stage completed <<<<<<
+=================================================================]
+[2025-04-14 15:46:06,137: INFO: main: 
+=================================================================
+>>>>>> stage Prepare Base Model started <<<<<<]
+[2025-04-14 15:46:06,141: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2025-04-14 15:46:06,146: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-04-14 15:46:06,147: INFO: common: created directory at: output]
+[2025-04-14 15:46:06,147: INFO: common: created directory at: src/tile_based_training/output/prepare_base_model]
+[2025-04-14 15:46:06,686: INFO: main: 
+=================================================================
+>>>>>> stage Prepare Base Model completed <<<<<<
+=================================================================]
+[2025-04-14 15:46:06,686: INFO: main: 
+=================================================================
+>>>>>> stage Training Model started <<<<<<]
+[2025-04-14 15:46:06,690: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2025-04-14 15:46:06,691: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-04-14 15:46:06,691: INFO: common: created directory at: output]
+[2025-04-14 15:46:06,692: INFO: common: json file loaded succesfully from: src/tile_based_training/output/data_ingestion/splited_data.json]
+[2025-04-14 15:46:06,692: INFO: common: json file loaded succesfully from: src/tile_based_training/output/data_ingestion/splited_data.json]
+[2025-04-14 15:46:06,693: INFO: common: created directory at: src/tile_based_training/output/training]
+[2025-04-14 15:46:07,149: INFO: train_model: Device is: None , Built with CUDA: True]
+[2025-04-14 15:46:24,672: INFO: __init__: GDAL signalled an error: err_no=1, msg='cpl_unzOpenCurrentFile() failed']
+[2025-04-14 15:46:26,202: INFO: __init__: GDAL signalled an error: err_no=1, msg='cpl_unzOpenCurrentFile() failed']
+[2025-04-14 15:46:28,516: INFO: __init__: GDAL signalled an error: err_no=1, msg='cpl_unzOpenCurrentFile() failed']
+[2025-04-14 15:49:29,870: INFO: common: created directory at: config]
+[2025-04-14 15:49:31,413: INFO: main: MLFLOW URI: None]
+[2025-04-14 15:49:31,413: INFO: main: /code]
+[2025-04-14 15:49:31,414: INFO: main: 
+=================================================================
+Device name is: None 
+=================================================================]
+[2025-04-14 15:49:31,415: INFO: common: YAML file: params.yaml written successfully]
+[2025-04-14 15:49:31,415: INFO: main: 
+=================================================================
+>>>>>> stage Data Ingestion stage started <<<<<<]
+[2025-04-14 15:49:31,417: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2025-04-14 15:49:31,418: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-04-14 15:49:31,419: INFO: common: created directory at: output]
+[2025-04-14 15:49:31,419: INFO: common: created directory at: src/tile_based_training/output/data_ingestion]
+[2025-04-14 15:49:31,419: INFO: data_ingestion: Accessing STAC endpoint]
+[2025-04-14 15:49:32,082: INFO: data_ingestion: geoparquet url: https://zenodo.org/records/15209589/files/euro-sat.parquet]
+[2025-04-14 15:51:08,658: INFO: data_ingestion: 100 items are loaded]
+[2025-04-14 15:51:08,689: INFO: data_ingestion: Train size: 60 , Valid size: 20, Test size: 20]
+[2025-04-14 15:51:08,694: INFO: main: 
+=================================================================
+>>>>>> stage Data Ingestion stage completed <<<<<<
+=================================================================]
+[2025-04-14 15:51:08,695: INFO: main: 
+=================================================================
+>>>>>> stage Prepare Base Model started <<<<<<]
+[2025-04-14 15:51:08,699: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2025-04-14 15:51:08,703: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-04-14 15:51:08,704: INFO: common: created directory at: output]
+[2025-04-14 15:51:08,704: INFO: common: created directory at: src/tile_based_training/output/prepare_base_model]
+[2025-04-14 15:51:09,268: INFO: main: 
+=================================================================
+>>>>>> stage Prepare Base Model completed <<<<<<
+=================================================================]
+[2025-04-14 15:51:09,268: INFO: main: 
+=================================================================
+>>>>>> stage Training Model started <<<<<<]
+[2025-04-14 15:51:09,271: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2025-04-14 15:51:09,273: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-04-14 15:51:09,273: INFO: common: created directory at: output]
+[2025-04-14 15:51:09,274: INFO: common: json file loaded succesfully from: src/tile_based_training/output/data_ingestion/splited_data.json]
+[2025-04-14 15:51:09,274: INFO: common: json file loaded succesfully from: src/tile_based_training/output/data_ingestion/splited_data.json]
+[2025-04-14 15:51:09,275: INFO: common: created directory at: src/tile_based_training/output/training]
+[2025-04-14 15:51:18,877: INFO: train_model: Device is: None , Built with CUDA: True]
+[2025-04-14 15:51:29,181: INFO: __init__: GDAL signalled an error: err_no=1, msg='In file /io/gdal-3.9.3/port/cpl_vsil_gzip.cpp, at line 1214, decompression failed with z_err = -1, return = 0']
+[2025-04-14 15:51:31,032: INFO: __init__: GDAL signalled an error: err_no=1, msg='cpl_unzOpenCurrentFile() failed']
+[2025-04-14 15:51:32,665: INFO: __init__: GDAL signalled an error: err_no=1, msg='cpl_unzOpenCurrentFile() failed']

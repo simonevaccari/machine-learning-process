@@ -39,8 +39,7 @@ class DataIngestion:
                 sql_query = sql_generator(
                     class_name=class_name, geoparquet_asset_path=geoparquet_asset_path, samples_per_class=samples_per_class
                 )
-                   
-                print("sql_query: ", sql_query)
+
                 duckdb_config()
                 db = duckdb.query(sql_query)
                 
@@ -51,7 +50,7 @@ class DataIngestion:
                         asset = item["assets"]["image"]
                         image_urls.append(
                             {
-                                "url": asset["href"] +"/"+ asset.extra_fields["archive:href"],
+                                "url": asset["href"] +"/"+ asset["archive:href"],
                                 "label": class_name,
                             }
                         )
