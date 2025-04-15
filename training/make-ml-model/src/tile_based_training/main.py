@@ -30,14 +30,17 @@ warnings.filterwarnings("ignore")
     help="A selected model with highest evaluation metrics will making an inference on a sentinel-2 L1C data",
 )
 @click.option(
-    "--stac_endpoint_url",
-    "stac_endpoint_url",
-    help="The url which point to STAC endpoint (Catalog)",
+    "--stac_reference",
+    "--sr",
+    "stac_reference",
+    help="The url which point to STAC reference(Catalog)",
+    default="https://raw.githubusercontent.com/eoap/machine-learning-process/main/training/app-package/EUROSAT-Training-Dataset/catalog.json", 
     required=True,
     show_default=True,
 )
 @click.option(
     "--BATCH_SIZE",
+    "--b",
     "BATCH_SIZE",
     help="BATCH_SIZE",
     required=False,
@@ -47,6 +50,7 @@ warnings.filterwarnings("ignore")
 )
 @click.option(
     "--CLASSES",
+    "--cls",
     "CLASSES",
     help="Number of classes",
     required=False,
@@ -56,6 +60,7 @@ warnings.filterwarnings("ignore")
 )
 @click.option(
     "--DECAY",
+    "--d",
     "DECAY",
     help="DECAY - model metadata",
     required=False,
@@ -63,9 +68,10 @@ warnings.filterwarnings("ignore")
     show_default=True,
     type=float,
 )
-@click.option("--EPOCHS", "EPOCHS", help="Number of epochs", required=False, default=5, type=int)
+@click.option("--EPOCHS", "--e","EPOCHS", help="Number of epochs", required=False, default=5, type=int)
 @click.option(
     "--EPSILON",
+    "--eps",
     "EPSILON",
     help="EPSILON - model metadata",
     required=False,
@@ -74,16 +80,8 @@ warnings.filterwarnings("ignore")
     type=float,
 )
 @click.option(
-    "--IMAGE_SIZE",
-    "IMAGE_SIZE",
-    help="input image size to model",
-    required=False,
-    multiple=True,
-    default=[64, 64, 13],
-    show_default=True,
-)
-@click.option(
     "--LEARNING_RATE",
+    "--lr",
     "LEARNING_RATE",
     help="LEARNING_RATE",
     required=False,
@@ -93,6 +91,7 @@ warnings.filterwarnings("ignore")
 )
 @click.option(
     "--LOSS",
+    "--lo",
     "LOSS",
     help="loss function",
     required=False,
@@ -102,6 +101,7 @@ warnings.filterwarnings("ignore")
 )
 @click.option(
     "--MEMENTUM",
+    "--mem",
     "MEMENTUM",
     help="MEMENTUM - model metadata",
     required=False,
@@ -111,6 +111,7 @@ warnings.filterwarnings("ignore")
 )
 @click.option(
     "--OPTIMIZER",
+    "--opt",
     "OPTIMIZER",
     help="OPTIMIZER",
     required=False,
@@ -119,31 +120,23 @@ warnings.filterwarnings("ignore")
     type=str,
 )
 @click.option(
-    "--REGULIZER",
-    "REGULIZER",
-    help="REGULIZER",
+    "--REGULARIZER",
+    "--reg",
+    "REGULARIZER",
+    help="REGULARIZER",
     required=False,
     default="None",
     type=str,
 )
 @click.option(
     "--SAMPLES_PER_CLASS",
+    "--s",
     "SAMPLES_PER_CLASS",
     help="number of sample for each class to train model based on",
     required=False,
-    default=500,
+    default=10,
     show_default=True,
     type=int,
-)
-@click.option(
-    "--enable_data_ingestion",
-    "enable_data_ingestion",
-    help="A flag to enable data ingestion pipeline",
-    required=False,
-    is_flag=True,
-    default=False,
-    show_default=True,
-    type=bool,
 )
 @click.pass_context
 def run_tile_based_classification_training(ctx, **kwargs):
