@@ -1,0 +1,928 @@
+[2025-04-14 12:33:49,108: INFO: font_manager: generated new fontManager]
+[2025-04-14 12:33:51,893: INFO: common: created directory at: config]
+[2025-04-14 12:38:44,066: INFO: common: created directory at: config]
+[2025-04-14 12:45:20,122: INFO: common: created directory at: config]
+[2025-04-14 12:45:21,486: INFO: common: ✅ GPU memory growth enabled.]
+[2025-04-14 12:45:21,487: INFO: main: MLFLOW URI: http://ml-flow-dev-mlflow:5000]
+[2025-04-14 12:45:21,487: INFO: main: /workspace/machine-learning-process/training/make-ml-model]
+[2025-04-14 12:45:21,487: INFO: main: 
+=================================================================
+Device name is: /GPU:0 
+=================================================================]
+[2025-04-14 12:46:14,421: INFO: common: created directory at: config]
+[2025-04-14 12:46:15,771: INFO: common: ✅ GPU memory growth enabled.]
+[2025-04-14 12:46:15,772: INFO: main: MLFLOW URI: http://ml-flow-dev-mlflow:5000]
+[2025-04-14 12:46:15,772: INFO: main: /workspace/machine-learning-process/training/make-ml-model]
+[2025-04-14 12:46:15,772: INFO: main: 
+=================================================================
+Device name is: /GPU:0 
+=================================================================]
+[2025-04-14 12:46:15,773: INFO: common: YAML file: params.yaml written successfully]
+[2025-04-14 12:47:00,922: INFO: common: created directory at: config]
+[2025-04-14 12:47:02,261: INFO: common: ✅ GPU memory growth enabled.]
+[2025-04-14 12:47:02,261: INFO: main: MLFLOW URI: http://ml-flow-dev-mlflow:5000]
+[2025-04-14 12:47:02,261: INFO: main: /workspace/machine-learning-process/training/make-ml-model]
+[2025-04-14 12:47:02,261: INFO: main: 
+=================================================================
+Device name is: /GPU:0 
+=================================================================]
+[2025-04-14 12:47:02,262: INFO: common: YAML file: params.yaml written successfully]
+[2025-04-14 12:47:02,262: INFO: main: 
+=================================================================
+>>>>>> stage Data Ingestion stage started <<<<<<]
+[2025-04-14 12:47:02,264: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2025-04-14 12:47:02,265: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-04-14 12:47:02,265: INFO: common: created directory at: output]
+[2025-04-14 12:47:02,265: INFO: common: created directory at: src/tile_based_training/output/data_ingestion]
+[2025-04-14 12:47:02,265: INFO: data_ingestion: Accessing STAC endpoint]
+[2025-04-14 12:47:02,265: ERROR: main: name 'stac_reference' is not defined]
+Traceback (most recent call last):
+  File "/workspace/machine-learning-process/training/make-ml-model/src/tile_based_training/main.py", line 168, in run_tile_based_classification_training
+    obj.main()
+  File "/workspace/machine-learning-process/training/make-ml-model/src/tile_based_training/pipeline/stage_01_data_ingestion.py", line 26, in main
+    raise e
+  File "/workspace/machine-learning-process/training/make-ml-model/src/tile_based_training/pipeline/stage_01_data_ingestion.py", line 18, in main
+    all_urls = data_ingestion.stac_loader()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/machine-learning-process/training/make-ml-model/src/tile_based_training/components/data_ingestion.py", line 68, in stac_loader
+    raise e
+  File "/workspace/machine-learning-process/training/make-ml-model/src/tile_based_training/components/data_ingestion.py", line 31, in stac_loader
+    catalog = pystac.read_file(stac_reference)
+                              ^^^^^^^^^^^^^^
+NameError: name 'stac_reference' is not defined
+[2025-04-14 12:48:23,866: INFO: common: created directory at: config]
+[2025-04-14 12:48:25,256: INFO: common: ✅ GPU memory growth enabled.]
+[2025-04-14 12:48:25,256: INFO: main: MLFLOW URI: http://ml-flow-dev-mlflow:5000]
+[2025-04-14 12:48:25,256: INFO: main: /workspace/machine-learning-process/training/make-ml-model]
+[2025-04-14 12:48:25,256: INFO: main: 
+=================================================================
+Device name is: /GPU:0 
+=================================================================]
+[2025-04-14 12:49:40,268: INFO: common: created directory at: config]
+[2025-04-14 12:49:41,631: INFO: common: ✅ GPU memory growth enabled.]
+[2025-04-14 12:49:41,631: INFO: main: MLFLOW URI: http://ml-flow-dev-mlflow:5000]
+[2025-04-14 12:49:41,631: INFO: main: /workspace/machine-learning-process/training/make-ml-model]
+[2025-04-14 12:49:41,631: INFO: main: 
+=================================================================
+Device name is: /GPU:0 
+=================================================================]
+[2025-04-14 12:50:03,502: INFO: common: created directory at: config]
+[2025-04-14 12:50:04,899: INFO: common: ✅ GPU memory growth enabled.]
+[2025-04-14 12:50:04,899: INFO: main: MLFLOW URI: http://ml-flow-dev-mlflow:5000]
+[2025-04-14 12:50:04,899: INFO: main: /workspace/machine-learning-process/training/make-ml-model]
+[2025-04-14 12:50:04,899: INFO: main: 
+=================================================================
+Device name is: /GPU:0 
+=================================================================]
+[2025-04-14 12:52:00,627: INFO: common: created directory at: config]
+[2025-04-14 12:52:02,018: INFO: common: ✅ GPU memory growth enabled.]
+[2025-04-14 12:52:02,018: INFO: main: MLFLOW URI: http://ml-flow-dev-mlflow:5000]
+[2025-04-14 12:52:02,018: INFO: main: /workspace/machine-learning-process/training/make-ml-model]
+[2025-04-14 12:52:02,018: INFO: main: 
+=================================================================
+Device name is: /GPU:0 
+=================================================================]
+[2025-04-14 12:52:32,264: INFO: common: created directory at: config]
+[2025-04-14 12:52:33,594: INFO: common: ✅ GPU memory growth enabled.]
+[2025-04-14 12:52:33,594: INFO: main: MLFLOW URI: http://ml-flow-dev-mlflow:5000]
+[2025-04-14 12:52:33,594: INFO: main: /workspace/machine-learning-process/training/make-ml-model]
+[2025-04-14 12:52:33,594: INFO: main: 
+=================================================================
+Device name is: /GPU:0 
+=================================================================]
+[2025-04-14 12:52:33,595: INFO: common: YAML file: params.yaml written successfully]
+[2025-04-14 12:52:33,595: INFO: main: 
+=================================================================
+>>>>>> stage Data Ingestion stage started <<<<<<]
+[2025-04-14 12:52:33,597: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2025-04-14 12:52:33,598: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-04-14 12:52:33,599: INFO: common: created directory at: output]
+[2025-04-14 12:52:33,599: INFO: common: created directory at: src/tile_based_training/output/data_ingestion]
+[2025-04-14 12:52:33,599: ERROR: main: "'ConfigBox' object has no attribute 'input_refrence'"]
+Traceback (most recent call last):
+  File "box/box.py", line 594, in box.box.Box.__getitem__
+KeyError: 'input_refrence'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "box/box.py", line 633, in box.box.Box.__getattr__
+  File "box/box.py", line 621, in box.box.Box.__getitem__
+box.exceptions.BoxKeyError: "'input_refrence'"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "box/box.py", line 635, in box.box.Box.__getattr__
+AttributeError: 'ConfigBox' object has no attribute 'input_refrence'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "box/config_box.py", line 29, in box.config_box.ConfigBox.__getattr__
+  File "box/box.py", line 649, in box.box.Box.__getattr__
+box.exceptions.BoxKeyError: "'ConfigBox' object has no attribute 'input_refrence'"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "box/box.py", line 594, in box.box.Box.__getitem__
+KeyError: 'input_refrence'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "box/box.py", line 633, in box.box.Box.__getattr__
+  File "box/box.py", line 621, in box.box.Box.__getitem__
+box.exceptions.BoxKeyError: "'input_refrence'"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "box/box.py", line 635, in box.box.Box.__getattr__
+AttributeError: 'ConfigBox' object has no attribute 'input_refrence'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/workspace/machine-learning-process/training/make-ml-model/src/tile_based_training/main.py", line 170, in run_tile_based_classification_training
+    obj.main()
+  File "/workspace/machine-learning-process/training/make-ml-model/src/tile_based_training/pipeline/stage_01_data_ingestion.py", line 26, in main
+    raise e
+  File "/workspace/machine-learning-process/training/make-ml-model/src/tile_based_training/pipeline/stage_01_data_ingestion.py", line 15, in main
+    data_ingestion_config = config.get_data_ingestion_config()
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/machine-learning-process/training/make-ml-model/src/tile_based_training/config/configuration.py", line 27, in get_data_ingestion_config
+    stac_reference=self.params.input_refrence,
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "box/config_box.py", line 31, in box.config_box.ConfigBox.__getattr__
+  File "box/box.py", line 649, in box.box.Box.__getattr__
+box.exceptions.BoxKeyError: "'ConfigBox' object has no attribute 'input_refrence'"
+[2025-04-14 12:55:16,842: INFO: common: created directory at: config]
+[2025-04-14 12:55:18,162: INFO: common: ✅ GPU memory growth enabled.]
+[2025-04-14 12:55:18,162: INFO: main: MLFLOW URI: http://ml-flow-dev-mlflow:5000]
+[2025-04-14 12:55:18,162: INFO: main: /workspace/machine-learning-process/training/make-ml-model]
+[2025-04-14 12:55:18,162: INFO: main: 
+=================================================================
+Device name is: /GPU:0 
+=================================================================]
+[2025-04-14 12:55:18,163: INFO: common: YAML file: params.yaml written successfully]
+[2025-04-14 12:55:18,164: INFO: main: 
+=================================================================
+>>>>>> stage Data Ingestion stage started <<<<<<]
+[2025-04-14 12:55:18,166: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2025-04-14 12:55:18,167: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-04-14 12:55:18,167: INFO: common: created directory at: output]
+[2025-04-14 12:55:18,167: INFO: common: created directory at: src/tile_based_training/output/data_ingestion]
+[2025-04-14 12:55:18,167: INFO: data_ingestion: Accessing STAC endpoint]
+[2025-04-14 12:55:18,167: ERROR: main: name 'stac_reference' is not defined]
+Traceback (most recent call last):
+  File "/workspace/machine-learning-process/training/make-ml-model/src/tile_based_training/main.py", line 170, in run_tile_based_classification_training
+    obj.main()
+  File "/workspace/machine-learning-process/training/make-ml-model/src/tile_based_training/pipeline/stage_01_data_ingestion.py", line 26, in main
+    raise e
+  File "/workspace/machine-learning-process/training/make-ml-model/src/tile_based_training/pipeline/stage_01_data_ingestion.py", line 18, in main
+    all_urls = data_ingestion.stac_loader()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/machine-learning-process/training/make-ml-model/src/tile_based_training/components/data_ingestion.py", line 68, in stac_loader
+    raise e
+  File "/workspace/machine-learning-process/training/make-ml-model/src/tile_based_training/components/data_ingestion.py", line 31, in stac_loader
+    catalog = pystac.read_file(stac_reference)
+                              ^^^^^^^^^^^^^^
+NameError: name 'stac_reference' is not defined
+[2025-04-14 12:56:13,483: INFO: common: created directory at: config]
+[2025-04-14 12:56:14,839: INFO: common: ✅ GPU memory growth enabled.]
+[2025-04-14 12:56:14,840: INFO: main: MLFLOW URI: http://ml-flow-dev-mlflow:5000]
+[2025-04-14 12:56:14,840: INFO: main: /workspace/machine-learning-process/training/make-ml-model]
+[2025-04-14 12:56:14,840: INFO: main: 
+=================================================================
+Device name is: /GPU:0 
+=================================================================]
+[2025-04-14 12:56:14,841: INFO: common: YAML file: params.yaml written successfully]
+[2025-04-14 12:56:14,841: INFO: main: 
+=================================================================
+>>>>>> stage Data Ingestion stage started <<<<<<]
+[2025-04-14 12:56:14,843: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2025-04-14 12:56:14,844: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-04-14 12:56:14,845: INFO: common: created directory at: output]
+[2025-04-14 12:56:14,845: INFO: common: created directory at: src/tile_based_training/output/data_ingestion]
+[2025-04-14 12:56:14,845: INFO: data_ingestion: Accessing STAC endpoint]
+[2025-04-14 12:56:14,845: ERROR: main: name 'stac_reference' is not defined]
+Traceback (most recent call last):
+  File "/workspace/machine-learning-process/training/make-ml-model/src/tile_based_training/main.py", line 170, in run_tile_based_classification_training
+    obj.main()
+  File "/workspace/machine-learning-process/training/make-ml-model/src/tile_based_training/pipeline/stage_01_data_ingestion.py", line 26, in main
+    raise e
+  File "/workspace/machine-learning-process/training/make-ml-model/src/tile_based_training/pipeline/stage_01_data_ingestion.py", line 18, in main
+    all_urls = data_ingestion.stac_loader()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/machine-learning-process/training/make-ml-model/src/tile_based_training/components/data_ingestion.py", line 68, in stac_loader
+    raise e
+  File "/workspace/machine-learning-process/training/make-ml-model/src/tile_based_training/components/data_ingestion.py", line 31, in stac_loader
+    catalog = pystac.read_file(stac_reference)
+                              ^^^^^^^^^^^^^^
+NameError: name 'stac_reference' is not defined
+[2025-04-14 12:57:53,356: INFO: common: created directory at: config]
+[2025-04-14 12:57:54,718: INFO: common: ✅ GPU memory growth enabled.]
+[2025-04-14 12:57:54,718: INFO: main: MLFLOW URI: http://ml-flow-dev-mlflow:5000]
+[2025-04-14 12:57:54,719: INFO: main: /workspace/machine-learning-process/training/make-ml-model]
+[2025-04-14 12:57:54,719: INFO: main: 
+=================================================================
+Device name is: /GPU:0 
+=================================================================]
+[2025-04-14 12:57:54,720: INFO: common: YAML file: params.yaml written successfully]
+[2025-04-14 12:57:54,720: INFO: main: 
+=================================================================
+>>>>>> stage Data Ingestion stage started <<<<<<]
+[2025-04-14 12:57:54,723: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2025-04-14 12:57:54,724: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-04-14 12:57:54,725: INFO: common: created directory at: output]
+[2025-04-14 12:57:54,725: INFO: common: created directory at: src/tile_based_training/output/data_ingestion]
+[2025-04-14 12:57:54,725: INFO: data_ingestion: Accessing STAC endpoint]
+[2025-04-14 12:57:55,231: INFO: data_ingestion: geoparquet url: https://zenodo.org/records/15209589/files/euro-sat.parquet]
+[2025-04-14 12:57:55,729: ERROR: main: Catalog Error: Scalar Function with name "st_intersects" is not in the catalog, but it exists in the spatial extension.
+
+Please try installing and loading the spatial extension:
+INSTALL spatial;
+LOAD spatial;
+
+]
+Traceback (most recent call last):
+  File "/workspace/machine-learning-process/training/make-ml-model/src/tile_based_training/main.py", line 170, in run_tile_based_classification_training
+    obj.main()
+  File "/workspace/machine-learning-process/training/make-ml-model/src/tile_based_training/pipeline/stage_01_data_ingestion.py", line 26, in main
+    raise e
+  File "/workspace/machine-learning-process/training/make-ml-model/src/tile_based_training/pipeline/stage_01_data_ingestion.py", line 18, in main
+    all_urls = data_ingestion.stac_loader()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/machine-learning-process/training/make-ml-model/src/tile_based_training/components/data_ingestion.py", line 68, in stac_loader
+    raise e
+  File "/workspace/machine-learning-process/training/make-ml-model/src/tile_based_training/components/data_ingestion.py", line 42, in stac_loader
+    table = connection.execute(sql_query).fetch_arrow_table()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+duckdb.duckdb.CatalogException: Catalog Error: Scalar Function with name "st_intersects" is not in the catalog, but it exists in the spatial extension.
+
+Please try installing and loading the spatial extension:
+INSTALL spatial;
+LOAD spatial;
+
+
+[2025-04-14 12:59:40,622: INFO: common: created directory at: config]
+[2025-04-14 12:59:41,943: INFO: common: ✅ GPU memory growth enabled.]
+[2025-04-14 12:59:41,943: INFO: main: MLFLOW URI: http://ml-flow-dev-mlflow:5000]
+[2025-04-14 12:59:41,943: INFO: main: /workspace/machine-learning-process/training/make-ml-model]
+[2025-04-14 12:59:41,943: INFO: main: 
+=================================================================
+Device name is: /GPU:0 
+=================================================================]
+[2025-04-14 12:59:41,944: INFO: common: YAML file: params.yaml written successfully]
+[2025-04-14 12:59:41,945: INFO: main: 
+=================================================================
+>>>>>> stage Data Ingestion stage started <<<<<<]
+[2025-04-14 12:59:41,947: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2025-04-14 12:59:41,948: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-04-14 12:59:41,948: INFO: common: created directory at: output]
+[2025-04-14 12:59:41,948: INFO: common: created directory at: src/tile_based_training/output/data_ingestion]
+[2025-04-14 12:59:41,948: INFO: data_ingestion: Accessing STAC endpoint]
+[2025-04-14 12:59:42,042: INFO: data_ingestion: geoparquet url: https://zenodo.org/records/15209589/files/euro-sat.parquet]
+[2025-04-14 12:59:42,590: ERROR: main: Catalog Error: Scalar Function with name "st_intersects" is not in the catalog, but it exists in the spatial extension.
+
+Please try installing and loading the spatial extension:
+INSTALL spatial;
+LOAD spatial;
+
+]
+Traceback (most recent call last):
+  File "/workspace/machine-learning-process/training/make-ml-model/src/tile_based_training/main.py", line 170, in run_tile_based_classification_training
+    obj.main()
+  File "/workspace/machine-learning-process/training/make-ml-model/src/tile_based_training/pipeline/stage_01_data_ingestion.py", line 26, in main
+    raise e
+  File "/workspace/machine-learning-process/training/make-ml-model/src/tile_based_training/pipeline/stage_01_data_ingestion.py", line 18, in main
+    all_urls = data_ingestion.stac_loader()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/machine-learning-process/training/make-ml-model/src/tile_based_training/components/data_ingestion.py", line 69, in stac_loader
+    raise e
+  File "/workspace/machine-learning-process/training/make-ml-model/src/tile_based_training/components/data_ingestion.py", line 43, in stac_loader
+    table = connection.execute(sql_query).fetch_arrow_table()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+duckdb.duckdb.CatalogException: Catalog Error: Scalar Function with name "st_intersects" is not in the catalog, but it exists in the spatial extension.
+
+Please try installing and loading the spatial extension:
+INSTALL spatial;
+LOAD spatial;
+
+
+[2025-04-14 13:01:57,717: INFO: common: created directory at: config]
+[2025-04-14 13:01:59,053: INFO: common: ✅ GPU memory growth enabled.]
+[2025-04-14 13:01:59,053: INFO: main: MLFLOW URI: http://ml-flow-dev-mlflow:5000]
+[2025-04-14 13:01:59,053: INFO: main: /workspace/machine-learning-process/training/make-ml-model]
+[2025-04-14 13:01:59,054: INFO: main: 
+=================================================================
+Device name is: /GPU:0 
+=================================================================]
+[2025-04-14 13:01:59,055: INFO: common: YAML file: params.yaml written successfully]
+[2025-04-14 13:01:59,055: INFO: main: 
+=================================================================
+>>>>>> stage Data Ingestion stage started <<<<<<]
+[2025-04-14 13:01:59,057: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2025-04-14 13:01:59,058: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-04-14 13:01:59,058: INFO: common: created directory at: output]
+[2025-04-14 13:01:59,058: INFO: common: created directory at: src/tile_based_training/output/data_ingestion]
+[2025-04-14 13:01:59,058: INFO: data_ingestion: Accessing STAC endpoint]
+[2025-04-14 13:01:59,176: INFO: data_ingestion: geoparquet url: https://zenodo.org/records/15209589/files/euro-sat.parquet]
+[2025-04-14 13:01:59,188: ERROR: main: name 'geoparquet' is not defined]
+Traceback (most recent call last):
+  File "/workspace/machine-learning-process/training/make-ml-model/src/tile_based_training/main.py", line 170, in run_tile_based_classification_training
+    obj.main()
+  File "/workspace/machine-learning-process/training/make-ml-model/src/tile_based_training/pipeline/stage_01_data_ingestion.py", line 26, in main
+    raise e
+  File "/workspace/machine-learning-process/training/make-ml-model/src/tile_based_training/pipeline/stage_01_data_ingestion.py", line 18, in main
+    all_urls = data_ingestion.stac_loader()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/machine-learning-process/training/make-ml-model/src/tile_based_training/components/data_ingestion.py", line 69, in stac_loader
+    raise e
+  File "/workspace/machine-learning-process/training/make-ml-model/src/tile_based_training/components/data_ingestion.py", line 39, in stac_loader
+    sql_query = sql_generator(
+                ^^^^^^^^^^^^^^
+  File "/workspace/machine-learning-process/training/make-ml-model/src/tile_based_training/utils/common.py", line 551, in sql_generator
+    sql_query = f"SELECT * EXCLUDE(geometry), ST_AsWKB(geometry) as geometry FROM '{geoparquet}' WHERE {sql_where}"
+                                                                                    ^^^^^^^^^^
+NameError: name 'geoparquet' is not defined
+[2025-04-14 13:02:22,137: INFO: common: created directory at: config]
+[2025-04-14 13:02:23,458: INFO: common: ✅ GPU memory growth enabled.]
+[2025-04-14 13:02:23,459: INFO: main: MLFLOW URI: http://ml-flow-dev-mlflow:5000]
+[2025-04-14 13:02:23,459: INFO: main: /workspace/machine-learning-process/training/make-ml-model]
+[2025-04-14 13:02:23,459: INFO: main: 
+=================================================================
+Device name is: /GPU:0 
+=================================================================]
+[2025-04-14 13:02:23,460: INFO: common: YAML file: params.yaml written successfully]
+[2025-04-14 13:02:23,460: INFO: main: 
+=================================================================
+>>>>>> stage Data Ingestion stage started <<<<<<]
+[2025-04-14 13:02:23,462: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2025-04-14 13:02:23,463: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-04-14 13:02:23,463: INFO: common: created directory at: output]
+[2025-04-14 13:02:23,463: INFO: common: created directory at: src/tile_based_training/output/data_ingestion]
+[2025-04-14 13:02:23,464: INFO: data_ingestion: Accessing STAC endpoint]
+[2025-04-14 13:02:23,592: INFO: data_ingestion: geoparquet url: https://zenodo.org/records/15209589/files/euro-sat.parquet]
+[2025-04-14 13:02:24,052: ERROR: main: Catalog Error: Scalar Function with name "st_intersects" is not in the catalog, but it exists in the spatial extension.
+
+Please try installing and loading the spatial extension:
+INSTALL spatial;
+LOAD spatial;
+
+]
+Traceback (most recent call last):
+  File "/workspace/machine-learning-process/training/make-ml-model/src/tile_based_training/main.py", line 170, in run_tile_based_classification_training
+    obj.main()
+  File "/workspace/machine-learning-process/training/make-ml-model/src/tile_based_training/pipeline/stage_01_data_ingestion.py", line 26, in main
+    raise e
+  File "/workspace/machine-learning-process/training/make-ml-model/src/tile_based_training/pipeline/stage_01_data_ingestion.py", line 18, in main
+    all_urls = data_ingestion.stac_loader()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/machine-learning-process/training/make-ml-model/src/tile_based_training/components/data_ingestion.py", line 69, in stac_loader
+    raise e
+  File "/workspace/machine-learning-process/training/make-ml-model/src/tile_based_training/components/data_ingestion.py", line 43, in stac_loader
+    table = connection.execute(sql_query).fetch_arrow_table()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+duckdb.duckdb.CatalogException: Catalog Error: Scalar Function with name "st_intersects" is not in the catalog, but it exists in the spatial extension.
+
+Please try installing and loading the spatial extension:
+INSTALL spatial;
+LOAD spatial;
+
+
+[2025-04-14 13:11:39,051: INFO: common: created directory at: config]
+[2025-04-14 13:11:40,352: INFO: common: ✅ GPU memory growth enabled.]
+[2025-04-14 13:11:40,352: INFO: main: MLFLOW URI: http://ml-flow-dev-mlflow:5000]
+[2025-04-14 13:11:40,352: INFO: main: /workspace/machine-learning-process/training/make-ml-model]
+[2025-04-14 13:11:40,352: INFO: main: 
+=================================================================
+Device name is: /GPU:0 
+=================================================================]
+[2025-04-14 13:11:40,353: INFO: common: YAML file: params.yaml written successfully]
+[2025-04-14 13:11:40,353: INFO: main: 
+=================================================================
+>>>>>> stage Data Ingestion stage started <<<<<<]
+[2025-04-14 13:11:40,355: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2025-04-14 13:11:40,356: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-04-14 13:11:40,356: INFO: common: created directory at: output]
+[2025-04-14 13:11:40,356: INFO: common: created directory at: src/tile_based_training/output/data_ingestion]
+[2025-04-14 13:11:40,357: INFO: data_ingestion: Accessing STAC endpoint]
+[2025-04-14 13:11:40,778: INFO: data_ingestion: geoparquet url: https://zenodo.org/records/15209589/files/euro-sat.parquet]
+[2025-04-14 13:11:41,199: ERROR: main: Catalog Error: Scalar Function with name "st_intersects" is not in the catalog, but it exists in the spatial extension.
+
+Please try installing and loading the spatial extension:
+INSTALL spatial;
+LOAD spatial;
+
+]
+Traceback (most recent call last):
+  File "/workspace/machine-learning-process/training/make-ml-model/src/tile_based_training/main.py", line 170, in run_tile_based_classification_training
+    obj.main()
+  File "/workspace/machine-learning-process/training/make-ml-model/src/tile_based_training/pipeline/stage_01_data_ingestion.py", line 26, in main
+    raise e
+  File "/workspace/machine-learning-process/training/make-ml-model/src/tile_based_training/pipeline/stage_01_data_ingestion.py", line 18, in main
+    all_urls = data_ingestion.stac_loader()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/machine-learning-process/training/make-ml-model/src/tile_based_training/components/data_ingestion.py", line 70, in stac_loader
+    raise e
+  File "/workspace/machine-learning-process/training/make-ml-model/src/tile_based_training/components/data_ingestion.py", line 43, in stac_loader
+    db = duckdb.query(sql_query)
+         ^^^^^^^^^^^^^^^^^^^^^^^
+duckdb.duckdb.CatalogException: Catalog Error: Scalar Function with name "st_intersects" is not in the catalog, but it exists in the spatial extension.
+
+Please try installing and loading the spatial extension:
+INSTALL spatial;
+LOAD spatial;
+
+
+[2025-04-14 13:12:42,529: INFO: common: created directory at: config]
+[2025-04-14 13:12:43,834: INFO: common: ✅ GPU memory growth enabled.]
+[2025-04-14 13:12:43,834: INFO: main: MLFLOW URI: http://ml-flow-dev-mlflow:5000]
+[2025-04-14 13:12:43,834: INFO: main: /workspace/machine-learning-process/training/make-ml-model]
+[2025-04-14 13:12:43,834: INFO: main: 
+=================================================================
+Device name is: /GPU:0 
+=================================================================]
+[2025-04-14 13:12:43,835: INFO: common: YAML file: params.yaml written successfully]
+[2025-04-14 13:12:43,835: INFO: main: 
+=================================================================
+>>>>>> stage Data Ingestion stage started <<<<<<]
+[2025-04-14 13:12:43,837: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2025-04-14 13:12:43,838: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-04-14 13:12:43,838: INFO: common: created directory at: output]
+[2025-04-14 13:12:43,839: INFO: common: created directory at: src/tile_based_training/output/data_ingestion]
+[2025-04-14 13:12:43,839: INFO: data_ingestion: Accessing STAC endpoint]
+[2025-04-14 13:12:43,914: INFO: data_ingestion: geoparquet url: https://zenodo.org/records/15209589/files/euro-sat.parquet]
+[2025-04-14 13:12:44,498: ERROR: main: name 'connection' is not defined]
+Traceback (most recent call last):
+  File "/workspace/machine-learning-process/training/make-ml-model/src/tile_based_training/main.py", line 170, in run_tile_based_classification_training
+    obj.main()
+  File "/workspace/machine-learning-process/training/make-ml-model/src/tile_based_training/pipeline/stage_01_data_ingestion.py", line 26, in main
+    raise e
+  File "/workspace/machine-learning-process/training/make-ml-model/src/tile_based_training/pipeline/stage_01_data_ingestion.py", line 18, in main
+    all_urls = data_ingestion.stac_loader()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/machine-learning-process/training/make-ml-model/src/tile_based_training/components/data_ingestion.py", line 72, in stac_loader
+    raise e
+  File "/workspace/machine-learning-process/training/make-ml-model/src/tile_based_training/components/data_ingestion.py", line 46, in stac_loader
+    table = connection.execute(sql_query).fetch_arrow_table()
+            ^^^^^^^^^^
+NameError: name 'connection' is not defined
+[2025-04-14 13:15:42,414: INFO: common: created directory at: config]
+[2025-04-14 13:15:43,733: INFO: common: ✅ GPU memory growth enabled.]
+[2025-04-14 13:15:43,733: INFO: main: MLFLOW URI: http://ml-flow-dev-mlflow:5000]
+[2025-04-14 13:15:43,733: INFO: main: /workspace/machine-learning-process/training/make-ml-model]
+[2025-04-14 13:15:43,733: INFO: main: 
+=================================================================
+Device name is: /GPU:0 
+=================================================================]
+[2025-04-14 13:15:43,734: INFO: common: YAML file: params.yaml written successfully]
+[2025-04-14 13:15:43,734: INFO: main: 
+=================================================================
+>>>>>> stage Data Ingestion stage started <<<<<<]
+[2025-04-14 13:15:43,736: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2025-04-14 13:15:43,738: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-04-14 13:15:43,738: INFO: common: created directory at: output]
+[2025-04-14 13:15:43,738: INFO: common: created directory at: src/tile_based_training/output/data_ingestion]
+[2025-04-14 13:15:43,738: INFO: data_ingestion: Accessing STAC endpoint]
+[2025-04-14 13:15:43,829: INFO: data_ingestion: geoparquet url: https://zenodo.org/records/15209589/files/euro-sat.parquet]
+[2025-04-14 13:15:55,043: ERROR: main: Query interrupted]
+KeyboardInterrupt
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/workspace/machine-learning-process/training/make-ml-model/src/tile_based_training/main.py", line 170, in run_tile_based_classification_training
+    obj.main()
+  File "/workspace/machine-learning-process/training/make-ml-model/src/tile_based_training/pipeline/stage_01_data_ingestion.py", line 26, in main
+    raise e
+  File "/workspace/machine-learning-process/training/make-ml-model/src/tile_based_training/pipeline/stage_01_data_ingestion.py", line 18, in main
+    all_urls = data_ingestion.stac_loader()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/machine-learning-process/training/make-ml-model/src/tile_based_training/components/data_ingestion.py", line 73, in stac_loader
+    X_train, X_val, y_train, y_val = train_test_split(X_train, y_train, test_size=0.25, random_state=random_state)
+        ^^^^^^^
+  File "/workspace/machine-learning-process/training/make-ml-model/src/tile_based_training/components/data_ingestion.py", line 47, in stac_loader
+    table = db.fetch_arrow_table()
+            ^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: Query interrupted
+[2025-04-14 13:16:43,647: INFO: common: created directory at: config]
+[2025-04-14 13:16:44,975: INFO: common: ✅ GPU memory growth enabled.]
+[2025-04-14 13:16:44,975: INFO: main: MLFLOW URI: http://ml-flow-dev-mlflow:5000]
+[2025-04-14 13:16:44,975: INFO: main: /workspace/machine-learning-process/training/make-ml-model]
+[2025-04-14 13:16:44,975: INFO: main: 
+=================================================================
+Device name is: /GPU:0 
+=================================================================]
+[2025-04-14 13:16:44,976: INFO: common: YAML file: params.yaml written successfully]
+[2025-04-14 13:16:44,976: INFO: main: 
+=================================================================
+>>>>>> stage Data Ingestion stage started <<<<<<]
+[2025-04-14 13:16:44,978: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2025-04-14 13:16:44,979: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-04-14 13:16:44,980: INFO: common: created directory at: output]
+[2025-04-14 13:16:44,980: INFO: common: created directory at: src/tile_based_training/output/data_ingestion]
+[2025-04-14 13:16:44,980: INFO: data_ingestion: Accessing STAC endpoint]
+[2025-04-14 13:16:45,451: INFO: data_ingestion: geoparquet url: https://zenodo.org/records/15209589/files/euro-sat.parquet]
+[2025-04-14 13:16:57,195: ERROR: main: Cannot locate timezone 'UTC': discover_tz_dir failed to find zoneinfo
+]
+Traceback (most recent call last):
+  File "/workspace/machine-learning-process/training/make-ml-model/src/tile_based_training/main.py", line 170, in run_tile_based_classification_training
+    obj.main()
+  File "/workspace/machine-learning-process/training/make-ml-model/src/tile_based_training/pipeline/stage_01_data_ingestion.py", line 26, in main
+    raise e
+  File "/workspace/machine-learning-process/training/make-ml-model/src/tile_based_training/pipeline/stage_01_data_ingestion.py", line 18, in main
+    all_urls = data_ingestion.stac_loader()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/machine-learning-process/training/make-ml-model/src/tile_based_training/components/data_ingestion.py", line 63, in stac_loader
+    raise e
+  File "/workspace/machine-learning-process/training/make-ml-model/src/tile_based_training/components/data_ingestion.py", line 59, in stac_loader
+    raise e
+  File "/workspace/machine-learning-process/training/make-ml-model/src/tile_based_training/components/data_ingestion.py", line 49, in stac_loader
+    for item in tqdm(stac_table_to_items(table), desc=f"Fetching data from class {class_name}"):
+  File "/workspace/envs/env_5/lib/python3.11/site-packages/tqdm/std.py", line 1181, in __iter__
+    for obj in iterable:
+  File "/workspace/envs/env_5/lib/python3.11/site-packages/stac_geoparquet/arrow/_api.py", line 140, in stac_table_to_items
+    yield from clean_batch.to_json_batch().iter_dicts()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/envs/env_5/lib/python3.11/site-packages/stac_geoparquet/arrow/_batch.py", line 198, in to_json_batch
+    batch = convert_timestamp_columns_to_string(batch)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/envs/env_5/lib/python3.11/site-packages/stac_geoparquet/arrow/_from_arrow.py", line 30, in convert_timestamp_columns_to_string
+    pc.strftime(column, format="%Y-%m-%dT%H:%M:%SZ"),  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/envs/env_5/lib/python3.11/site-packages/pyarrow/compute.py", line 264, in wrapper
+    return func.call(args, options, memory_pool)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "pyarrow/_compute.pyx", line 393, in pyarrow._compute.Function.call
+  File "pyarrow/error.pxi", line 155, in pyarrow.lib.pyarrow_internal_check_status
+  File "pyarrow/error.pxi", line 92, in pyarrow.lib.check_status
+pyarrow.lib.ArrowInvalid: Cannot locate timezone 'UTC': discover_tz_dir failed to find zoneinfo
+
+[2025-04-14 13:57:01,030: INFO: common: created directory at: config]
+[2025-04-14 13:57:02,675: INFO: main: MLFLOW URI: None]
+[2025-04-14 13:57:02,675: INFO: main: /code]
+[2025-04-14 13:57:02,676: INFO: main: 
+=================================================================
+Device name is: None 
+=================================================================]
+[2025-04-14 13:57:02,677: INFO: common: YAML file: params.yaml written successfully]
+[2025-04-14 13:57:02,677: INFO: main: 
+=================================================================
+>>>>>> stage Data Ingestion stage started <<<<<<]
+[2025-04-14 13:57:02,679: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2025-04-14 13:57:02,681: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-04-14 13:57:02,681: INFO: common: created directory at: output]
+[2025-04-14 13:57:02,681: INFO: common: created directory at: src/tile_based_training/output/data_ingestion]
+[2025-04-14 13:57:02,682: INFO: data_ingestion: Accessing STAC endpoint]
+[2025-04-14 13:57:03,344: INFO: data_ingestion: geoparquet url: https://zenodo.org/records/15209589/files/euro-sat.parquet]
+[2025-04-14 13:57:30,702: ERROR: main: 'dict' object has no attribute 'extra_fields']
+Traceback (most recent call last):
+  File "/code/src/tile_based_training/main.py", line 170, in run_tile_based_classification_training
+    obj.main()
+  File "/code/src/tile_based_training/pipeline/stage_01_data_ingestion.py", line 26, in main
+    raise e
+  File "/code/src/tile_based_training/pipeline/stage_01_data_ingestion.py", line 18, in main
+    all_urls = data_ingestion.stac_loader()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/code/src/tile_based_training/components/data_ingestion.py", line 63, in stac_loader
+    raise e
+  File "/code/src/tile_based_training/components/data_ingestion.py", line 59, in stac_loader
+    raise e
+  File "/code/src/tile_based_training/components/data_ingestion.py", line 54, in stac_loader
+    "url": asset["href"] +"/"+ asset.extra_fields["archive:href"],
+                               ^^^^^^^^^^^^^^^^^^
+AttributeError: 'dict' object has no attribute 'extra_fields'
+[2025-04-14 13:58:17,366: INFO: common: created directory at: config]
+[2025-04-14 13:58:18,401: INFO: main: MLFLOW URI: None]
+[2025-04-14 13:58:18,401: INFO: main: /code]
+[2025-04-14 13:58:18,401: INFO: main: 
+=================================================================
+Device name is: None 
+=================================================================]
+[2025-04-14 13:58:18,402: INFO: common: YAML file: params.yaml written successfully]
+[2025-04-14 13:58:18,402: INFO: main: 
+=================================================================
+>>>>>> stage Data Ingestion stage started <<<<<<]
+[2025-04-14 13:58:18,404: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2025-04-14 13:58:18,405: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-04-14 13:58:18,405: INFO: common: created directory at: output]
+[2025-04-14 13:58:18,405: INFO: common: created directory at: src/tile_based_training/output/data_ingestion]
+[2025-04-14 13:58:18,405: INFO: data_ingestion: Accessing STAC endpoint]
+[2025-04-14 13:58:18,793: INFO: data_ingestion: geoparquet url: https://zenodo.org/records/15209589/files/euro-sat.parquet]
+[2025-04-14 13:58:33,328: ERROR: main: Query interrupted]
+KeyboardInterrupt
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/code/src/tile_based_training/main.py", line 170, in run_tile_based_classification_training
+    obj.main()
+  File "/code/src/tile_based_training/pipeline/stage_01_data_ingestion.py", line 26, in main
+    raise e
+  File "/code/src/tile_based_training/pipeline/stage_01_data_ingestion.py", line 18, in main
+    all_urls = data_ingestion.stac_loader()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/code/src/tile_based_training/components/data_ingestion.py", line 63, in stac_loader
+    raise e
+  File "/code/src/tile_based_training/components/data_ingestion.py", line 47, in stac_loader
+    table = db.fetch_arrow_table()
+            ^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: Query interrupted
+[2025-04-14 13:58:53,020: INFO: common: created directory at: config]
+[2025-04-14 13:58:54,392: INFO: main: MLFLOW URI: None]
+[2025-04-14 13:58:54,392: INFO: main: /code]
+[2025-04-14 13:58:54,392: INFO: main: 
+=================================================================
+Device name is: None 
+=================================================================]
+[2025-04-14 13:58:54,393: INFO: common: YAML file: params.yaml written successfully]
+[2025-04-14 13:58:54,393: INFO: main: 
+=================================================================
+>>>>>> stage Data Ingestion stage started <<<<<<]
+[2025-04-14 13:58:54,395: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2025-04-14 13:58:54,396: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-04-14 13:58:54,396: INFO: common: created directory at: output]
+[2025-04-14 13:58:54,396: INFO: common: created directory at: src/tile_based_training/output/data_ingestion]
+[2025-04-14 13:58:54,396: INFO: data_ingestion: Accessing STAC endpoint]
+[2025-04-14 13:58:54,814: INFO: data_ingestion: geoparquet url: https://zenodo.org/records/15209589/files/euro-sat.parquet]
+[2025-04-14 14:01:55,497: INFO: data_ingestion: 100 items are loaded]
+[2025-04-14 14:01:55,511: INFO: data_ingestion: Train size: 60 , Valid size: 20, Test size: 20]
+[2025-04-14 14:01:55,512: INFO: main: 
+=================================================================
+>>>>>> stage Data Ingestion stage completed <<<<<<
+=================================================================]
+[2025-04-14 14:56:21,222: INFO: common: created directory at: config]
+[2025-04-14 14:56:38,421: INFO: common: created directory at: config]
+[2025-04-14 14:56:39,450: INFO: main: MLFLOW URI: None]
+[2025-04-14 14:56:39,450: INFO: main: /code]
+[2025-04-14 14:56:39,450: INFO: main: 
+=================================================================
+Device name is: None 
+=================================================================]
+[2025-04-14 14:56:39,451: INFO: common: YAML file: params.yaml written successfully]
+[2025-04-14 14:56:39,451: INFO: main: 
+=================================================================
+>>>>>> stage Data Ingestion stage started <<<<<<]
+[2025-04-14 14:56:39,453: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2025-04-14 14:56:39,454: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-04-14 14:56:39,455: INFO: common: created directory at: output]
+[2025-04-14 14:56:39,455: INFO: common: created directory at: src/tile_based_training/output/data_ingestion]
+[2025-04-14 14:56:39,455: INFO: data_ingestion: Accessing STAC endpoint]
+[2025-04-14 14:56:40,182: INFO: data_ingestion: geoparquet url: https://zenodo.org/records/15209589/files/euro-sat.parquet]
+[2025-04-14 14:58:25,778: INFO: data_ingestion: 100 items are loaded]
+[2025-04-14 14:58:25,788: INFO: data_ingestion: Train size: 60 , Valid size: 20, Test size: 20]
+[2025-04-14 14:58:25,788: INFO: main: 
+=================================================================
+>>>>>> stage Data Ingestion stage completed <<<<<<
+=================================================================]
+[2025-04-14 14:58:25,788: INFO: main: 
+=================================================================
+>>>>>> stage Prepare Base Model started <<<<<<]
+[2025-04-14 14:58:25,791: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2025-04-14 14:58:25,792: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-04-14 14:58:25,792: INFO: common: created directory at: output]
+[2025-04-14 14:58:25,792: INFO: common: created directory at: src/tile_based_training/output/prepare_base_model]
+[2025-04-14 14:58:25,792: ERROR: main: "'ConfigBox' object has no attribute 'image_size'"]
+Traceback (most recent call last):
+  File "box/box.py", line 594, in box.box.Box.__getitem__
+KeyError: 'IMAGE_SIZE'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "box/box.py", line 633, in box.box.Box.__getattr__
+  File "box/box.py", line 621, in box.box.Box.__getitem__
+box.exceptions.BoxKeyError: "'IMAGE_SIZE'"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "box/box.py", line 635, in box.box.Box.__getattr__
+AttributeError: 'ConfigBox' object has no attribute 'IMAGE_SIZE'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "box/config_box.py", line 29, in box.config_box.ConfigBox.__getattr__
+  File "box/box.py", line 649, in box.box.Box.__getattr__
+box.exceptions.BoxKeyError: "'ConfigBox' object has no attribute 'IMAGE_SIZE'"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "box/box.py", line 594, in box.box.Box.__getitem__
+KeyError: 'image_size'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "box/box.py", line 633, in box.box.Box.__getattr__
+  File "box/box.py", line 621, in box.box.Box.__getitem__
+box.exceptions.BoxKeyError: "'image_size'"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "box/box.py", line 635, in box.box.Box.__getattr__
+AttributeError: 'ConfigBox' object has no attribute 'image_size'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/code/src/tile_based_training/main.py", line 184, in run_tile_based_classification_training
+    obj.main()
+  File "/code/src/tile_based_training/pipeline/stage_02_prepare_base_model.py", line 15, in main
+    prepare_base_model_config = config.get_prepare_base_model_config()
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/code/src/tile_based_training/config/configuration.py", line 38, in get_prepare_base_model_config
+    params_image_size=self.params.IMAGE_SIZE,
+                      ^^^^^^^^^^^^^^^^^^^^^^
+  File "box/config_box.py", line 31, in box.config_box.ConfigBox.__getattr__
+  File "box/box.py", line 649, in box.box.Box.__getattr__
+box.exceptions.BoxKeyError: "'ConfigBox' object has no attribute 'image_size'"
+[2025-04-14 15:34:16,678: INFO: common: created directory at: config]
+[2025-04-14 15:34:17,974: INFO: main: MLFLOW URI: None]
+[2025-04-14 15:34:17,974: INFO: main: /code]
+[2025-04-14 15:34:17,974: INFO: main: 
+=================================================================
+Device name is: None 
+=================================================================]
+[2025-04-14 15:34:17,976: INFO: common: YAML file: params.yaml written successfully]
+[2025-04-14 15:34:17,976: INFO: main: 
+=================================================================
+>>>>>> stage Data Ingestion stage started <<<<<<]
+[2025-04-14 15:34:17,977: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2025-04-14 15:34:17,979: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-04-14 15:34:17,979: INFO: common: created directory at: output]
+[2025-04-14 15:34:17,979: INFO: common: created directory at: src/tile_based_training/output/data_ingestion]
+[2025-04-14 15:34:17,979: INFO: data_ingestion: Accessing STAC endpoint]
+[2025-04-14 15:34:18,765: INFO: data_ingestion: geoparquet url: https://zenodo.org/records/15209589/files/euro-sat.parquet]
+[2025-04-14 15:36:07,425: INFO: data_ingestion: 100 items are loaded]
+[2025-04-14 15:36:07,438: INFO: data_ingestion: Train size: 60 , Valid size: 20, Test size: 20]
+[2025-04-14 15:36:07,440: INFO: main: 
+=================================================================
+>>>>>> stage Data Ingestion stage completed <<<<<<
+=================================================================]
+[2025-04-14 15:36:07,440: INFO: main: 
+=================================================================
+>>>>>> stage Prepare Base Model started <<<<<<]
+[2025-04-14 15:36:07,444: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2025-04-14 15:36:07,446: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-04-14 15:36:07,446: INFO: common: created directory at: output]
+[2025-04-14 15:36:07,446: INFO: common: created directory at: src/tile_based_training/output/prepare_base_model]
+[2025-04-14 15:36:07,852: INFO: main: 
+=================================================================
+>>>>>> stage Prepare Base Model completed <<<<<<
+=================================================================]
+[2025-04-14 15:36:07,852: INFO: main: 
+=================================================================
+>>>>>> stage Training Model started <<<<<<]
+[2025-04-14 15:36:07,855: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2025-04-14 15:36:07,857: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-04-14 15:36:07,857: INFO: common: created directory at: output]
+[2025-04-14 15:36:07,857: INFO: common: json file loaded succesfully from: src/tile_based_training/output/data_ingestion/splited_data.json]
+[2025-04-14 15:36:07,857: INFO: common: json file loaded succesfully from: src/tile_based_training/output/data_ingestion/splited_data.json]
+[2025-04-14 15:36:07,858: INFO: common: created directory at: src/tile_based_training/output/training]
+[2025-04-14 15:36:08,292: INFO: train_model: Device is: None , Built with CUDA: True]
+[2025-04-14 15:37:57,683: INFO: common: created directory at: config]
+[2025-04-14 15:37:58,913: INFO: main: MLFLOW URI: None]
+[2025-04-14 15:37:58,913: INFO: main: /code]
+[2025-04-14 15:37:58,913: INFO: main: 
+=================================================================
+Device name is: None 
+=================================================================]
+[2025-04-14 15:37:58,914: INFO: common: YAML file: params.yaml written successfully]
+[2025-04-14 15:37:58,914: INFO: main: 
+=================================================================
+>>>>>> stage Data Ingestion stage started <<<<<<]
+[2025-04-14 15:37:58,916: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2025-04-14 15:37:58,917: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-04-14 15:37:58,917: INFO: common: created directory at: output]
+[2025-04-14 15:37:58,917: INFO: common: created directory at: src/tile_based_training/output/data_ingestion]
+[2025-04-14 15:37:58,917: INFO: data_ingestion: Accessing STAC endpoint]
+[2025-04-14 15:37:59,355: INFO: data_ingestion: geoparquet url: https://zenodo.org/records/15209589/files/euro-sat.parquet]
+[2025-04-14 15:39:30,062: INFO: data_ingestion: 100 items are loaded]
+[2025-04-14 15:39:30,082: INFO: data_ingestion: Train size: 60 , Valid size: 20, Test size: 20]
+[2025-04-14 15:39:30,082: INFO: main: 
+=================================================================
+>>>>>> stage Data Ingestion stage completed <<<<<<
+=================================================================]
+[2025-04-14 15:39:30,082: INFO: main: 
+=================================================================
+>>>>>> stage Prepare Base Model started <<<<<<]
+[2025-04-14 15:39:30,085: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2025-04-14 15:39:30,086: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-04-14 15:39:30,086: INFO: common: created directory at: output]
+[2025-04-14 15:39:30,086: INFO: common: created directory at: src/tile_based_training/output/prepare_base_model]
+[2025-04-14 15:39:30,392: INFO: main: 
+=================================================================
+>>>>>> stage Prepare Base Model completed <<<<<<
+=================================================================]
+[2025-04-14 15:39:30,392: INFO: main: 
+=================================================================
+>>>>>> stage Training Model started <<<<<<]
+[2025-04-14 15:39:30,394: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2025-04-14 15:39:30,395: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-04-14 15:39:30,395: INFO: common: created directory at: output]
+[2025-04-14 15:39:30,395: INFO: common: json file loaded succesfully from: src/tile_based_training/output/data_ingestion/splited_data.json]
+[2025-04-14 15:39:30,395: INFO: common: json file loaded succesfully from: src/tile_based_training/output/data_ingestion/splited_data.json]
+[2025-04-14 15:39:30,395: INFO: common: created directory at: src/tile_based_training/output/training]
+[2025-04-14 15:39:30,681: INFO: train_model: Device is: None , Built with CUDA: True]
+[2025-04-14 15:44:29,006: INFO: common: created directory at: config]
+[2025-04-14 15:44:30,231: INFO: main: MLFLOW URI: None]
+[2025-04-14 15:44:30,232: INFO: main: /code]
+[2025-04-14 15:44:30,232: INFO: main: 
+=================================================================
+Device name is: None 
+=================================================================]
+[2025-04-14 15:44:30,232: INFO: common: YAML file: params.yaml written successfully]
+[2025-04-14 15:44:30,233: INFO: main: 
+=================================================================
+>>>>>> stage Data Ingestion stage started <<<<<<]
+[2025-04-14 15:44:30,234: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2025-04-14 15:44:30,235: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-04-14 15:44:30,235: INFO: common: created directory at: output]
+[2025-04-14 15:44:30,235: INFO: common: created directory at: src/tile_based_training/output/data_ingestion]
+[2025-04-14 15:44:30,235: INFO: data_ingestion: Accessing STAC endpoint]
+[2025-04-14 15:44:30,988: INFO: data_ingestion: geoparquet url: https://zenodo.org/records/15209589/files/euro-sat.parquet]
+[2025-04-14 15:46:06,120: INFO: data_ingestion: 100 items are loaded]
+[2025-04-14 15:46:06,133: INFO: data_ingestion: Train size: 60 , Valid size: 20, Test size: 20]
+[2025-04-14 15:46:06,137: INFO: main: 
+=================================================================
+>>>>>> stage Data Ingestion stage completed <<<<<<
+=================================================================]
+[2025-04-14 15:46:06,137: INFO: main: 
+=================================================================
+>>>>>> stage Prepare Base Model started <<<<<<]
+[2025-04-14 15:46:06,141: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2025-04-14 15:46:06,146: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-04-14 15:46:06,147: INFO: common: created directory at: output]
+[2025-04-14 15:46:06,147: INFO: common: created directory at: src/tile_based_training/output/prepare_base_model]
+[2025-04-14 15:46:06,686: INFO: main: 
+=================================================================
+>>>>>> stage Prepare Base Model completed <<<<<<
+=================================================================]
+[2025-04-14 15:46:06,686: INFO: main: 
+=================================================================
+>>>>>> stage Training Model started <<<<<<]
+[2025-04-14 15:46:06,690: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2025-04-14 15:46:06,691: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-04-14 15:46:06,691: INFO: common: created directory at: output]
+[2025-04-14 15:46:06,692: INFO: common: json file loaded succesfully from: src/tile_based_training/output/data_ingestion/splited_data.json]
+[2025-04-14 15:46:06,692: INFO: common: json file loaded succesfully from: src/tile_based_training/output/data_ingestion/splited_data.json]
+[2025-04-14 15:46:06,693: INFO: common: created directory at: src/tile_based_training/output/training]
+[2025-04-14 15:46:07,149: INFO: train_model: Device is: None , Built with CUDA: True]
+[2025-04-14 15:46:24,672: INFO: __init__: GDAL signalled an error: err_no=1, msg='cpl_unzOpenCurrentFile() failed']
+[2025-04-14 15:46:26,202: INFO: __init__: GDAL signalled an error: err_no=1, msg='cpl_unzOpenCurrentFile() failed']
+[2025-04-14 15:46:28,516: INFO: __init__: GDAL signalled an error: err_no=1, msg='cpl_unzOpenCurrentFile() failed']
+[2025-04-14 15:49:29,870: INFO: common: created directory at: config]
+[2025-04-14 15:49:31,413: INFO: main: MLFLOW URI: None]
+[2025-04-14 15:49:31,413: INFO: main: /code]
+[2025-04-14 15:49:31,414: INFO: main: 
+=================================================================
+Device name is: None 
+=================================================================]
+[2025-04-14 15:49:31,415: INFO: common: YAML file: params.yaml written successfully]
+[2025-04-14 15:49:31,415: INFO: main: 
+=================================================================
+>>>>>> stage Data Ingestion stage started <<<<<<]
+[2025-04-14 15:49:31,417: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2025-04-14 15:49:31,418: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-04-14 15:49:31,419: INFO: common: created directory at: output]
+[2025-04-14 15:49:31,419: INFO: common: created directory at: src/tile_based_training/output/data_ingestion]
+[2025-04-14 15:49:31,419: INFO: data_ingestion: Accessing STAC endpoint]
+[2025-04-14 15:49:32,082: INFO: data_ingestion: geoparquet url: https://zenodo.org/records/15209589/files/euro-sat.parquet]
+[2025-04-14 15:51:08,658: INFO: data_ingestion: 100 items are loaded]
+[2025-04-14 15:51:08,689: INFO: data_ingestion: Train size: 60 , Valid size: 20, Test size: 20]
+[2025-04-14 15:51:08,694: INFO: main: 
+=================================================================
+>>>>>> stage Data Ingestion stage completed <<<<<<
+=================================================================]
+[2025-04-14 15:51:08,695: INFO: main: 
+=================================================================
+>>>>>> stage Prepare Base Model started <<<<<<]
+[2025-04-14 15:51:08,699: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2025-04-14 15:51:08,703: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-04-14 15:51:08,704: INFO: common: created directory at: output]
+[2025-04-14 15:51:08,704: INFO: common: created directory at: src/tile_based_training/output/prepare_base_model]
+[2025-04-14 15:51:09,268: INFO: main: 
+=================================================================
+>>>>>> stage Prepare Base Model completed <<<<<<
+=================================================================]
+[2025-04-14 15:51:09,268: INFO: main: 
+=================================================================
+>>>>>> stage Training Model started <<<<<<]
+[2025-04-14 15:51:09,271: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2025-04-14 15:51:09,273: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-04-14 15:51:09,273: INFO: common: created directory at: output]
+[2025-04-14 15:51:09,274: INFO: common: json file loaded succesfully from: src/tile_based_training/output/data_ingestion/splited_data.json]
+[2025-04-14 15:51:09,274: INFO: common: json file loaded succesfully from: src/tile_based_training/output/data_ingestion/splited_data.json]
+[2025-04-14 15:51:09,275: INFO: common: created directory at: src/tile_based_training/output/training]
+[2025-04-14 15:51:18,877: INFO: train_model: Device is: None , Built with CUDA: True]
+[2025-04-14 15:51:29,181: INFO: __init__: GDAL signalled an error: err_no=1, msg='In file /io/gdal-3.9.3/port/cpl_vsil_gzip.cpp, at line 1214, decompression failed with z_err = -1, return = 0']
+[2025-04-14 15:51:31,032: INFO: __init__: GDAL signalled an error: err_no=1, msg='cpl_unzOpenCurrentFile() failed']
+[2025-04-14 15:51:32,665: INFO: __init__: GDAL signalled an error: err_no=1, msg='cpl_unzOpenCurrentFile() failed']

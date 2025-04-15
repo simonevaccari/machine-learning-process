@@ -6,13 +6,13 @@
   "links": [
     {
       "rel": "root",
-      "href": "https://raw.githubusercontent.com/eoap/machine-learning-process/develop/training/app-package/EUROSAT-Training-Dataset/catalog.json",
+      "href": "https://raw.githubusercontent.com/eoap/machine-learning-process/main/training/app-package/EUROSAT-Training-Dataset/catalog.json",
       "type": "application/json",
       "title": "Euro_SAT"
     },
     {
       "rel": "child",
-      "href": "https://raw.githubusercontent.com/eoap/machine-learning-process/develop/training/app-package/EUROSAT-Training-Dataset/EUROSAT-Training-Dataset/collection.json",
+      "href": "https://raw.githubusercontent.com/eoap/machine-learning-process/main/training/app-package/EUROSAT-Training-Dataset/EUROSAT-Training-Dataset/collection.json",
       "type": "application/json",
       "title": "EUROSAT-Training-Dataset"
     }

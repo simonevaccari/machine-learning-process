@@ -13,7 +13,7 @@ class PrepareBaseModel:
 
     @staticmethod
     def _model_architecture(
-        input_shape=[64, 64, 13],
+        input_shape=[64, 64, 12],
         kernel_regularizer=None,
         number_of_classes=10,
         lr=0.01,
@@ -72,7 +72,6 @@ class PrepareBaseModel:
 
     def base_model(self):
         self.model = self._model_architecture(
-            input_shape=self.config.params_image_size,
             kernel_regularizer=self.config.parms_kernel_regularizer,
             number_of_classes=self.config.params_classes,
             lr=self.config.params_learning_rate,

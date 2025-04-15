@@ -19,12 +19,10 @@ class ConfigurationManager:
     def get_data_ingestion_config(self) -> DataIngestionConfig:
         config = self.config.data_ingestion
         create_directories([config.root_dir])
-        collection_name = self.params.stac_endpoint_url.split("/collections/")[1].split("/items/")[0]
-        stac_endpoint_url = self.params.stac_endpoint_url.split("/collections/")[0]
+        
         data_ingestion_config = DataIngestionConfig(
             root_dir=config.root_dir,
-            stac_endpoint=stac_endpoint_url,
-            collection_name=collection_name,
+            stac_reference=self.params.stac_reference,
             local_data_file=config.local_data_file,
             data_classes=self.config.data_ingestion.DATA_CLASSES,
             samples_per_class=self.params.SAMPLES_PER_CLASS,
@@ -33,13 +31,10 @@ class ConfigurationManager:
 
     def get_prepare_base_model_config(self) -> PrepareBaseModelConfig:
         config = self.config.prepare_base_model
-
         create_directories([config.root_dir])
-
         prepare_base_model_config = PrepareBaseModelConfig(
             root_dir=Path(config.root_dir),
             model_path=Path(config.model_path),
-            params_image_size=self.params.IMAGE_SIZE,
             params_learning_rate=self.params.LEARNING_RATE,
             params_classes=self.params.CLASSES,
             params_decay=self.params.DECAY,
@@ -72,7 +67,6 @@ class ConfigurationManager:
             base_model_path=Path(prepare_base_model.model_path),
             params_epochs=params.EPOCHS,
             params_batch_size=params.BATCH_SIZE,
-            params_image_size=params.IMAGE_SIZE,
             calsses_number=self.params.CLASSES,
         )
 

@@ -6,8 +6,7 @@ from pathlib import Path
 @dataclass(frozen=True)  # for equality checks
 class DataIngestionConfig:
     root_dir: Path
-    stac_endpoint: str
-    collection_name: str
+    stac_reference: str
     local_data_file: Path
     data_classes: list
     samples_per_class: int
@@ -17,7 +16,7 @@ class DataIngestionConfig:
 class PrepareBaseModelConfig:
     root_dir: Path
     model_path: Path
-    params_image_size: list
+   
     params_learning_rate: float
     params_classes: int
     params_decay: float
@@ -42,7 +41,7 @@ class TrainingConfig:
     base_model_path: Path
     params_epochs: int
     params_batch_size: int
-    params_image_size: list
+    
     calsses_number: int
 
 

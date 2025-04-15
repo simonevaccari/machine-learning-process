@@ -6,13 +6,13 @@
   "links": [
     {
       "rel": "root",
-      "href": "https://raw.githubusercontent.com/eoap/machine-learning-process/develop/training/app-package/EUROSAT-Training-Dataset/catalog.json",
+      "href": "https://raw.githubusercontent.com/eoap/machine-learning-process/main/training/app-package/EUROSAT-Training-Dataset/catalog.json",
       "type": "application/json",
       "title": "Euro_SAT"
     },
     {
       "rel": "parent",
-      "href": "https://raw.githubusercontent.com/eoap/machine-learning-process/develop/training/app-package/EUROSAT-Training-Dataset/catalog.json",
+      "href": "https://raw.githubusercontent.com/eoap/machine-learning-process/main/training/app-package/EUROSAT-Training-Dataset/catalog.json",
       "type": "application/json",
       "title": "Euro_SAT"
     }
@@ -49,11 +49,14 @@
     "Euro_SAT100"
   ],
   "assets": {
-    "source": {
-      "href": "https://github.com/phelber/EuroSAT/",
-      "type": "text/html",
-      "title": "EuroSAT gitHub repository",
-      "description": "Source GitHub repository of the EuroSAT dataset."
+    "geoparquet": {
+      "href": "https://zenodo.org/records/15209589/files/euro-sat.parquet",
+      "type": "application/vnd.apache.parquet",
+      "title": "EuroSAT GeoParquet on zenodo",
+      "description": "This dataset provides a GeoParquet catalog of SpatioTemporal Asset Catalog (STAC) Items that describe the image chips in the EuroSAT dataset. Each row in the GeoParquet file represents a STAC Item, including spatial geometry, temporal properties, and asset links.",
+      "roles": [
+        "data"
+      ]
     },
     "thumbnail": {
       "href": "https://raw.githubusercontent.com/phelber/EuroSAT/master/eurosat_overview_small.jpg",
@@ -85,15 +88,6 @@
       "roles": [
         "legal",
         "license"
-      ]
-    },
-    "geoparquet": {
-      "href": "https://github.com/eoap/machine-learning-process/raw/refs/heads/develop/training/app-package/EUROSAT-Training-Dataset/EUROSAT-Training-Dataset/euro-sat.parquet?download=",
-      "type": "application/vnd.apache.parquet",
-      "title": "EuroSAT GeoParquet",
-      "description": "GeoParquet representation of the EuroSAT dataset.",
-      "roles": [
-        "data"
       ]
     }
   }

@@ -1,5 +1,5 @@
 import os
-
+import sys
 # os.environ['TF_XLA_FLAGS'] = '--tf_xla_enable_xla_devices=0'
 # os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
 from tile_based_training import logger
@@ -7,7 +7,6 @@ import warnings
 import click
 from pathlib import Path
 from tile_based_training.utils.common import (
-    s3_bucket_config,
     write_yaml,
     configure_gpu,
 )
@@ -33,8 +32,8 @@ warnings.filterwarnings("ignore")
     "--stac_reference",
     "--sr",
     "stac_reference",
-    help="The url which point to STAC reference(Catalog)",
-    default="https://raw.githubusercontent.com/eoap/machine-learning-process/main/training/app-package/EUROSAT-Training-Dataset/catalog.json", 
+    help="The url which point to STAC input reference",
+    default= "https://raw.githubusercontent.com/eoap/machine-learning-process/main/training/app-package/EUROSAT-Training-Dataset/catalog.json",
     required=True,
     show_default=True,
 )
@@ -50,9 +49,9 @@ warnings.filterwarnings("ignore")
 )
 @click.option(
     "--CLASSES",
-    "--cls",
+    "--c",
     "CLASSES",
-    help="Number of classes",
+    help="Number of classes to train",
     required=False,
     default=10,
     show_default=True,
@@ -68,10 +67,10 @@ warnings.filterwarnings("ignore")
     show_default=True,
     type=float,
 )
-@click.option("--EPOCHS", "--e","EPOCHS", help="Number of epochs", required=False, default=5, type=int)
+@click.option("--EPOCHS", "--ep","EPOCHS", help="Number of epochs", required=False, default=5, type=int)
 @click.option(
     "--EPSILON",
-    "--eps",
+    "--e",
     "EPSILON",
     help="EPSILON - model metadata",
     required=False,
@@ -101,7 +100,7 @@ warnings.filterwarnings("ignore")
 )
 @click.option(
     "--MEMENTUM",
-    "--mem",
+    "--m",
     "MEMENTUM",
     help="MEMENTUM - model metadata",
     required=False,
@@ -111,7 +110,7 @@ warnings.filterwarnings("ignore")
 )
 @click.option(
     "--OPTIMIZER",
-    "--opt",
+    "--o",
     "OPTIMIZER",
     help="OPTIMIZER",
     required=False,
@@ -121,7 +120,7 @@ warnings.filterwarnings("ignore")
 )
 @click.option(
     "--REGULARIZER",
-    "--reg",
+    "--r",
     "REGULARIZER",
     help="REGULARIZER",
     required=False,
@@ -138,6 +137,17 @@ warnings.filterwarnings("ignore")
     show_default=True,
     type=int,
 )
+@click.option(
+    "--indexing_flag",
+    "--idx",
+    "indexing_flag",
+    help="A flag to enable data ingestion pipeline",
+    required=False,
+    is_flag=True,
+    default=False,
+    show_default=True,
+    type=bool,
+)
 @click.pass_context
 def run_tile_based_classification_training(ctx, **kwargs):
     device_name = configure_gpu()
@@ -146,27 +156,26 @@ def run_tile_based_classification_training(ctx, **kwargs):
     logger.info(
         f"\n=================================================================\nDevice name is: {device_name} \n================================================================="
     )
+    from pprint import pprint
+    pprint(kwargs)
     write_yaml(path_to_yaml=Path("params.yaml"), args=kwargs)
 
-    s3_bucket_config()
+    #s3_bucket_config()
     # First step
     STAGE_NAME = "Data Ingestion stage"
-    if kwargs["enable_data_ingestion"] == True:
-        try:
-            logger.info(f"\n=================================================================\n>>>>>> stage {STAGE_NAME} started <<<<<<")
-            obj = DataIngestionTrainingPipeline()
-            obj.main()
-            logger.info(
-                f"\n=================================================================\n>>>>>> stage {STAGE_NAME} completed <<<<<<\n================================================================="
-            )
-        except Exception as e:
-            logger.exception(e)
-            raise e
-    else:
+   
+    try:
+        logger.info(f"\n=================================================================\n>>>>>> stage {STAGE_NAME} started <<<<<<")
+        obj = DataIngestionTrainingPipeline()
+        obj.main()
         logger.info(
-            f"\n=================================================================\n>>>>>> stage {STAGE_NAME} skipped <<<<<<\n================================================================="
+            f"\n=================================================================\n>>>>>> stage {STAGE_NAME} completed <<<<<<\n================================================================="
         )
-
+    except Exception as e:
+        logger.exception(e)
+        raise e
+    
+    
     STAGE_NAME = "Prepare Base Model"
     logger.info(f"\n=================================================================\n>>>>>> stage {STAGE_NAME} started <<<<<<")
 
@@ -191,7 +200,7 @@ def run_tile_based_classification_training(ctx, **kwargs):
     except Exception as e:
         logger.exception(e)
         raise e
-
+    sys.exit(0)
     STAGE_NAME = "Evaluating Model"
 
     try:
