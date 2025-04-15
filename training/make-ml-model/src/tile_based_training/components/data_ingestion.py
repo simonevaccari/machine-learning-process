@@ -22,9 +22,6 @@ class DataIngestion:
         Fetch data from the endpoint
         """
         try:
-            
-            # self.config.local_data_file
-            #collection_name = self.config.collection_name
             samples_per_class = self.config.samples_per_class
             logger.info(f"Accessing STAC endpoint")
             image_urls = []
@@ -33,8 +30,7 @@ class DataIngestion:
             for key, asset in collection.get_assets().items():
                 if asset.media_type == "application/vnd.apache.parquet":
                     geoparquet_asset_path = asset.href
-            logger.info(f"geoparquet url: {geoparquet_asset_path}")
-            #connection = duckdb_config()
+            
             for class_name in tqdm(self.config.data_classes):
                 sql_query = sql_generator(
                     class_name=class_name, geoparquet_asset_path=geoparquet_asset_path, samples_per_class=samples_per_class
@@ -77,45 +73,6 @@ class DataIngestion:
             "test": {"url": X_test, "label": y_test},
         }
 
-        json.dump(dataset, open(self.config.root_dir + "/splited_data.json", "w"))
+        json.dump(dataset, open(self.config.root_dir + "/splitted_data.json", "w"))
 
         return dataset
-
-    # def data_downloader(self, data, split_name="train"):
-    #     urls = data["url"]
-
-    #     labels = data["label"]
-    #     settings = UserSettings("/etc/Stars/appsettings.json")
-    #     settings.set_s3_environment(f"s3://{bucket_name}/Euro_SAT/Euro_SAT")
-    #     StacIO.set_default(DefaultStacIO)
-    #     # reach to bucket name and key
-
-    #     session = botocore.session.Session()
-    #     s3_client = session.create_client(
-    #         service_name="s3",
-    #         use_ssl=True,
-    #         region_name=os.environ.get("AWS_REGION"),
-    #         endpoint_url=os.environ.get("AWS_S3_ENDPOINT"),
-    #         aws_access_key_id=os.environ.get("AWS_ACCESS_KEY_ID"),
-    #         aws_secret_access_key=os.environ.get("AWS_SECRET_ACCESS_KEY"),
-    #     )
-
-    #     try:
-    #         for url, label in zip(tqdm(urls, desc=f"Downloading {split_name}"), labels):
-    #             parsed = urlparse(url)
-    #             bucket = parsed.netloc
-    #             key = parsed.path[1:]
-
-    #             # retrive the obj which was stored on s3
-    #             respond = s3_client.get_object(Bucket=bucket, Key=key)
-    #             content = io.BytesIO(respond["Body"].read())
-    #             # create trin/test/val directories
-    #             output_dir = f"output/data_ingestion/{split_name}/{label}"
-    #             os.makedirs(output_dir, exist_ok=True)
-
-    #             # Save the tif content to a local file
-    #             with open(f'{output_dir}/{url.split("/")[-1].replace(".tif","")}.tif', "wb") as file:
-    #                 file.write(content.getvalue())
-
-    #     except Exception as e:
-    #         raise e

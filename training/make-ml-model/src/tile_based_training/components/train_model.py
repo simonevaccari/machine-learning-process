@@ -21,15 +21,16 @@ class Training:
         """Reads images, preprocesses, and returns tensors."""
         try:
             file_path = file_path.numpy().decode("utf-8")
-            data = rasterio_read(file_path)  # Assuming this is correctly defined elsewhere
-            data = augmentation(data)  # Assuming this is correctly defined elsewhere
-            data = data / 10000.0  # Normalize
-            # data = data / 10000.0 # Normalize
+            data = rasterio_read(file_path)  
+            data = augmentation(data)
+            
             image_data = np.transpose(data, (1, 2, 0))  # Transpose for proper shape
+            print("Image shape:", image_data.shape)  # Or use logger
+
             return tf.convert_to_tensor(image_data, dtype=tf.float32), tf.convert_to_tensor(label, dtype=tf.float32)
 
         except Exception as e:
-            print("Error:", e)
+            print("Image shape:", image_data.shape)
             sys.exit(1)
             # return tf.zeros((64, 64, 13)), tf.zeros((10,))  # Return default tensor shape
 
@@ -59,7 +60,7 @@ class Training:
         dataset = dataset.map(
             lambda x, y: (
                 tf.ensure_shape(x, [64, 64, 12]),
-                tf.ensure_shape(y, self.config.calsses_number),
+                tf.ensure_shape(y, self.config.classes_number),
             )
         )
         dataset = dataset.batch(self.config.params_batch_size).cache().prefetch(tf.data.AUTOTUNE)
@@ -68,7 +69,6 @@ class Training:
 
     def train_model(self, device_name):
         """Handles GPU setup, prepares data, and trains the model."""
-
         # Prepare datasets
         train_paths = self.config.train_data["url"]
         random.shuffle(train_paths)
@@ -77,12 +77,7 @@ class Training:
         val_paths = self.config.val_data["url"]
 
         val_dataset = self.train_valid_dataloader(val_paths)
-        for x, y in enumerate(train_dataset):
-            print(x)
-            print()
-            print(y)
-            break
-        # sys.exit(0)
+        
         # Model checkpointing
         checkpoint = tf.keras.callbacks.ModelCheckpoint(
             str(self.config.trained_model_path) + "/trained_model.keras",
@@ -91,14 +86,6 @@ class Training:
             save_best_only=True,
             mode="max",
         )
-        # for x, y in train_dataset:
-        #     print(x.shape, y.shape)
-        # break
-        # print("Device name is: ", device_name)
-        # tf.debugging.set_log_device_placement(True)
-
-        # print("Is TensorFlow using GPU?", tf.test.is_gpu_available(cuda_only=True, min_cuda_compute_capability=None))
-        # print("GPU Devices:", tf.config.list_logical_devices('GPU'))
 
         # **Train on the correct device**
         # Use dynamically assigned device

@@ -87,7 +87,6 @@ def write_yaml(path_to_yaml: Path, **args) -> None:
 
     # data = dict(args["args"])
     args = args["args"]
-    print(args)
     data = {
         "BATCH_SIZE": args["BATCH_SIZE"],
         "CLASSES": args["CLASSES"],
@@ -98,7 +97,7 @@ def write_yaml(path_to_yaml: Path, **args) -> None:
         "LOSS": args["LOSS"],
         "MEMENTUM": args["MEMENTUM"],
         "OPTIMIZER": args["OPTIMIZER"],
-        "REGULIZER": args["REGULIZER"],
+        "REGULARIZER": args["REGULARIZER"],
         "SAMPLES_PER_CLASS": args["SAMPLES_PER_CLASS"],
         "stac_reference": args["stac_reference"],
     }
@@ -402,9 +401,6 @@ class UserSettings:
 def rasterio_read(s3_path: str):
     
     
-
-    
-
     with rasterio.open(os.path.join("/vsizip/vsicurl",s3_path)) as src:
         total_bands = src.count
         band_index_to_exclude = [11] # Exclude band 11(cirrus band)
@@ -424,7 +420,7 @@ def augmentation(data):
         data = np.flip(data, axis=1)  # vertical flip
     if random.choice([True, False]):
         data = np.flip(data, axis=2)  # horizontal flip
-    
+    data = data / 10000.0  # Normalize
     return data
     
     

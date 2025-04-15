@@ -40,7 +40,7 @@ class ConfigurationManager:
             params_decay=self.params.DECAY,
             params_loss=self.params.LOSS,
             params_optimizer=self.params.OPTIMIZER,
-            parms_kernel_regularizer=self.params.REGULIZER,
+            params_kernel_regularizer=self.params.REGULARIZER,
             params_momentum=self.params.MEMENTUM,
             params_epsilon=self.params.EPSILON,
         )
@@ -50,8 +50,8 @@ class ConfigurationManager:
     def get_training_config(self) -> TrainingConfig:
         training_config = self.config.training
         prepare_base_model = self.config.prepare_base_model
-        train_data = load_json(Path(training_config.all_data_urls + "/splited_data.json"))["train"]
-        val_data = load_json(Path(training_config.all_data_urls + "/splited_data.json"))["val"]
+        train_data = load_json(Path(training_config.all_data_urls + "/splitted_data.json"))["train"]
+        val_data = load_json(Path(training_config.all_data_urls + "/splitted_data.json"))["val"]
         # load params
         params = self.params
         create_directories([Path(training_config.trained_model_path)])
@@ -67,13 +67,13 @@ class ConfigurationManager:
             base_model_path=Path(prepare_base_model.model_path),
             params_epochs=params.EPOCHS,
             params_batch_size=params.BATCH_SIZE,
-            calsses_number=self.params.CLASSES,
+            classes_number=self.params.CLASSES,
         )
 
         return training_config
 
     def get_evaluation_config(self) -> EvaluationConfig:
-        test_data = load_json(Path(self.config.evaluation.all_data_urls + "/splited_data.json"))["test"]
+        test_data = load_json(Path(self.config.evaluation.all_data_urls + "/splitted_data.json"))["test"]
 
         eval_config = EvaluationConfig(
             path_of_model=self.config.evaluation.trained_model_path,

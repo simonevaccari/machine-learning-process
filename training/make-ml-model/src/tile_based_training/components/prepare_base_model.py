@@ -72,7 +72,7 @@ class PrepareBaseModel:
 
     def base_model(self):
         self.model = self._model_architecture(
-            kernel_regularizer=self.config.parms_kernel_regularizer,
+            kernel_regularizer=self.config.params_kernel_regularizer,
             number_of_classes=self.config.params_classes,
             lr=self.config.params_learning_rate,
             epsilon=self.config.params_epsilon,

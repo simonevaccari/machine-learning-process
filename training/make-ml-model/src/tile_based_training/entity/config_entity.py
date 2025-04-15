@@ -22,7 +22,7 @@ class PrepareBaseModelConfig:
     params_decay: float
     params_loss: str
     params_optimizer: str
-    parms_kernel_regularizer: str
+    params_kernel_regularizer: str
     params_momentum: float
     params_epsilon: float
 
@@ -42,7 +42,7 @@ class TrainingConfig:
     params_epochs: int
     params_batch_size: int
     
-    calsses_number: int
+    classes_number: int
 
 
 @dataclass(frozen=True)

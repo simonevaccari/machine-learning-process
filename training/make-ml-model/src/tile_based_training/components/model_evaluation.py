@@ -23,14 +23,10 @@ class Evaluation:
     def read_images(file_path, label):
         try:
             file_path = file_path.numpy().decode("utf-8")
-            data = rasterio_s3_read(file_path)
-            data = data / np.amax(data)
-            # data = data / 10000.0
+            data = rasterio_read(file_path)
+            #data = data / np.amax(data)
+            data = data / 10000.0
             image_data = np.transpose(data, (1, 2, 0))
-
-            ## uncomment this when you download the data
-            # image_data = np.transpose(gdal_array.LoadFile(file_path.numpy().decode("utf-8"))/10000.0,(1,2,0))
-
             return tf.convert_to_tensor(image_data, dtype=tf.float32), tf.convert_to_tensor(label, dtype=tf.float32)
         except Exception as e:
             print("Error:", e)

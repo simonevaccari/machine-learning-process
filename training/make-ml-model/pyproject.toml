@@ -41,7 +41,7 @@ include = [
   "*.json",
   "config.yaml",
   "params.yaml",
-  "output/data_ingestion/splited_data.json"
+  "output/data_ingestion/splitted_data.json"
 ]
 
 

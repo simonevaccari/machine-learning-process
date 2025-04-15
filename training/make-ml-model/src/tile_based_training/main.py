@@ -164,16 +164,16 @@ def run_tile_based_classification_training(ctx, **kwargs):
     # First step
     STAGE_NAME = "Data Ingestion stage"
    
-    try:
-        logger.info(f"\n=================================================================\n>>>>>> stage {STAGE_NAME} started <<<<<<")
-        obj = DataIngestionTrainingPipeline()
-        obj.main()
-        logger.info(
-            f"\n=================================================================\n>>>>>> stage {STAGE_NAME} completed <<<<<<\n================================================================="
-        )
-    except Exception as e:
-        logger.exception(e)
-        raise e
+    # try:
+    #     logger.info(f"\n=================================================================\n>>>>>> stage {STAGE_NAME} started <<<<<<")
+    #     obj = DataIngestionTrainingPipeline()
+    #     obj.main()
+    #     logger.info(
+    #         f"\n=================================================================\n>>>>>> stage {STAGE_NAME} completed <<<<<<\n================================================================="
+    #     )
+    # except Exception as e:
+    #     logger.exception(e)
+    #     raise e
     
     
     STAGE_NAME = "Prepare Base Model"
@@ -228,7 +228,7 @@ if __name__ == "__main__":
 # STAGE_NAME = "Data Ingestion stage"
 
 # try:
-#     if not (os.path.isfile("./output/data_ingestion/splited_data.json")):
+#     if not (os.path.isfile("./output/data_ingestion/splitted_data.json")):
 #         logger.info(f"\n>>>>>> stage {STAGE_NAME} started <<<<<<")
 #         obj = DataIngestionTrainingPipeline()
 #         obj.main()

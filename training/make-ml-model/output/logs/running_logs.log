@@ -784,8 +784,8 @@ Device name is: None
 [2025-04-14 15:36:07,855: INFO: common: yaml file: config/config.yaml loaded successfully]
 [2025-04-14 15:36:07,857: INFO: common: yaml file: params.yaml loaded successfully]
 [2025-04-14 15:36:07,857: INFO: common: created directory at: output]
-[2025-04-14 15:36:07,857: INFO: common: json file loaded succesfully from: src/tile_based_training/output/data_ingestion/splited_data.json]
-[2025-04-14 15:36:07,857: INFO: common: json file loaded succesfully from: src/tile_based_training/output/data_ingestion/splited_data.json]
+[2025-04-14 15:36:07,857: INFO: common: json file loaded succesfully from: src/tile_based_training/output/data_ingestion/splitted_data.json]
+[2025-04-14 15:36:07,857: INFO: common: json file loaded succesfully from: src/tile_based_training/output/data_ingestion/splitted_data.json]
 [2025-04-14 15:36:07,858: INFO: common: created directory at: src/tile_based_training/output/training]
 [2025-04-14 15:36:08,292: INFO: train_model: Device is: None , Built with CUDA: True]
 [2025-04-14 15:37:57,683: INFO: common: created directory at: config]
@@ -828,8 +828,8 @@ Device name is: None
 [2025-04-14 15:39:30,394: INFO: common: yaml file: config/config.yaml loaded successfully]
 [2025-04-14 15:39:30,395: INFO: common: yaml file: params.yaml loaded successfully]
 [2025-04-14 15:39:30,395: INFO: common: created directory at: output]
-[2025-04-14 15:39:30,395: INFO: common: json file loaded succesfully from: src/tile_based_training/output/data_ingestion/splited_data.json]
-[2025-04-14 15:39:30,395: INFO: common: json file loaded succesfully from: src/tile_based_training/output/data_ingestion/splited_data.json]
+[2025-04-14 15:39:30,395: INFO: common: json file loaded succesfully from: src/tile_based_training/output/data_ingestion/splitted_data.json]
+[2025-04-14 15:39:30,395: INFO: common: json file loaded succesfully from: src/tile_based_training/output/data_ingestion/splitted_data.json]
 [2025-04-14 15:39:30,395: INFO: common: created directory at: src/tile_based_training/output/training]
 [2025-04-14 15:39:30,681: INFO: train_model: Device is: None , Built with CUDA: True]
 [2025-04-14 15:44:29,006: INFO: common: created directory at: config]
@@ -872,8 +872,8 @@ Device name is: None
 [2025-04-14 15:46:06,690: INFO: common: yaml file: config/config.yaml loaded successfully]
 [2025-04-14 15:46:06,691: INFO: common: yaml file: params.yaml loaded successfully]
 [2025-04-14 15:46:06,691: INFO: common: created directory at: output]
-[2025-04-14 15:46:06,692: INFO: common: json file loaded succesfully from: src/tile_based_training/output/data_ingestion/splited_data.json]
-[2025-04-14 15:46:06,692: INFO: common: json file loaded succesfully from: src/tile_based_training/output/data_ingestion/splited_data.json]
+[2025-04-14 15:46:06,692: INFO: common: json file loaded succesfully from: src/tile_based_training/output/data_ingestion/splitted_data.json]
+[2025-04-14 15:46:06,692: INFO: common: json file loaded succesfully from: src/tile_based_training/output/data_ingestion/splitted_data.json]
 [2025-04-14 15:46:06,693: INFO: common: created directory at: src/tile_based_training/output/training]
 [2025-04-14 15:46:07,149: INFO: train_model: Device is: None , Built with CUDA: True]
 [2025-04-14 15:46:24,672: INFO: __init__: GDAL signalled an error: err_no=1, msg='cpl_unzOpenCurrentFile() failed']
@@ -919,10 +919,1053 @@ Device name is: None
 [2025-04-14 15:51:09,271: INFO: common: yaml file: config/config.yaml loaded successfully]
 [2025-04-14 15:51:09,273: INFO: common: yaml file: params.yaml loaded successfully]
 [2025-04-14 15:51:09,273: INFO: common: created directory at: output]
-[2025-04-14 15:51:09,274: INFO: common: json file loaded succesfully from: src/tile_based_training/output/data_ingestion/splited_data.json]
-[2025-04-14 15:51:09,274: INFO: common: json file loaded succesfully from: src/tile_based_training/output/data_ingestion/splited_data.json]
+[2025-04-14 15:51:09,274: INFO: common: json file loaded succesfully from: src/tile_based_training/output/data_ingestion/splitted_data.json]
+[2025-04-14 15:51:09,274: INFO: common: json file loaded succesfully from: src/tile_based_training/output/data_ingestion/splitted_data.json]
 [2025-04-14 15:51:09,275: INFO: common: created directory at: src/tile_based_training/output/training]
 [2025-04-14 15:51:18,877: INFO: train_model: Device is: None , Built with CUDA: True]
 [2025-04-14 15:51:29,181: INFO: __init__: GDAL signalled an error: err_no=1, msg='In file /io/gdal-3.9.3/port/cpl_vsil_gzip.cpp, at line 1214, decompression failed with z_err = -1, return = 0']
 [2025-04-14 15:51:31,032: INFO: __init__: GDAL signalled an error: err_no=1, msg='cpl_unzOpenCurrentFile() failed']
 [2025-04-14 15:51:32,665: INFO: __init__: GDAL signalled an error: err_no=1, msg='cpl_unzOpenCurrentFile() failed']
+[2025-04-15 14:15:57,795: INFO: common: created directory at: config]
+[2025-04-15 14:15:58,994: INFO: main: MLFLOW URI: None]
+[2025-04-15 14:15:58,994: INFO: main: /code]
+[2025-04-15 14:15:58,994: INFO: main: 
+=================================================================
+Device name is: None 
+=================================================================]
+[2025-04-15 14:16:36,221: INFO: common: created directory at: config]
+[2025-04-15 14:16:37,348: INFO: main: MLFLOW URI: None]
+[2025-04-15 14:16:37,348: INFO: main: /code]
+[2025-04-15 14:16:37,348: INFO: main: 
+=================================================================
+Device name is: None 
+=================================================================]
+[2025-04-15 14:16:37,350: INFO: common: YAML file: params.yaml written successfully]
+[2025-04-15 14:16:37,350: INFO: main: 
+=================================================================
+>>>>>> stage Data Ingestion stage started <<<<<<]
+[2025-04-15 14:16:37,351: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2025-04-15 14:16:37,353: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-04-15 14:16:37,353: INFO: common: created directory at: output]
+[2025-04-15 14:16:37,353: INFO: common: created directory at: src/tile_based_training/output/data_ingestion]
+[2025-04-15 14:16:37,353: INFO: data_ingestion: Accessing STAC endpoint]
+[2025-04-15 14:18:55,832: INFO: data_ingestion: 100 items are loaded]
+[2025-04-15 14:18:55,840: INFO: data_ingestion: Train size: 60 , Valid size: 20, Test size: 20]
+[2025-04-15 14:18:55,841: INFO: main: 
+=================================================================
+>>>>>> stage Data Ingestion stage completed <<<<<<
+=================================================================]
+[2025-04-15 14:18:55,841: INFO: main: 
+=================================================================
+>>>>>> stage Prepare Base Model started <<<<<<]
+[2025-04-15 14:18:55,842: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2025-04-15 14:18:55,844: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-04-15 14:18:55,844: INFO: common: created directory at: output]
+[2025-04-15 14:18:55,845: INFO: common: created directory at: src/tile_based_training/output/prepare_base_model]
+[2025-04-15 14:18:56,089: INFO: main: 
+=================================================================
+>>>>>> stage Prepare Base Model completed <<<<<<
+=================================================================]
+[2025-04-15 14:18:56,089: INFO: main: 
+=================================================================
+>>>>>> stage Training Model started <<<<<<]
+[2025-04-15 14:18:56,091: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2025-04-15 14:18:56,093: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-04-15 14:18:56,093: INFO: common: created directory at: output]
+[2025-04-15 14:18:56,093: ERROR: main: Expecting value: line 195 column 9 (char 13165)]
+Traceback (most recent call last):
+  File "/code/src/tile_based_training/main.py", line 196, in run_tile_based_classification_training
+    obj.main(device_name)
+  File "/code/src/tile_based_training/pipeline/stage_03_model_training.py", line 16, in main
+    training_config = config.get_training_config()
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/code/src/tile_based_training/config/configuration.py", line 53, in get_training_config
+    train_data = load_json(Path(training_config.all_data_urls + "/splitted_data.json"))["train"]
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/code/envs/env_5/lib/python3.12/site-packages/ensure/main.py", line 872, in __call__
+    return_val = self.f(*args, **kwargs)
+                 ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/code/src/tile_based_training/utils/common.py", line 171, in load_json
+  File "/home/neo/.local/share/hatch/env/virtual/.pythons/3.12/python/lib/python3.12/json/__init__.py", line 293, in load
+    return loads(fp.read(),
+           ^^^^^^^^^^^^^^^^
+  File "/home/neo/.local/share/hatch/env/virtual/.pythons/3.12/python/lib/python3.12/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/neo/.local/share/hatch/env/virtual/.pythons/3.12/python/lib/python3.12/json/decoder.py", line 338, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/neo/.local/share/hatch/env/virtual/.pythons/3.12/python/lib/python3.12/json/decoder.py", line 356, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 195 column 9 (char 13165)
+[2025-04-15 14:21:08,502: INFO: common: created directory at: config]
+[2025-04-15 14:21:09,638: INFO: main: MLFLOW URI: None]
+[2025-04-15 14:21:09,638: INFO: main: /code]
+[2025-04-15 14:21:09,638: INFO: main: 
+=================================================================
+Device name is: None 
+=================================================================]
+[2025-04-15 14:21:09,639: INFO: common: YAML file: params.yaml written successfully]
+[2025-04-15 14:21:09,639: INFO: main: 
+=================================================================
+>>>>>> stage Data Ingestion stage started <<<<<<]
+[2025-04-15 14:21:09,641: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2025-04-15 14:21:09,642: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-04-15 14:21:09,642: INFO: common: created directory at: output]
+[2025-04-15 14:21:09,642: INFO: common: created directory at: src/tile_based_training/output/data_ingestion]
+[2025-04-15 14:21:09,643: INFO: data_ingestion: Accessing STAC endpoint]
+[2025-04-15 14:23:33,462: INFO: data_ingestion: 100 items are loaded]
+[2025-04-15 14:23:33,464: INFO: data_ingestion: Train size: 60 , Valid size: 20, Test size: 20]
+[2025-04-15 14:23:33,465: INFO: main: 
+=================================================================
+>>>>>> stage Data Ingestion stage completed <<<<<<
+=================================================================]
+[2025-04-15 14:23:33,465: INFO: main: 
+=================================================================
+>>>>>> stage Prepare Base Model started <<<<<<]
+[2025-04-15 14:23:33,466: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2025-04-15 14:23:33,468: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-04-15 14:23:33,468: INFO: common: created directory at: output]
+[2025-04-15 14:23:33,468: INFO: common: created directory at: src/tile_based_training/output/prepare_base_model]
+[2025-04-15 14:23:33,702: INFO: main: 
+=================================================================
+>>>>>> stage Prepare Base Model completed <<<<<<
+=================================================================]
+[2025-04-15 14:23:33,702: INFO: main: 
+=================================================================
+>>>>>> stage Training Model started <<<<<<]
+[2025-04-15 14:23:33,703: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2025-04-15 14:23:33,704: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-04-15 14:23:33,705: INFO: common: created directory at: output]
+[2025-04-15 14:23:33,705: INFO: common: json file loaded succesfully from: src/tile_based_training/output/data_ingestion/splitted_data.json]
+[2025-04-15 14:23:33,705: INFO: common: json file loaded succesfully from: src/tile_based_training/output/data_ingestion/splitted_data.json]
+[2025-04-15 14:23:33,706: INFO: common: created directory at: src/tile_based_training/output/training]
+[2025-04-15 14:23:43,574: ERROR: main: 'int' object has no attribute 'shape']
+Traceback (most recent call last):
+  File "/code/src/tile_based_training/main.py", line 196, in run_tile_based_classification_training
+    obj.main(device_name)
+  File "/code/src/tile_based_training/pipeline/stage_03_model_training.py", line 19, in main
+    training.train_model(device_name)
+  File "/code/src/tile_based_training/components/train_model.py", line 79, in train_model
+    print(x.shape, x[0])
+          ^^^^^^^
+AttributeError: 'int' object has no attribute 'shape'
+[2025-04-15 14:26:39,493: INFO: common: created directory at: config]
+[2025-04-15 14:26:40,591: INFO: main: MLFLOW URI: None]
+[2025-04-15 14:26:40,591: INFO: main: /code]
+[2025-04-15 14:26:40,591: INFO: main: 
+=================================================================
+Device name is: None 
+=================================================================]
+[2025-04-15 14:26:40,593: INFO: common: YAML file: params.yaml written successfully]
+[2025-04-15 14:26:40,593: INFO: main: 
+=================================================================
+>>>>>> stage Prepare Base Model started <<<<<<]
+[2025-04-15 14:26:40,595: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2025-04-15 14:26:40,596: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-04-15 14:26:40,596: INFO: common: created directory at: output]
+[2025-04-15 14:26:40,596: INFO: common: created directory at: src/tile_based_training/output/prepare_base_model]
+[2025-04-15 14:26:40,856: INFO: main: 
+=================================================================
+>>>>>> stage Prepare Base Model completed <<<<<<
+=================================================================]
+[2025-04-15 14:26:40,856: INFO: main: 
+=================================================================
+>>>>>> stage Training Model started <<<<<<]
+[2025-04-15 14:26:40,858: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2025-04-15 14:26:40,859: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-04-15 14:26:40,859: INFO: common: created directory at: output]
+[2025-04-15 14:26:40,859: INFO: common: json file loaded succesfully from: src/tile_based_training/output/data_ingestion/splitted_data.json]
+[2025-04-15 14:26:40,859: INFO: common: json file loaded succesfully from: src/tile_based_training/output/data_ingestion/splitted_data.json]
+[2025-04-15 14:26:40,860: INFO: common: created directory at: src/tile_based_training/output/training]
+[2025-04-15 14:26:49,496: ERROR: main: 'tuple' object has no attribute 'shape']
+Traceback (most recent call last):
+  File "/code/src/tile_based_training/main.py", line 196, in run_tile_based_classification_training
+    obj.main(device_name)
+  File "/code/src/tile_based_training/pipeline/stage_03_model_training.py", line 19, in main
+    training.train_model(device_name)
+  File "/code/src/tile_based_training/components/train_model.py", line 81, in train_model
+    print(y.shape)
+          ^^^^^^^
+AttributeError: 'tuple' object has no attribute 'shape'
+[2025-04-15 14:27:23,239: INFO: common: created directory at: config]
+[2025-04-15 14:27:24,345: INFO: main: MLFLOW URI: None]
+[2025-04-15 14:27:24,345: INFO: main: /code]
+[2025-04-15 14:27:24,346: INFO: main: 
+=================================================================
+Device name is: None 
+=================================================================]
+[2025-04-15 14:27:24,347: INFO: common: YAML file: params.yaml written successfully]
+[2025-04-15 14:27:24,347: INFO: main: 
+=================================================================
+>>>>>> stage Prepare Base Model started <<<<<<]
+[2025-04-15 14:27:24,349: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2025-04-15 14:27:24,350: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-04-15 14:27:24,350: INFO: common: created directory at: output]
+[2025-04-15 14:27:24,350: INFO: common: created directory at: src/tile_based_training/output/prepare_base_model]
+[2025-04-15 14:27:24,596: INFO: main: 
+=================================================================
+>>>>>> stage Prepare Base Model completed <<<<<<
+=================================================================]
+[2025-04-15 14:27:24,596: INFO: main: 
+=================================================================
+>>>>>> stage Training Model started <<<<<<]
+[2025-04-15 14:27:24,598: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2025-04-15 14:27:24,599: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-04-15 14:27:24,599: INFO: common: created directory at: output]
+[2025-04-15 14:27:24,599: INFO: common: json file loaded succesfully from: src/tile_based_training/output/data_ingestion/splitted_data.json]
+[2025-04-15 14:27:24,600: INFO: common: json file loaded succesfully from: src/tile_based_training/output/data_ingestion/splitted_data.json]
+[2025-04-15 14:27:24,600: INFO: common: created directory at: src/tile_based_training/output/training]
+[2025-04-15 14:27:24,861: ERROR: main: '_PrefetchDataset' object has no attribute 'shape']
+Traceback (most recent call last):
+  File "/code/src/tile_based_training/main.py", line 196, in run_tile_based_classification_training
+    obj.main(device_name)
+  File "/code/src/tile_based_training/pipeline/stage_03_model_training.py", line 19, in main
+    training.train_model(device_name)
+  File "/code/src/tile_based_training/components/train_model.py", line 78, in train_model
+    print(train_dataset.shape)
+          ^^^^^^^^^^^^^^^^^^^
+AttributeError: '_PrefetchDataset' object has no attribute 'shape'. Did you mean: 'save'?
+[2025-04-15 14:27:40,488: INFO: common: created directory at: config]
+[2025-04-15 14:27:41,604: INFO: main: MLFLOW URI: None]
+[2025-04-15 14:27:41,604: INFO: main: /code]
+[2025-04-15 14:27:41,604: INFO: main: 
+=================================================================
+Device name is: None 
+=================================================================]
+[2025-04-15 14:27:41,605: INFO: common: YAML file: params.yaml written successfully]
+[2025-04-15 14:27:41,605: INFO: main: 
+=================================================================
+>>>>>> stage Prepare Base Model started <<<<<<]
+[2025-04-15 14:27:41,607: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2025-04-15 14:27:41,609: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-04-15 14:27:41,609: INFO: common: created directory at: output]
+[2025-04-15 14:27:41,609: INFO: common: created directory at: src/tile_based_training/output/prepare_base_model]
+[2025-04-15 14:27:41,857: INFO: main: 
+=================================================================
+>>>>>> stage Prepare Base Model completed <<<<<<
+=================================================================]
+[2025-04-15 14:27:41,857: INFO: main: 
+=================================================================
+>>>>>> stage Training Model started <<<<<<]
+[2025-04-15 14:27:41,859: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2025-04-15 14:27:41,860: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-04-15 14:27:41,860: INFO: common: created directory at: output]
+[2025-04-15 14:27:41,860: INFO: common: json file loaded succesfully from: src/tile_based_training/output/data_ingestion/splitted_data.json]
+[2025-04-15 14:27:41,861: INFO: common: json file loaded succesfully from: src/tile_based_training/output/data_ingestion/splitted_data.json]
+[2025-04-15 14:27:41,861: INFO: common: created directory at: src/tile_based_training/output/training]
+[2025-04-15 14:27:42,143: INFO: train_model: Device is: None , Built with CUDA: True]
+[2025-04-15 14:27:58,072: INFO: common: GDAL signalled an error: err_no=1, msg='In file /io/gdal-3.9.3/port/cpl_vsil_gzip.cpp, at line 1214, decompression failed with z_err = -1, return = 6016']
+[2025-04-15 14:27:58,072: INFO: common: GDAL signalled an error: err_no=1, msg='TIFFReadEncodedStrip:Read error at scanline 4294967295; got 6016 bytes, expected 6656']
+[2025-04-15 14:27:58,072: INFO: common: GDAL signalled an error: err_no=1, msg='TIFFReadEncodedStrip() failed.']
+[2025-04-15 14:27:58,073: INFO: common: GDAL signalled an error: err_no=1, msg='Industrial_991.tif, band 1: IReadBlock failed at X offset 0, Y offset 12: TIFFReadEncodedStrip() failed.']
+[2025-04-15 14:28:17,284: INFO: common: created directory at: config]
+[2025-04-15 14:28:18,413: INFO: main: MLFLOW URI: None]
+[2025-04-15 14:28:18,413: INFO: main: /code]
+[2025-04-15 14:28:18,413: INFO: main: 
+=================================================================
+Device name is: None 
+=================================================================]
+[2025-04-15 14:28:18,414: INFO: common: YAML file: params.yaml written successfully]
+[2025-04-15 14:28:18,414: INFO: main: 
+=================================================================
+>>>>>> stage Prepare Base Model started <<<<<<]
+[2025-04-15 14:28:18,416: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2025-04-15 14:28:18,417: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-04-15 14:28:18,417: INFO: common: created directory at: output]
+[2025-04-15 14:28:18,417: INFO: common: created directory at: src/tile_based_training/output/prepare_base_model]
+[2025-04-15 14:28:18,665: INFO: main: 
+=================================================================
+>>>>>> stage Prepare Base Model completed <<<<<<
+=================================================================]
+[2025-04-15 14:28:18,666: INFO: main: 
+=================================================================
+>>>>>> stage Training Model started <<<<<<]
+[2025-04-15 14:28:18,667: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2025-04-15 14:28:18,668: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-04-15 14:28:18,668: INFO: common: created directory at: output]
+[2025-04-15 14:28:18,669: INFO: common: json file loaded succesfully from: src/tile_based_training/output/data_ingestion/splitted_data.json]
+[2025-04-15 14:28:18,669: INFO: common: json file loaded succesfully from: src/tile_based_training/output/data_ingestion/splitted_data.json]
+[2025-04-15 14:28:18,670: INFO: common: created directory at: src/tile_based_training/output/training]
+[2025-04-15 14:28:19,112: WARNING: __init__: CPLE_AppDefined in HTTP response code on https://zenodo.org/record/7711810/files/EuroSAT_MS.zip: 429]
+[2025-04-15 14:28:19,112: INFO: __init__: GDAL signalled an error: err_no=4, msg="`/vsizip/vsicurl/https://zenodo.org/record/7711810/files/EuroSAT_MS.zip/EuroSAT_MS/SeaLake/SeaLake_959.tif' does not exist in the file system, and is not recognized as a supported dataset name."]
+[2025-04-15 14:28:19,115: INFO: __init__: GDAL signalled an error: err_no=4, msg="`/vsizip/vsicurl/https://zenodo.org/record/7711810/files/EuroSAT_MS.zip/EuroSAT_MS/PermanentCrop/PermanentCrop_967.tif' does not exist in the file system, and is not recognized as a supported dataset name."]
+[2025-04-15 14:28:19,116: INFO: __init__: GDAL signalled an error: err_no=4, msg="`/vsizip/vsicurl/https://zenodo.org/record/7711810/files/EuroSAT_MS.zip/EuroSAT_MS/Highway/Highway_97.tif' does not exist in the file system, and is not recognized as a supported dataset name."]
+[2025-04-15 14:28:19,117: INFO: __init__: GDAL signalled an error: err_no=4, msg="`/vsizip/vsicurl/https://zenodo.org/record/7711810/files/EuroSAT_MS.zip/EuroSAT_MS/Industrial/Industrial_958.tif' does not exist in the file system, and is not recognized as a supported dataset name."]
+[2025-04-15 14:28:19,119: ERROR: main: {{function_node __wrapped__IteratorGetNext_output_types_2_device_/job:localhost/replica:0/task:0/device:CPU:0}} Error in user-defined function passed to MapDataset:2 transformation with iterator: Iterator::Root::Prefetch::MemoryCacheImpl::MapAndBatch::Map: SystemExit: 1
+Traceback (most recent call last):
+
+  File "rasterio/_base.pyx", line 310, in rasterio._base.DatasetBase.__init__
+
+  File "rasterio/_base.pyx", line 221, in rasterio._base.open_dataset
+
+  File "rasterio/_err.pyx", line 359, in rasterio._err.exc_wrap_pointer
+
+rasterio._err.CPLE_OpenFailedError: '/vsizip/vsicurl/https://zenodo.org/record/7711810/files/EuroSAT_MS.zip/EuroSAT_MS/SeaLake/SeaLake_959.tif' does not exist in the file system, and is not recognized as a supported dataset name.
+
+
+During handling of the above exception, another exception occurred:
+
+
+Traceback (most recent call last):
+
+  File "/code/src/tile_based_training/components/train_model.py", line 24, in read_images
+    data = rasterio_read(file_path)
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+
+  File "/code/src/tile_based_training/utils/common.py", line 407, in rasterio_read
+    with rasterio.open(os.path.join("/vsizip/vsicurl",s3_path)) as src:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+  File "/code/envs/env_5/lib/python3.12/site-packages/rasterio/env.py", line 463, in wrapper
+    return f(*args, **kwds)
+           ^^^^^^^^^^^^^^^^
+
+  File "/code/envs/env_5/lib/python3.12/site-packages/rasterio/__init__.py", line 356, in open
+    dataset = DatasetReader(path, driver=driver, sharing=sharing, **kwargs)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+  File "rasterio/_base.pyx", line 312, in rasterio._base.DatasetBase.__init__
+
+rasterio.errors.RasterioIOError: '/vsizip/vsicurl/https://zenodo.org/record/7711810/files/EuroSAT_MS.zip/EuroSAT_MS/SeaLake/SeaLake_959.tif' does not exist in the file system, and is not recognized as a supported dataset name.
+
+
+During handling of the above exception, another exception occurred:
+
+
+Traceback (most recent call last):
+
+  File "/code/envs/env_5/lib/python3.12/site-packages/tensorflow/python/ops/script_ops.py", line 267, in __call__
+    return func(device, token, args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+
+  File "/code/envs/env_5/lib/python3.12/site-packages/tensorflow/python/ops/script_ops.py", line 145, in __call__
+    outputs = self._call(device, args)
+              ^^^^^^^^^^^^^^^^^^^^^^^^
+
+  File "/code/envs/env_5/lib/python3.12/site-packages/tensorflow/python/ops/script_ops.py", line 152, in _call
+    ret = self._func(*args)
+          ^^^^^^^^^^^^^^^^^
+
+  File "/code/envs/env_5/lib/python3.12/site-packages/tensorflow/python/autograph/impl/api.py", line 643, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+
+  File "/code/src/tile_based_training/components/train_model.py", line 31, in read_images
+    sys.exit(1)
+
+SystemExit: 1
+
+
+	 [[{{node EagerPyFunc}}]] [Op:IteratorGetNext] name: ]
+Traceback (most recent call last):
+  File "/code/src/tile_based_training/main.py", line 196, in run_tile_based_classification_training
+    obj.main(device_name)
+  File "/code/src/tile_based_training/pipeline/stage_03_model_training.py", line 19, in main
+    training.train_model(device_name)
+  File "/code/src/tile_based_training/components/train_model.py", line 79, in train_model
+    for x, y in enumerate(train_dataset):
+                ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/code/envs/env_5/lib/python3.12/site-packages/tensorflow/python/data/ops/iterator_ops.py", line 826, in __next__
+    return self._next_internal()
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/code/envs/env_5/lib/python3.12/site-packages/tensorflow/python/data/ops/iterator_ops.py", line 776, in _next_internal
+    ret = gen_dataset_ops.iterator_get_next(
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/code/envs/env_5/lib/python3.12/site-packages/tensorflow/python/ops/gen_dataset_ops.py", line 3086, in iterator_get_next
+    _ops.raise_from_not_ok_status(e, name)
+  File "/code/envs/env_5/lib/python3.12/site-packages/tensorflow/python/framework/ops.py", line 6006, in raise_from_not_ok_status
+    raise core._status_to_exception(e) from None  # pylint: disable=protected-access
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tensorflow.python.framework.errors_impl.UnknownError: {{function_node __wrapped__IteratorGetNext_output_types_2_device_/job:localhost/replica:0/task:0/device:CPU:0}} Error in user-defined function passed to MapDataset:2 transformation with iterator: Iterator::Root::Prefetch::MemoryCacheImpl::MapAndBatch::Map: SystemExit: 1
+Traceback (most recent call last):
+
+  File "rasterio/_base.pyx", line 310, in rasterio._base.DatasetBase.__init__
+
+  File "rasterio/_base.pyx", line 221, in rasterio._base.open_dataset
+
+  File "rasterio/_err.pyx", line 359, in rasterio._err.exc_wrap_pointer
+
+rasterio._err.CPLE_OpenFailedError: '/vsizip/vsicurl/https://zenodo.org/record/7711810/files/EuroSAT_MS.zip/EuroSAT_MS/SeaLake/SeaLake_959.tif' does not exist in the file system, and is not recognized as a supported dataset name.
+
+
+During handling of the above exception, another exception occurred:
+
+
+Traceback (most recent call last):
+
+  File "/code/src/tile_based_training/components/train_model.py", line 24, in read_images
+    data = rasterio_read(file_path)
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+
+  File "/code/src/tile_based_training/utils/common.py", line 407, in rasterio_read
+    with rasterio.open(os.path.join("/vsizip/vsicurl",s3_path)) as src:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+  File "/code/envs/env_5/lib/python3.12/site-packages/rasterio/env.py", line 463, in wrapper
+    return f(*args, **kwds)
+           ^^^^^^^^^^^^^^^^
+
+  File "/code/envs/env_5/lib/python3.12/site-packages/rasterio/__init__.py", line 356, in open
+    dataset = DatasetReader(path, driver=driver, sharing=sharing, **kwargs)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+  File "rasterio/_base.pyx", line 312, in rasterio._base.DatasetBase.__init__
+
+rasterio.errors.RasterioIOError: '/vsizip/vsicurl/https://zenodo.org/record/7711810/files/EuroSAT_MS.zip/EuroSAT_MS/SeaLake/SeaLake_959.tif' does not exist in the file system, and is not recognized as a supported dataset name.
+
+
+During handling of the above exception, another exception occurred:
+
+
+Traceback (most recent call last):
+
+  File "/code/envs/env_5/lib/python3.12/site-packages/tensorflow/python/ops/script_ops.py", line 267, in __call__
+    return func(device, token, args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+
+  File "/code/envs/env_5/lib/python3.12/site-packages/tensorflow/python/ops/script_ops.py", line 145, in __call__
+    outputs = self._call(device, args)
+              ^^^^^^^^^^^^^^^^^^^^^^^^
+
+  File "/code/envs/env_5/lib/python3.12/site-packages/tensorflow/python/ops/script_ops.py", line 152, in _call
+    ret = self._func(*args)
+          ^^^^^^^^^^^^^^^^^
+
+  File "/code/envs/env_5/lib/python3.12/site-packages/tensorflow/python/autograph/impl/api.py", line 643, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+
+  File "/code/src/tile_based_training/components/train_model.py", line 31, in read_images
+    sys.exit(1)
+
+SystemExit: 1
+
+
+	 [[{{node EagerPyFunc}}]] [Op:IteratorGetNext] name: 
+[2025-04-15 14:28:19,119: INFO: __init__: GDAL signalled an error: err_no=4, msg="`/vsizip/vsicurl/https://zenodo.org/record/7711810/files/EuroSAT_MS.zip/EuroSAT_MS/AnnualCrop/AnnualCrop_947.tif' does not exist in the file system, and is not recognized as a supported dataset name."]
+[2025-04-15 14:28:19,122: INFO: __init__: GDAL signalled an error: err_no=4, msg="`/vsizip/vsicurl/https://zenodo.org/record/7711810/files/EuroSAT_MS.zip/EuroSAT_MS/SeaLake/SeaLake_972.tif' does not exist in the file system, and is not recognized as a supported dataset name."]
+[2025-04-15 14:28:19,124: INFO: __init__: GDAL signalled an error: err_no=4, msg="`/vsizip/vsicurl/https://zenodo.org/record/7711810/files/EuroSAT_MS.zip/EuroSAT_MS/Pasture/Pasture_998.tif' does not exist in the file system, and is not recognized as a supported dataset name."]
+[2025-04-15 14:28:19,126: INFO: __init__: GDAL signalled an error: err_no=4, msg="`/vsizip/vsicurl/https://zenodo.org/record/7711810/files/EuroSAT_MS.zip/EuroSAT_MS/SeaLake/SeaLake_983.tif' does not exist in the file system, and is not recognized as a supported dataset name."]
+[2025-04-15 14:28:54,890: INFO: common: created directory at: config]
+[2025-04-15 14:28:56,042: INFO: main: MLFLOW URI: None]
+[2025-04-15 14:28:56,042: INFO: main: /code]
+[2025-04-15 14:28:56,042: INFO: main: 
+=================================================================
+Device name is: None 
+=================================================================]
+[2025-04-15 14:28:56,044: INFO: common: YAML file: params.yaml written successfully]
+[2025-04-15 14:28:56,044: INFO: main: 
+=================================================================
+>>>>>> stage Prepare Base Model started <<<<<<]
+[2025-04-15 14:28:56,045: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2025-04-15 14:28:56,046: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-04-15 14:28:56,047: INFO: common: created directory at: output]
+[2025-04-15 14:28:56,047: INFO: common: created directory at: src/tile_based_training/output/prepare_base_model]
+[2025-04-15 14:28:56,298: INFO: main: 
+=================================================================
+>>>>>> stage Prepare Base Model completed <<<<<<
+=================================================================]
+[2025-04-15 14:28:56,298: INFO: main: 
+=================================================================
+>>>>>> stage Training Model started <<<<<<]
+[2025-04-15 14:28:56,300: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2025-04-15 14:28:56,301: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-04-15 14:28:56,301: INFO: common: created directory at: output]
+[2025-04-15 14:28:56,301: INFO: common: json file loaded succesfully from: src/tile_based_training/output/data_ingestion/splitted_data.json]
+[2025-04-15 14:28:56,302: INFO: common: json file loaded succesfully from: src/tile_based_training/output/data_ingestion/splitted_data.json]
+[2025-04-15 14:28:56,302: INFO: common: created directory at: src/tile_based_training/output/training]
+[2025-04-15 14:29:19,501: INFO: common: created directory at: config]
+[2025-04-15 14:29:20,614: INFO: main: MLFLOW URI: None]
+[2025-04-15 14:29:20,615: INFO: main: /code]
+[2025-04-15 14:29:20,615: INFO: main: 
+=================================================================
+Device name is: None 
+=================================================================]
+[2025-04-15 14:29:20,616: INFO: common: YAML file: params.yaml written successfully]
+[2025-04-15 14:29:20,616: INFO: main: 
+=================================================================
+>>>>>> stage Prepare Base Model started <<<<<<]
+[2025-04-15 14:29:20,618: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2025-04-15 14:29:20,619: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-04-15 14:29:20,619: INFO: common: created directory at: output]
+[2025-04-15 14:29:20,619: INFO: common: created directory at: src/tile_based_training/output/prepare_base_model]
+[2025-04-15 14:29:20,870: INFO: main: 
+=================================================================
+>>>>>> stage Prepare Base Model completed <<<<<<
+=================================================================]
+[2025-04-15 14:29:20,870: INFO: main: 
+=================================================================
+>>>>>> stage Training Model started <<<<<<]
+[2025-04-15 14:29:20,872: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2025-04-15 14:29:20,873: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-04-15 14:29:20,873: INFO: common: created directory at: output]
+[2025-04-15 14:29:20,873: INFO: common: json file loaded succesfully from: src/tile_based_training/output/data_ingestion/splitted_data.json]
+[2025-04-15 14:29:20,873: INFO: common: json file loaded succesfully from: src/tile_based_training/output/data_ingestion/splitted_data.json]
+[2025-04-15 14:29:20,874: INFO: common: created directory at: src/tile_based_training/output/training]
+[2025-04-15 14:29:32,768: INFO: __init__: GDAL signalled an error: err_no=1, msg='In file /io/gdal-3.9.3/port/cpl_vsil_gzip.cpp, at line 1214, decompression failed with z_err = -1, return = 0']
+[2025-04-15 14:29:58,188: INFO: common: created directory at: config]
+[2025-04-15 14:29:59,314: INFO: main: MLFLOW URI: None]
+[2025-04-15 14:29:59,315: INFO: main: /code]
+[2025-04-15 14:29:59,315: INFO: main: 
+=================================================================
+Device name is: None 
+=================================================================]
+[2025-04-15 14:29:59,316: INFO: common: YAML file: params.yaml written successfully]
+[2025-04-15 14:29:59,316: INFO: main: 
+=================================================================
+>>>>>> stage Prepare Base Model started <<<<<<]
+[2025-04-15 14:29:59,318: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2025-04-15 14:29:59,319: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-04-15 14:29:59,319: INFO: common: created directory at: output]
+[2025-04-15 14:29:59,319: INFO: common: created directory at: src/tile_based_training/output/prepare_base_model]
+[2025-04-15 14:29:59,556: INFO: main: 
+=================================================================
+>>>>>> stage Prepare Base Model completed <<<<<<
+=================================================================]
+[2025-04-15 14:29:59,556: INFO: main: 
+=================================================================
+>>>>>> stage Training Model started <<<<<<]
+[2025-04-15 14:29:59,558: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2025-04-15 14:29:59,559: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-04-15 14:29:59,559: INFO: common: created directory at: output]
+[2025-04-15 14:29:59,559: INFO: common: json file loaded succesfully from: src/tile_based_training/output/data_ingestion/splitted_data.json]
+[2025-04-15 14:29:59,560: INFO: common: json file loaded succesfully from: src/tile_based_training/output/data_ingestion/splitted_data.json]
+[2025-04-15 14:29:59,560: INFO: common: created directory at: src/tile_based_training/output/training]
+[2025-04-15 14:30:09,011: INFO: common: GDAL signalled an error: err_no=1, msg='In file /io/gdal-3.9.3/port/cpl_vsil_gzip.cpp, at line 1214, decompression failed with z_err = -1, return = 5448']
+[2025-04-15 14:30:09,011: INFO: common: GDAL signalled an error: err_no=1, msg='TIFFReadEncodedStrip:Read error at scanline 4294967295; got 5448 bytes, expected 6656']
+[2025-04-15 14:30:09,011: INFO: common: GDAL signalled an error: err_no=1, msg='TIFFReadEncodedStrip() failed.']
+[2025-04-15 14:30:09,011: INFO: common: GDAL signalled an error: err_no=1, msg='Residential_982.tif, band 1: IReadBlock failed at X offset 0, Y offset 12: TIFFReadEncodedStrip() failed.']
+[2025-04-15 14:31:32,396: INFO: common: created directory at: config]
+[2025-04-15 14:31:33,492: INFO: main: MLFLOW URI: None]
+[2025-04-15 14:31:33,492: INFO: main: /code]
+[2025-04-15 14:31:33,492: INFO: main: 
+=================================================================
+Device name is: None 
+=================================================================]
+[2025-04-15 14:31:33,493: INFO: common: YAML file: params.yaml written successfully]
+[2025-04-15 14:31:33,493: INFO: main: 
+=================================================================
+>>>>>> stage Prepare Base Model started <<<<<<]
+[2025-04-15 14:31:33,495: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2025-04-15 14:31:33,497: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-04-15 14:31:33,497: INFO: common: created directory at: output]
+[2025-04-15 14:31:33,497: INFO: common: created directory at: src/tile_based_training/output/prepare_base_model]
+[2025-04-15 14:31:33,747: INFO: main: 
+=================================================================
+>>>>>> stage Prepare Base Model completed <<<<<<
+=================================================================]
+[2025-04-15 14:31:33,747: INFO: main: 
+=================================================================
+>>>>>> stage Training Model started <<<<<<]
+[2025-04-15 14:31:33,749: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2025-04-15 14:31:33,751: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-04-15 14:31:33,751: INFO: common: created directory at: output]
+[2025-04-15 14:31:33,751: INFO: common: json file loaded succesfully from: src/tile_based_training/output/data_ingestion/splitted_data.json]
+[2025-04-15 14:31:33,752: INFO: common: json file loaded succesfully from: src/tile_based_training/output/data_ingestion/splitted_data.json]
+[2025-04-15 14:31:33,752: INFO: common: created directory at: src/tile_based_training/output/training]
+[2025-04-15 14:37:04,625: INFO: common: created directory at: config]
+[2025-04-15 14:37:05,734: INFO: main: MLFLOW URI: None]
+[2025-04-15 14:37:05,734: INFO: main: /code]
+[2025-04-15 14:37:05,734: INFO: main: 
+=================================================================
+Device name is: None 
+=================================================================]
+[2025-04-15 14:37:05,736: INFO: common: YAML file: params.yaml written successfully]
+[2025-04-15 14:37:05,736: INFO: main: 
+=================================================================
+>>>>>> stage Prepare Base Model started <<<<<<]
+[2025-04-15 14:37:05,738: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2025-04-15 14:37:05,739: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-04-15 14:37:05,739: INFO: common: created directory at: output]
+[2025-04-15 14:37:05,739: INFO: common: created directory at: src/tile_based_training/output/prepare_base_model]
+[2025-04-15 14:37:05,981: INFO: main: 
+=================================================================
+>>>>>> stage Prepare Base Model completed <<<<<<
+=================================================================]
+[2025-04-15 14:37:05,981: INFO: main: 
+=================================================================
+>>>>>> stage Training Model started <<<<<<]
+[2025-04-15 14:37:05,983: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2025-04-15 14:37:05,984: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-04-15 14:37:05,984: INFO: common: created directory at: output]
+[2025-04-15 14:37:05,984: INFO: common: json file loaded succesfully from: src/tile_based_training/output/data_ingestion/splitted_data.json]
+[2025-04-15 14:37:05,985: INFO: common: json file loaded succesfully from: src/tile_based_training/output/data_ingestion/splitted_data.json]
+[2025-04-15 14:37:05,985: INFO: common: created directory at: src/tile_based_training/output/training]
+[2025-04-15 14:37:06,254: INFO: train_model: Device is: None , Built with CUDA: True]
+[2025-04-15 14:37:24,797: INFO: __init__: GDAL signalled an error: err_no=1, msg='In file /io/gdal-3.9.3/port/cpl_vsil_gzip.cpp, at line 1214, decompression failed with z_err = -1, return = 0']
+[2025-04-15 14:37:26,780: INFO: __init__: GDAL signalled an error: err_no=1, msg='cpl_unzOpenCurrentFile() failed']
+[2025-04-15 14:39:31,781: INFO: common: created directory at: config]
+[2025-04-15 14:39:32,884: INFO: main: MLFLOW URI: None]
+[2025-04-15 14:39:32,884: INFO: main: /code]
+[2025-04-15 14:39:32,885: INFO: main: 
+=================================================================
+Device name is: None 
+=================================================================]
+[2025-04-15 14:39:32,886: INFO: common: YAML file: params.yaml written successfully]
+[2025-04-15 14:39:32,886: INFO: main: 
+=================================================================
+>>>>>> stage Prepare Base Model started <<<<<<]
+[2025-04-15 14:39:32,888: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2025-04-15 14:39:32,889: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-04-15 14:39:32,889: INFO: common: created directory at: output]
+[2025-04-15 14:39:32,889: INFO: common: created directory at: src/tile_based_training/output/prepare_base_model]
+[2025-04-15 14:39:33,142: INFO: main: 
+=================================================================
+>>>>>> stage Prepare Base Model completed <<<<<<
+=================================================================]
+[2025-04-15 14:39:33,142: INFO: main: 
+=================================================================
+>>>>>> stage Training Model started <<<<<<]
+[2025-04-15 14:39:33,144: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2025-04-15 14:39:33,146: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-04-15 14:39:33,146: INFO: common: created directory at: output]
+[2025-04-15 14:39:33,146: INFO: common: json file loaded succesfully from: src/tile_based_training/output/data_ingestion/splitted_data.json]
+[2025-04-15 14:39:33,146: INFO: common: json file loaded succesfully from: src/tile_based_training/output/data_ingestion/splitted_data.json]
+[2025-04-15 14:39:33,147: INFO: common: created directory at: src/tile_based_training/output/training]
+[2025-04-15 14:39:33,408: INFO: train_model: Device is: None , Built with CUDA: True]
+[2025-04-15 14:39:34,873: INFO: __init__: GDAL signalled an error: err_no=11, msg='HTTP response code: 404']
+[2025-04-15 14:39:35,204: INFO: __init__: GDAL signalled an error: err_no=11, msg='HTTP response code: 404']
+[2025-04-15 14:39:35,500: INFO: __init__: GDAL signalled an error: err_no=11, msg='HTTP response code: 404']
+[2025-04-15 14:39:35,717: INFO: __init__: GDAL signalled an error: err_no=11, msg='HTTP response code: 404']
+[2025-04-15 14:49:29,427: INFO: common: created directory at: config]
+[2025-04-15 14:49:30,562: INFO: main: MLFLOW URI: None]
+[2025-04-15 14:49:30,562: INFO: main: /code]
+[2025-04-15 14:49:30,562: INFO: main: 
+=================================================================
+Device name is: None 
+=================================================================]
+[2025-04-15 14:49:30,563: INFO: common: YAML file: params.yaml written successfully]
+[2025-04-15 14:49:30,563: INFO: main: 
+=================================================================
+>>>>>> stage Prepare Base Model started <<<<<<]
+[2025-04-15 14:49:30,565: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2025-04-15 14:49:30,566: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-04-15 14:49:30,566: INFO: common: created directory at: output]
+[2025-04-15 14:49:30,566: INFO: common: created directory at: src/tile_based_training/output/prepare_base_model]
+[2025-04-15 14:49:30,812: INFO: main: 
+=================================================================
+>>>>>> stage Prepare Base Model completed <<<<<<
+=================================================================]
+[2025-04-15 14:49:30,812: INFO: main: 
+=================================================================
+>>>>>> stage Training Model started <<<<<<]
+[2025-04-15 14:49:30,814: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2025-04-15 14:49:30,815: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-04-15 14:49:30,815: INFO: common: created directory at: output]
+[2025-04-15 14:49:30,816: INFO: common: json file loaded succesfully from: src/tile_based_training/output/data_ingestion/splitted_data.json]
+[2025-04-15 14:49:30,816: INFO: common: json file loaded succesfully from: src/tile_based_training/output/data_ingestion/splitted_data.json]
+[2025-04-15 14:49:30,816: INFO: common: created directory at: src/tile_based_training/output/training]
+[2025-04-15 14:49:31,081: INFO: train_model: Device is: None , Built with CUDA: True]
+[2025-04-15 14:49:32,500: INFO: __init__: GDAL signalled an error: err_no=11, msg='HTTP response code: 404']
+[2025-04-15 14:49:32,705: INFO: __init__: GDAL signalled an error: err_no=11, msg='HTTP response code: 404']
+[2025-04-15 14:49:32,938: INFO: __init__: GDAL signalled an error: err_no=11, msg='HTTP response code: 404']
+[2025-04-15 14:49:33,243: INFO: __init__: GDAL signalled an error: err_no=11, msg='HTTP response code: 404']
+[2025-04-15 14:50:54,442: INFO: common: created directory at: config]
+[2025-04-15 14:50:55,566: INFO: main: MLFLOW URI: None]
+[2025-04-15 14:50:55,566: INFO: main: /code]
+[2025-04-15 14:50:55,566: INFO: main: 
+=================================================================
+Device name is: None 
+=================================================================]
+[2025-04-15 14:50:55,568: INFO: common: YAML file: params.yaml written successfully]
+[2025-04-15 14:50:55,568: INFO: main: 
+=================================================================
+>>>>>> stage Prepare Base Model started <<<<<<]
+[2025-04-15 14:50:55,570: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2025-04-15 14:50:55,571: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-04-15 14:50:55,571: INFO: common: created directory at: output]
+[2025-04-15 14:50:55,571: INFO: common: created directory at: src/tile_based_training/output/prepare_base_model]
+[2025-04-15 14:50:55,823: INFO: main: 
+=================================================================
+>>>>>> stage Prepare Base Model completed <<<<<<
+=================================================================]
+[2025-04-15 14:50:55,823: INFO: main: 
+=================================================================
+>>>>>> stage Training Model started <<<<<<]
+[2025-04-15 14:50:55,825: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2025-04-15 14:50:55,826: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-04-15 14:50:55,826: INFO: common: created directory at: output]
+[2025-04-15 14:50:55,826: INFO: common: json file loaded succesfully from: src/tile_based_training/output/data_ingestion/splitted_data.json]
+[2025-04-15 14:50:55,827: INFO: common: json file loaded succesfully from: src/tile_based_training/output/data_ingestion/splitted_data.json]
+[2025-04-15 14:50:55,827: INFO: common: created directory at: src/tile_based_training/output/training]
+[2025-04-15 14:50:56,112: INFO: train_model: Device is: None , Built with CUDA: True]
+[2025-04-15 14:51:13,304: INFO: __init__: GDAL signalled an error: err_no=1, msg='cpl_unzOpenCurrentFile() failed']
+[2025-04-15 14:51:14,885: INFO: __init__: GDAL signalled an error: err_no=1, msg='cpl_unzOpenCurrentFile() failed']
+[2025-04-15 14:51:16,435: INFO: __init__: GDAL signalled an error: err_no=1, msg='cpl_unzOpenCurrentFile() failed']
+[2025-04-15 14:52:00,773: INFO: common: created directory at: config]
+[2025-04-15 14:52:01,910: INFO: main: MLFLOW URI: None]
+[2025-04-15 14:52:01,910: INFO: main: /code]
+[2025-04-15 14:52:01,910: INFO: main: 
+=================================================================
+Device name is: None 
+=================================================================]
+[2025-04-15 14:52:01,911: INFO: common: YAML file: params.yaml written successfully]
+[2025-04-15 14:52:01,911: INFO: main: 
+=================================================================
+>>>>>> stage Prepare Base Model started <<<<<<]
+[2025-04-15 14:52:01,914: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2025-04-15 14:52:01,915: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-04-15 14:52:01,915: INFO: common: created directory at: output]
+[2025-04-15 14:52:01,915: INFO: common: created directory at: src/tile_based_training/output/prepare_base_model]
+[2025-04-15 14:52:02,173: INFO: main: 
+=================================================================
+>>>>>> stage Prepare Base Model completed <<<<<<
+=================================================================]
+[2025-04-15 14:52:02,173: INFO: main: 
+=================================================================
+>>>>>> stage Training Model started <<<<<<]
+[2025-04-15 14:52:02,175: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2025-04-15 14:52:02,176: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-04-15 14:52:02,176: INFO: common: created directory at: output]
+[2025-04-15 14:52:02,176: INFO: common: json file loaded succesfully from: src/tile_based_training/output/data_ingestion/splitted_data.json]
+[2025-04-15 14:52:02,177: INFO: common: json file loaded succesfully from: src/tile_based_training/output/data_ingestion/splitted_data.json]
+[2025-04-15 14:52:02,177: INFO: common: created directory at: src/tile_based_training/output/training]
+[2025-04-15 14:52:02,473: INFO: train_model: Device is: None , Built with CUDA: True]
+[2025-04-15 14:52:20,130: INFO: common: GDAL signalled an error: err_no=1, msg='In file /io/gdal-3.9.3/port/cpl_vsil_gzip.cpp, at line 1214, decompression failed with z_err = -1, return = 452']
+[2025-04-15 14:52:20,130: INFO: common: GDAL signalled an error: err_no=1, msg='TIFFReadEncodedStrip:Read error at scanline 4294967295; got 452 bytes, expected 6656']
+[2025-04-15 14:52:20,130: INFO: common: GDAL signalled an error: err_no=1, msg='TIFFReadEncodedStrip() failed.']
+[2025-04-15 14:52:20,130: INFO: common: GDAL signalled an error: err_no=1, msg='Residential_963.tif, band 1: IReadBlock failed at X offset 0, Y offset 13: TIFFReadEncodedStrip() failed.']
+[2025-04-15 14:52:21,971: INFO: __init__: GDAL signalled an error: err_no=1, msg='cpl_unzOpenCurrentFile() failed']
+[2025-04-15 14:53:45,101: INFO: common: created directory at: config]
+[2025-04-15 14:53:46,288: INFO: main: MLFLOW URI: None]
+[2025-04-15 14:53:46,288: INFO: main: /code]
+[2025-04-15 14:53:46,288: INFO: main: 
+=================================================================
+Device name is: None 
+=================================================================]
+[2025-04-15 14:53:46,290: INFO: common: YAML file: params.yaml written successfully]
+[2025-04-15 14:53:46,290: INFO: main: 
+=================================================================
+>>>>>> stage Prepare Base Model started <<<<<<]
+[2025-04-15 14:53:46,292: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2025-04-15 14:53:46,293: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-04-15 14:53:46,293: INFO: common: created directory at: output]
+[2025-04-15 14:53:46,293: INFO: common: created directory at: src/tile_based_training/output/prepare_base_model]
+[2025-04-15 14:53:46,577: INFO: main: 
+=================================================================
+>>>>>> stage Prepare Base Model completed <<<<<<
+=================================================================]
+[2025-04-15 14:53:46,577: INFO: main: 
+=================================================================
+>>>>>> stage Training Model started <<<<<<]
+[2025-04-15 14:53:46,579: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2025-04-15 14:53:46,580: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-04-15 14:53:46,580: INFO: common: created directory at: output]
+[2025-04-15 14:53:46,581: INFO: common: json file loaded succesfully from: src/tile_based_training/output/data_ingestion/splitted_data.json]
+[2025-04-15 14:53:46,581: INFO: common: json file loaded succesfully from: src/tile_based_training/output/data_ingestion/splitted_data.json]
+[2025-04-15 14:53:46,582: INFO: common: created directory at: src/tile_based_training/output/training]
+[2025-04-15 14:53:46,879: INFO: train_model: Device is: None , Built with CUDA: True]
+[2025-04-15 14:54:06,880: INFO: common: GDAL signalled an error: err_no=1, msg='In file /io/gdal-3.9.3/port/cpl_vsil_gzip.cpp, at line 1214, decompression failed with z_err = -1, return = 5050']
+[2025-04-15 14:54:06,880: INFO: common: GDAL signalled an error: err_no=1, msg='TIFFReadEncodedStrip:Read error at scanline 4294967295; got 5050 bytes, expected 6656']
+[2025-04-15 14:54:06,880: INFO: common: GDAL signalled an error: err_no=1, msg='TIFFReadEncodedStrip() failed.']
+[2025-04-15 14:54:06,880: INFO: common: GDAL signalled an error: err_no=1, msg='HerbaceousVegetation_972.tif, band 1: IReadBlock failed at X offset 0, Y offset 13: TIFFReadEncodedStrip() failed.']
+[2025-04-15 15:04:40,423: INFO: common: created directory at: config]
+[2025-04-15 15:04:41,761: INFO: main: MLFLOW URI: None]
+[2025-04-15 15:04:41,761: INFO: main: /code]
+[2025-04-15 15:04:41,761: INFO: main: 
+=================================================================
+Device name is: None 
+=================================================================]
+[2025-04-15 15:04:41,763: INFO: common: YAML file: params.yaml written successfully]
+[2025-04-15 15:04:41,763: INFO: main: 
+=================================================================
+>>>>>> stage Prepare Base Model started <<<<<<]
+[2025-04-15 15:04:41,765: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2025-04-15 15:04:41,766: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-04-15 15:04:41,766: INFO: common: created directory at: output]
+[2025-04-15 15:04:41,766: INFO: common: created directory at: src/tile_based_training/output/prepare_base_model]
+[2025-04-15 15:04:42,052: INFO: main: 
+=================================================================
+>>>>>> stage Prepare Base Model completed <<<<<<
+=================================================================]
+[2025-04-15 15:04:42,052: INFO: main: 
+=================================================================
+>>>>>> stage Training Model started <<<<<<]
+[2025-04-15 15:04:42,053: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2025-04-15 15:04:42,054: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-04-15 15:04:42,055: INFO: common: created directory at: output]
+[2025-04-15 15:04:42,061: INFO: common: json file loaded succesfully from: src/tile_based_training/output/data_ingestion/splitted_data.json]
+[2025-04-15 15:04:42,062: INFO: common: json file loaded succesfully from: src/tile_based_training/output/data_ingestion/splitted_data.json]
+[2025-04-15 15:04:42,062: INFO: common: created directory at: src/tile_based_training/output/training]
+[2025-04-15 15:04:42,332: INFO: train_model: Device is: None , Built with CUDA: True]
+[2025-04-15 15:04:59,670: INFO: common: GDAL signalled an error: err_no=1, msg='In file /io/gdal-3.9.3/port/cpl_vsil_gzip.cpp, at line 1214, decompression failed with z_err = -1, return = 3100']
+[2025-04-15 15:04:59,670: INFO: common: GDAL signalled an error: err_no=1, msg='TIFFReadEncodedStrip:Read error at scanline 4294967295; got 3100 bytes, expected 6656']
+[2025-04-15 15:04:59,670: INFO: common: GDAL signalled an error: err_no=1, msg='TIFFReadEncodedStrip() failed.']
+[2025-04-15 15:04:59,670: INFO: common: GDAL signalled an error: err_no=1, msg='River_954.tif, band 1: IReadBlock failed at X offset 0, Y offset 14: TIFFReadEncodedStrip() failed.']
+[2025-04-15 15:22:43,903: INFO: common: created directory at: config]
+[2025-04-15 15:22:45,316: INFO: main: MLFLOW URI: None]
+[2025-04-15 15:22:45,316: INFO: main: /code]
+[2025-04-15 15:22:45,316: INFO: main: 
+=================================================================
+Device name is: None 
+=================================================================]
+[2025-04-15 15:22:45,318: INFO: common: YAML file: params.yaml written successfully]
+[2025-04-15 15:22:45,318: INFO: main: 
+=================================================================
+>>>>>> stage Prepare Base Model started <<<<<<]
+[2025-04-15 15:22:45,320: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2025-04-15 15:22:45,321: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-04-15 15:22:45,321: INFO: common: created directory at: output]
+[2025-04-15 15:22:45,322: INFO: common: created directory at: src/tile_based_training/output/prepare_base_model]
+[2025-04-15 15:22:45,579: INFO: main: 
+=================================================================
+>>>>>> stage Prepare Base Model completed <<<<<<
+=================================================================]
+[2025-04-15 15:22:45,579: INFO: main: 
+=================================================================
+>>>>>> stage Training Model started <<<<<<]
+[2025-04-15 15:22:45,581: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2025-04-15 15:22:45,582: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-04-15 15:22:45,582: INFO: common: created directory at: output]
+[2025-04-15 15:22:45,589: INFO: common: json file loaded succesfully from: src/tile_based_training/output/data_ingestion/splitted_data.json]
+[2025-04-15 15:22:45,590: INFO: common: json file loaded succesfully from: src/tile_based_training/output/data_ingestion/splitted_data.json]
+[2025-04-15 15:22:45,590: INFO: common: created directory at: src/tile_based_training/output/training]
+[2025-04-15 15:22:45,866: INFO: train_model: Device is: None , Built with CUDA: True]
+[2025-04-15 15:22:47,019: INFO: train_model: tf.Tensor(b'https://zenodo.org/record/7711810/files/EuroSAT_MS.zip/EuroSAT_MS/Highway/Highway_976.tif', shape=(), dtype=string)]
+[2025-04-15 15:22:53,985: INFO: train_model: tf.Tensor(b'https://zenodo.org/record/7711810/files/EuroSAT_MS.zip/EuroSAT_MS/HerbaceousVegetation/HerbaceousVegetation_972.tif', shape=(), dtype=string)]
+[2025-04-15 15:22:54,715: INFO: train_model: tf.Tensor(b'https://zenodo.org/record/7711810/files/EuroSAT_MS.zip/EuroSAT_MS/River/River_964.tif', shape=(), dtype=string)]
+[2025-04-15 15:22:55,696: INFO: train_model: tf.Tensor(b'https://zenodo.org/record/7711810/files/EuroSAT_MS.zip/EuroSAT_MS/Highway/Highway_985.tif', shape=(), dtype=string)]
+[2025-04-15 15:22:56,530: INFO: train_model: tf.Tensor(b'https://zenodo.org/record/7711810/files/EuroSAT_MS.zip/EuroSAT_MS/Forest/Forest_984.tif', shape=(), dtype=string)]
+[2025-04-15 15:22:57,173: INFO: train_model: tf.Tensor(b'https://zenodo.org/record/7711810/files/EuroSAT_MS.zip/EuroSAT_MS/River/River_957.tif', shape=(), dtype=string)]
+[2025-04-15 15:22:57,879: INFO: train_model: tf.Tensor(b'https://zenodo.org/record/7711810/files/EuroSAT_MS.zip/EuroSAT_MS/Industrial/Industrial_981.tif', shape=(), dtype=string)]
+[2025-04-15 15:22:58,533: INFO: train_model: tf.Tensor(b'https://zenodo.org/record/7711810/files/EuroSAT_MS.zip/EuroSAT_MS/Forest/Forest_963.tif', shape=(), dtype=string)]
+[2025-04-15 15:22:59,119: INFO: train_model: tf.Tensor(b'https://zenodo.org/record/7711810/files/EuroSAT_MS.zip/EuroSAT_MS/SeaLake/SeaLake_959.tif', shape=(), dtype=string)]
+[2025-04-15 15:23:00,030: INFO: train_model: tf.Tensor(b'https://zenodo.org/record/7711810/files/EuroSAT_MS.zip/EuroSAT_MS/Forest/Forest_959.tif', shape=(), dtype=string)]
+[2025-04-15 15:23:00,705: INFO: train_model: tf.Tensor(b'https://zenodo.org/record/7711810/files/EuroSAT_MS.zip/EuroSAT_MS/AnnualCrop/AnnualCrop_951.tif', shape=(), dtype=string)]
+[2025-04-15 15:23:01,634: INFO: train_model: tf.Tensor(b'https://zenodo.org/record/7711810/files/EuroSAT_MS.zip/EuroSAT_MS/Industrial/Industrial_997.tif', shape=(), dtype=string)]
+[2025-04-15 15:23:02,716: INFO: train_model: tf.Tensor(b'https://zenodo.org/record/7711810/files/EuroSAT_MS.zip/EuroSAT_MS/SeaLake/SeaLake_964.tif', shape=(), dtype=string)]
+[2025-04-15 15:23:03,535: INFO: train_model: tf.Tensor(b'https://zenodo.org/record/7711810/files/EuroSAT_MS.zip/EuroSAT_MS/Industrial/Industrial_969.tif', shape=(), dtype=string)]
+[2025-04-15 15:23:05,631: INFO: __init__: GDAL signalled an error: err_no=1, msg='cpl_unzOpenCurrentFile() failed']
+[2025-04-15 15:23:05,631: ERROR: train_model: https://zenodo.org/record/7711810/files/EuroSAT_MS.zip/EuroSAT_MS/Industrial/Industrial_969.tif]
+[2025-04-15 15:23:05,638: INFO: train_model: tf.Tensor(b'https://zenodo.org/record/7711810/files/EuroSAT_MS.zip/EuroSAT_MS/Industrial/Industrial_958.tif', shape=(), dtype=string)]
+[2025-04-15 15:27:44,657: INFO: common: created directory at: config]
+[2025-04-15 15:27:45,817: INFO: main: MLFLOW URI: None]
+[2025-04-15 15:27:45,817: INFO: main: /code]
+[2025-04-15 15:27:45,818: INFO: main: 
+=================================================================
+Device name is: None 
+=================================================================]
+[2025-04-15 15:27:45,819: INFO: common: YAML file: params.yaml written successfully]
+[2025-04-15 15:27:45,819: INFO: main: 
+=================================================================
+>>>>>> stage Prepare Base Model started <<<<<<]
+[2025-04-15 15:27:45,821: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2025-04-15 15:27:45,822: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-04-15 15:27:45,822: INFO: common: created directory at: output]
+[2025-04-15 15:27:45,822: INFO: common: created directory at: src/tile_based_training/output/prepare_base_model]
+[2025-04-15 15:27:46,091: INFO: main: 
+=================================================================
+>>>>>> stage Prepare Base Model completed <<<<<<
+=================================================================]
+[2025-04-15 15:27:46,092: INFO: main: 
+=================================================================
+>>>>>> stage Training Model started <<<<<<]
+[2025-04-15 15:27:46,094: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2025-04-15 15:27:46,095: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-04-15 15:27:46,095: INFO: common: created directory at: output]
+[2025-04-15 15:27:46,095: INFO: common: json file loaded succesfully from: src/tile_based_training/output/data_ingestion/splitted_data.json]
+[2025-04-15 15:27:46,095: INFO: common: json file loaded succesfully from: src/tile_based_training/output/data_ingestion/splitted_data.json]
+[2025-04-15 15:27:46,096: INFO: common: created directory at: src/tile_based_training/output/training]
+[2025-04-15 15:27:46,390: INFO: train_model: Device is: None , Built with CUDA: True]
+[2025-04-15 15:28:00,965: INFO: common: GDAL signalled an error: err_no=1, msg='In file /io/gdal-3.9.3/port/cpl_vsil_gzip.cpp, at line 1214, decompression failed with z_err = -1, return = 6357']
+[2025-04-15 15:28:00,965: INFO: common: GDAL signalled an error: err_no=1, msg='TIFFReadEncodedStrip:Read error at scanline 4294967295; got 6357 bytes, expected 6656']
+[2025-04-15 15:28:00,965: INFO: common: GDAL signalled an error: err_no=1, msg='TIFFReadEncodedStrip() failed.']
+[2025-04-15 15:28:00,965: INFO: common: GDAL signalled an error: err_no=1, msg='Industrial_997.tif, band 1: IReadBlock failed at X offset 0, Y offset 12: TIFFReadEncodedStrip() failed.']
+[2025-04-15 15:28:00,965: ERROR: train_model: https://zenodo.org/record/7711810/files/EuroSAT_MS.zip/EuroSAT_MS/Industrial/Industrial_997.tif]
+[2025-04-15 15:28:02,642: INFO: __init__: GDAL signalled an error: err_no=1, msg='cpl_unzOpenCurrentFile() failed']
+[2025-04-15 15:28:02,642: ERROR: train_model: https://zenodo.org/record/7711810/files/EuroSAT_MS.zip/EuroSAT_MS/SeaLake/SeaLake_975.tif]
+[2025-04-15 15:31:57,087: INFO: common: created directory at: config]
+[2025-04-15 15:31:58,238: INFO: main: MLFLOW URI: None]
+[2025-04-15 15:31:58,238: INFO: main: /code]
+[2025-04-15 15:31:58,238: INFO: main: 
+=================================================================
+Device name is: None 
+=================================================================]
+[2025-04-15 15:31:58,239: INFO: common: YAML file: params.yaml written successfully]
+[2025-04-15 15:31:58,239: INFO: main: 
+=================================================================
+>>>>>> stage Prepare Base Model started <<<<<<]
+[2025-04-15 15:31:58,241: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2025-04-15 15:31:58,242: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-04-15 15:31:58,243: INFO: common: created directory at: output]
+[2025-04-15 15:31:58,243: INFO: common: created directory at: src/tile_based_training/output/prepare_base_model]
+[2025-04-15 15:31:58,503: INFO: main: 
+=================================================================
+>>>>>> stage Prepare Base Model completed <<<<<<
+=================================================================]
+[2025-04-15 15:31:58,504: INFO: main: 
+=================================================================
+>>>>>> stage Training Model started <<<<<<]
+[2025-04-15 15:31:58,505: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2025-04-15 15:31:58,506: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-04-15 15:31:58,507: INFO: common: created directory at: output]
+[2025-04-15 15:31:58,507: INFO: common: json file loaded succesfully from: src/tile_based_training/output/data_ingestion/splitted_data.json]
+[2025-04-15 15:31:58,507: INFO: common: json file loaded succesfully from: src/tile_based_training/output/data_ingestion/splitted_data.json]
+[2025-04-15 15:31:58,508: INFO: common: created directory at: src/tile_based_training/output/training]
+[2025-04-15 15:31:58,772: INFO: train_model: Device is: None , Built with CUDA: True]
+[2025-04-15 15:32:16,501: INFO: __init__: GDAL signalled an error: err_no=1, msg='cpl_unzOpenCurrentFile() failed']
+[2025-04-15 15:32:16,502: ERROR: train_model: https://zenodo.org/record/7711810/files/EuroSAT_MS.zip/EuroSAT_MS/AnnualCrop/AnnualCrop_978.tif]
+[2025-04-15 15:32:18,179: INFO: __init__: GDAL signalled an error: err_no=1, msg='cpl_unzOpenCurrentFile() failed']
+[2025-04-15 15:32:18,180: ERROR: train_model: https://zenodo.org/record/7711810/files/EuroSAT_MS.zip/EuroSAT_MS/Industrial/Industrial_958.tif]
+[2025-04-15 15:32:19,836: INFO: __init__: GDAL signalled an error: err_no=1, msg='cpl_unzOpenCurrentFile() failed']
+[2025-04-15 15:32:19,837: ERROR: train_model: https://zenodo.org/record/7711810/files/EuroSAT_MS.zip/EuroSAT_MS/Residential/Residential_980.tif]
+[2025-04-15 15:34:42,575: INFO: common: created directory at: config]
+[2025-04-15 15:34:43,686: INFO: main: MLFLOW URI: None]
+[2025-04-15 15:34:43,686: INFO: main: /code]
+[2025-04-15 15:34:43,686: INFO: main: 
+=================================================================
+Device name is: None 
+=================================================================]
+[2025-04-15 15:34:43,687: INFO: common: YAML file: params.yaml written successfully]
+[2025-04-15 15:34:43,687: INFO: main: 
+=================================================================
+>>>>>> stage Prepare Base Model started <<<<<<]
+[2025-04-15 15:34:43,689: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2025-04-15 15:34:43,690: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-04-15 15:34:43,691: INFO: common: created directory at: output]
+[2025-04-15 15:34:43,691: INFO: common: created directory at: src/tile_based_training/output/prepare_base_model]
+[2025-04-15 15:34:43,955: INFO: main: 
+=================================================================
+>>>>>> stage Prepare Base Model completed <<<<<<
+=================================================================]
+[2025-04-15 15:34:43,955: INFO: main: 
+=================================================================
+>>>>>> stage Training Model started <<<<<<]
+[2025-04-15 15:34:43,957: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2025-04-15 15:34:43,958: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-04-15 15:34:43,958: INFO: common: created directory at: output]
+[2025-04-15 15:34:43,958: INFO: common: json file loaded succesfully from: src/tile_based_training/output/data_ingestion/splitted_data.json]
+[2025-04-15 15:34:43,959: INFO: common: json file loaded succesfully from: src/tile_based_training/output/data_ingestion/splitted_data.json]
+[2025-04-15 15:34:43,959: INFO: common: created directory at: src/tile_based_training/output/training]
+[2025-04-15 15:34:44,225: INFO: train_model: Device is: None , Built with CUDA: True]
+[2025-04-15 15:35:02,683: INFO: common: GDAL signalled an error: err_no=1, msg='In file /io/gdal-3.9.3/port/cpl_vsil_gzip.cpp, at line 1214, decompression failed with z_err = -1, return = 5967']
+[2025-04-15 15:35:02,684: INFO: common: GDAL signalled an error: err_no=1, msg='TIFFReadEncodedStrip:Read error at scanline 4294967295; got 5967 bytes, expected 6656']
+[2025-04-15 15:35:02,684: INFO: common: GDAL signalled an error: err_no=1, msg='TIFFReadEncodedStrip() failed.']
+[2025-04-15 15:35:02,684: INFO: common: GDAL signalled an error: err_no=1, msg='Pasture_95.tif, band 1: IReadBlock failed at X offset 0, Y offset 12: TIFFReadEncodedStrip() failed.']
+[2025-04-15 15:35:02,684: ERROR: train_model: https://zenodo.org/record/7711810/files/EuroSAT_MS.zip/EuroSAT_MS/Pasture/Pasture_95.tif]
+[2025-04-15 15:35:04,330: INFO: __init__: GDAL signalled an error: err_no=1, msg='cpl_unzOpenCurrentFile() failed']
+[2025-04-15 15:35:04,331: ERROR: train_model: https://zenodo.org/record/7711810/files/EuroSAT_MS.zip/EuroSAT_MS/Industrial/Industrial_968.tif]
+[2025-04-15 15:36:14,571: INFO: common: created directory at: config]
+[2025-04-15 15:36:15,735: INFO: main: MLFLOW URI: None]
+[2025-04-15 15:36:15,735: INFO: main: /code]
+[2025-04-15 15:36:15,735: INFO: main: 
+=================================================================
+Device name is: None 
+=================================================================]
+[2025-04-15 15:36:15,736: INFO: common: YAML file: params.yaml written successfully]
+[2025-04-15 15:36:15,737: INFO: main: 
+=================================================================
+>>>>>> stage Prepare Base Model started <<<<<<]
+[2025-04-15 15:36:15,738: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2025-04-15 15:36:15,739: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-04-15 15:36:15,739: INFO: common: created directory at: output]
+[2025-04-15 15:36:15,740: INFO: common: created directory at: src/tile_based_training/output/prepare_base_model]
+[2025-04-15 15:36:16,018: INFO: main: 
+=================================================================
+>>>>>> stage Prepare Base Model completed <<<<<<
+=================================================================]
+[2025-04-15 15:36:16,018: INFO: main: 
+=================================================================
+>>>>>> stage Training Model started <<<<<<]
+[2025-04-15 15:36:16,020: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2025-04-15 15:36:16,021: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-04-15 15:36:16,021: INFO: common: created directory at: output]
+[2025-04-15 15:36:16,021: INFO: common: json file loaded succesfully from: src/tile_based_training/output/data_ingestion/splitted_data.json]
+[2025-04-15 15:36:16,022: INFO: common: json file loaded succesfully from: src/tile_based_training/output/data_ingestion/splitted_data.json]
+[2025-04-15 15:36:16,022: INFO: common: created directory at: src/tile_based_training/output/training]
+[2025-04-15 15:36:16,342: INFO: train_model: Device is: None , Built with CUDA: True]
+[2025-04-15 15:36:33,759: INFO: __init__: GDAL signalled an error: err_no=1, msg='In file /io/gdal-3.9.3/port/cpl_vsil_gzip.cpp, at line 1214, decompression failed with z_err = -1, return = 0']
+[2025-04-15 15:36:35,567: INFO: __init__: GDAL signalled an error: err_no=1, msg='cpl_unzOpenCurrentFile() failed']
+[2025-04-15 15:37:28,899: INFO: common: created directory at: config]
+[2025-04-15 15:37:30,060: INFO: main: MLFLOW URI: None]
+[2025-04-15 15:37:30,060: INFO: main: /code]
+[2025-04-15 15:37:30,060: INFO: main: 
+=================================================================
+Device name is: None 
+=================================================================]
+[2025-04-15 15:37:30,062: INFO: common: YAML file: params.yaml written successfully]
+[2025-04-15 15:37:30,062: INFO: main: 
+=================================================================
+>>>>>> stage Prepare Base Model started <<<<<<]
+[2025-04-15 15:37:30,064: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2025-04-15 15:37:30,065: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-04-15 15:37:30,065: INFO: common: created directory at: output]
+[2025-04-15 15:37:30,065: INFO: common: created directory at: src/tile_based_training/output/prepare_base_model]
+[2025-04-15 15:37:30,361: INFO: main: 
+=================================================================
+>>>>>> stage Prepare Base Model completed <<<<<<
+=================================================================]
+[2025-04-15 15:37:30,361: INFO: main: 
+=================================================================
+>>>>>> stage Training Model started <<<<<<]
+[2025-04-15 15:37:30,362: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2025-04-15 15:37:30,363: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-04-15 15:37:30,363: INFO: common: created directory at: output]
+[2025-04-15 15:37:30,364: INFO: common: json file loaded succesfully from: src/tile_based_training/output/data_ingestion/splitted_data.json]
+[2025-04-15 15:37:30,364: INFO: common: json file loaded succesfully from: src/tile_based_training/output/data_ingestion/splitted_data.json]
+[2025-04-15 15:37:30,365: INFO: common: created directory at: src/tile_based_training/output/training]
+[2025-04-15 15:37:30,685: INFO: train_model: Device is: None , Built with CUDA: True]
+[2025-04-15 15:37:48,908: INFO: __init__: GDAL signalled an error: err_no=1, msg='cpl_unzOpenCurrentFile() failed']
+[2025-04-15 15:38:39,573: INFO: common: created directory at: config]
+[2025-04-15 15:38:40,725: INFO: main: MLFLOW URI: None]
+[2025-04-15 15:38:40,726: INFO: main: /code]
+[2025-04-15 15:38:40,726: INFO: main: 
+=================================================================
+Device name is: None 
+=================================================================]
+[2025-04-15 15:38:40,727: INFO: common: YAML file: params.yaml written successfully]
+[2025-04-15 15:38:40,727: INFO: main: 
+=================================================================
+>>>>>> stage Prepare Base Model started <<<<<<]
+[2025-04-15 15:38:40,729: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2025-04-15 15:38:40,730: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-04-15 15:38:40,730: INFO: common: created directory at: output]
+[2025-04-15 15:38:40,730: INFO: common: created directory at: src/tile_based_training/output/prepare_base_model]
+[2025-04-15 15:38:41,030: INFO: main: 
+=================================================================
+>>>>>> stage Prepare Base Model completed <<<<<<
+=================================================================]
+[2025-04-15 15:38:41,030: INFO: main: 
+=================================================================
+>>>>>> stage Training Model started <<<<<<]
+[2025-04-15 15:38:41,032: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2025-04-15 15:38:41,033: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-04-15 15:38:41,033: INFO: common: created directory at: output]
+[2025-04-15 15:38:41,034: INFO: common: json file loaded succesfully from: src/tile_based_training/output/data_ingestion/splitted_data.json]
+[2025-04-15 15:38:41,034: INFO: common: json file loaded succesfully from: src/tile_based_training/output/data_ingestion/splitted_data.json]
+[2025-04-15 15:38:41,034: INFO: common: created directory at: src/tile_based_training/output/training]
+[2025-04-15 15:38:41,319: INFO: train_model: Device is: None , Built with CUDA: True]
+[2025-04-15 15:58:53,045: INFO: common: created directory at: config]
+[2025-04-15 15:58:54,177: INFO: main: MLFLOW URI: None]
+[2025-04-15 15:58:54,178: INFO: main: /code]
+[2025-04-15 15:58:54,178: INFO: main: 
+=================================================================
+Device name is: None 
+=================================================================]
+[2025-04-15 15:58:54,179: INFO: common: YAML file: params.yaml written successfully]
+[2025-04-15 15:58:54,179: INFO: main: 
+=================================================================
+>>>>>> stage Prepare Base Model started <<<<<<]
+[2025-04-15 15:58:54,181: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2025-04-15 15:58:54,182: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-04-15 15:58:54,182: INFO: common: created directory at: output]
+[2025-04-15 15:58:54,182: INFO: common: created directory at: src/tile_based_training/output/prepare_base_model]
+[2025-04-15 15:58:54,457: INFO: main: 
+=================================================================
+>>>>>> stage Prepare Base Model completed <<<<<<
+=================================================================]
+[2025-04-15 15:58:54,457: INFO: main: 
+=================================================================
+>>>>>> stage Training Model started <<<<<<]
+[2025-04-15 15:58:54,459: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2025-04-15 15:58:54,460: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-04-15 15:58:54,460: INFO: common: created directory at: output]
+[2025-04-15 15:58:54,460: INFO: common: json file loaded succesfully from: src/tile_based_training/output/data_ingestion/splitted_data.json]
+[2025-04-15 15:58:54,461: INFO: common: json file loaded succesfully from: src/tile_based_training/output/data_ingestion/splitted_data.json]
+[2025-04-15 15:58:54,461: INFO: common: created directory at: src/tile_based_training/output/training]
+[2025-04-15 15:58:54,745: INFO: train_model: Device is: None , Built with CUDA: True]
+[2025-04-15 15:59:11,292: INFO: common: GDAL signalled an error: err_no=1, msg='In file /io/gdal-3.9.3/port/cpl_vsil_gzip.cpp, at line 1214, decompression failed with z_err = -1, return = 1451']
+[2025-04-15 15:59:11,292: INFO: common: GDAL signalled an error: err_no=1, msg='TIFFReadEncodedStrip:Read error at scanline 4294967295; got 1451 bytes, expected 6656']
+[2025-04-15 15:59:11,292: INFO: common: GDAL signalled an error: err_no=1, msg='TIFFReadEncodedStrip() failed.']
+[2025-04-15 15:59:11,293: INFO: common: GDAL signalled an error: err_no=1, msg='Forest_959.tif, band 1: IReadBlock failed at X offset 0, Y offset 14: TIFFReadEncodedStrip() failed.']
