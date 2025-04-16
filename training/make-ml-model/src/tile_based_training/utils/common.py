@@ -22,6 +22,7 @@ import json
 import os
 import re
 import rasterio
+from rasterio.env import Env
 # from fs_s3fs import S3FS
 import numpy as np
 import random
@@ -397,18 +398,74 @@ class UserSettings:
 #         logger.error("S3 bucket's configuration is failed")
 #         sys.exit(1)
 
+import time
+import rasterio
+from rasterio.env import Env
+from rasterio.errors import RasterioIOError
 
-def rasterio_read(s3_path: str):
-    
-    
-    with rasterio.open(os.path.join("/vsizip/vsicurl",s3_path)) as src:
-        total_bands = src.count
-        band_index_to_exclude = [11] # Exclude band 11(cirrus band)
-        band_indices = [b for b in range(1, total_bands + 1) if b not in band_index_to_exclude]
-        data = src.read(band_indices)
-        data = data.astype("float32")
 
-    return data
+# def rasterio_read(image_path: str):
+#     full_path = f"/vsizip/vsicurl/{image_path}"
+    
+#     with Env(GDAL_DISABLE_READDIR_ON_OPEN='TRUE', VSI_CACHE='TRUE'):
+#         with rasterio.open(full_path) as src:
+#             total_bands = src.count
+#             band_index_to_exclude = [11]
+#             band_indices = [b for b in range(1, total_bands + 1) if b not in band_index_to_exclude]
+
+#             # Read the specified bands
+#             data = src.read(band_indices)
+#             data = data.astype("float32")
+    
+#     return data
+
+
+def rasterio_read(image_path: str, max_retries: int = 20, backoff_base: int = 5):
+    """
+    Attempts to read a GeoTIFF file using rasterio with retries and exponential backoff.
+    
+    Parameters:
+        image_path (str): Path to the file (excluding the /vsizip/vsicurl/ prefix).
+        max_retries (int): Number of attempts before giving up.
+        backoff_base (int): Base seconds for backoff (e.g., 5 → 5s, 10s, 20s...).
+
+    Returns:
+        data (np.ndarray): The read image data as a NumPy array (float32).
+    """
+    full_path = f"/vsizip/{image_path}"
+    attempt = 0
+
+    while attempt < max_retries:
+        try:
+            with Env(VSI_CACHE='TRUE', GDAL_CACHEMAX=2048):
+                with rasterio.open(full_path) as src:
+                    total_bands = src.count
+                    band_index_to_exclude = [11]
+                    band_indices = [b for b in range(1, total_bands + 1) if b not in band_index_to_exclude]
+
+                    data = src.read(band_indices).astype("float32")
+                    return data
+
+        except RasterioIOError as e:
+            wait_time = backoff_base * (2 ** attempt) + 5
+            time.sleep(wait_time)
+            attempt += 1
+
+    raise RuntimeError(f"[ERROR] Unable to read {full_path} after {max_retries} attempts.")
+
+
+# def rasterio_read(image_path: str):
+    
+#     read_url = f'/vsizip/vsicurl/{image_path}'
+
+#     with rasterio.open(read_url) as src:
+#         total_bands = src.count
+#         band_index_to_exclude = [11] # Exclude band 11(cirrus band)
+#         band_indices = [b for b in range(1, total_bands + 1) if b not in band_index_to_exclude]
+#         data = src.read(band_indices)
+#         data = data.astype("float32")
+
+#     return data
 
 def augmentation(data):
     # Random rotation (90, 180, 270 degrees)

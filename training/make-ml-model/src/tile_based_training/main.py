@@ -43,7 +43,7 @@ warnings.filterwarnings("ignore")
     "BATCH_SIZE",
     help="BATCH_SIZE",
     required=False,
-    default=4,
+    default=1,
     show_default=True,
     type=int,
 )
