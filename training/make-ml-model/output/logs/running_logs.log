@@ -37109,3 +37109,674 @@ Device name is: None
 [2025-04-16 16:17:51,261: INFO: __init__: GDAL signalled an error: err_no=4, msg="`/vsizip/https://zenodo.org/record/7711810/files/EuroSAT_MS.zip/EuroSAT_MS/Residential/Residential_982.tif' does not exist in the file system, and is not recognized as a supported dataset name."]
 [2025-04-16 16:17:51,261: INFO: __init__: GDAL signalled an error: err_no=4, msg="`/vsizip/https://zenodo.org/record/7711810/files/EuroSAT_MS.zip/EuroSAT_MS/PermanentCrop/PermanentCrop_980.tif' does not exist in the file system, and is not recognized as a supported dataset name."]
 [2025-04-16 16:17:51,261: INFO: __init__: GDAL signalled an error: err_no=4, msg="`/vsizip/https://zenodo.org/record/7711810/files/EuroSAT_MS.zip/EuroSAT_MS/Pasture/Pasture_946.tif' does not exist in the file system, and is not recognized as a supported dataset name."]
+[2025-04-17 08:26:46,924: INFO: common: created directory at: config]
+[2025-04-17 08:26:48,426: INFO: main: MLFLOW URI: None]
+[2025-04-17 08:26:48,426: INFO: main: /code/training/make-ml-model]
+[2025-04-17 08:26:48,427: INFO: main: 
+=================================================================
+Device name is: None 
+=================================================================]
+[2025-04-17 08:26:48,428: INFO: common: YAML file: params.yaml written successfully]
+[2025-04-17 08:26:48,428: INFO: main: 
+=================================================================
+>>>>>> stage Prepare Base Model started <<<<<<]
+[2025-04-17 08:26:48,430: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2025-04-17 08:26:48,432: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-04-17 08:26:48,432: INFO: common: created directory at: output]
+[2025-04-17 08:26:48,432: INFO: common: created directory at: src/tile_based_training/output/prepare_base_model]
+[2025-04-17 08:26:48,820: INFO: main: 
+=================================================================
+>>>>>> stage Prepare Base Model completed <<<<<<
+=================================================================]
+[2025-04-17 08:26:48,821: INFO: main: 
+=================================================================
+>>>>>> stage Training Model started <<<<<<]
+[2025-04-17 08:26:48,824: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2025-04-17 08:26:48,826: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-04-17 08:26:48,826: INFO: common: created directory at: output]
+[2025-04-17 08:26:48,826: INFO: common: json file loaded succesfully from: src/tile_based_training/output/data_ingestion/splitted_data.json]
+[2025-04-17 08:26:48,827: INFO: common: json file loaded succesfully from: src/tile_based_training/output/data_ingestion/splitted_data.json]
+[2025-04-17 08:26:48,828: INFO: common: created directory at: src/tile_based_training/output/training]
+[2025-04-17 08:26:49,142: INFO: __init__: GDAL signalled an error: err_no=4, msg="`/vsizip/https://zenodo.org/record/7711810/files/EuroSAT_MS.zip/EuroSAT_MS/Pasture/Pasture_997.tif' does not exist in the file system, and is not recognized as a supported dataset name."]
+[2025-04-17 08:26:59,144: INFO: __init__: GDAL signalled an error: err_no=4, msg="`/vsizip/https://zenodo.org/record/7711810/files/EuroSAT_MS.zip/EuroSAT_MS/Pasture/Pasture_997.tif' does not exist in the file system, and is not recognized as a supported dataset name."]
+[2025-04-17 08:28:12,777: INFO: common: created directory at: config]
+[2025-04-17 08:28:13,821: INFO: main: MLFLOW URI: None]
+[2025-04-17 08:28:13,822: INFO: main: /code/training/make-ml-model]
+[2025-04-17 08:28:13,822: INFO: main: 
+=================================================================
+Device name is: None 
+=================================================================]
+[2025-04-17 08:28:13,823: INFO: common: YAML file: params.yaml written successfully]
+[2025-04-17 08:28:13,823: INFO: main: 
+=================================================================
+>>>>>> stage Prepare Base Model started <<<<<<]
+[2025-04-17 08:28:13,824: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2025-04-17 08:28:13,825: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-04-17 08:28:13,825: INFO: common: created directory at: output]
+[2025-04-17 08:28:13,825: INFO: common: created directory at: src/tile_based_training/output/prepare_base_model]
+[2025-04-17 08:28:14,078: INFO: main: 
+=================================================================
+>>>>>> stage Prepare Base Model completed <<<<<<
+=================================================================]
+[2025-04-17 08:28:14,078: INFO: main: 
+=================================================================
+>>>>>> stage Training Model started <<<<<<]
+[2025-04-17 08:28:14,079: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2025-04-17 08:28:14,080: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-04-17 08:28:14,080: INFO: common: created directory at: output]
+[2025-04-17 08:28:14,081: INFO: common: json file loaded succesfully from: src/tile_based_training/output/data_ingestion/splitted_data.json]
+[2025-04-17 08:28:14,081: INFO: common: json file loaded succesfully from: src/tile_based_training/output/data_ingestion/splitted_data.json]
+[2025-04-17 08:28:14,081: INFO: common: created directory at: src/tile_based_training/output/training]
+[2025-04-17 08:28:29,647: INFO: common: GDAL signalled an error: err_no=1, msg='In file /io/gdal-3.9.3/port/cpl_vsil_gzip.cpp, at line 1214, decompression failed with z_err = -1, return = 4390']
+[2025-04-17 08:28:29,648: INFO: common: GDAL signalled an error: err_no=1, msg='TIFFReadEncodedStrip:Read error at scanline 4294967295; got 4390 bytes, expected 6656']
+[2025-04-17 08:28:29,648: INFO: common: GDAL signalled an error: err_no=1, msg='TIFFReadEncodedStrip() failed.']
+[2025-04-17 08:28:29,648: INFO: common: GDAL signalled an error: err_no=1, msg='PermanentCrop_983.tif, band 1: IReadBlock failed at X offset 0, Y offset 2: TIFFReadEncodedStrip() failed.']
+[2025-04-17 08:28:39,909: INFO: common: GDAL signalled an error: err_no=1, msg='In file /io/gdal-3.9.3/port/cpl_vsil_gzip.cpp, at line 1214, decompression failed with z_err = -1, return = 4390']
+[2025-04-17 08:28:39,909: INFO: common: GDAL signalled an error: err_no=1, msg='TIFFReadEncodedStrip:Read error at scanline 4294967295; got 4390 bytes, expected 6656']
+[2025-04-17 08:28:39,909: INFO: common: GDAL signalled an error: err_no=1, msg='TIFFReadEncodedStrip() failed.']
+[2025-04-17 08:28:39,909: INFO: common: GDAL signalled an error: err_no=1, msg='PermanentCrop_983.tif, band 1: IReadBlock failed at X offset 0, Y offset 2: TIFFReadEncodedStrip() failed.']
+[2025-04-17 08:28:55,168: INFO: common: GDAL signalled an error: err_no=1, msg='In file /io/gdal-3.9.3/port/cpl_vsil_gzip.cpp, at line 1214, decompression failed with z_err = -1, return = 4390']
+[2025-04-17 08:28:55,169: INFO: common: GDAL signalled an error: err_no=1, msg='TIFFReadEncodedStrip:Read error at scanline 4294967295; got 4390 bytes, expected 6656']
+[2025-04-17 08:28:55,169: INFO: common: GDAL signalled an error: err_no=1, msg='TIFFReadEncodedStrip() failed.']
+[2025-04-17 08:28:55,169: INFO: common: GDAL signalled an error: err_no=1, msg='PermanentCrop_983.tif, band 1: IReadBlock failed at X offset 0, Y offset 2: TIFFReadEncodedStrip() failed.']
+[2025-04-17 08:29:36,024: INFO: common: GDAL signalled an error: err_no=1, msg='In file /io/gdal-3.9.3/port/cpl_vsil_gzip.cpp, at line 1214, decompression failed with z_err = -1, return = 4353']
+[2025-04-17 08:29:36,025: INFO: common: GDAL signalled an error: err_no=1, msg='TIFFReadEncodedStrip:Read error at scanline 4294967295; got 4353 bytes, expected 6656']
+[2025-04-17 08:29:36,025: INFO: common: GDAL signalled an error: err_no=1, msg='TIFFReadEncodedStrip() failed.']
+[2025-04-17 08:29:36,025: INFO: common: GDAL signalled an error: err_no=1, msg='Highway_991.tif, band 1: IReadBlock failed at X offset 0, Y offset 1: TIFFReadEncodedStrip() failed.']
+[2025-04-17 08:29:49,943: INFO: common: GDAL signalled an error: err_no=1, msg='In file /io/gdal-3.9.3/port/cpl_vsil_gzip.cpp, at line 1214, decompression failed with z_err = -1, return = 4353']
+[2025-04-17 08:29:49,943: INFO: common: GDAL signalled an error: err_no=1, msg='TIFFReadEncodedStrip:Read error at scanline 4294967295; got 4353 bytes, expected 6656']
+[2025-04-17 08:29:49,943: INFO: common: GDAL signalled an error: err_no=1, msg='TIFFReadEncodedStrip() failed.']
+[2025-04-17 08:29:49,943: INFO: common: GDAL signalled an error: err_no=1, msg='Highway_991.tif, band 1: IReadBlock failed at X offset 0, Y offset 1: TIFFReadEncodedStrip() failed.']
+[2025-04-17 08:30:08,870: INFO: common: GDAL signalled an error: err_no=1, msg='In file /io/gdal-3.9.3/port/cpl_vsil_gzip.cpp, at line 1214, decompression failed with z_err = -1, return = 4353']
+[2025-04-17 08:30:08,871: INFO: common: GDAL signalled an error: err_no=1, msg='TIFFReadEncodedStrip:Read error at scanline 4294967295; got 4353 bytes, expected 6656']
+[2025-04-17 08:30:08,871: INFO: common: GDAL signalled an error: err_no=1, msg='TIFFReadEncodedStrip() failed.']
+[2025-04-17 08:30:08,871: INFO: common: GDAL signalled an error: err_no=1, msg='Highway_991.tif, band 1: IReadBlock failed at X offset 0, Y offset 1: TIFFReadEncodedStrip() failed.']
+[2025-04-17 08:30:46,021: INFO: common: GDAL signalled an error: err_no=1, msg='In file /io/gdal-3.9.3/port/cpl_vsil_gzip.cpp, at line 1214, decompression failed with z_err = -1, return = 171']
+[2025-04-17 08:30:46,022: INFO: common: GDAL signalled an error: err_no=1, msg='TIFFReadEncodedStrip:Read error at scanline 4294967295; got 171 bytes, expected 6656']
+[2025-04-17 08:30:46,022: INFO: common: GDAL signalled an error: err_no=1, msg='TIFFReadEncodedStrip() failed.']
+[2025-04-17 08:30:46,022: INFO: common: GDAL signalled an error: err_no=1, msg='Forest_984.tif, band 1: IReadBlock failed at X offset 0, Y offset 3: TIFFReadEncodedStrip() failed.']
+[2025-04-17 08:30:56,319: INFO: common: GDAL signalled an error: err_no=1, msg='In file /io/gdal-3.9.3/port/cpl_vsil_gzip.cpp, at line 1214, decompression failed with z_err = -1, return = 171']
+[2025-04-17 08:30:56,319: INFO: common: GDAL signalled an error: err_no=1, msg='TIFFReadEncodedStrip:Read error at scanline 4294967295; got 171 bytes, expected 6656']
+[2025-04-17 08:30:56,320: INFO: common: GDAL signalled an error: err_no=1, msg='TIFFReadEncodedStrip() failed.']
+[2025-04-17 08:30:56,320: INFO: common: GDAL signalled an error: err_no=1, msg='Forest_984.tif, band 1: IReadBlock failed at X offset 0, Y offset 3: TIFFReadEncodedStrip() failed.']
+[2025-04-17 08:31:11,618: INFO: common: GDAL signalled an error: err_no=1, msg='In file /io/gdal-3.9.3/port/cpl_vsil_gzip.cpp, at line 1214, decompression failed with z_err = -1, return = 171']
+[2025-04-17 08:31:11,618: INFO: common: GDAL signalled an error: err_no=1, msg='TIFFReadEncodedStrip:Read error at scanline 4294967295; got 171 bytes, expected 6656']
+[2025-04-17 08:31:11,618: INFO: common: GDAL signalled an error: err_no=1, msg='TIFFReadEncodedStrip() failed.']
+[2025-04-17 08:31:11,618: INFO: common: GDAL signalled an error: err_no=1, msg='Forest_984.tif, band 1: IReadBlock failed at X offset 0, Y offset 3: TIFFReadEncodedStrip() failed.']
+[2025-04-17 08:31:52,163: INFO: common: GDAL signalled an error: err_no=1, msg='In file /io/gdal-3.9.3/port/cpl_vsil_gzip.cpp, at line 1214, decompression failed with z_err = -1, return = 4046']
+[2025-04-17 08:31:52,163: INFO: common: GDAL signalled an error: err_no=1, msg='TIFFReadEncodedStrip:Read error at scanline 4294967295; got 4046 bytes, expected 6656']
+[2025-04-17 08:31:52,163: INFO: common: GDAL signalled an error: err_no=1, msg='TIFFReadEncodedStrip() failed.']
+[2025-04-17 08:31:52,164: INFO: common: GDAL signalled an error: err_no=1, msg='Forest_989.tif, band 1: IReadBlock failed at X offset 0, Y offset 3: TIFFReadEncodedStrip() failed.']
+[2025-04-17 08:32:06,519: INFO: common: GDAL signalled an error: err_no=1, msg='In file /io/gdal-3.9.3/port/cpl_vsil_gzip.cpp, at line 1214, decompression failed with z_err = -1, return = 4046']
+[2025-04-17 08:32:06,519: INFO: common: GDAL signalled an error: err_no=1, msg='TIFFReadEncodedStrip:Read error at scanline 4294967295; got 4046 bytes, expected 6656']
+[2025-04-17 08:32:06,519: INFO: common: GDAL signalled an error: err_no=1, msg='TIFFReadEncodedStrip() failed.']
+[2025-04-17 08:32:06,520: INFO: common: GDAL signalled an error: err_no=1, msg='Forest_989.tif, band 1: IReadBlock failed at X offset 0, Y offset 3: TIFFReadEncodedStrip() failed.']
+[2025-04-17 08:32:25,878: INFO: common: GDAL signalled an error: err_no=1, msg='In file /io/gdal-3.9.3/port/cpl_vsil_gzip.cpp, at line 1214, decompression failed with z_err = -1, return = 4046']
+[2025-04-17 08:32:25,879: INFO: common: GDAL signalled an error: err_no=1, msg='TIFFReadEncodedStrip:Read error at scanline 4294967295; got 4046 bytes, expected 6656']
+[2025-04-17 08:32:25,879: INFO: common: GDAL signalled an error: err_no=1, msg='TIFFReadEncodedStrip() failed.']
+[2025-04-17 08:32:25,879: INFO: common: GDAL signalled an error: err_no=1, msg='Forest_989.tif, band 1: IReadBlock failed at X offset 0, Y offset 3: TIFFReadEncodedStrip() failed.']
+[2025-04-17 08:33:00,334: INFO: train_model: Device is: None, Built with CUDA: True]
+[2025-04-17 08:33:04,238: INFO: main: 
+=================================================================
+>>>>>> stage Training Model completed <<<<<<
+
+x==========x]
+[2025-04-17 08:55:07,130: INFO: common: created directory at: config]
+[2025-04-17 08:55:08,151: INFO: main: MLFLOW URI: http://127.0.0.1:5000]
+[2025-04-17 08:55:08,151: INFO: main: /code/training/make-ml-model]
+[2025-04-17 08:55:08,151: INFO: main: 
+=================================================================
+Device name is: None 
+=================================================================]
+[2025-04-17 08:55:08,152: INFO: common: YAML file: params.yaml written successfully]
+[2025-04-17 08:55:08,152: INFO: main: 
+=================================================================
+>>>>>> stage Data Ingestion stage started <<<<<<]
+[2025-04-17 08:55:08,154: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2025-04-17 08:55:08,155: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-04-17 08:55:08,155: INFO: common: created directory at: output]
+[2025-04-17 08:55:08,155: INFO: common: created directory at: src/tile_based_training/output/data_ingestion]
+[2025-04-17 08:55:08,155: INFO: data_ingestion: Accessing STAC endpoint]
+[2025-04-17 08:57:18,842: INFO: data_ingestion: 5000 items are loaded]
+[2025-04-17 08:57:18,855: INFO: data_ingestion: Train size: 3000 , Valid size: 1000, Test size: 1000]
+[2025-04-17 08:57:18,860: INFO: main: 
+=================================================================
+>>>>>> stage Data Ingestion stage completed <<<<<<
+=================================================================]
+[2025-04-17 08:57:18,860: INFO: main: 
+=================================================================
+>>>>>> stage Prepare Base Model started <<<<<<]
+[2025-04-17 08:57:18,862: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2025-04-17 08:57:18,863: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-04-17 08:57:18,863: INFO: common: created directory at: output]
+[2025-04-17 08:57:18,863: INFO: common: created directory at: src/tile_based_training/output/prepare_base_model]
+[2025-04-17 08:57:19,149: INFO: main: 
+=================================================================
+>>>>>> stage Prepare Base Model completed <<<<<<
+=================================================================]
+[2025-04-17 08:57:19,149: INFO: main: 
+=================================================================
+>>>>>> stage Evaluating Model started <<<<<<]
+[2025-04-17 08:57:19,151: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2025-04-17 08:57:19,152: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-04-17 08:57:19,152: INFO: common: created directory at: output]
+[2025-04-17 08:57:19,153: INFO: common: json file loaded succesfully from: src/tile_based_training/output/data_ingestion/splitted_data.json]
+[2025-04-17 08:57:19,158: INFO: common: created directory at: mlruns]
+[2025-04-17 08:57:22,806: ERROR: main: 'Evaluation' object has no attribute 'label_lookup']
+Traceback (most recent call last):
+  File "/code/training/make-ml-model/src/tile_based_training/main.py", line 209, in run_tile_based_classification_training
+    obj.main()
+  File "/code/training/make-ml-model/src/tile_based_training/pipeline/stage_04_model_evaluation.py", line 18, in main
+    test_dataset, conf_mat = evaluation.evaluation()
+                             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/code/training/make-ml-model/src/tile_based_training/components/model_evaluation.py", line 100, in evaluation
+    x_test, y_test = self._load_data_as_arrays(test_paths)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/code/training/make-ml-model/src/tile_based_training/components/model_evaluation.py", line 73, in _load_data_as_arrays
+    image, label = self._process_data(url)
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/code/training/make-ml-model/src/tile_based_training/components/model_evaluation.py", line 89, in _process_data
+    label_id = self.label_lookup[label_str]
+               ^^^^^^^^^^^^^^^^^
+AttributeError: 'Evaluation' object has no attribute 'label_lookup'
+[2025-04-17 08:58:30,558: INFO: common: created directory at: config]
+[2025-04-17 08:58:31,609: INFO: main: MLFLOW URI: http://127.0.0.1:5000]
+[2025-04-17 08:58:31,609: INFO: main: /code/training/make-ml-model]
+[2025-04-17 08:58:31,609: INFO: main: 
+=================================================================
+Device name is: None 
+=================================================================]
+[2025-04-17 08:58:31,610: INFO: common: YAML file: params.yaml written successfully]
+[2025-04-17 08:58:31,610: INFO: main: 
+=================================================================
+>>>>>> stage Prepare Base Model started <<<<<<]
+[2025-04-17 08:58:31,612: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2025-04-17 08:58:31,613: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-04-17 08:58:31,613: INFO: common: created directory at: output]
+[2025-04-17 08:58:31,613: INFO: common: created directory at: src/tile_based_training/output/prepare_base_model]
+[2025-04-17 08:58:31,884: INFO: main: 
+=================================================================
+>>>>>> stage Prepare Base Model completed <<<<<<
+=================================================================]
+[2025-04-17 08:58:31,884: INFO: main: 
+=================================================================
+>>>>>> stage Evaluating Model started <<<<<<]
+[2025-04-17 08:58:31,886: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2025-04-17 08:58:31,886: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-04-17 08:58:31,887: INFO: common: created directory at: output]
+[2025-04-17 08:58:31,888: INFO: common: json file loaded succesfully from: src/tile_based_training/output/data_ingestion/splitted_data.json]
+[2025-04-17 08:58:31,891: INFO: common: created directory at: mlruns]
+[2025-04-17 08:58:43,301: INFO: common: GDAL signalled an error: err_no=1, msg='In file /io/gdal-3.9.3/port/cpl_vsil_gzip.cpp, at line 1214, decompression failed with z_err = -1, return = 589']
+[2025-04-17 08:58:43,301: INFO: common: GDAL signalled an error: err_no=1, msg='TIFFReadEncodedStrip:Read error at scanline 4294967295; got 589 bytes, expected 6656']
+[2025-04-17 08:58:43,301: INFO: common: GDAL signalled an error: err_no=1, msg='TIFFReadEncodedStrip() failed.']
+[2025-04-17 08:58:43,301: INFO: common: GDAL signalled an error: err_no=1, msg='Highway_159.tif, band 1: IReadBlock failed at X offset 0, Y offset 1: TIFFReadEncodedStrip() failed.']
+[2025-04-17 08:58:53,565: INFO: common: GDAL signalled an error: err_no=1, msg='In file /io/gdal-3.9.3/port/cpl_vsil_gzip.cpp, at line 1214, decompression failed with z_err = -1, return = 589']
+[2025-04-17 08:58:53,565: INFO: common: GDAL signalled an error: err_no=1, msg='TIFFReadEncodedStrip:Read error at scanline 4294967295; got 589 bytes, expected 6656']
+[2025-04-17 08:58:53,565: INFO: common: GDAL signalled an error: err_no=1, msg='TIFFReadEncodedStrip() failed.']
+[2025-04-17 08:58:53,565: INFO: common: GDAL signalled an error: err_no=1, msg='Highway_159.tif, band 1: IReadBlock failed at X offset 0, Y offset 1: TIFFReadEncodedStrip() failed.']
+[2025-04-17 09:01:26,939: INFO: common: created directory at: config]
+[2025-04-17 09:01:27,984: INFO: main: MLFLOW URI: http://127.0.0.1:5000]
+[2025-04-17 09:01:27,984: INFO: main: /code/training/make-ml-model]
+[2025-04-17 09:01:27,984: INFO: main: 
+=================================================================
+Device name is: None 
+=================================================================]
+[2025-04-17 09:01:27,985: INFO: common: YAML file: params.yaml written successfully]
+[2025-04-17 09:01:27,985: INFO: main: 
+=================================================================
+>>>>>> stage Data Ingestion stage started <<<<<<]
+[2025-04-17 09:01:27,986: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2025-04-17 09:01:27,987: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-04-17 09:01:27,987: INFO: common: created directory at: output]
+[2025-04-17 09:01:27,987: INFO: common: created directory at: src/tile_based_training/output/data_ingestion]
+[2025-04-17 09:01:27,987: INFO: data_ingestion: Accessing STAC endpoint]
+[2025-04-17 09:03:18,029: INFO: data_ingestion: 100 items are loaded]
+[2025-04-17 09:03:18,037: INFO: data_ingestion: Train size: 60 , Valid size: 20, Test size: 20]
+[2025-04-17 09:03:18,038: INFO: main: 
+=================================================================
+>>>>>> stage Data Ingestion stage completed <<<<<<
+=================================================================]
+[2025-04-17 09:03:18,038: INFO: main: 
+=================================================================
+>>>>>> stage Prepare Base Model started <<<<<<]
+[2025-04-17 09:03:18,040: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2025-04-17 09:03:18,041: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-04-17 09:03:18,041: INFO: common: created directory at: output]
+[2025-04-17 09:03:18,042: INFO: common: created directory at: src/tile_based_training/output/prepare_base_model]
+[2025-04-17 09:03:18,324: INFO: main: 
+=================================================================
+>>>>>> stage Prepare Base Model completed <<<<<<
+=================================================================]
+[2025-04-17 09:03:18,324: INFO: main: 
+=================================================================
+>>>>>> stage Evaluating Model started <<<<<<]
+[2025-04-17 09:03:18,325: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2025-04-17 09:03:18,326: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-04-17 09:03:18,326: INFO: common: created directory at: output]
+[2025-04-17 09:03:18,326: INFO: common: json file loaded succesfully from: src/tile_based_training/output/data_ingestion/splitted_data.json]
+[2025-04-17 09:03:18,327: INFO: common: created directory at: mlruns]
+[2025-04-17 09:03:30,818: INFO: common: GDAL signalled an error: err_no=1, msg='In file /io/gdal-3.9.3/port/cpl_vsil_gzip.cpp, at line 1214, decompression failed with z_err = -1, return = 3066']
+[2025-04-17 09:03:30,818: INFO: common: GDAL signalled an error: err_no=1, msg='TIFFReadEncodedStrip:Read error at scanline 4294967295; got 3066 bytes, expected 6656']
+[2025-04-17 09:03:30,818: INFO: common: GDAL signalled an error: err_no=1, msg='TIFFReadEncodedStrip() failed.']
+[2025-04-17 09:03:30,818: INFO: common: GDAL signalled an error: err_no=1, msg='Forest_995.tif, band 1: IReadBlock failed at X offset 0, Y offset 2: TIFFReadEncodedStrip() failed.']
+[2025-04-17 09:03:41,093: INFO: common: GDAL signalled an error: err_no=1, msg='In file /io/gdal-3.9.3/port/cpl_vsil_gzip.cpp, at line 1214, decompression failed with z_err = -1, return = 3066']
+[2025-04-17 09:03:41,094: INFO: common: GDAL signalled an error: err_no=1, msg='TIFFReadEncodedStrip:Read error at scanline 4294967295; got 3066 bytes, expected 6656']
+[2025-04-17 09:03:41,094: INFO: common: GDAL signalled an error: err_no=1, msg='TIFFReadEncodedStrip() failed.']
+[2025-04-17 09:03:41,094: INFO: common: GDAL signalled an error: err_no=1, msg='Forest_995.tif, band 1: IReadBlock failed at X offset 0, Y offset 2: TIFFReadEncodedStrip() failed.']
+[2025-04-17 09:03:56,411: INFO: common: GDAL signalled an error: err_no=1, msg='In file /io/gdal-3.9.3/port/cpl_vsil_gzip.cpp, at line 1214, decompression failed with z_err = -1, return = 3066']
+[2025-04-17 09:03:56,412: INFO: common: GDAL signalled an error: err_no=1, msg='TIFFReadEncodedStrip:Read error at scanline 4294967295; got 3066 bytes, expected 6656']
+[2025-04-17 09:03:56,412: INFO: common: GDAL signalled an error: err_no=1, msg='TIFFReadEncodedStrip() failed.']
+[2025-04-17 09:03:56,412: INFO: common: GDAL signalled an error: err_no=1, msg='Forest_995.tif, band 1: IReadBlock failed at X offset 0, Y offset 2: TIFFReadEncodedStrip() failed.']
+[2025-04-17 09:04:25,650: ERROR: main: None values not supported.]
+Traceback (most recent call last):
+  File "/code/training/make-ml-model/src/tile_based_training/main.py", line 209, in run_tile_based_classification_training
+    obj.main()
+  File "/code/training/make-ml-model/src/tile_based_training/pipeline/stage_04_model_evaluation.py", line 18, in main
+    test_dataset, conf_mat = evaluation.evaluation()
+                             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/code/training/make-ml-model/src/tile_based_training/components/model_evaluation.py", line 108, in evaluation
+    self.score = self.model.evaluate((x_test, y_test))
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/code/envs/env_5/lib/python3.12/site-packages/keras/src/utils/traceback_utils.py", line 122, in error_handler
+    raise e.with_traceback(filtered_tb) from None
+  File "/code/envs/env_5/lib/python3.12/site-packages/optree/ops.py", line 766, in tree_map
+    return treespec.unflatten(map(func, *flat_args))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: None values not supported.
+[2025-04-17 09:08:48,374: INFO: common: created directory at: config]
+[2025-04-17 09:08:49,411: INFO: main: MLFLOW URI: http://127.0.0.1:5000]
+[2025-04-17 09:08:49,412: INFO: main: /code/training/make-ml-model]
+[2025-04-17 09:08:49,412: INFO: main: 
+=================================================================
+Device name is: None 
+=================================================================]
+[2025-04-17 09:08:49,412: INFO: common: YAML file: params.yaml written successfully]
+[2025-04-17 09:08:49,413: INFO: main: 
+=================================================================
+>>>>>> stage Data Ingestion stage started <<<<<<]
+[2025-04-17 09:08:49,414: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2025-04-17 09:08:49,415: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-04-17 09:08:49,415: INFO: common: created directory at: output]
+[2025-04-17 09:08:49,415: INFO: common: created directory at: src/tile_based_training/output/data_ingestion]
+[2025-04-17 09:08:49,415: INFO: data_ingestion: Accessing STAC endpoint]
+[2025-04-17 09:10:47,525: INFO: data_ingestion: 100 items are loaded]
+[2025-04-17 09:10:47,527: INFO: data_ingestion: Train size: 60 , Valid size: 20, Test size: 20]
+[2025-04-17 09:10:47,527: INFO: main: 
+=================================================================
+>>>>>> stage Data Ingestion stage completed <<<<<<
+=================================================================]
+[2025-04-17 09:10:47,527: INFO: main: 
+=================================================================
+>>>>>> stage Prepare Base Model started <<<<<<]
+[2025-04-17 09:10:47,530: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2025-04-17 09:10:47,531: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-04-17 09:10:47,531: INFO: common: created directory at: output]
+[2025-04-17 09:10:47,531: INFO: common: created directory at: src/tile_based_training/output/prepare_base_model]
+[2025-04-17 09:10:47,813: INFO: main: 
+=================================================================
+>>>>>> stage Prepare Base Model completed <<<<<<
+=================================================================]
+[2025-04-17 09:10:47,813: INFO: main: 
+=================================================================
+>>>>>> stage Evaluating Model started <<<<<<]
+[2025-04-17 09:10:47,815: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2025-04-17 09:10:47,816: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-04-17 09:10:47,816: INFO: common: created directory at: output]
+[2025-04-17 09:10:47,816: INFO: common: json file loaded succesfully from: src/tile_based_training/output/data_ingestion/splitted_data.json]
+[2025-04-17 09:10:47,816: INFO: common: created directory at: mlruns]
+[2025-04-17 09:11:04,582: INFO: __init__: GDAL signalled an error: err_no=1, msg='cpl_unzOpenCurrentFile() failed']
+[2025-04-17 09:11:18,048: INFO: __init__: GDAL signalled an error: err_no=1, msg='cpl_unzOpenCurrentFile() failed']
+[2025-04-17 09:11:36,817: INFO: __init__: GDAL signalled an error: err_no=1, msg='cpl_unzOpenCurrentFile() failed']
+[2025-04-17 09:12:06,935: ERROR: main: setting an array element with a sequence. The requested array has an inhomogeneous shape after 1 dimensions. The detected shape was (2,) + inhomogeneous part.]
+Traceback (most recent call last):
+  File "/code/training/make-ml-model/src/tile_based_training/main.py", line 209, in run_tile_based_classification_training
+    obj.main()
+  File "/code/training/make-ml-model/src/tile_based_training/pipeline/stage_04_model_evaluation.py", line 18, in main
+    test_dataset, conf_mat = evaluation.evaluation()
+                             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/code/training/make-ml-model/src/tile_based_training/components/model_evaluation.py", line 78, in evaluation
+    sample_input = np.array((x_test[0], y_test[0]))
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: setting an array element with a sequence. The requested array has an inhomogeneous shape after 1 dimensions. The detected shape was (2,) + inhomogeneous part.
+[2025-04-17 09:13:43,770: INFO: common: created directory at: config]
+[2025-04-17 09:13:44,776: INFO: main: MLFLOW URI: http://127.0.0.1:5000]
+[2025-04-17 09:13:44,776: INFO: main: /code/training/make-ml-model]
+[2025-04-17 09:13:44,776: INFO: main: 
+=================================================================
+Device name is: None 
+=================================================================]
+[2025-04-17 09:13:44,777: INFO: common: YAML file: params.yaml written successfully]
+[2025-04-17 09:13:44,777: INFO: main: 
+=================================================================
+>>>>>> stage Prepare Base Model started <<<<<<]
+[2025-04-17 09:13:44,779: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2025-04-17 09:13:44,779: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-04-17 09:13:44,780: INFO: common: created directory at: output]
+[2025-04-17 09:13:44,780: INFO: common: created directory at: src/tile_based_training/output/prepare_base_model]
+[2025-04-17 09:13:45,047: INFO: main: 
+=================================================================
+>>>>>> stage Prepare Base Model completed <<<<<<
+=================================================================]
+[2025-04-17 09:13:45,047: INFO: main: 
+=================================================================
+>>>>>> stage Evaluating Model started <<<<<<]
+[2025-04-17 09:13:45,048: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2025-04-17 09:13:45,049: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-04-17 09:13:45,049: INFO: common: created directory at: output]
+[2025-04-17 09:13:45,050: INFO: common: json file loaded succesfully from: src/tile_based_training/output/data_ingestion/splitted_data.json]
+[2025-04-17 09:13:45,050: INFO: common: created directory at: mlruns]
+[2025-04-17 09:13:58,560: INFO: common: GDAL signalled an error: err_no=1, msg='In file /io/gdal-3.9.3/port/cpl_vsil_gzip.cpp, at line 1214, decompression failed with z_err = -1, return = 3582']
+[2025-04-17 09:13:58,560: INFO: common: GDAL signalled an error: err_no=1, msg='TIFFReadEncodedStrip:Read error at scanline 4294967295; got 3582 bytes, expected 6656']
+[2025-04-17 09:13:58,560: INFO: common: GDAL signalled an error: err_no=1, msg='TIFFReadEncodedStrip() failed.']
+[2025-04-17 09:13:58,560: INFO: common: GDAL signalled an error: err_no=1, msg='Industrial_977.tif, band 1: IReadBlock failed at X offset 0, Y offset 2: TIFFReadEncodedStrip() failed.']
+[2025-04-17 09:14:08,948: INFO: common: GDAL signalled an error: err_no=1, msg='In file /io/gdal-3.9.3/port/cpl_vsil_gzip.cpp, at line 1214, decompression failed with z_err = -1, return = 3582']
+[2025-04-17 09:14:08,948: INFO: common: GDAL signalled an error: err_no=1, msg='TIFFReadEncodedStrip:Read error at scanline 4294967295; got 3582 bytes, expected 6656']
+[2025-04-17 09:14:08,948: INFO: common: GDAL signalled an error: err_no=1, msg='TIFFReadEncodedStrip() failed.']
+[2025-04-17 09:14:08,948: INFO: common: GDAL signalled an error: err_no=1, msg='Industrial_977.tif, band 1: IReadBlock failed at X offset 0, Y offset 2: TIFFReadEncodedStrip() failed.']
+[2025-04-17 09:14:24,242: INFO: common: GDAL signalled an error: err_no=1, msg='In file /io/gdal-3.9.3/port/cpl_vsil_gzip.cpp, at line 1214, decompression failed with z_err = -1, return = 3582']
+[2025-04-17 09:14:24,242: INFO: common: GDAL signalled an error: err_no=1, msg='TIFFReadEncodedStrip:Read error at scanline 4294967295; got 3582 bytes, expected 6656']
+[2025-04-17 09:14:24,242: INFO: common: GDAL signalled an error: err_no=1, msg='TIFFReadEncodedStrip() failed.']
+[2025-04-17 09:14:24,242: INFO: common: GDAL signalled an error: err_no=1, msg='Industrial_977.tif, band 1: IReadBlock failed at X offset 0, Y offset 2: TIFFReadEncodedStrip() failed.']
+[2025-04-17 09:14:54,033: INFO: model_evaluation: MLFLOW_TRACKING_URI: http://127.0.0.1:5000]
+[2025-04-17 09:14:54,132: WARNING: connectionpool: Retrying (Retry(total=6, connect=6, read=7, redirect=7, status=7)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7faf8c61d8e0>: Failed to establish a new connection: [Errno 111] Connection refused')': /api/2.0/mlflow/experiments/get-by-name?experiment_name=EuroSAT_classification]
+[2025-04-17 09:14:58,424: WARNING: connectionpool: Retrying (Retry(total=5, connect=5, read=7, redirect=7, status=7)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7faf516c2de0>: Failed to establish a new connection: [Errno 111] Connection refused')': /api/2.0/mlflow/experiments/get-by-name?experiment_name=EuroSAT_classification]
+[2025-04-17 09:15:06,572: WARNING: connectionpool: Retrying (Retry(total=4, connect=4, read=7, redirect=7, status=7)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7faf516c39b0>: Failed to establish a new connection: [Errno 111] Connection refused')': /api/2.0/mlflow/experiments/get-by-name?experiment_name=EuroSAT_classification]
+[2025-04-17 09:15:44,934: INFO: common: created directory at: config]
+[2025-04-17 09:15:45,940: INFO: main: MLFLOW URI: http://localhost:5000]
+[2025-04-17 09:15:45,940: INFO: main: /code/training/make-ml-model]
+[2025-04-17 09:15:45,940: INFO: main: 
+=================================================================
+Device name is: None 
+=================================================================]
+[2025-04-17 09:15:45,941: INFO: common: YAML file: params.yaml written successfully]
+[2025-04-17 09:15:45,941: INFO: main: 
+=================================================================
+>>>>>> stage Prepare Base Model started <<<<<<]
+[2025-04-17 09:15:45,942: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2025-04-17 09:15:45,943: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-04-17 09:15:45,943: INFO: common: created directory at: output]
+[2025-04-17 09:15:45,943: INFO: common: created directory at: src/tile_based_training/output/prepare_base_model]
+[2025-04-17 09:15:46,230: INFO: main: 
+=================================================================
+>>>>>> stage Prepare Base Model completed <<<<<<
+=================================================================]
+[2025-04-17 09:15:46,230: INFO: main: 
+=================================================================
+>>>>>> stage Evaluating Model started <<<<<<]
+[2025-04-17 09:15:46,232: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2025-04-17 09:15:46,233: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-04-17 09:15:46,233: INFO: common: created directory at: output]
+[2025-04-17 09:15:46,233: INFO: common: json file loaded succesfully from: src/tile_based_training/output/data_ingestion/splitted_data.json]
+[2025-04-17 09:15:46,234: INFO: common: created directory at: mlruns]
+[2025-04-17 09:15:57,869: INFO: common: GDAL signalled an error: err_no=1, msg='In file /io/gdal-3.9.3/port/cpl_vsil_gzip.cpp, at line 1214, decompression failed with z_err = -1, return = 4555']
+[2025-04-17 09:15:57,869: INFO: common: GDAL signalled an error: err_no=1, msg='TIFFReadEncodedStrip:Read error at scanline 4294967295; got 4555 bytes, expected 6656']
+[2025-04-17 09:15:57,869: INFO: common: GDAL signalled an error: err_no=1, msg='TIFFReadEncodedStrip() failed.']
+[2025-04-17 09:15:57,869: INFO: common: GDAL signalled an error: err_no=1, msg='Forest_986.tif, band 1: IReadBlock failed at X offset 0, Y offset 1: TIFFReadEncodedStrip() failed.']
+[2025-04-17 09:16:12,663: INFO: common: GDAL signalled an error: err_no=1, msg='In file /io/gdal-3.9.3/port/cpl_vsil_gzip.cpp, at line 1214, decompression failed with z_err = -1, return = 4555']
+[2025-04-17 09:16:12,663: INFO: common: GDAL signalled an error: err_no=1, msg='TIFFReadEncodedStrip:Read error at scanline 4294967295; got 4555 bytes, expected 6656']
+[2025-04-17 09:16:12,663: INFO: common: GDAL signalled an error: err_no=1, msg='TIFFReadEncodedStrip() failed.']
+[2025-04-17 09:16:12,663: INFO: common: GDAL signalled an error: err_no=1, msg='Forest_986.tif, band 1: IReadBlock failed at X offset 0, Y offset 1: TIFFReadEncodedStrip() failed.']
+[2025-04-17 09:16:27,953: INFO: common: GDAL signalled an error: err_no=1, msg='In file /io/gdal-3.9.3/port/cpl_vsil_gzip.cpp, at line 1214, decompression failed with z_err = -1, return = 4555']
+[2025-04-17 09:16:27,953: INFO: common: GDAL signalled an error: err_no=1, msg='TIFFReadEncodedStrip:Read error at scanline 4294967295; got 4555 bytes, expected 6656']
+[2025-04-17 09:16:27,953: INFO: common: GDAL signalled an error: err_no=1, msg='TIFFReadEncodedStrip() failed.']
+[2025-04-17 09:16:27,954: INFO: common: GDAL signalled an error: err_no=1, msg='Forest_986.tif, band 1: IReadBlock failed at X offset 0, Y offset 1: TIFFReadEncodedStrip() failed.']
+[2025-04-17 09:16:58,096: INFO: model_evaluation: MLFLOW_TRACKING_URI: http://localhost:5000]
+[2025-04-17 09:16:58,196: WARNING: connectionpool: Retrying (Retry(total=6, connect=6, read=7, redirect=7, status=7)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x71816aa1a780>: Failed to establish a new connection: [Errno 111] Connection refused')': /api/2.0/mlflow/experiments/get-by-name?experiment_name=EuroSAT_classification]
+[2025-04-17 09:17:02,828: WARNING: connectionpool: Retrying (Retry(total=5, connect=5, read=7, redirect=7, status=7)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7181481f4f80>: Failed to establish a new connection: [Errno 111] Connection refused')': /api/2.0/mlflow/experiments/get-by-name?experiment_name=EuroSAT_classification]
+[2025-04-17 09:17:11,715: WARNING: connectionpool: Retrying (Retry(total=4, connect=4, read=7, redirect=7, status=7)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7181481f6e10>: Failed to establish a new connection: [Errno 111] Connection refused')': /api/2.0/mlflow/experiments/get-by-name?experiment_name=EuroSAT_classification]
+[2025-04-17 09:17:28,643: WARNING: connectionpool: Retrying (Retry(total=3, connect=3, read=7, redirect=7, status=7)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7181481f4680>: Failed to establish a new connection: [Errno 111] Connection refused')': /api/2.0/mlflow/experiments/get-by-name?experiment_name=EuroSAT_classification]
+[2025-04-17 09:20:55,677: INFO: common: created directory at: config]
+[2025-04-17 09:20:56,674: INFO: main: MLFLOW URI: http://host.docker.internal:5000]
+[2025-04-17 09:20:56,674: INFO: main: /code/training/make-ml-model]
+[2025-04-17 09:20:56,674: INFO: main: 
+=================================================================
+Device name is: None 
+=================================================================]
+[2025-04-17 09:20:56,675: INFO: common: YAML file: params.yaml written successfully]
+[2025-04-17 09:20:56,675: INFO: main: 
+=================================================================
+>>>>>> stage Prepare Base Model started <<<<<<]
+[2025-04-17 09:20:56,677: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2025-04-17 09:20:56,678: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-04-17 09:20:56,678: INFO: common: created directory at: output]
+[2025-04-17 09:20:56,678: INFO: common: created directory at: src/tile_based_training/output/prepare_base_model]
+[2025-04-17 09:20:56,982: INFO: main: 
+=================================================================
+>>>>>> stage Prepare Base Model completed <<<<<<
+=================================================================]
+[2025-04-17 09:20:56,982: INFO: main: 
+=================================================================
+>>>>>> stage Evaluating Model started <<<<<<]
+[2025-04-17 09:20:56,983: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2025-04-17 09:20:56,984: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-04-17 09:20:56,984: INFO: common: created directory at: output]
+[2025-04-17 09:20:56,984: INFO: common: json file loaded succesfully from: src/tile_based_training/output/data_ingestion/splitted_data.json]
+[2025-04-17 09:20:56,985: INFO: common: created directory at: mlruns]
+[2025-04-17 09:21:11,457: INFO: __init__: GDAL signalled an error: err_no=1, msg='cpl_unzOpenCurrentFile() failed']
+[2025-04-17 09:21:25,056: INFO: __init__: GDAL signalled an error: err_no=1, msg='cpl_unzOpenCurrentFile() failed']
+[2025-04-17 09:21:43,831: INFO: __init__: GDAL signalled an error: err_no=1, msg='cpl_unzOpenCurrentFile() failed']
+[2025-04-17 09:22:14,351: INFO: model_evaluation: MLFLOW_TRACKING_URI: http://host.docker.internal:5000]
+[2025-04-17 09:22:14,484: WARNING: connectionpool: Retrying (Retry(total=6, connect=6, read=7, redirect=7, status=7)) after connection broken by 'NameResolutionError("<urllib3.connection.HTTPConnection object at 0x70ae393d9b20>: Failed to resolve 'host.docker.internal' ([Errno -2] Name or service not known)")': /api/2.0/mlflow/experiments/get-by-name?experiment_name=EuroSAT_classification]
+[2025-04-17 09:22:19,319: WARNING: connectionpool: Retrying (Retry(total=5, connect=5, read=7, redirect=7, status=7)) after connection broken by 'NameResolutionError("<urllib3.connection.HTTPConnection object at 0x70adf8708800>: Failed to resolve 'host.docker.internal' ([Errno -2] Name or service not known)")': /api/2.0/mlflow/experiments/get-by-name?experiment_name=EuroSAT_classification]
+[2025-04-17 09:27:09,505: INFO: common: created directory at: config]
+[2025-04-17 09:27:10,538: INFO: main: MLFLOW URI: http://host.docker.internal:5000]
+[2025-04-17 09:27:10,538: INFO: main: /code/training/make-ml-model]
+[2025-04-17 09:27:10,538: INFO: main: 
+=================================================================
+Device name is: None 
+=================================================================]
+[2025-04-17 09:27:10,539: INFO: common: YAML file: params.yaml written successfully]
+[2025-04-17 09:27:10,540: INFO: main: 
+=================================================================
+>>>>>> stage Prepare Base Model started <<<<<<]
+[2025-04-17 09:27:10,541: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2025-04-17 09:27:10,542: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-04-17 09:27:10,542: INFO: common: created directory at: output]
+[2025-04-17 09:27:10,542: INFO: common: created directory at: src/tile_based_training/output/prepare_base_model]
+[2025-04-17 09:27:10,879: INFO: main: 
+=================================================================
+>>>>>> stage Prepare Base Model completed <<<<<<
+=================================================================]
+[2025-04-17 09:27:10,879: INFO: main: 
+=================================================================
+>>>>>> stage Evaluating Model started <<<<<<]
+[2025-04-17 09:27:10,880: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2025-04-17 09:27:10,881: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-04-17 09:27:10,881: INFO: common: created directory at: output]
+[2025-04-17 09:27:10,882: INFO: common: json file loaded succesfully from: src/tile_based_training/output/data_ingestion/splitted_data.json]
+[2025-04-17 09:27:10,882: INFO: common: created directory at: mlruns]
+[2025-04-17 09:27:22,486: INFO: common: GDAL signalled an error: err_no=1, msg='In file /io/gdal-3.9.3/port/cpl_vsil_gzip.cpp, at line 1214, decompression failed with z_err = -1, return = 5440']
+[2025-04-17 09:27:22,487: INFO: common: GDAL signalled an error: err_no=1, msg='TIFFReadEncodedStrip:Read error at scanline 4294967295; got 5440 bytes, expected 6656']
+[2025-04-17 09:27:22,487: INFO: common: GDAL signalled an error: err_no=1, msg='TIFFReadEncodedStrip() failed.']
+[2025-04-17 09:27:22,487: INFO: common: GDAL signalled an error: err_no=1, msg='Highway_96.tif, band 1: IReadBlock failed at X offset 0, Y offset 1: TIFFReadEncodedStrip() failed.']
+[2025-04-17 09:27:32,736: INFO: common: GDAL signalled an error: err_no=1, msg='In file /io/gdal-3.9.3/port/cpl_vsil_gzip.cpp, at line 1214, decompression failed with z_err = -1, return = 5440']
+[2025-04-17 09:27:32,737: INFO: common: GDAL signalled an error: err_no=1, msg='TIFFReadEncodedStrip:Read error at scanline 4294967295; got 5440 bytes, expected 6656']
+[2025-04-17 09:27:32,737: INFO: common: GDAL signalled an error: err_no=1, msg='TIFFReadEncodedStrip() failed.']
+[2025-04-17 09:27:32,737: INFO: common: GDAL signalled an error: err_no=1, msg='Highway_96.tif, band 1: IReadBlock failed at X offset 0, Y offset 1: TIFFReadEncodedStrip() failed.']
+[2025-04-17 09:27:48,012: INFO: common: GDAL signalled an error: err_no=1, msg='In file /io/gdal-3.9.3/port/cpl_vsil_gzip.cpp, at line 1214, decompression failed with z_err = -1, return = 5440']
+[2025-04-17 09:27:48,012: INFO: common: GDAL signalled an error: err_no=1, msg='TIFFReadEncodedStrip:Read error at scanline 4294967295; got 5440 bytes, expected 6656']
+[2025-04-17 09:27:48,012: INFO: common: GDAL signalled an error: err_no=1, msg='TIFFReadEncodedStrip() failed.']
+[2025-04-17 09:27:48,012: INFO: common: GDAL signalled an error: err_no=1, msg='Highway_96.tif, band 1: IReadBlock failed at X offset 0, Y offset 1: TIFFReadEncodedStrip() failed.']
+[2025-04-17 09:28:17,501: INFO: model_evaluation: MLFLOW_TRACKING_URI: http://host.docker.internal:5000]
+[2025-04-17 09:28:17,645: WARNING: connectionpool: Retrying (Retry(total=6, connect=6, read=7, redirect=7, status=7)) after connection broken by 'NameResolutionError("<urllib3.connection.HTTPConnection object at 0x7db834509220>: Failed to resolve 'host.docker.internal' ([Errno -2] Name or service not known)")': /api/2.0/mlflow/experiments/get-by-name?experiment_name=EuroSAT_classification]
+[2025-04-17 09:28:21,790: WARNING: connectionpool: Retrying (Retry(total=5, connect=5, read=7, redirect=7, status=7)) after connection broken by 'NameResolutionError("<urllib3.connection.HTTPConnection object at 0x7db7f46599a0>: Failed to resolve 'host.docker.internal' ([Errno -2] Name or service not known)")': /api/2.0/mlflow/experiments/get-by-name?experiment_name=EuroSAT_classification]
+[2025-04-17 09:28:30,229: WARNING: connectionpool: Retrying (Retry(total=4, connect=4, read=7, redirect=7, status=7)) after connection broken by 'NameResolutionError("<urllib3.connection.HTTPConnection object at 0x7db7f46530e0>: Failed to resolve 'host.docker.internal' ([Errno -2] Name or service not known)")': /api/2.0/mlflow/experiments/get-by-name?experiment_name=EuroSAT_classification]
+[2025-04-17 09:29:29,093: INFO: common: created directory at: config]
+[2025-04-17 09:29:30,085: INFO: main: MLFLOW URI: http://127.0.0.1:5000]
+[2025-04-17 09:29:30,085: INFO: main: /code/training/make-ml-model]
+[2025-04-17 09:29:30,085: INFO: main: 
+=================================================================
+Device name is: None 
+=================================================================]
+[2025-04-17 09:29:30,086: INFO: common: YAML file: params.yaml written successfully]
+[2025-04-17 09:29:30,086: INFO: main: 
+=================================================================
+>>>>>> stage Prepare Base Model started <<<<<<]
+[2025-04-17 09:29:30,088: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2025-04-17 09:29:30,089: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-04-17 09:29:30,089: INFO: common: created directory at: output]
+[2025-04-17 09:29:30,089: INFO: common: created directory at: src/tile_based_training/output/prepare_base_model]
+[2025-04-17 09:29:30,396: INFO: main: 
+=================================================================
+>>>>>> stage Prepare Base Model completed <<<<<<
+=================================================================]
+[2025-04-17 09:29:30,396: INFO: main: 
+=================================================================
+>>>>>> stage Evaluating Model started <<<<<<]
+[2025-04-17 09:29:30,398: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2025-04-17 09:29:30,399: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-04-17 09:29:30,399: INFO: common: created directory at: output]
+[2025-04-17 09:29:30,399: INFO: common: json file loaded succesfully from: src/tile_based_training/output/data_ingestion/splitted_data.json]
+[2025-04-17 09:29:30,399: INFO: common: created directory at: mlruns]
+[2025-04-17 09:29:47,644: INFO: __init__: GDAL signalled an error: err_no=1, msg='cpl_unzOpenCurrentFile() failed']
+[2025-04-17 09:30:01,395: INFO: __init__: GDAL signalled an error: err_no=1, msg='cpl_unzOpenCurrentFile() failed']
+[2025-04-17 09:30:20,157: INFO: __init__: GDAL signalled an error: err_no=1, msg='cpl_unzOpenCurrentFile() failed']
+[2025-04-17 09:30:49,984: INFO: model_evaluation: MLFLOW_TRACKING_URI: http://127.0.0.1:5000]
+[2025-04-17 09:30:56,577: INFO: main: 
+=================================================================
+>>>>>> stage Evaluating Model completed <<<<<<
+
+x==========x]
+[2025-04-17 09:34:21,471: INFO: common: created directory at: config]
+[2025-04-17 09:34:22,530: INFO: main: MLFLOW URI: http://127.0.0.1:5000]
+[2025-04-17 09:34:22,530: INFO: main: /code/training/make-ml-model]
+[2025-04-17 09:34:22,530: INFO: main: 
+=================================================================
+Device name is: None 
+=================================================================]
+[2025-04-17 09:34:22,531: INFO: common: YAML file: params.yaml written successfully]
+[2025-04-17 09:34:22,531: INFO: main: 
+=================================================================
+>>>>>> stage Prepare Base Model started <<<<<<]
+[2025-04-17 09:34:22,533: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2025-04-17 09:34:22,534: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-04-17 09:34:22,534: INFO: common: created directory at: output]
+[2025-04-17 09:34:22,534: INFO: common: created directory at: src/tile_based_training/output/prepare_base_model]
+[2025-04-17 09:34:22,791: INFO: main: 
+=================================================================
+>>>>>> stage Prepare Base Model completed <<<<<<
+=================================================================]
+[2025-04-17 09:34:22,791: INFO: main: 
+=================================================================
+>>>>>> stage Training Model started <<<<<<]
+[2025-04-17 09:34:22,792: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2025-04-17 09:34:22,793: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-04-17 09:34:22,793: INFO: common: created directory at: output]
+[2025-04-17 09:34:22,795: INFO: common: json file loaded succesfully from: src/tile_based_training/output/data_ingestion/splitted_data.json]
+[2025-04-17 09:34:22,800: INFO: common: json file loaded succesfully from: src/tile_based_training/output/data_ingestion/splitted_data.json]
+[2025-04-17 09:34:22,803: INFO: common: created directory at: src/tile_based_training/output/training]
+[2025-04-17 09:34:39,271: INFO: common: created directory at: config]
+[2025-04-17 09:34:40,274: INFO: main: MLFLOW URI: http://127.0.0.1:5000]
+[2025-04-17 09:34:40,274: INFO: main: /code/training/make-ml-model]
+[2025-04-17 09:34:40,274: INFO: main: 
+=================================================================
+Device name is: None 
+=================================================================]
+[2025-04-17 09:34:40,275: INFO: common: YAML file: params.yaml written successfully]
+[2025-04-17 09:34:40,275: INFO: main: 
+=================================================================
+>>>>>> stage Prepare Base Model started <<<<<<]
+[2025-04-17 09:34:40,277: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2025-04-17 09:34:40,278: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-04-17 09:34:40,278: INFO: common: created directory at: output]
+[2025-04-17 09:34:40,278: INFO: common: created directory at: src/tile_based_training/output/prepare_base_model]
+[2025-04-17 09:34:40,598: INFO: main: 
+=================================================================
+>>>>>> stage Prepare Base Model completed <<<<<<
+=================================================================]
+[2025-04-17 09:34:40,598: INFO: main: 
+=================================================================
+>>>>>> stage Training Model started <<<<<<]
+[2025-04-17 09:34:40,600: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2025-04-17 09:34:40,601: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-04-17 09:34:40,601: INFO: common: created directory at: output]
+[2025-04-17 09:34:40,602: INFO: common: json file loaded succesfully from: src/tile_based_training/output/data_ingestion/splitted_data.json]
+[2025-04-17 09:34:40,608: INFO: common: json file loaded succesfully from: src/tile_based_training/output/data_ingestion/splitted_data.json]
+[2025-04-17 09:34:40,615: INFO: common: created directory at: src/tile_based_training/output/training]
+[2025-04-17 09:34:56,470: INFO: __init__: GDAL signalled an error: err_no=1, msg='cpl_unzOpenCurrentFile() failed']
+[2025-04-17 09:35:10,338: INFO: __init__: GDAL signalled an error: err_no=1, msg='cpl_unzOpenCurrentFile() failed']
+[2025-04-17 09:35:29,049: INFO: __init__: GDAL signalled an error: err_no=1, msg='cpl_unzOpenCurrentFile() failed']
+[2025-04-17 09:36:07,874: INFO: __init__: GDAL signalled an error: err_no=1, msg='cpl_unzOpenCurrentFile() failed']
+[2025-04-17 09:36:21,508: INFO: __init__: GDAL signalled an error: err_no=1, msg='cpl_unzOpenCurrentFile() failed']
+[2025-04-17 09:36:40,134: INFO: __init__: GDAL signalled an error: err_no=1, msg='cpl_unzOpenCurrentFile() failed']
+[2025-04-17 09:37:19,499: INFO: __init__: GDAL signalled an error: err_no=1, msg='cpl_unzOpenCurrentFile() failed']
+[2025-04-17 09:37:33,344: INFO: __init__: GDAL signalled an error: err_no=1, msg='cpl_unzOpenCurrentFile() failed']
+[2025-04-17 09:37:52,003: INFO: __init__: GDAL signalled an error: err_no=1, msg='cpl_unzOpenCurrentFile() failed']
+[2025-04-17 09:38:31,946: INFO: common: GDAL signalled an error: err_no=1, msg='In file /io/gdal-3.9.3/port/cpl_vsil_gzip.cpp, at line 1214, decompression failed with z_err = -1, return = 1566']
+[2025-04-17 09:38:31,946: INFO: common: GDAL signalled an error: err_no=1, msg='TIFFReadEncodedStrip:Read error at scanline 4294967295; got 1566 bytes, expected 6656']
+[2025-04-17 09:38:31,946: INFO: common: GDAL signalled an error: err_no=1, msg='TIFFReadEncodedStrip() failed.']
+[2025-04-17 09:38:31,946: INFO: common: GDAL signalled an error: err_no=1, msg='PermanentCrop_438.tif, band 1: IReadBlock failed at X offset 0, Y offset 1: TIFFReadEncodedStrip() failed.']
+[2025-04-17 09:38:45,789: INFO: common: GDAL signalled an error: err_no=1, msg='In file /io/gdal-3.9.3/port/cpl_vsil_gzip.cpp, at line 1214, decompression failed with z_err = -1, return = 1566']
+[2025-04-17 09:38:45,789: INFO: common: GDAL signalled an error: err_no=1, msg='TIFFReadEncodedStrip:Read error at scanline 4294967295; got 1566 bytes, expected 6656']
+[2025-04-17 09:38:45,789: INFO: common: GDAL signalled an error: err_no=1, msg='TIFFReadEncodedStrip() failed.']
+[2025-04-17 09:38:45,789: INFO: common: GDAL signalled an error: err_no=1, msg='PermanentCrop_438.tif, band 1: IReadBlock failed at X offset 0, Y offset 1: TIFFReadEncodedStrip() failed.']
+[2025-04-17 09:39:04,756: INFO: common: GDAL signalled an error: err_no=1, msg='In file /io/gdal-3.9.3/port/cpl_vsil_gzip.cpp, at line 1214, decompression failed with z_err = -1, return = 1566']
+[2025-04-17 09:39:04,756: INFO: common: GDAL signalled an error: err_no=1, msg='TIFFReadEncodedStrip:Read error at scanline 4294967295; got 1566 bytes, expected 6656']
+[2025-04-17 09:39:04,756: INFO: common: GDAL signalled an error: err_no=1, msg='TIFFReadEncodedStrip() failed.']
+[2025-04-17 09:39:04,756: INFO: common: GDAL signalled an error: err_no=1, msg='PermanentCrop_438.tif, band 1: IReadBlock failed at X offset 0, Y offset 1: TIFFReadEncodedStrip() failed.']
+[2025-04-17 09:39:40,555: INFO: common: GDAL signalled an error: err_no=1, msg='In file /io/gdal-3.9.3/port/cpl_vsil_gzip.cpp, at line 1214, decompression failed with z_err = -1, return = 769']
+[2025-04-17 09:39:40,555: INFO: common: GDAL signalled an error: err_no=1, msg='TIFFReadEncodedStrip:Read error at scanline 4294967295; got 769 bytes, expected 6656']
+[2025-04-17 09:39:40,555: INFO: common: GDAL signalled an error: err_no=1, msg='TIFFReadEncodedStrip() failed.']
+[2025-04-17 09:39:40,555: INFO: common: GDAL signalled an error: err_no=1, msg='Industrial_1254.tif, band 1: IReadBlock failed at X offset 0, Y offset 3: TIFFReadEncodedStrip() failed.']
+[2025-04-17 09:39:50,848: INFO: common: GDAL signalled an error: err_no=1, msg='In file /io/gdal-3.9.3/port/cpl_vsil_gzip.cpp, at line 1214, decompression failed with z_err = -1, return = 769']
+[2025-04-17 09:39:50,849: INFO: common: GDAL signalled an error: err_no=1, msg='TIFFReadEncodedStrip:Read error at scanline 4294967295; got 769 bytes, expected 6656']
+[2025-04-17 09:39:50,849: INFO: common: GDAL signalled an error: err_no=1, msg='TIFFReadEncodedStrip() failed.']
+[2025-04-17 09:39:50,849: INFO: common: GDAL signalled an error: err_no=1, msg='Industrial_1254.tif, band 1: IReadBlock failed at X offset 0, Y offset 3: TIFFReadEncodedStrip() failed.']
+[2025-04-17 09:40:06,159: INFO: common: GDAL signalled an error: err_no=1, msg='In file /io/gdal-3.9.3/port/cpl_vsil_gzip.cpp, at line 1214, decompression failed with z_err = -1, return = 769']
+[2025-04-17 09:40:06,160: INFO: common: GDAL signalled an error: err_no=1, msg='TIFFReadEncodedStrip:Read error at scanline 4294967295; got 769 bytes, expected 6656']
+[2025-04-17 09:40:06,160: INFO: common: GDAL signalled an error: err_no=1, msg='TIFFReadEncodedStrip() failed.']
+[2025-04-17 09:40:06,160: INFO: common: GDAL signalled an error: err_no=1, msg='Industrial_1254.tif, band 1: IReadBlock failed at X offset 0, Y offset 3: TIFFReadEncodedStrip() failed.']
+[2025-04-17 09:40:42,522: INFO: common: GDAL signalled an error: err_no=1, msg='In file /io/gdal-3.9.3/port/cpl_vsil_gzip.cpp, at line 1214, decompression failed with z_err = -1, return = 3574']
+[2025-04-17 09:40:42,522: INFO: common: GDAL signalled an error: err_no=1, msg='TIFFReadEncodedStrip:Read error at scanline 4294967295; got 3574 bytes, expected 6656']
+[2025-04-17 09:40:42,522: INFO: common: GDAL signalled an error: err_no=1, msg='TIFFReadEncodedStrip() failed.']
+[2025-04-17 09:40:42,522: INFO: common: GDAL signalled an error: err_no=1, msg='Residential_924.tif, band 1: IReadBlock failed at X offset 0, Y offset 2: TIFFReadEncodedStrip() failed.']
+[2025-04-17 09:40:52,796: INFO: common: GDAL signalled an error: err_no=1, msg='In file /io/gdal-3.9.3/port/cpl_vsil_gzip.cpp, at line 1214, decompression failed with z_err = -1, return = 3574']
+[2025-04-17 09:40:52,796: INFO: common: GDAL signalled an error: err_no=1, msg='TIFFReadEncodedStrip:Read error at scanline 4294967295; got 3574 bytes, expected 6656']
+[2025-04-17 09:40:52,796: INFO: common: GDAL signalled an error: err_no=1, msg='TIFFReadEncodedStrip() failed.']
+[2025-04-17 09:40:52,797: INFO: common: GDAL signalled an error: err_no=1, msg='Residential_924.tif, band 1: IReadBlock failed at X offset 0, Y offset 2: TIFFReadEncodedStrip() failed.']
+[2025-04-17 09:41:08,082: INFO: common: GDAL signalled an error: err_no=1, msg='In file /io/gdal-3.9.3/port/cpl_vsil_gzip.cpp, at line 1214, decompression failed with z_err = -1, return = 3574']
+[2025-04-17 09:41:08,082: INFO: common: GDAL signalled an error: err_no=1, msg='TIFFReadEncodedStrip:Read error at scanline 4294967295; got 3574 bytes, expected 6656']
+[2025-04-17 09:41:08,082: INFO: common: GDAL signalled an error: err_no=1, msg='TIFFReadEncodedStrip() failed.']
+[2025-04-17 09:41:08,082: INFO: common: GDAL signalled an error: err_no=1, msg='Residential_924.tif, band 1: IReadBlock failed at X offset 0, Y offset 2: TIFFReadEncodedStrip() failed.']
+[2025-04-17 09:41:47,394: INFO: __init__: GDAL signalled an error: err_no=1, msg='cpl_unzOpenCurrentFile() failed']
+[2025-04-17 09:42:01,221: INFO: __init__: GDAL signalled an error: err_no=1, msg='cpl_unzOpenCurrentFile() failed']
+[2025-04-17 09:42:19,936: INFO: __init__: GDAL signalled an error: err_no=1, msg='cpl_unzOpenCurrentFile() failed']
+[2025-04-17 09:42:56,093: INFO: common: GDAL signalled an error: err_no=1, msg='In file /io/gdal-3.9.3/port/cpl_vsil_gzip.cpp, at line 1214, decompression failed with z_err = -1, return = 5286']
+[2025-04-17 09:42:56,093: INFO: common: GDAL signalled an error: err_no=1, msg='TIFFReadEncodedStrip:Read error at scanline 4294967295; got 5286 bytes, expected 6656']
+[2025-04-17 09:42:56,093: INFO: common: GDAL signalled an error: err_no=1, msg='TIFFReadEncodedStrip() failed.']
+[2025-04-17 09:42:56,093: INFO: common: GDAL signalled an error: err_no=1, msg='SeaLake_1895.tif, band 1: IReadBlock failed at X offset 0, Y offset 3: TIFFReadEncodedStrip() failed.']
+[2025-04-17 09:43:06,389: INFO: common: GDAL signalled an error: err_no=1, msg='In file /io/gdal-3.9.3/port/cpl_vsil_gzip.cpp, at line 1214, decompression failed with z_err = -1, return = 5286']
+[2025-04-17 09:43:06,389: INFO: common: GDAL signalled an error: err_no=1, msg='TIFFReadEncodedStrip:Read error at scanline 4294967295; got 5286 bytes, expected 6656']
+[2025-04-17 09:43:06,390: INFO: common: GDAL signalled an error: err_no=1, msg='TIFFReadEncodedStrip() failed.']
+[2025-04-17 09:43:06,390: INFO: common: GDAL signalled an error: err_no=1, msg='SeaLake_1895.tif, band 1: IReadBlock failed at X offset 0, Y offset 3: TIFFReadEncodedStrip() failed.']
+[2025-04-17 09:43:21,701: INFO: common: GDAL signalled an error: err_no=1, msg='In file /io/gdal-3.9.3/port/cpl_vsil_gzip.cpp, at line 1214, decompression failed with z_err = -1, return = 5286']
+[2025-04-17 09:43:21,702: INFO: common: GDAL signalled an error: err_no=1, msg='TIFFReadEncodedStrip:Read error at scanline 4294967295; got 5286 bytes, expected 6656']
+[2025-04-17 09:43:21,702: INFO: common: GDAL signalled an error: err_no=1, msg='TIFFReadEncodedStrip() failed.']
+[2025-04-17 09:43:21,702: INFO: common: GDAL signalled an error: err_no=1, msg='SeaLake_1895.tif, band 1: IReadBlock failed at X offset 0, Y offset 3: TIFFReadEncodedStrip() failed.']
+[2025-04-17 09:44:01,109: INFO: common: GDAL signalled an error: err_no=1, msg='In file /io/gdal-3.9.3/port/cpl_vsil_gzip.cpp, at line 1214, decompression failed with z_err = -1, return = 4602']
+[2025-04-17 09:44:01,109: INFO: common: GDAL signalled an error: err_no=1, msg='TIFFReadEncodedStrip:Read error at scanline 4294967295; got 4602 bytes, expected 6656']
+[2025-04-17 09:44:01,109: INFO: common: GDAL signalled an error: err_no=1, msg='TIFFReadEncodedStrip() failed.']
+[2025-04-17 09:44:01,109: INFO: common: GDAL signalled an error: err_no=1, msg='Highway_99.tif, band 1: IReadBlock failed at X offset 0, Y offset 5: TIFFReadEncodedStrip() failed.']
+[2025-04-17 09:44:11,394: INFO: common: GDAL signalled an error: err_no=1, msg='In file /io/gdal-3.9.3/port/cpl_vsil_gzip.cpp, at line 1214, decompression failed with z_err = -1, return = 4602']
+[2025-04-17 09:44:11,395: INFO: common: GDAL signalled an error: err_no=1, msg='TIFFReadEncodedStrip:Read error at scanline 4294967295; got 4602 bytes, expected 6656']
+[2025-04-17 09:44:11,395: INFO: common: GDAL signalled an error: err_no=1, msg='TIFFReadEncodedStrip() failed.']
+[2025-04-17 09:44:11,395: INFO: common: GDAL signalled an error: err_no=1, msg='Highway_99.tif, band 1: IReadBlock failed at X offset 0, Y offset 5: TIFFReadEncodedStrip() failed.']
+[2025-04-17 09:44:26,704: INFO: common: GDAL signalled an error: err_no=1, msg='In file /io/gdal-3.9.3/port/cpl_vsil_gzip.cpp, at line 1214, decompression failed with z_err = -1, return = 4602']
+[2025-04-17 09:44:26,704: INFO: common: GDAL signalled an error: err_no=1, msg='TIFFReadEncodedStrip:Read error at scanline 4294967295; got 4602 bytes, expected 6656']
+[2025-04-17 09:44:26,704: INFO: common: GDAL signalled an error: err_no=1, msg='TIFFReadEncodedStrip() failed.']
+[2025-04-17 09:44:26,704: INFO: common: GDAL signalled an error: err_no=1, msg='Highway_99.tif, band 1: IReadBlock failed at X offset 0, Y offset 5: TIFFReadEncodedStrip() failed.']
+[2025-04-17 09:45:03,378: INFO: common: GDAL signalled an error: err_no=1, msg='In file /io/gdal-3.9.3/port/cpl_vsil_gzip.cpp, at line 1214, decompression failed with z_err = -1, return = 6184']
+[2025-04-17 09:45:03,378: INFO: common: GDAL signalled an error: err_no=1, msg='TIFFReadEncodedStrip:Read error at scanline 4294967295; got 6184 bytes, expected 6656']
+[2025-04-17 09:45:03,379: INFO: common: GDAL signalled an error: err_no=1, msg='TIFFReadEncodedStrip() failed.']
+[2025-04-17 09:45:03,379: INFO: common: GDAL signalled an error: err_no=1, msg='Highway_48.tif, band 1: IReadBlock failed at X offset 0, Y offset 1: TIFFReadEncodedStrip() failed.']
+[2025-04-17 09:45:13,687: INFO: common: GDAL signalled an error: err_no=1, msg='In file /io/gdal-3.9.3/port/cpl_vsil_gzip.cpp, at line 1214, decompression failed with z_err = -1, return = 6184']
+[2025-04-17 09:45:13,687: INFO: common: GDAL signalled an error: err_no=1, msg='TIFFReadEncodedStrip:Read error at scanline 4294967295; got 6184 bytes, expected 6656']
+[2025-04-17 09:45:13,687: INFO: common: GDAL signalled an error: err_no=1, msg='TIFFReadEncodedStrip() failed.']
+[2025-04-17 09:45:13,687: INFO: common: GDAL signalled an error: err_no=1, msg='Highway_48.tif, band 1: IReadBlock failed at X offset 0, Y offset 1: TIFFReadEncodedStrip() failed.']
+[2025-04-17 09:45:28,978: INFO: common: GDAL signalled an error: err_no=1, msg='In file /io/gdal-3.9.3/port/cpl_vsil_gzip.cpp, at line 1214, decompression failed with z_err = -1, return = 6184']
+[2025-04-17 09:45:28,978: INFO: common: GDAL signalled an error: err_no=1, msg='TIFFReadEncodedStrip:Read error at scanline 4294967295; got 6184 bytes, expected 6656']
+[2025-04-17 09:45:28,978: INFO: common: GDAL signalled an error: err_no=1, msg='TIFFReadEncodedStrip() failed.']
+[2025-04-17 09:45:28,979: INFO: common: GDAL signalled an error: err_no=1, msg='Highway_48.tif, band 1: IReadBlock failed at X offset 0, Y offset 1: TIFFReadEncodedStrip() failed.']
+[2025-04-17 09:46:10,853: INFO: __init__: GDAL signalled an error: err_no=1, msg='GotoFileOffset failed']
+[2025-04-17 09:46:26,339: INFO: __init__: GDAL signalled an error: err_no=1, msg='GotoFileOffset failed']
+[2025-04-17 09:46:47,012: INFO: __init__: GDAL signalled an error: err_no=1, msg='GotoFileOffset failed']

@@ -20,7 +20,7 @@ from tile_based_training.pipeline.stage_03_model_training import ModelTRainingPi
 from tile_based_training.pipeline.stage_04_model_evaluation import (
     ModelEvaluationPipeline,
 )
-
+from pprint import pprint
 warnings.filterwarnings("ignore")
 
 
@@ -43,7 +43,7 @@ warnings.filterwarnings("ignore")
     "BATCH_SIZE",
     help="BATCH_SIZE",
     required=False,
-    default=1,
+    default=2,
     show_default=True,
     type=int,
 )
@@ -67,7 +67,7 @@ warnings.filterwarnings("ignore")
     show_default=True,
     type=float,
 )
-@click.option("--EPOCHS", "--ep","EPOCHS", help="Number of epochs", required=False, default=5, type=int)
+@click.option("--EPOCHS", "--ep","EPOCHS", help="Number of epochs", required=False, default=50, type=int)
 @click.option(
     "--EPSILON",
     "--e",
@@ -156,13 +156,13 @@ def run_tile_based_classification_training(ctx, **kwargs):
     logger.info(
         f"\n=================================================================\nDevice name is: {device_name} \n================================================================="
     )
-    from pprint import pprint
+    
     pprint(kwargs)
     write_yaml(path_to_yaml=Path("params.yaml"), args=kwargs)
 
     #s3_bucket_config()
     # First step
-    STAGE_NAME = "Data Ingestion stage"
+    # STAGE_NAME = "Data Ingestion stage"
    
     # try:
     #     logger.info(f"\n=================================================================\n>>>>>> stage {STAGE_NAME} started <<<<<<")
@@ -200,7 +200,7 @@ def run_tile_based_classification_training(ctx, **kwargs):
     except Exception as e:
         logger.exception(e)
         raise e
-    sys.exit(0)
+    # sys.exit(0)
     STAGE_NAME = "Evaluating Model"
 
     try:

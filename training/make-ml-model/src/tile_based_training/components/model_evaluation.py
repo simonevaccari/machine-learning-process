@@ -18,80 +18,71 @@ from mlflow.models import infer_signature
 class Evaluation:
     def __init__(self, config: EvaluationConfig):
         self.config = config
-
-    @staticmethod
-    def read_images(file_path, label):
-        try:
-            file_path = file_path.numpy().decode("utf-8")
-            data = rasterio_read(file_path)
-            #data = data / np.amax(data)
-            data = data / 10000.0
-            image_data = np.transpose(data, (1, 2, 0))
-            return tf.convert_to_tensor(image_data, dtype=tf.float32), tf.convert_to_tensor(label, dtype=tf.float32)
-        except Exception as e:
-            print("Error:", e)
-            return (None, label)
-
-    def test_dataloader(self, file_paths):
-        classes = {
-            "AnnualCrop": 0,
-            "Forest": 1,
-            "HerbaceousVegetation": 2,
-            "Highway": 3,
-            "Industrial": 4,
-            "Pasture": 5,
-            "PermanentCrop": 6,
-            "Residential": 7,
-            "River": 8,
-            "SeaLake": 9,
-        }
-        labels = [tf.one_hot(classes[file_path.split("/")[-2].split("_")[0]], depth=10) for file_path in file_paths]
-
-        dataset = tf.data.Dataset.from_tensor_slices((file_paths, labels))
-
-        dataset = dataset.map(lambda x, y: tf.py_function(self.read_images, [x, y], (tf.float32, tf.float32)))
-        dataset.map(
-            lambda x, y: tf.py_function(self.read_images, [x, y], (tf.float32, tf.float32)),
-            num_parallel_calls=tf.data.AUTOTUNE,
-        )
-        dataset = dataset.map(lambda x, y: (tf.ensure_shape(x, [64, 64, 13]), tf.ensure_shape(y, [10])))
-        dataset = dataset.batch(self.config.params_batch_size).cache().prefetch(tf.data.AUTOTUNE)
-
-        return dataset
+        self.model = None
+        self.class_names = [
+            "AnnualCrop", "Forest", "HerbaceousVegetation", "Highway",
+            "Industrial", "Pasture", "PermanentCrop", "Residential",
+            "River", "SeaLake"
+        ]
+        self.label_lookup = {name: idx for idx, name in enumerate(self.class_names)}
 
     @staticmethod
     def load_model(path: Path):
         return load_model("src/tile_based_training/output/training/trained_model.keras")
 
+
+
+    def _load_data_as_arrays(self, urls):
+        images = []
+        labels = []
+
+        for url in urls:
+            image, label = self._process_data(url)
+            images.append(image)
+            labels.append(label)
+
+        images = np.stack(images)  # shape: (N, 64, 64, 12)
+        labels = tf.stack(labels).numpy()  # shape: (N, 10)
+        return images, labels
+    
+    def fetch_image(self, url):
+        image = rasterio_read(str(url))  # e.g., (12, 64, 64)
+        image = np.transpose(image, (1, 2, 0))  # to (64, 64, 12)
+        return image.astype(np.float32)
+
+    def _process_data(self, url):
+        image = self.fetch_image(url)
+        label_str = url.split("/")[-2]
+        label_id = self.label_lookup[label_str]
+        label = tf.one_hot(label_id, depth=10)
+        return image, label
+
+
     def evaluation(self):
         create_directories([Path("./mlruns")])
         self.model = self.load_model(self.config.path_of_model)
+
         test_paths = self.config.test_data_paths["url"]
         random.shuffle(test_paths)
-        test_dataset = self.test_dataloader(test_paths).shuffle(buffer_size=2 * self.config.params_batch_size).cache()
 
-        self.score = self.model.evaluate(test_dataset)
-        y_pred = self.model.predict(test_dataset.map(lambda x, y: x))
+        x_test, y_test = self._load_data_as_arrays(test_paths)
 
-        # Extract true labels directly from the test_dataset
-        self.y_true = np.array([np.argmax(y.numpy()) for _, y in test_dataset.unbatch()])
-        # Extract predicted labels
+        self.score = self.model.evaluate(x_test, y_test)  
+        y_pred = self.model.predict(x_test)
+
+        self.y_true = np.argmax(y_test, axis=1)  
         self.y_pred_amax = np.argmax(y_pred, axis=1)
 
-        # Calculate confusion matrix
         self.matrix = metrics.confusion_matrix(self.y_true, self.y_pred_amax)
 
-        # Infer MLflow signature
-        sample_batch = next(iter(test_dataset.take(1)), None)
-        if sample_batch is not None:
-            sample_input = sample_batch[0].numpy()  # Extract input images
-            sample_output = self.model.predict(sample_input)  # Get predictions
-            self.signature = infer_signature(sample_input, sample_output)
-        else:
-            self.signature = None  # Handle empty dataset case
+        sample_input = x_test[0:1]  # ✅ keep batch dim
+        sample_output = self.model.predict(sample_input)
+        self.signature = infer_signature(sample_input, sample_output)
+
 
         self.save_scores()
-        return test_dataset, self.matrix
+        return (x_test, y_test), self.matrix
+
 
     def save_scores(self):
         scores = {
@@ -182,3 +173,50 @@ class Evaluation:
                     registered_model_name=f"CNN",
                     # pip_requirements=pip_requirements,
                 )
+
+
+
+
+
+
+
+    @staticmethod
+    def read_images(file_path, label):
+        try:
+            file_path = file_path.numpy().decode("utf-8")
+            data = rasterio_read(file_path)
+            #data = data / np.amax(data)
+            data = data / 10000.0
+            image_data = np.transpose(data, (1, 2, 0))
+            return tf.convert_to_tensor(image_data, dtype=tf.float32), tf.convert_to_tensor(label, dtype=tf.float32)
+        except Exception as e:
+            print("Error:", e)
+            return (None, label)
+
+
+    def test_dataloader(self, file_paths):
+        classes = {
+            "AnnualCrop": 0,
+            "Forest": 1,
+            "HerbaceousVegetation": 2,
+            "Highway": 3,
+            "Industrial": 4,
+            "Pasture": 5,
+            "PermanentCrop": 6,
+            "Residential": 7,
+            "River": 8,
+            "SeaLake": 9,
+        }
+        labels = [tf.one_hot(classes[file_path.split("/")[-2].split("_")[0]], depth=10) for file_path in file_paths]
+
+        dataset = tf.data.Dataset.from_tensor_slices((file_paths, labels))
+
+        dataset = dataset.map(lambda x, y: tf.py_function(self.read_images, [x, y], (tf.float32, tf.float32)))
+        dataset.map(
+            lambda x, y: tf.py_function(self.read_images, [x, y], (tf.float32, tf.float32)),
+            num_parallel_calls=tf.data.AUTOTUNE,
+        )
+        dataset = dataset.map(lambda x, y: (tf.ensure_shape(x, [64, 64, 13]), tf.ensure_shape(y, [10])))
+        dataset = dataset.batch(self.config.params_batch_size).cache().prefetch(tf.data.AUTOTUNE)
+
+        return dataset

@@ -6,7 +6,9 @@ __pycache__/*
 *.pkl
 *.h5
 *.keras
-
+training/make-ml-model/envs
+training/make-ml-model/mlartifacts
+training/make-ml-model/mlruns
 # .dockerignore
 __pycache__
 *.pyc
