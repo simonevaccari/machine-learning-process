@@ -200,7 +200,7 @@ def run_tile_based_classification_training(ctx, **kwargs):
     except Exception as e:
         logger.exception(e)
         raise e
-    # sys.exit(0)
+    sys.exit(0)
     STAGE_NAME = "Evaluating Model"
 
     try:

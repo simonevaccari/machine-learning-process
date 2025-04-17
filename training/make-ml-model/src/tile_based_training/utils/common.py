@@ -432,7 +432,8 @@ def rasterio_read(image_path: str, max_retries: int = 20, backoff_base: int = 5)
     Returns:
         data (np.ndarray): The read image data as a NumPy array (float32).
     """
-    full_path = f"/vsizip/vsicurl/{image_path}"
+    #print(os.getcwd())
+    full_path = f"{image_path}"
     attempt = 0
 
     while attempt < max_retries:
@@ -442,10 +443,8 @@ def rasterio_read(image_path: str, max_retries: int = 20, backoff_base: int = 5)
                     total_bands = src.count
                     band_index_to_exclude = [11]
                     band_indices = [b for b in range(1, total_bands + 1) if b not in band_index_to_exclude]
-
                     data = src.read(band_indices).astype("float32")
                     return data
-
         except RasterioIOError as e:
             wait_time = backoff_base * (2 ** attempt) + 5
             time.sleep(wait_time)

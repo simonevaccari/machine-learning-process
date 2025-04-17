@@ -47,6 +47,7 @@ class Evaluation:
     
     def fetch_image(self, url):
         image = rasterio_read(str(url))  # e.g., (12, 64, 64)
+        image = augmentation(image)  # Apply augmentations
         image = np.transpose(image, (1, 2, 0))  # to (64, 64, 12)
         return image.astype(np.float32)
 

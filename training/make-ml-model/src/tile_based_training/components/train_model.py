@@ -2,6 +2,7 @@ import sys
 import numpy as np
 import tensorflow as tf
 import random
+from tqdm import tqdm
 from tile_based_training.utils.common import rasterio_read, augmentation
 from tile_based_training import logger
 
@@ -135,6 +136,7 @@ class Training:
 
     def fetch_image(self, url):
         image = rasterio_read(str(url))  # e.g., (12, 64, 64)
+        image = augmentation(image)  # Apply augmentations
         image = np.transpose(image, (1, 2, 0))  # to (64, 64, 12)
         return image.astype(np.float32)
 
@@ -153,7 +155,7 @@ class Training:
         images = []
         labels = []
 
-        for url in urls:
+        for url in tqdm(urls, total=len(urls), desc="Loading data"):
             image, label = self._process_data(url)
             images.append(image)
             labels.append(label)
