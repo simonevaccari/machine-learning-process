@@ -13,13 +13,14 @@ warnings.filterwarnings("ignore")
 
 
 @click.command(
-    short_help="making a tile-based classification on a sentinel-2 L1C data ",
-    help="A selected model with highest evaluation metrics will making an inference on a sentinel-2 L1C data",
+    short_help="making a tile-based classification on a sentinel-2 data ",
+    help="A selected model with highest evaluation metrics will making an inference on a sentinel-2  data",
 )
 @click.option(
     "--input_reference",
+    "-i",
     "input_reference",
-    help="Url to sentinel-2 L1C STAC Item to provide inference on tif images for 13 common bands",
+    help="Url to sentinel-2 STAC Item to provide inference on tif images for 12 common bands(excluding cirrus)",
     type=click.Path(),
     required=True,
 )

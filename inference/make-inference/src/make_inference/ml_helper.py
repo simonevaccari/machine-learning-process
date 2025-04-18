@@ -261,19 +261,34 @@ def get_asset(item, common_name):
 def item_filter_assets(item):
 
     common_names = [
-        "coastal", # B01
-        "blue", #   B02
-        "green", # B03
-        "red", #   B04
-        "rededge70", # B05
-        "rededge74", # B06
-        "rededge78", # B07
-        "nir", # B08
-        "nir08", # B8A
-        "nir09", # B09
-        "cirrus", # B10
-        "swir16", # B11
-        "swir22", # B12
+        
+        "B01",  #"coastal"
+        "B02",  #"blue"
+        "B03",  #"green"
+        "B04",  #"red"
+        "B05",  #"rededge70"
+        "B06",  #"rededge74"
+        "B07",  #"rededge78"
+        "B08",  #"nir"
+        "B8A",  #"nir08"
+        "B09",  #"nir09"
+        #"B10",  # cirrus
+        "B11",  #"swir16"
+        "B12",  #"swir22"
+        # "coastal",  "B01"
+        # "blue",   "B02"
+        # "green", "B03"
+        # "red",    "B04"
+        # "rededge70",  "B05"
+        # "rededge74",  "B06"
+        # "rededge78",  "B07"
+        # "nir",  "B08"
+        # "nir08",  "B8A"
+        # "nir09",  "B09"
+        # #"cirrus", # B10
+        # "B11",  #"swir16"
+        # "B12",  #"swir22"
+        
     ]
     desirable_assets = {}
     for common_name in common_names:
