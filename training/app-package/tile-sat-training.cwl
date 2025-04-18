@@ -13,103 +13,71 @@ $graph:
       - class: InlineJavascriptRequirement
       - class: ScatterFeatureRequirement
     inputs:
-      ADES_AWS_S3_ENDPOINT: 
-        label: ADES_AWS_S3_ENDPOINT
-        type: string?
-      ADES_AWS_REGION: 
-        label: ADES_AWS_REGION
-        type: string?
-      ADES_AWS_DEFAULT_REGION: 
-        label: ADES_AWS_DEFAULT_REGION
-        type: string?
-      ADES_AWS_ACCESS_KEY_ID: 
-        label: ADES_AWS_ACCESS_KEY_ID
-        type: string?
-      ADES_AWS_SECRET_ACCESS_KEY: 
-        label: ADES_AWS_SECRET_ACCESS_KEY
-        type: string?
-      ADES_BUCKET_NAME: 
-        label: ADES_BUCKET_NAME
-        type: string?
-      ADES_IAM_URL: 
-        label: ADES_IAM_URL
-        type: string?
-      ADES_IAM_PASSWORD: 
-        label: ADES_IAM_PASSWORD
-        type: string?
       MLFLOW_TRACKING_URI: 
         label: MLFLOW_TRACKING_URI
         type: string
-      stac_endpoint_url:
-        label: stac_endpoint_url
+      stac_reference:
+        label: stac_reference
         doc: STAC Item label url
         type: string
-
-
       BATCH_SIZE:
         label: BATCH_SIZE
         default: 4
         doc: BATCH_SIZE- model metadata
-        type: int
-      EPOCHS:
-        label: EPOCHS
-        default: 5
-        doc: EPOCHS- model metadata
-        type: int
-      LEARNING_RATE:
-        label: LEARNING_RATE
-        default: 0.0001
-        doc: LEARNING_RATE- model metadata
-        type: float
-      DECAY:
-        label: DECAY
-        default: 0.1
-        doc: DECAY- model metadata
-        type: float
-      EPSILON:
-        label: EPSILON
-        default: 0.000002
-        doc: EPSILON- model metadata
-        type: float
-      MEMENTUM:
-        label: MEMENTUM
-        default: 0.95
-        doc: MEMENTUM- model metadata
-        type: float
-      LOSS:
-        label: LOSS
-        default: "categorical_crossentropy"
-        doc: LOSS- model metadata
-        type: string
-      REGULIZER:
-        label: REGULIZER
-        default: "None"
-        doc: REGULIZER- model metadata
-        type: string
-      OPTIMIZER:
-        label: OPTIMIZER
-        default: "Adam"
-        doc: OPTIMIZER- model metadata
-        type: string
-      SAMPLES_PER_CLASS:
-        label: SAMPLES_PER_CLASS
-        default: 500
-        doc: SAMPLES_PER_CLASS- model metadata
-        type: int
+        type: int[]
       CLASSES:
         label: CLASSES
         default: 10
         doc: CLASSES- model metadata
         type: int
-      IMAGE_SIZE:
-        label: IMAGE_SIZE
-        doc: IMAGE_SIZE- model metadata
+      DECAY:
+        label: DECAY
+        default: 0.1
+        doc: DECAY- model metadata
+        type: float[]
+      EPOCHS:
+        label: EPOCHS
+        default: 5
+        doc: EPOCHS- model metadata
         type: int[]
-      enable_data_ingestion:
-        label: enable_data_ingestion
-        default: "False"
-        doc: A flag to enable data ingestion pipeline
-        type: boolean
+      EPSILON:
+        label: EPSILON
+        default: 0.000002
+        doc: EPSILON- model metadata
+        type: float[]
+      LEARNING_RATE:
+        label: LEARNING_RATE
+        default: 0.0001
+        doc: LEARNING_RATE- model metadata
+        type: float[]
+      LOSS:
+        label: LOSS
+        default: "categorical_crossentropy"
+        doc: LOSS- model metadata
+        type: string[]
+      
+      MEMENTUM:
+        label: MEMENTUM
+        default: 0.95
+        doc: MEMENTUM- model metadata
+        type: float[]
+      OPTIMIZER:
+        label: OPTIMIZER
+        default: "Adam"
+        doc: OPTIMIZER- model metadata
+        type: string[]
+      REGULARIZER:
+        label: REGULARIZER
+        default: "None"
+        doc: REGULARIZER- model metadata
+        type: string[]
+      
+      SAMPLES_PER_CLASS:
+        label: SAMPLES_PER_CLASS
+        default: 500
+        doc: SAMPLES_PER_CLASS- model metadata
+        type: int
+      
     outputs: 
       - id: artifacts
         outputSource: 
@@ -119,30 +87,31 @@ $graph:
       training:
         run: "#training"
         in:  
-          ADES_AWS_S3_ENDPOINT: ADES_AWS_S3_ENDPOINT
-          ADES_AWS_REGION: ADES_AWS_REGION
-          ADES_AWS_DEFAULT_REGION: ADES_AWS_DEFAULT_REGION
-          ADES_AWS_ACCESS_KEY_ID: ADES_AWS_ACCESS_KEY_ID
-          ADES_AWS_SECRET_ACCESS_KEY: ADES_AWS_SECRET_ACCESS_KEY
-          ADES_BUCKET_NAME: ADES_BUCKET_NAME
-          ADES_IAM_URL: ADES_IAM_URL
-          ADES_IAM_PASSWORD: ADES_IAM_PASSWORD
           MLFLOW_TRACKING_URI: MLFLOW_TRACKING_URI
-          stac_endpoint_url: stac_endpoint_url
+          stac_reference: stac_reference
           BATCH_SIZE: BATCH_SIZE
-          EPOCHS: EPOCHS
-          LEARNING_RATE: LEARNING_RATE
-          DECAY: DECAY
-          EPSILON: EPSILON
-          MEMENTUM: MEMENTUM
-          LOSS: LOSS  
-          REGULIZER: REGULIZER
-          OPTIMIZER: OPTIMIZER
-          SAMPLES_PER_CLASS: SAMPLES_PER_CLASS
           CLASSES: CLASSES
-          IMAGE_SIZE: IMAGE_SIZE
-          enable_data_ingestion: enable_data_ingestion
+          DECAY: DECAY
+          EPOCHS: EPOCHS
+          EPSILON: EPSILON
+          LEARNING_RATE: LEARNING_RATE
+          LOSS: LOSS  
+          MEMENTUM: MEMENTUM
+          OPTIMIZER: OPTIMIZER
+          REGULARIZER: REGULARIZER
+          SAMPLES_PER_CLASS: SAMPLES_PER_CLASS
+        scatter: 
+          - BATCH_SIZE
+          - DECAY
+          - EPOCHS
+          - EPSILON
+          - LEARNING_RATE
+          - LOSS
+          - MEMENTUM
+          - OPTIMIZER
+          - REGULARIZER
 
+        scatterMethod: dotproduct # "flat_crossproduct" to analyse all possible combination of inputs
         out: 
           - artifacts
         
@@ -157,122 +126,87 @@ $graph:
         envDef:
           #LD_LIBRARY_PATH: /home/neo/.local/share/hatch/env/virtual/.pythons/3.10/python/lib/libpython3.10.so.1.0
           #PATH: /home/neo/.local/bin:/home/neo/bin:/code/envs/env_5/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-          AWS_S3_ENDPOINT: $( inputs.ADES_AWS_S3_ENDPOINT )
-          AWS_REGION: $( inputs.ADES_AWS_REGION )
-          AWS_DEFAULT_REGION: $(inputs.ADES_AWS_DEFAULT_REGION ) 
-          AWS_ACCESS_KEY_ID: $( inputs.ADES_AWS_ACCESS_KEY_ID )
-          AWS_SECRET_ACCESS_KEY: $( inputs.ADES_AWS_SECRET_ACCESS_KEY )
-          BUCKET_NAME: $( inputs.ADES_BUCKET_NAME )            
-          IAM_URL: $( inputs.ADES_IAM_URL ) 
-          IAM_PASSWORD: $( inputs.ADES_IAM_PASSWORD ) 
           MLFLOW_TRACKING_URI: $(inputs.MLFLOW_TRACKING_URI)
       ResourceRequirement:
         coresMax: 1
         ramMax: 1600
     hints:
       DockerRequirement:
-        dockerPull: training:latest 
+        dockerPull: train:latest 
         
     baseCommand: ["tile-based-training"]
-    arguments: 
+    arguments: []
       
-      - valueFrom: |
-            ${
-                var args=[];
-                for (var i = 0; i < inputs.IMAGE_SIZE.length; i++)
-                {
-                  args.push("--IMAGE_SIZE");
-                  args.push(inputs.IMAGE_SIZE[i]);
-                }
-                return args;
-            }
+      # - valueFrom: |
+      #       ${
+      #           var args=[];
+      #           for (var i = 0; i < inputs.IMAGE_SIZE.length; i++)
+      #           {
+      #             args.push("--IMAGE_SIZE");
+      #             args.push(inputs.IMAGE_SIZE[i]);
+      #           }
+      #           return args;
+      #       }
     inputs:
-      ADES_AWS_S3_ENDPOINT:
-        type: string?
-        
-      ADES_AWS_DEFAULT_REGION:
-        type: string?
-        
-
-      ADES_AWS_REGION:
-        type: string?
-        
-      ADES_AWS_ACCESS_KEY_ID:
-        type: string?
-        
-      ADES_AWS_SECRET_ACCESS_KEY:
-        type: string?
-        
-      ADES_BUCKET_NAME:
-        type: string?
-        
-      ADES_IAM_URL:
-        type: string?
-        
-      ADES_IAM_PASSWORD:
-        type: string?
       MLFLOW_TRACKING_URI:
         type: string  
-      stac_endpoint_url:
+      stac_reference:
         type: string
         inputBinding:
-          prefix: --stac_endpoint_url
+          prefix: --stac_reference
       BATCH_SIZE:
         type: int
         inputBinding:
           prefix: --BATCH_SIZE
-      EPOCHS:
-        type: int
-        inputBinding:
-          prefix: --EPOCHS
-      LEARNING_RATE:
-        type: float
-        inputBinding:
-          prefix: --LEARNING_RATE
-      DECAY:
-        type: float
-        inputBinding:
-          prefix: --DECAY
-      EPSILON:
-        type: float
-        inputBinding:
-          prefix: --EPSILON
-      MEMENTUM:
-        type: float
-        inputBinding:
-          prefix: --MEMENTUM
-      LOSS:
-        type: string
-        inputBinding:
-          prefix: --LOSS
-      REGULIZER:
-        type: string
-        inputBinding:
-          prefix: --REGULIZER
-      OPTIMIZER:
-        type: string
-        inputBinding:
-          prefix: --OPTIMIZER
-      SAMPLES_PER_CLASS:
-        type: int
-        inputBinding:
-          prefix: --SAMPLES_PER_CLASS
       CLASSES:
         type: int
         inputBinding:
           prefix: --CLASSES
-      IMAGE_SIZE:
-        type: int[]
-        
-      enable_data_ingestion:
-        type: boolean
+      DECAY:
+        type: float
         inputBinding:
-          prefix: --enable_data_ingestion
+          prefix: --DECAY
+      EPOCHS:
+        type: int
+        inputBinding:
+          prefix: --EPOCHS
+      EPSILON:
+        type: float
+        inputBinding:
+          prefix: --EPSILON
+      LEARNING_RATE:
+        type: float
+        inputBinding:
+          prefix: --LEARNING_RATE
+      LOSS:
+        type: string
+        inputBinding:
+          prefix: --LOSS
+      
+      MEMENTUM:
+        type: float
+        inputBinding:
+          prefix: --MEMENTUM
+      OPTIMIZER:
+        type: string
+        inputBinding:
+          prefix: --OPTIMIZER
+      REGULARIZER:
+        type: string
+        inputBinding:
+          prefix: --REGULARIZER
+      
+      SAMPLES_PER_CLASS:
+        type: int
+        inputBinding:
+          prefix: --SAMPLES_PER_CLASS
+      
+      
 
     outputs: 
       artifacts:
         outputBinding:
           glob: .
-        type: Directory[]
+        type: Directory
 
   
