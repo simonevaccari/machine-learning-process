@@ -117,6 +117,9 @@ import tensorflow as tf
 import random
 import logging
 
+tf.config.run_functions_eagerly(True)
+
+
 logger = logging.getLogger(__name__)
 
 class Training:
@@ -161,9 +164,10 @@ class Training:
             labels.append(label)
 
         images = np.stack(images)  # shape: (N, 64, 64, 12)
-        labels = tf.stack(labels).numpy()  # shape: (N, 10)
+        labels = tf.stack(labels)  # keep as Tensor
 
         return images, labels
+
 
     def train_model(self, device_name):
         train_paths = self.config.train_data["url"]

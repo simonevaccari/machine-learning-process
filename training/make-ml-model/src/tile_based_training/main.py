@@ -137,17 +137,6 @@ warnings.filterwarnings("ignore")
     show_default=True,
     type=int,
 )
-@click.option(
-    "--indexing_flag",
-    "--idx",
-    "indexing_flag",
-    help="A flag to enable data ingestion pipeline",
-    required=False,
-    is_flag=True,
-    default=False,
-    show_default=True,
-    type=bool,
-)
 @click.pass_context
 def run_tile_based_classification_training(ctx, **kwargs):
     device_name = configure_gpu()
@@ -159,21 +148,19 @@ def run_tile_based_classification_training(ctx, **kwargs):
     
     pprint(kwargs)
     write_yaml(path_to_yaml=Path("params.yaml"), args=kwargs)
-
-    #s3_bucket_config()
     # First step
-    # STAGE_NAME = "Data Ingestion stage"
+    STAGE_NAME = "Data Ingestion stage"
    
-    # try:
-    #     logger.info(f"\n=================================================================\n>>>>>> stage {STAGE_NAME} started <<<<<<")
-    #     obj = DataIngestionTrainingPipeline()
-    #     obj.main()
-    #     logger.info(
-    #         f"\n=================================================================\n>>>>>> stage {STAGE_NAME} completed <<<<<<\n================================================================="
-    #     )
-    # except Exception as e:
-    #     logger.exception(e)
-    #     raise e
+    try:
+        logger.info(f"\n=================================================================\n>>>>>> stage {STAGE_NAME} started <<<<<<")
+        obj = DataIngestionTrainingPipeline()
+        obj.main()
+        logger.info(
+            f"\n=================================================================\n>>>>>> stage {STAGE_NAME} completed <<<<<<\n================================================================="
+        )
+    except Exception as e:
+        logger.exception(e)
+        raise e
     
     
     STAGE_NAME = "Prepare Base Model"
@@ -200,7 +187,7 @@ def run_tile_based_classification_training(ctx, **kwargs):
     except Exception as e:
         logger.exception(e)
         raise e
-    sys.exit(0)
+    
     STAGE_NAME = "Evaluating Model"
 
     try:
@@ -224,58 +211,3 @@ if __name__ == "__main__":
     main()
 
 
-# # First step
-# STAGE_NAME = "Data Ingestion stage"
-
-# try:
-#     if not (os.path.isfile("./output/data_ingestion/splitted_data.json")):
-#         logger.info(f"\n>>>>>> stage {STAGE_NAME} started <<<<<<")
-#         obj = DataIngestionTrainingPipeline()
-#         obj.main()
-#         logger.info(
-#             f"\n>>>>>> stage {STAGE_NAME} completed <<<<<<\n================================================================="
-#         )
-#     else:
-#         logger.info(
-#             f"\n>>> stage {STAGE_NAME} is completed in previous attempts <<<\n================================================================="
-#         )
-# except Exception as e:
-#     logger.exception(e)
-#     raise e
-
-# STAGE_NAME = "Prepare Base Model"
-
-# try:
-#     logger.info(f"\n>>>>>> stage {STAGE_NAME} started <<<<<<")
-#     obj = PrepareBaseModelTRainingPipeline()
-#     obj.main()
-#     logger.info(
-#         f"\n\n>>>>>> stage {STAGE_NAME} completed <<<<<<\n================================================================="
-#     )
-# except Exception as e:
-#     logger.exception(e)
-#     raise e
-
-
-# STAGE_NAME = "Training Model"
-
-# try:
-#     logger.info(f">>>>>> stage {STAGE_NAME} started <<<<<<")
-#     obj = ModelTRainingPipeline()
-#     obj.main()
-#     logger.info(f">>>>>> stage {STAGE_NAME} completed <<<<<<\n\nx==========x")
-# except Exception as e:
-#     logger.exception(e)
-#     raise e
-
-
-# STAGE_NAME = "Evaluating Model"
-
-# try:
-#     logger.info(f">>>>>> stage {STAGE_NAME} started <<<<<<")
-#     obj = ModelEvaluationPipeline()
-#     obj.main()
-#     logger.info(f">>>>>> stage {STAGE_NAME} completed <<<<<<\n\nx==========x")
-# except Exception as e:
-#     logger.exception(e)
-#     raise e

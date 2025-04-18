@@ -433,7 +433,7 @@ def rasterio_read(image_path: str, max_retries: int = 20, backoff_base: int = 5)
         data (np.ndarray): The read image data as a NumPy array (float32).
     """
     #print(os.getcwd())
-    full_path = f"{image_path}"
+    full_path = f"/vsizip/vsicurl/{image_path}"
     attempt = 0
 
     while attempt < max_retries:

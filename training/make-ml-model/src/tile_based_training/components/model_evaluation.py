@@ -79,8 +79,6 @@ class Evaluation:
         sample_input = x_test[0:1]  # ✅ keep batch dim
         sample_output = self.model.predict(sample_input)
         self.signature = infer_signature(sample_input, sample_output)
-
-
         self.save_scores()
         return (x_test, y_test), self.matrix
 
@@ -181,43 +179,43 @@ class Evaluation:
 
 
 
-    @staticmethod
-    def read_images(file_path, label):
-        try:
-            file_path = file_path.numpy().decode("utf-8")
-            data = rasterio_read(file_path)
-            #data = data / np.amax(data)
-            data = data / 10000.0
-            image_data = np.transpose(data, (1, 2, 0))
-            return tf.convert_to_tensor(image_data, dtype=tf.float32), tf.convert_to_tensor(label, dtype=tf.float32)
-        except Exception as e:
-            print("Error:", e)
-            return (None, label)
+    # @staticmethod
+    # def read_images(file_path, label):
+    #     try:
+    #         file_path = file_path.numpy().decode("utf-8")
+    #         data = rasterio_read(file_path)
+    #         #data = data / np.amax(data)
+    #         data = data / 10000.0
+    #         image_data = np.transpose(data, (1, 2, 0))
+    #         return tf.convert_to_tensor(image_data, dtype=tf.float32), tf.convert_to_tensor(label, dtype=tf.float32)
+    #     except Exception as e:
+    #         print("Error:", e)
+    #         return (None, label)
 
 
-    def test_dataloader(self, file_paths):
-        classes = {
-            "AnnualCrop": 0,
-            "Forest": 1,
-            "HerbaceousVegetation": 2,
-            "Highway": 3,
-            "Industrial": 4,
-            "Pasture": 5,
-            "PermanentCrop": 6,
-            "Residential": 7,
-            "River": 8,
-            "SeaLake": 9,
-        }
-        labels = [tf.one_hot(classes[file_path.split("/")[-2].split("_")[0]], depth=10) for file_path in file_paths]
+    # def test_dataloader(self, file_paths):
+    #     classes = {
+    #         "AnnualCrop": 0,
+    #         "Forest": 1,
+    #         "HerbaceousVegetation": 2,
+    #         "Highway": 3,
+    #         "Industrial": 4,
+    #         "Pasture": 5,
+    #         "PermanentCrop": 6,
+    #         "Residential": 7,
+    #         "River": 8,
+    #         "SeaLake": 9,
+    #     }
+    #     labels = [tf.one_hot(classes[file_path.split("/")[-2].split("_")[0]], depth=10) for file_path in file_paths]
 
-        dataset = tf.data.Dataset.from_tensor_slices((file_paths, labels))
+    #     dataset = tf.data.Dataset.from_tensor_slices((file_paths, labels))
 
-        dataset = dataset.map(lambda x, y: tf.py_function(self.read_images, [x, y], (tf.float32, tf.float32)))
-        dataset.map(
-            lambda x, y: tf.py_function(self.read_images, [x, y], (tf.float32, tf.float32)),
-            num_parallel_calls=tf.data.AUTOTUNE,
-        )
-        dataset = dataset.map(lambda x, y: (tf.ensure_shape(x, [64, 64, 13]), tf.ensure_shape(y, [10])))
-        dataset = dataset.batch(self.config.params_batch_size).cache().prefetch(tf.data.AUTOTUNE)
+    #     dataset = dataset.map(lambda x, y: tf.py_function(self.read_images, [x, y], (tf.float32, tf.float32)))
+    #     dataset.map(
+    #         lambda x, y: tf.py_function(self.read_images, [x, y], (tf.float32, tf.float32)),
+    #         num_parallel_calls=tf.data.AUTOTUNE,
+    #     )
+    #     dataset = dataset.map(lambda x, y: (tf.ensure_shape(x, [64, 64, 13]), tf.ensure_shape(y, [10])))
+    #     dataset = dataset.batch(self.config.params_batch_size).cache().prefetch(tf.data.AUTOTUNE)
 
-        return dataset
+    #     return dataset
