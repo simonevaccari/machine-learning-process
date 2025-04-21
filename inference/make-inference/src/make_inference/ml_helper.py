@@ -6,6 +6,7 @@ import pystac
 from rio_stac.stac import create_stac_item
 from rasterio.warp import Resampling
 from rasterio.windows import Window
+from planetary_computer import sign
 from typing import Dict, List
 import pystac
 import warnings
@@ -254,13 +255,13 @@ def get_asset(item, common_name):
         for b in eo_asset.bands:
 
             if "name" in b.properties.keys() and common_name in b.properties["name"]:
-
-                return asset.get_absolute_href(), key
+                signed_href = sign(asset.get_absolute_href())
+                return signed_href, key
 
 
 def item_filter_assets(item):
 
-    common_names = [
+    bands = [
         
         "B01",  #"coastal"
         "B02",  #"blue"
@@ -291,16 +292,16 @@ def item_filter_assets(item):
         
     ]
     desirable_assets = {}
-    for common_name in common_names:
+    for band in bands:
 
-        desirable_assets[common_name], key = get_asset(item, common_name)
-        print(f"Asset {key} with common name {common_name} found")
+        desirable_assets[band], key = get_asset(item, band)
+        print(f"Asset href {desirable_assets[band]} with common name {band} found")
     assert len(desirable_assets) > 0, "Item has no desirable asset"
     return desirable_assets
 
 
-def resize_and_convert_to_cog(asset_path, target_resolution=10):
-    output_file = f'./{asset_path.split("/")[-1]}'
+def resize_and_convert_to_cog(key, asset_path, target_resolution=10):
+    output_file = f'./{key}.tif'
     with rasterio.open(asset_path) as src:
         src_transform = src.transform
         if src_transform.a > target_resolution:
@@ -377,7 +378,7 @@ def sliding(shape, window_size, step_size=None, fixed=True):
     return windows
 
 
-def stack_separated_bands(window, srcs, block_shape=(13, 64, 64)):
+def stack_separated_bands(window, srcs, block_shape=(12, 64, 64)):
     """
     Stack specified bands from raster sources into a numpy array block.
 

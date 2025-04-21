@@ -61,6 +61,7 @@ dependencies = [
     "onnxmltools",
     "onnxruntime",
     "onnx",
+    "planetary_computer",
 ]
 
 [tool.hatch.envs.prod.scripts]

@@ -31,7 +31,6 @@ def run_inference(ctx, **params):
     if os.path.isdir(params["input_reference"]):
         catalog = pystac.read_file(os.path.join(params["input_reference"], "catalog.json"))
         item = next(catalog.get_items())
-
         filtered_assets = item_filter_assets(item)
 
     else:
@@ -42,8 +41,7 @@ def run_inference(ctx, **params):
     window_size = 64
     logger.info(f"Item assets keys are: {item.get_assets().keys()} \n\nFiltered assets: {filtered_assets.keys()}")
     for key, asset_href in filtered_assets.items():
-        print(key)
-        updated_asset_href = resize_and_convert_to_cog(asset_href)
+        updated_asset_href = resize_and_convert_to_cog(key, asset_href)
         filtered_assets[key] = updated_asset_href
     ### Open the tif file
     srcs, referenced_src, meta = asset_reader(filtered_assets)
