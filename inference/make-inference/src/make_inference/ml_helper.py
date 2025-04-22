@@ -199,7 +199,7 @@ def save_overview(data, output_href, meta):
             "blockysize": 512,
             "count": 1,
             "tiled": True,
-            "compress": "deflate",
+            "compress": "LZW",
             "interleave": "band",
             "nodata": 10,  # Setting nodata to 0 for this example
         }
