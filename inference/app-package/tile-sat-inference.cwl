@@ -7,8 +7,8 @@ schemas:
 $graph:
   - class: Workflow
     id: tile-sat-inference
-    label: Tile-SAT Inference on Sentinel-2 L1C data
-    doc: A trained CNN model performs a tile-based inference on Sentinel-2 L1C data to classify image into 11 different classes.
+    label: Tile-SAT Inference on Sentinel-2 data
+    doc: A trained CNN model performs a tile-based inference on Sentinel-2 data to classify image into 11 different classes.
     requirements:
       - class: InlineJavascriptRequirement
       - class: ScatterFeatureRequirement
@@ -17,12 +17,12 @@ $graph:
       input_reference:
         doc: S2 product
         label: S2 product
-        type: Directory
+        type: string[]
     outputs:
       results:
         outputSource:
         - make_inference/artifacts
-        type: Directory
+        type: Directory[]
     steps:
       make_inference:
         in:
@@ -30,6 +30,9 @@ $graph:
         out:
         - artifacts
         run: '#make_inference'
+        scatter: 
+          - input_reference
+        scatterMethod: dotproduct
 
   - class: CommandLineTool
     id: make_inference
@@ -39,7 +42,7 @@ $graph:
     baseCommand: ["make-inference"]
     inputs:
       input_reference:
-        type: Directory
+        type: string
         inputBinding:
           position: 1
           prefix: --input_reference
