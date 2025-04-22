@@ -30,7 +30,7 @@ The CWL file takes as input a reference to a directory containing the staged Sen
 Before executing the application package with a CWL runner, the user must first stage in the Sentinel-2 L1C data. Instructions for doing this can be found in the [stage-in guide](./stage-in.md). Then update the latest docker image reference in the cwl file as below:
 ```
 cd inference/app-package
-VERSION="0.0.2"
+VERSION="0.0.3"
 curl -L -o "tile-sat-inference.cwl" \
   "https://github.com/eoap/machine-learning-process/releases/download/${VERSION}/tile-sat-inference.${VERSION}.cwl"
 

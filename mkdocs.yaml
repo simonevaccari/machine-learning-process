@@ -64,7 +64,6 @@ nav:
     - Run Training Module using CWL Runner: 'training-cwl.md'
   - Run an inference on Real World data: 
     - Container: 'inference-container.md'
-    - Stage-in: 'stage-in.md'
     - Run Inference Module using CWL Runner: 'inference-cwl.md'
   - Describes a trained machine learning model: 'mlm.md'
   - Technical Insights and Learnings: 'insights.md'
