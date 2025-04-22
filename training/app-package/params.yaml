@@ -1,4 +1,4 @@
-MLFLOW_TRACKING_URI: http://127.0.0.1:5000
+MLFLOW_TRACKING_URI: http://my-mlflow:5000
 stac_reference: "https://raw.githubusercontent.com/eoap/machine-learning-process/main/training/app-package/EUROSAT-Training-Dataset/catalog.json"
 BATCH_SIZE: 
     - 2
@@ -18,16 +18,19 @@ LEARNING_RATE:
     - 0.0005
     
 LOSS: 
+    # choose one of binary_crossentropy/cosine_similarity/mean_absolute_error/mean_squared_logarithmic_error
+    # squared_hinge
     - categorical_crossentropy
-    - sparse_categorical_crossentropy  
+    - categorical_crossentropy  
 MEMENTUM: 
     - 0.95
     - 0.79
 OPTIMIZER: 
+    # choose one of Adam, SGD, RMSprop
     - Adam
-    - sgd
+    - SGD
 REGULARIZER: 
+    # choose one of  l1,l2,None
     - None
     - l1l2
 SAMPLES_PER_CLASS: 10
-# MLFLOW_TRACKING_URI: http://my-mlflow:5000
