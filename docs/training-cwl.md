@@ -54,7 +54,7 @@ The latest version of cwl document can be fetched as below:
 
 ```
 cd training/app-package
-VERSION="0.0.3"
+VERSION="0.0.4"
 curl -L -o "tile-sat-training.cwl" \
   "https://github.com/eoap/machine-learning-process/releases/download/${VERSION}/tile-sat-training.${VERSION}.cwl"
 
