@@ -50,40 +50,40 @@ jobs:
           echo "version=$version" >> $GITHUB_OUTPUT
           echo "📦 App version: $version"
 
-  # container-build:
-  #   needs: version
-  #   runs-on: ubuntu-latest
-  #   permissions:
-  #     contents: read
-  #     packages: write
-  #   strategy:
-  #     matrix:
-  #       include:
-  #         - name: training
-  #           path: make-ml-model
-  #         - name: inference
-  #           path: make-inference
-  #   steps:
-  #     - uses: actions/checkout@v2
+  container-build:
+    needs: version
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+    strategy:
+      matrix:
+        include:
+          - name: training
+            path: make-ml-model
+          - name: inference
+            path: make-inference
+    steps:
+      - uses: actions/checkout@v2
 
-  #     - name: Log in to GHCR
-  #       run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
+      - name: Log in to GHCR
+        run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
 
-  #     - name: Build and Push Docker Image
-  #       run: |
-  #         IMAGE_NAME=${{ env.GHCR_REPO }}/${{ matrix.name }}
-  #         VERSION=${{ needs.version.outputs.app-version }}
-  #         DOCKERFILE=${{ matrix.name }}/${{ matrix.path }}/Dockerfile
-  #         CONTEXT=${{ matrix.name }}/${{ matrix.path }}
+      - name: Build and Push Docker Image
+        run: |
+          IMAGE_NAME=${{ env.GHCR_REPO }}/${{ matrix.name }}
+          VERSION=${{ needs.version.outputs.app-version }}
+          DOCKERFILE=${{ matrix.name }}/${{ matrix.path }}/Dockerfile
+          CONTEXT=${{ matrix.name }}/${{ matrix.path }}
 
-  #         echo "🔨 Building $IMAGE_NAME:$VERSION"
-  #         docker build "$CONTEXT" -f "$DOCKERFILE" -t "$IMAGE_NAME:$VERSION"
+          echo "🔨 Building $IMAGE_NAME:$VERSION"
+          docker build "$CONTEXT" -f "$DOCKERFILE" -t "$IMAGE_NAME:$VERSION"
 
-  #         echo "📤 Pushing $IMAGE_NAME:$VERSION"
-  #         docker push "$IMAGE_NAME:$VERSION"
+          echo "📤 Pushing $IMAGE_NAME:$VERSION"
+          docker push "$IMAGE_NAME:$VERSION"
 
   create-release:
-    needs: [version]
+    needs: [container-build, version]
     runs-on: ubuntu-latest
     permissions:
       contents: write
