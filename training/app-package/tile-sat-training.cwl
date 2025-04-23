@@ -129,7 +129,7 @@ $graph:
           MLFLOW_TRACKING_URI: $(inputs.MLFLOW_TRACKING_URI)
       ResourceRequirement:
         coresMax: 1
-        ramMax: 1600
+        ramMax: 4096
     hints:
       DockerRequirement:
         dockerPull: train:latest 
