@@ -58,14 +58,17 @@ extra_javascript:
 
 nav:
   - Introduction: 'index.md'
-  - Application Packages: 'packages.md'
-  - Training a Machine Learning Model: 
-    - Container: 'training-container.md'
+  - How-to guides: 'hands-on.md'
+  - Tutorials:
+    - Application Packages: 'packages.md'
     - Run Training Module using CWL Runner: 'training-cwl.md'
-  - Run an inference on Real World data: 
-    - Container: 'inference-container.md'
     - Run Inference Module using CWL Runner: 'inference-cwl.md'
-  - Describes a trained machine learning model: 'mlm.md'
+    - Describes a trained machine learning model: 'mlm.md'
+  - Reference guides:
+    - Training a Machine Learning Model: 
+      - Container: 'training-container.md'
+    - Run an inference on Real World data: 
+      - Container: 'inference-container.md'
   - Technical Insights and Learnings: 'insights.md'
   
 

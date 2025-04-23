@@ -1,58 +1,45 @@
 # Inference Module & CWL Runner
 
-In the [training](training-container.md) module, the user trained a CNN model on EuroSAT dataset to classify image chips into 10 different classes and tracked the workflow with MLFlow.
+In the [training module](training-container.md), a CNN model was trained on the EuroSAT dataset to classify image chips into 10 different land use/land cover classes. The training workflow was tracked using MLflow.
 
-In this Application Package, the user provide a cwl document to performs inference by applying the trained model to unseen data to generate a classified image. The cwl document containing one main workflow to execute one CommandLineTool step:
+This Application Package provides a CWL document that performs inference by applying the trained model to unseen Sentinel-2 data in order to generate a classified image. The CWL document contains a single main workflow that executes one `CommandLineTool` step. It also supports parallel execution by accepting a list of Sentinel-2 references as input, making it suitable for running at scale on a Minikube cluster.
 
-The Application Package takes as input a [staged-in](./stage-in.md) Sentinel-2 L1C data and classifies it into 11 land cover classes:
+To execute the application, users have the option to use either [cwltool](https://github.com/common-workflow-language/cwltool) or [Calrissian](https://github.com/Duke-GCB/calrissian) as the CWL runner.
 
-| Class ID | Class Name            |
-|----------|-----------------------|
-| 0        | AnnualCrop            |
-| 1        | Forest                |
-| 2        | HerbaceousVegetation  |
-| 3        | Highway               |
-| 4        | Industrial            |
-| 5        | Pasture               |
-| 6        | PermanentCrop         |
-| 7        | Residential           |
-| 8        | River                 |
-| 9        | SeaLake               |
-| 10       | No Data               |
+## Inputs:
+- `input_reference`: A list of reference to a Sentinel-2 product on [planetary computer](https://planetarycomputer.microsoft.com/api/stac/v1/collections). The application will give you an accurate result if the sentinel-2 product has no/low cloud-cover.
 
-For executing the application package, the user have the options to use whether [cwltool](https://github.com/common-workflow-language/cwltool) or [calrissian](https://github.com/Duke-GCB/calrissian).
+## How to Execute the Application Package
 
-## Inputs
-The CWL file takes as input a reference to a directory containing the staged Sentinel-2 L1C product.
+Before running the application with a CWL runner, make sure to download and use the latest version of the CWL document:
 
-## **How to Execute the Application Package?**
-
-Before executing the application package with a CWL runner, the user must first stage in the Sentinel-2 L1C data. Instructions for doing this can be found in the [stage-in guide](./stage-in.md). Then update the latest docker image reference in the cwl file as below:
-```
+```bash
 cd inference/app-package
 VERSION="0.0.4"
 curl -L -o "tile-sat-inference.cwl" \
   "https://github.com/eoap/machine-learning-process/releases/download/${VERSION}/tile-sat-inference.${VERSION}.cwl"
-
 ```
 
 ### **Run the Application Package**:
 There are two methods to execute the application:
 
-- Executing the `tile-sat-inference` app using `cwltool` in a terminal:
+- Executing the `tile-sat-inference` app using `cwltool`:
 
     ```bash
-    cwltool --podman --debug tile-sat-inference.cwl#tile-sat-inference params.yml
+    cwltool --podman --debug --parallel tile-sat-inference.cwl#tile-sat-inference params.yml
     ```
 
-- Executing the water-bodies-app using `calrissian` in a terminal:
+- Executing the `tile-sat-inference` using `calrissian`:
 
     ```bash
     
-    calrissian --debug --stdout /calrissian/out.json --stderr /calrissian/stderr.log --usage-report /calrissian/report.json --max-ram 10G --max-cores 2 --tmp-outdir-prefix /calrissian/tmp/ --outdir /calrissian/results/ --tool-logs-basepath /calrissian/logs tile-sat-inference.cwl#tile-sat-inference params.yml
+    calrissian --debug --stdout /calrissian/out.json --stderr /calrissian/stderr.log --usage-report /calrissian/report.json --max-ram 10G --max-cores 2 --parallel --tmp-outdir-prefix /calrissian/tmp/ --outdir /calrissian/results/ --tool-logs-basepath /calrissian/logs tile-sat-inference.cwl#tile-sat-inference params.yml
     ```
+  > You can monitor the pod creation using command below:
+  >
+  >   `kubectl get pods` 
 
-## How the CWL Document Works:
+## How the CWL document designed:
 The CWL file can be triggered using `cwltool` or `calrissian`. The user provides a `params.yml` file that passes all inputs needed by the CWL file to execute the module. The CWL file is designed to execute the module based on the structure below:
 
 <p align="center"><img src="./imgs/inference.png" alt="Picture" width="40%" height="10%" style="display: block; margin: 20px auto;"/></p>

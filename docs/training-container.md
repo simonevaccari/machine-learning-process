@@ -4,50 +4,25 @@ This tutorial containing a python application for training a deep learning model
 
 <p align="center"><img src="https://raw.githubusercontent.com/phelber/EuroSAT/master/eurosat_overview_small.jpg" alt="Picture" width="40%" height="10%" style="display: block; margin: 20px auto;"/></p>
 
+
 ## Inputs
-The application has the option to train the model using CPU or GPU to accelerate the training process. It received a set of input parameters including:
-```
-stac_endpoint_url: https://ai-extensions-stac.terradue.com/collections/Euro_SAT
-BATCH_SIZE: 4
-EPOCHS: 3
-LEARNING_RATE: 0.0001
-DECAY: 0.1  ### float
-EPSILON: 0.000002
-MEMENTUM: 0.95
-# choose one of binary_crossentropy/cosine_similarity/mean_absolute_error/mean_squared_logarithmic_error
-# squared_hinge
-LOSS: categorical_crossentropy  
-# choose one of  l1,l2,None
-REGULIZER: None
-# try Adam/SGD/RMSprop
-OPTIMIZER: Adam
-###############################################################
-###############################################################
-# Dataset
-SAMPLES_PER_CLASS: 10
-CLASSES: 10
-IMAGE_SIZE: [64, 64, 13]
-enable_data_ingestion: True
 
-```
-and some environment variable must be set:
+This application supports training the CNN model using either CPU or GPU to accelerate the process. It accepts the following input parameters:
 
-```
-# Environment variables
-# AWS
-AWS_S3_ENDPOINT: #AWS_S3_ENDPOINT 
-AWS_REGION: fr-par # AWS_REGION 
-AWS_DEFAULT_REGION: fr-par #AWS_DEFAULT_REGION 
-AWS_ACCESS_KEY_ID:  #AWS_ACCESS_KEY_ID 
-AWS_SECRET_ACCESS_KEY:  # AWS_SECRET_ACCESS_KEY 
-BUCKET_NAME: ai-ext-bucket-dev # BUCKET_NAME ai-ext-bucket-dev
-##############################################################
-##############################################################
-# STAC
-IAM_URL:  # IAM_URL
-IAM_PASSWORD:  #IAM_PASSWORD
-MLFLOW_TRACKING_URI: http://my-mlflow:5000
-```
+| Parameter              | Type     | Default Value | Description |
+|------------------------|----------|----------------|-------------|
+| `--stac_reference`, `--sr` | `str`   | `https://raw.githubusercontent.com/eoap/machine-learning-process/main/training/app-package/EUROSAT-Training-Dataset/catalog.json` | URL pointing to a STAC catalog. The model reads GeoParquet annotations from the collection's assets. |
+| `--BATCH_SIZE`, `--b`  | `int`    | `2`            | Number of batches |
+| `--CLASSES`, `--c`     | `int`    | `10`           | Number of land cover classes to classify. |
+| `--DECAY`, `--d`       | `float`  | `0.1`          |  Decay value used in training. |
+| `--EPOCHS`, `--ep`     | `int`    | *required*     | Number of epochs |
+| `--EPSILON`, `--e`     | `float`  | `1e-6`         | epsilon value (Model's heyperparameter) |
+| `--LEARNING_RATE`, `--lr` | `float` | `0.0001`      | Initial learning rate for the optimizer. |
+| `--LOSS`, `--lo`       | `str`    | `categorical_crossentropy` | Loss function for training. Options: `binary_crossentropy`, `cosine_similarity`, `mean_absolute_error`, `mean_squared_logarithmic_error`, `squared_hinge`. |
+| `--MEMENTUM`, `--m`    | `float`  | `0.95`         | Momentum parameter used in optimizers |
+| `--OPTIMIZER`, `--o`   | `str`    | `Adam`         | Optimization algorithm. Options: `Adam`, `SGD`, `RMSprop`. |
+| `--REGULARIZER`, `--r` | `str`    | `None`         | Regularization technique to avoid overfitting. Options: `l1l2`,`l1`, `l2`, `None`. |
+| `--SAMPLES_PER_CLASS`, `--s` | `int` | `10`       | Number of samples to use for training per class. |
 
 
 ## How the application structured internally

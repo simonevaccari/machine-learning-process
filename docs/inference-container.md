@@ -1,11 +1,13 @@
 # Inference container:
-This module helps the user to create a pipeline for inference, which is responsible for reading assets from a Sentinel-2 L1C STAC item, loading 13 common bands, and providing a binary mask TIFF image using a CNN model that has already been trained (Please check the [training-container](./training-container.md)). 
+
+This module enables users to create an inference pipeline that take a Sentinel-2 STAC Item from the [Planetary Computer](https://planetarycomputer.microsoft.com/api/stac/v1/collections), and generates a binary mask TIFF image using a pre-trained CNN model. For details on how the model was trained, refer to the [training container documentation](./training-container.md).
+
 
 
 ## **Make Inference Module:**
 
 **Inputs**:
-- `input_reference`: The reference to a [staged-in](./stage-in.md) Sentinel-2 L1C product to run the inference on Sentinel-2 L1C images with 13 common bands.
+- `input_reference`: The reference to a Sentinel-2 product on [planetary computer](https://planetarycomputer.microsoft.com/api/stac/v1/collections). The application will give you an accurate result if the sentinel-2 product has no/low cloud-cover.
 
 **Outputs**:
 
@@ -43,14 +45,30 @@ This module helps the user to create a pipeline for inference, which is responsi
 
 - `STAC objects`: STAC objects related to the provided masks, including STAC catalog and STAC Item.
 
+## How the Application Works
 
-Certainly! Here's a grammatically correct and technically clearer version of your section:
+The application begins by reading a Sentinel-2 STAC Item from the [Planetary Computer](https://planetarycomputer.microsoft.com/api/stac/v1/collections). It then filters and selects 12 specific asset references in the order expected by the machine learning model. These assets correspond to common Sentinel-2 bands, as shown below:
 
+| Index | Asset Key  | Asset Common Name |
+|-------|------------|-------------------|
+| 1     | B01        | Coastal           |
+| 2     | B02        | Blue              |
+| 3     | B03        | Green             |
+| 4     | B04        | Red               |
+| 5     | B05        | Red Edge          |
+| 6     | B06        | Red Edge          |
+| 7     | B07        | Red Edge          |
+| 8     | B08        | NIR               |
+| 9     | B8A        | Narrow NIR        |
+| 10    | B09        | Water Vapor       |
+| 11    | B11        | SWIR 1 (16)       |
+| 12    | B12        | SWIR 2 (22)       |
 
-## How the Application Package Works
+As a preprocessing step, all selected assets are resampled to a uniform resolution of 10 meters.
 
-Before developing the inference module, one crucial step must be completed: the user needs to **select a candidate model from MLflow**, based on preferred evaluation metrics. The selected model should then be exported in the [ONNX](https://onnx.ai/) format and used for building the inference module.
+The pipeline then proceeds with a sliding window approach: it reads and stacks small image chips from the selected bands in the order listed above. These chips are fed into a trained CNN model, which predicts the corresponding class for each chip.
 
-The user must also provide a staged-in Sentinel-2 L1C product and read the STAC Item's 13 common spectral bands, which serve as the input to the trained model. These assets are processed using a 64×64 sliding window to handle memory limitations and ensure the input size matches that of the machine learning model.
-
-Finally, the model generates predictions, and the resulting classification masks are stored as a **COG (Cloud-Optimized GeoTIFF)** image.
+Finally, the application generates:
+- The classification prediction map (as a GeoTIFF mask)
+- A visual overview image
+- An updated STAC item containing metadata and references to the output files
