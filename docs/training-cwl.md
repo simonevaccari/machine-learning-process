@@ -39,17 +39,20 @@ There are two methods to execute the application:
 
 - Executing the tile-based-training using cwltool in a terminal:
 
-   ``
+   ```
     cwltool --podman --debug --parallel tile-sat-training.cwl#tile-sat-training params.yml
-   ``
+   ```
     
 
 
 - Executing the tile-based classification using calrissian in a terminal:
 
-   ``
+   ```
     calrissian --debug --stdout /calrissian/out.json --stderr /calrissian/stderr.log --usage-report /calrissian/report.json --parallel --max-ram 10G --max-cores 2 --tmp-outdir-prefix /calrissian/tmp/ --outdir /calrissian/results/ --tool-logs-basepath /calrissian/logs tile-sat-training.cwl#tile-sat-training params.yaml
-   ``
+   ```
+   > You can monitor the pod creation using command below:
+   >
+   >   `kubectl get pods` 
 
 
 ## How the CWL document designed:

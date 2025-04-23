@@ -5,7 +5,7 @@ This page provides a step-by-step guide to help you run different components of 
 ---
 
 ### Tile-based Training Implementation
-Refer to the [training component documentation](./training-cwl.md) and run multiple training jobs with various model hyperparameters by following the instructions provided in the [README](../training/app-package/README.md).
+Refer to the [training component documentation](./training-cwl.md) and run multiple training jobs with various model hyperparameter.
 
 ---
 

@@ -11,18 +11,22 @@ This application supports training the CNN model using either CPU or GPU to acce
 
 | Parameter              | Type     | Default Value | Description |
 |------------------------|----------|----------------|-------------|
-| `--stac_reference`, `--sr` | `str`   | `https://raw.githubusercontent.com/eoap/machine-learning-process/main/training/app-package/EUROSAT-Training-Dataset/catalog.json` | URL pointing to a STAC catalog. The model reads GeoParquet annotations from the collection's assets. |
-| `--BATCH_SIZE`, `--b`  | `int`    | `2`            | Number of batches |
-| `--CLASSES`, `--c`     | `int`    | `10`           | Number of land cover classes to classify. |
-| `--DECAY`, `--d`       | `float`  | `0.1`          |  Decay value used in training. |
-| `--EPOCHS`, `--ep`     | `int`    | *required*     | Number of epochs |
-| `--EPSILON`, `--e`     | `float`  | `1e-6`         | epsilon value (Model's heyperparameter) |
-| `--LEARNING_RATE`, `--lr` | `float` | `0.0001`      | Initial learning rate for the optimizer. |
-| `--LOSS`, `--lo`       | `str`    | `categorical_crossentropy` | Loss function for training. Options: `binary_crossentropy`, `cosine_similarity`, `mean_absolute_error`, `mean_squared_logarithmic_error`, `squared_hinge`. |
-| `--MEMENTUM`, `--m`    | `float`  | `0.95`         | Momentum parameter used in optimizers |
-| `--OPTIMIZER`, `--o`   | `str`    | `Adam`         | Optimization algorithm. Options: `Adam`, `SGD`, `RMSprop`. |
-| `--REGULARIZER`, `--r` | `str`    | `None`         | Regularization technique to avoid overfitting. Options: `l1l2`,`l1`, `l2`, `None`. |
-| `--SAMPLES_PER_CLASS`, `--s` | `int` | `10`       | Number of samples to use for training per class. |
+| stac_reference | `str`   | `https://raw.githubusercontent.com/eoap/machine-learning-process/main/training/app-package/EUROSAT-Training-Dataset/catalog.json` | URL pointing to a STAC catalog. The model reads GeoParquet annotations from the collection's assets. |
+| BATCH_SIZE  | `int`    | `2`            | Number of batches |
+| CLASSES     | `int`    | `10`           | Number of land cover classes to classify. |
+| DECAY       | `float`  | `0.1`          |  Decay value used in training. |
+| EPOCHS`      | `int`    | *required*     | Number of epochs |
+| EPSILON`     | `float`  | `1e-6`         | epsilon value (Model's heyperparameter) |
+| LEARNING_RATE` | `float` | `0.0001`      | Initial learning rate for the optimizer. |
+| LOSS       | `str`    | `categorical_crossentropy` | Loss function for training. Options: `binary_crossentropy`, `cosine_similarity`, `mean_absolute_error`, `mean_squared_logarithmic_error`, `squared_hinge`. |
+| MEMENTUM    | `float`  | `0.95`         | Momentum parameter used in optimizers |
+| OPTIMIZER   | `str`    | `Adam`         | Optimization algorithm. Options: `Adam`, `SGD`, `RMSprop`. |
+|REGULARIZER | `str`    | `None`         | Regularization technique to avoid overfitting. Options: `l1l2`,`l1`, `l2`, `None`. |
+| SAMPLES_PER_CLASS | `int` | `10`       | Number of samples to use for training per class. |
+
+
+## Outputs:
+- `mlruns`: Directory containing artifacts, metrics, and metadata for each training run, tracked and organized by MLflow.
 
 
 ## How the application structured internally
