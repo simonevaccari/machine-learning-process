@@ -4,7 +4,6 @@ build-backend = "hatchling.build"
 
 [project]
 name = "mlm"
-dynamic = ["version"]
 description = "Describes a trained machine learning model"
 requires-python = ">=3.10"
 license = "Apache-2.0"
@@ -50,19 +49,16 @@ dependencies = [
     "tqdm",
     "ipykernel",
 ]
-
+[tool.hatch.build.targets.wheel]
+packages = ["src/mlm"]
 
 [[tool.hatch.envs.test.matrix]]
 python = ["3.10"]
 
 # Coverage settings
 [tool.coverage.run]
-source_pkgs = ["tile_based_training"]
 branch = true
 parallel = true
-omit = [
-    "src/tile_based_training/__about__.py",
-]
 
 
 
