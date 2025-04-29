@@ -47,3 +47,5 @@ The CWL file can be triggered using `cwltool` or `calrissian`. The user provides
 > **`[]`** in the image above indicates that the user may pass a list of parameters to the application package.
 
 The Application Package will generate a list of directories containing intermediate or final output. The number of folders containing a `{STAC_ITEM_ID}_classified.tif` and the corresponding STAC objects, such as STAC Catalog and STAC Item, depends on the number of input Sentinel-2 items.
+
+

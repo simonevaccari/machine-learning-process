@@ -61,3 +61,4 @@ The CWL file can be triggered using `cwltool` or `calrissian`. The user provides
 <p align="center"><img src="./imgs/training.png" alt="Picture" width="40%" height="10%" style="display: block; margin: 20px auto;"/></p>
 
 > **`[]`** in the image above indicates that the user may pass a list of parameters to the application package.
+

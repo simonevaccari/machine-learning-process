@@ -46,3 +46,7 @@ It is particularly suited for Earth observation and scientific workflows because
 * Automation: Events trigger workflows without manual intervention, enabling real-time processing.
 
 Through this resource, you'll learn to implement a cloud-native pipeline for tile-based classification, which can be extended to other geospatial or scientific applications.
+
+
+
+

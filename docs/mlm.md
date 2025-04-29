@@ -15,3 +15,5 @@ To run the notebook successfully, you must install the dependencies with hatch:
 hatch shell prod
 hatch -e prod run python -m ipykernel install --user --name=mlm --display-name "mlm"
 ```
+
+
