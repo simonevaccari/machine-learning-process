@@ -49,3 +49,6 @@ The CWL file can be triggered using `cwltool` or `calrissian`. The user provides
 The Application Package will generate a list of directories containing intermediate or final output. The number of folders containing a `{STAC_ITEM_ID}_classified.tif` and the corresponding STAC objects, such as STAC Catalog and STAC Item, depends on the number of input Sentinel-2 items.
 
 
+## Troubleshooting
+
+The user might encounter to memory issues during the execution with CWL Runners. This can be addressing by reducing the `ramMax` parameter in the cwl file.

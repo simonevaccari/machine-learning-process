@@ -63,3 +63,7 @@ The CWL file can be triggered using `cwltool` or `calrissian`. The user provides
 
 > **`[]`** in the image above indicates that the user may pass a list of parameters to the application package.
 
+
+## Troubleshooting
+
+The user might encounter to memory issues during the execution with CWL Runners. This can be addressing by reducing the `ramMax` parameter in the cwl file.
