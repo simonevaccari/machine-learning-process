@@ -1,6 +1,6 @@
 site_name: Machine Learning Process
 theme:
-    logo: imgs/icon-eoap.png
+    logo: imgs/icon.png
     name: material
 
     palette:
