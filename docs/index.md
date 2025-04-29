@@ -20,9 +20,9 @@ This setup integrates the following technologies and concepts:
 * Simple, low-code performance tracking with autologging
 * State-of-the-art UI for model analysis and comparison
 
-### STAC Endpoint
+### STAC & DuckDB
 
-* Serves as the primary data source, providing geospatial data in a standardized format.
+* Acts as the primary data source by providing geospatial data in a standardized format. The STAC collection includes references to the EUROSAT benchmark dataset, which can be queried using DuckDB.
 
 ## High-Level Architecture
 
