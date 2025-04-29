@@ -58,7 +58,8 @@ There are two methods to execute the application:
 ## How the CWL document designed:
 The CWL file can be triggered using `cwltool` or `calrissian`. The user provides a `params.yml` file that passes all inputs needed by the CWL file to execute the module. The CWL file is designed to execute the module based on the structure below:
 
-<p align="center"><img src="imgs/training.png" alt="Picture" width="40%" height="10%" style="display: block; margin: 20px auto;"/></p>
+![Training Workflow](imgs/training.png)
+
 
 > **`[]`** in the image above indicates that the user may pass a list of parameters to the application package.
 
