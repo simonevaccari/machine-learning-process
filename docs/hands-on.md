@@ -15,6 +15,6 @@ Check the [inference component documentation](./inference-cwl.md) and run infere
 ---
 
 ### Describing the ML Model
-Refer to the [MLM component documentation](./mlm.md.md) and execute the provided notebook to describe the machine learning model.
+Refer to the [MLM component documentation](./mlm.md) and execute the provided notebook to describe the machine learning model.
 
 
