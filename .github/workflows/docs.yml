@@ -9,7 +9,7 @@ on:
     paths:
       - 'docs/**'
       - 'mkdocs.yaml'
-      - .github/**
+      - .github/workflows/docs.yaml
 
 permissions:
   contents: write  # ✅ This is required to push to gh-pages

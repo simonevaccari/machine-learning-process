@@ -11,7 +11,7 @@ on:
       - 'training/**'
       - 'inference/app-package/**'
       - 'training/app-package/**'
-      - '.github/**'
+      - '.github/workflows/build.yaml'
       - 'codemeta.json'
 
 env:
