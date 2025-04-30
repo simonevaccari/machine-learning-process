@@ -74,4 +74,4 @@ The user may train several tile-based classifiers using the CWL runner. One of t
 
 ## Troubleshooting
 
-The user might encounter to memory issues during the execution with CWL Runners. This can be addressing by reducing the `ramMax` parameter in the cwl file.
+The user might encounter to memory issues during the execution with CWL Runners(especially with the `cwltool`). This can be addressing by reducing the `ramMax`(e.g. `ramMax: 1000`) parameter in the cwl file.
