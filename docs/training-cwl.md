@@ -55,6 +55,8 @@ There are two methods to execute the application:
    >   `kubectl get pods` 
 
 
+
+
 ## How the CWL document designed:
 The CWL file can be triggered using `cwltool` or `calrissian`. The user provides a `params.yml` file that passes all inputs needed by the CWL file to execute the module. The CWL file is designed to execute the module based on the structure below:
 
@@ -62,6 +64,12 @@ The CWL file can be triggered using `cwltool` or `calrissian`. The user provides
 
 
 > **`[]`** in the image above indicates that the user may pass a list of parameters to the application package.
+
+## For developers
+
+The user may train several tile-based classifiers using the CWL runner. One of the tracked artifacts through MLflow is the model's weights. The next step is to retrieve the best model, based on the desired evaluation metric, from the MLflow artifact registry and convert it to the ONNX format. This activity is explained in ["Export the Best Model to ONNX Format"](./extract-model.md). Finally, this model can be integrated into the inference application package.
+
+> **Note:** This process has already been completed. However, users may need to repeat it with their own candidate models.
 
 
 ## Troubleshooting
