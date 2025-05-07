@@ -1,0 +1,226 @@
+[2025-05-07 17:13:51,335: INFO: common: created directory at: config]
+[2025-05-07 17:13:58,128: INFO: common: created directory at: config]
+[2025-05-07 17:14:35,110: INFO: common: created directory at: config]
+[2025-05-07 17:14:36,328: INFO: main: MLFLOW URI: None]
+[2025-05-07 17:14:36,328: INFO: main: /home/t2/Desktop/p/argo/machine-learning-process/training/make-ml-model]
+[2025-05-07 17:14:36,328: INFO: main: 
+=================================================================
+Device name is: None 
+=================================================================]
+[2025-05-07 17:14:36,331: INFO: common: YAML file: params.yaml written successfully]
+[2025-05-07 17:14:36,332: INFO: main: 
+=================================================================
+>>>>>> stage Data Ingestion stage started <<<<<<]
+[2025-05-07 17:14:36,336: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2025-05-07 17:14:36,340: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-05-07 17:14:36,340: INFO: common: created directory at: output]
+[2025-05-07 17:14:36,340: INFO: common: created directory at: src/tile_based_training/output/data_ingestion]
+[2025-05-07 17:14:36,340: INFO: data_ingestion: Accessing STAC endpoint]
+[2025-05-07 17:14:37,038: ERROR: main: 'Item' object has no attribute 'get_children']
+Traceback (most recent call last):
+  File "/home/t2/Desktop/p/argo/machine-learning-process/training/make-ml-model/src/tile_based_training/main.py", line 157, in run_tile_based_classification_training
+    obj.main()
+  File "/home/t2/Desktop/p/argo/machine-learning-process/training/make-ml-model/src/tile_based_training/pipeline/stage_01_data_ingestion.py", line 26, in main
+    raise e
+  File "/home/t2/Desktop/p/argo/machine-learning-process/training/make-ml-model/src/tile_based_training/pipeline/stage_01_data_ingestion.py", line 18, in main
+    all_urls = data_ingestion.stac_loader()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/t2/Desktop/p/argo/machine-learning-process/training/make-ml-model/src/tile_based_training/components/data_ingestion.py", line 58, in stac_loader
+    raise e
+  File "/home/t2/Desktop/p/argo/machine-learning-process/training/make-ml-model/src/tile_based_training/components/data_ingestion.py", line 29, in stac_loader
+    collection = next(iter(catalog.get_children()))
+                           ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Item' object has no attribute 'get_children'
+[2025-05-07 17:15:21,348: INFO: common: created directory at: config]
+[2025-05-07 17:15:22,330: INFO: main: MLFLOW URI: None]
+[2025-05-07 17:15:22,331: INFO: main: /home/t2/Desktop/p/argo/machine-learning-process/training/make-ml-model]
+[2025-05-07 17:15:22,331: INFO: main: 
+=================================================================
+Device name is: None 
+=================================================================]
+[2025-05-07 17:15:22,333: INFO: common: YAML file: params.yaml written successfully]
+[2025-05-07 17:15:22,333: INFO: main: 
+=================================================================
+>>>>>> stage Data Ingestion stage started <<<<<<]
+[2025-05-07 17:15:22,336: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2025-05-07 17:15:22,337: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-05-07 17:15:22,337: INFO: common: created directory at: output]
+[2025-05-07 17:15:22,337: INFO: common: created directory at: src/tile_based_training/output/data_ingestion]
+[2025-05-07 17:15:22,337: INFO: data_ingestion: Accessing STAC endpoint]
+[2025-05-07 17:15:22,750: ERROR: main: HREF: 'https://raw.githubusercontent.com/eoap/machine-learning-process/main/training/app-package/EUROSAT-Training-Dataset/EUROSAT-Training-Dataset/collection.json' does not resolve to a STAC object]
+Traceback (most recent call last):
+  File "/home/t2/Desktop/p/argo/machine-learning-process/training/make-ml-model/envs/env_5/lib/python3.11/site-packages/pystac/stac_io.py", line 301, in read_text_from_href
+    with urlopen(req) as f:
+         ^^^^^^^^^^^^
+  File "/home/t2/miniconda3/lib/python3.11/urllib/request.py", line 216, in urlopen
+    return opener.open(url, data, timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/t2/miniconda3/lib/python3.11/urllib/request.py", line 525, in open
+    response = meth(req, response)
+               ^^^^^^^^^^^^^^^^^^^
+  File "/home/t2/miniconda3/lib/python3.11/urllib/request.py", line 634, in http_response
+    response = self.parent.error(
+               ^^^^^^^^^^^^^^^^^^
+  File "/home/t2/miniconda3/lib/python3.11/urllib/request.py", line 563, in error
+    return self._call_chain(*args)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/t2/miniconda3/lib/python3.11/urllib/request.py", line 496, in _call_chain
+    result = func(*args)
+             ^^^^^^^^^^^
+  File "/home/t2/miniconda3/lib/python3.11/urllib/request.py", line 643, in http_error_default
+    raise HTTPError(req.full_url, code, msg, hdrs, fp)
+urllib.error.HTTPError: HTTP Error 429: Too Many Requests
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/t2/Desktop/p/argo/machine-learning-process/training/make-ml-model/envs/env_5/lib/python3.11/site-packages/pystac/link.py", line 332, in resolve_stac_object
+    obj = stac_io.read_stac_object(target_href, root=root)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/t2/Desktop/p/argo/machine-learning-process/training/make-ml-model/envs/env_5/lib/python3.11/site-packages/pystac/stac_io.py", line 235, in read_stac_object
+    d = self.read_json(source, *args, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/t2/Desktop/p/argo/machine-learning-process/training/make-ml-model/envs/env_5/lib/python3.11/site-packages/pystac/stac_io.py", line 206, in read_json
+    txt = self.read_text(source, *args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/t2/Desktop/p/argo/machine-learning-process/training/make-ml-model/envs/env_5/lib/python3.11/site-packages/pystac/stac_io.py", line 283, in read_text
+    return self.read_text_from_href(href)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/t2/Desktop/p/argo/machine-learning-process/training/make-ml-model/envs/env_5/lib/python3.11/site-packages/pystac/stac_io.py", line 304, in read_text_from_href
+    raise Exception(f"Could not read uri {href}") from e
+Exception: Could not read uri https://raw.githubusercontent.com/eoap/machine-learning-process/main/training/app-package/EUROSAT-Training-Dataset/EUROSAT-Training-Dataset/collection.json
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/t2/Desktop/p/argo/machine-learning-process/training/make-ml-model/src/tile_based_training/main.py", line 157, in run_tile_based_classification_training
+    obj.main()
+  File "/home/t2/Desktop/p/argo/machine-learning-process/training/make-ml-model/src/tile_based_training/pipeline/stage_01_data_ingestion.py", line 26, in main
+    raise e
+  File "/home/t2/Desktop/p/argo/machine-learning-process/training/make-ml-model/src/tile_based_training/pipeline/stage_01_data_ingestion.py", line 18, in main
+    all_urls = data_ingestion.stac_loader()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/t2/Desktop/p/argo/machine-learning-process/training/make-ml-model/src/tile_based_training/components/data_ingestion.py", line 58, in stac_loader
+    raise e
+  File "/home/t2/Desktop/p/argo/machine-learning-process/training/make-ml-model/src/tile_based_training/components/data_ingestion.py", line 29, in stac_loader
+    collection = next(iter(catalog.get_children()))
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/t2/Desktop/p/argo/machine-learning-process/training/make-ml-model/envs/env_5/lib/python3.11/site-packages/pystac/stac_object.py", line 432, in get_stac_objects
+    link.resolve_stac_object(root=self.get_root())
+  File "/home/t2/Desktop/p/argo/machine-learning-process/training/make-ml-model/envs/env_5/lib/python3.11/site-packages/pystac/link.py", line 334, in resolve_stac_object
+    raise STACError(
+pystac.errors.STACError: HREF: 'https://raw.githubusercontent.com/eoap/machine-learning-process/main/training/app-package/EUROSAT-Training-Dataset/EUROSAT-Training-Dataset/collection.json' does not resolve to a STAC object
+[2025-05-07 17:17:08,791: INFO: common: created directory at: config]
+[2025-05-07 17:17:10,140: INFO: main: MLFLOW URI: None]
+[2025-05-07 17:17:10,140: INFO: main: /home/t2/Desktop/p/argo/machine-learning-process/training/make-ml-model]
+[2025-05-07 17:17:10,140: INFO: main: 
+=================================================================
+Device name is: None 
+=================================================================]
+[2025-05-07 17:17:10,143: INFO: common: YAML file: params.yaml written successfully]
+[2025-05-07 17:17:10,143: INFO: main: 
+=================================================================
+>>>>>> stage Data Ingestion stage started <<<<<<]
+[2025-05-07 17:17:10,147: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2025-05-07 17:17:10,155: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-05-07 17:17:10,155: INFO: common: created directory at: output]
+[2025-05-07 17:17:10,155: INFO: common: created directory at: src/tile_based_training/output/data_ingestion]
+[2025-05-07 17:17:10,155: INFO: data_ingestion: Accessing STAC endpoint]
+[2025-05-07 17:17:10,804: ERROR: main: 'Item' object has no attribute 'get_children']
+Traceback (most recent call last):
+  File "/home/t2/Desktop/p/argo/machine-learning-process/training/make-ml-model/src/tile_based_training/main.py", line 157, in run_tile_based_classification_training
+    obj.main()
+  File "/home/t2/Desktop/p/argo/machine-learning-process/training/make-ml-model/src/tile_based_training/pipeline/stage_01_data_ingestion.py", line 26, in main
+    raise e
+  File "/home/t2/Desktop/p/argo/machine-learning-process/training/make-ml-model/src/tile_based_training/pipeline/stage_01_data_ingestion.py", line 18, in main
+    all_urls = data_ingestion.stac_loader()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/t2/Desktop/p/argo/machine-learning-process/training/make-ml-model/src/tile_based_training/components/data_ingestion.py", line 58, in stac_loader
+    raise e
+  File "/home/t2/Desktop/p/argo/machine-learning-process/training/make-ml-model/src/tile_based_training/components/data_ingestion.py", line 29, in stac_loader
+    collection = next(iter(catalog.get_children()))
+                           ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Item' object has no attribute 'get_children'
+[2025-05-07 17:31:29,339: INFO: common: created directory at: config]
+[2025-05-07 17:31:30,560: INFO: main: MLFLOW URI: None]
+[2025-05-07 17:31:30,560: INFO: main: /home/t2/Desktop/p/argo/machine-learning-process/training/make-ml-model]
+[2025-05-07 17:31:30,560: INFO: main: 
+=================================================================
+Device name is: None 
+=================================================================]
+[2025-05-07 17:31:30,561: INFO: common: YAML file: params.yaml written successfully]
+[2025-05-07 17:31:30,561: INFO: main: 
+=================================================================
+>>>>>> stage Data Ingestion stage started <<<<<<]
+[2025-05-07 17:31:30,564: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2025-05-07 17:31:30,566: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-05-07 17:31:30,566: INFO: common: created directory at: output]
+[2025-05-07 17:31:30,566: INFO: common: created directory at: src/tile_based_training/output/data_ingestion]
+[2025-05-07 17:31:30,566: INFO: data_ingestion: Accessing STAC endpoint]
+[2025-05-07 17:32:21,711: ERROR: main: Query interrupted]
+KeyboardInterrupt
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/t2/Desktop/p/argo/machine-learning-process/training/make-ml-model/src/tile_based_training/main.py", line 157, in run_tile_based_classification_training
+    obj.main()
+  File "/home/t2/Desktop/p/argo/machine-learning-process/training/make-ml-model/src/tile_based_training/pipeline/stage_01_data_ingestion.py", line 26, in main
+    raise e
+  File "/home/t2/Desktop/p/argo/machine-learning-process/training/make-ml-model/src/tile_based_training/pipeline/stage_01_data_ingestion.py", line 18, in main
+    all_urls = data_ingestion.stac_loader()
+  File "/home/t2/Desktop/p/argo/machine-learning-process/training/make-ml-model/src/tile_based_training/components/data_ingestion.py", line 58, in stac_loader
+    raise e
+  File "/home/t2/Desktop/p/argo/machine-learning-process/training/make-ml-model/src/tile_based_training/components/data_ingestion.py", line 42, in stac_loader
+    table = db.fetch_arrow_table()
+RuntimeError: Query interrupted
+[2025-05-07 17:34:13,183: INFO: common: created directory at: config]
+[2025-05-07 17:34:55,843: INFO: common: created directory at: config]
+[2025-05-07 17:34:56,922: INFO: main: MLFLOW URI: None]
+[2025-05-07 17:34:56,923: INFO: main: /home/t2/Desktop/p/argo/machine-learning-process/training/make-ml-model]
+[2025-05-07 17:34:56,923: INFO: main: 
+=================================================================
+Device name is: None 
+=================================================================]
+[2025-05-07 17:34:56,923: INFO: common: YAML file: params.yaml written successfully]
+[2025-05-07 17:34:56,923: INFO: main: 
+=================================================================
+>>>>>> stage Data Ingestion stage started <<<<<<]
+[2025-05-07 17:34:56,925: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2025-05-07 17:34:56,929: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-05-07 17:34:56,929: INFO: common: created directory at: output]
+[2025-05-07 17:34:56,929: INFO: common: created directory at: src/tile_based_training/output/data_ingestion]
+[2025-05-07 17:34:56,929: INFO: data_ingestion: Accessing STAC endpoint]
+[2025-05-07 17:34:57,600: ERROR: main: 'Item' object has no attribute 'get_children']
+Traceback (most recent call last):
+  File "/home/t2/Desktop/p/argo/machine-learning-process/training/make-ml-model/src/tile_based_training/main.py", line 157, in run_tile_based_classification_training
+    obj.main()
+  File "/home/t2/Desktop/p/argo/machine-learning-process/training/make-ml-model/src/tile_based_training/pipeline/stage_01_data_ingestion.py", line 26, in main
+    raise e
+  File "/home/t2/Desktop/p/argo/machine-learning-process/training/make-ml-model/src/tile_based_training/pipeline/stage_01_data_ingestion.py", line 18, in main
+    all_urls = data_ingestion.stac_loader()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/t2/Desktop/p/argo/machine-learning-process/training/make-ml-model/src/tile_based_training/components/data_ingestion.py", line 58, in stac_loader
+    raise e
+  File "/home/t2/Desktop/p/argo/machine-learning-process/training/make-ml-model/src/tile_based_training/components/data_ingestion.py", line 29, in stac_loader
+    collection = next(iter(catalog.get_children()))
+                           ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Item' object has no attribute 'get_children'
+[2025-05-07 17:36:17,777: INFO: common: created directory at: config]
+[2025-05-07 17:36:18,988: INFO: main: MLFLOW URI: None]
+[2025-05-07 17:36:18,989: INFO: main: /home/t2/Desktop/p/argo/machine-learning-process/training/make-ml-model]
+[2025-05-07 17:36:18,989: INFO: main: 
+=================================================================
+Device name is: None 
+=================================================================]
+[2025-05-07 17:36:18,991: INFO: common: YAML file: params.yaml written successfully]
+[2025-05-07 17:36:18,991: INFO: main: 
+=================================================================
+>>>>>> stage Data Ingestion stage started <<<<<<]
+[2025-05-07 17:36:18,992: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2025-05-07 17:36:18,993: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-05-07 17:36:18,993: INFO: common: created directory at: output]
+[2025-05-07 17:36:18,993: INFO: common: created directory at: src/tile_based_training/output/data_ingestion]
+[2025-05-07 17:36:18,993: INFO: data_ingestion: Accessing STAC endpoint]
+[2025-05-07 17:47:42,931: INFO: common: created directory at: config]
+[2025-05-07 17:47:57,105: INFO: common: created directory at: config]

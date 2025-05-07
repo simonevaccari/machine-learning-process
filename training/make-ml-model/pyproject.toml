@@ -50,7 +50,35 @@ include = [
 tile-based-training = "tile_based_training.main:main"
 
 [tool.hatch.envs.default]
-path = "/code/envs/env_5"
+path = "envs/env_5"
+dependencies = [
+    "click",
+    "pystac>=1.4.0",
+    "pystac_client",
+    "numpy",
+    "scikit-learn",
+    "ipykernel",
+    "pandas",
+    "matplotlib",
+    "joblib",
+    "pyYAML",
+    "python-box",
+    "tensorflow",
+    "mlflow",
+    "seaborn",
+    "rasterio",
+    "loguru",
+    "ensure",
+    "pathlib",
+    "dataclasses",
+    "tqdm",
+    "pygeofilter",
+    "duckdb",
+    "shapely",
+    "stac-geoparquet",
+    "tzdata",
+    "pygeofilter_duckdb @ git+https://github.com/parham-membari-terradue/pygeofilter-duckdb"
+]
 
 [tool.hatch.envs.prod]
 path = "/code/envs/env_5"

@@ -43,7 +43,23 @@ include = [
 make-inference = "make_inference.main:main"
 
 [tool.hatch.envs.default]
-path = "/code/envs/make_inference"
+path = "envs/make_inference"
+dependencies = [
+    "click",
+    "pystac>=1.4.0",
+    "pystac_client",
+    "numpy",
+    "tf2onnx",
+    "georeader-spaceml",
+    "rasterio",
+    "loguru",
+    "tqdm",
+    "rio_stac",
+    "onnxmltools",
+    "onnxruntime",
+    "onnx",
+    "planetary_computer",
+]
 
 [tool.hatch.envs.prod]
 path = "/code/envs/make_inference"
