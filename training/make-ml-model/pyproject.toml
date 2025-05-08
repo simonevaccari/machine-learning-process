@@ -50,7 +50,7 @@ include = [
 tile-based-training = "tile_based_training.main:main"
 
 [tool.hatch.envs.default]
-path = "envs/env_5"
+path = "/workspace/machine-learning-process/runs/envs/env_5"
 dependencies = [
     "click",
     "pystac>=1.4.0",

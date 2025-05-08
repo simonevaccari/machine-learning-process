@@ -8,5 +8,5 @@ LOSS: categorical_crossentropy
 MEMENTUM: 0.95
 OPTIMIZER: Adam
 REGULARIZER: None
-SAMPLES_PER_CLASS: 1000
+SAMPLES_PER_CLASS: 10
 stac_reference: https://raw.githubusercontent.com/eoap/machine-learning-process/main/training/app-package/EUROSAT-Training-Dataset/catalog.json
