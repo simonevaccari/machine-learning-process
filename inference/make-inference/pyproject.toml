@@ -43,7 +43,7 @@ include = [
 make-inference = "make_inference.main:main"
 
 [tool.hatch.envs.default]
-path = "envs/make_inference"
+path = "/workspace/machine-learning-process/runs/envs/make_inference"
 dependencies = [
     "click",
     "pystac>=1.4.0",
