@@ -14,8 +14,8 @@ To execute the application, users have the option to use either [cwltool](https:
 Before running the application with a CWL runner, make sure to download and use the latest version of the CWL document:
 
 ```bash
-cd /workspace/machine-learning-process/inference/app-package
-VERSION="0.0.4"
+cd inference/app-package
+VERSION=$(curl -s https://api.github.com/repos/eoap/machine-learning-process/releases/latest | jq -r '.tag_name')
 curl -L -o "tile-sat-inference.cwl" \
   "https://github.com/eoap/machine-learning-process/releases/download/${VERSION}/tile-sat-inference.${VERSION}.cwl"
 ```

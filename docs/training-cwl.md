@@ -26,8 +26,8 @@ To execute the training workflow, users can choose between [cwltool](https://git
 ## How to execute the application-package?
 Before running the application with a CWL runner, make sure to download and use the latest version of the CWL document:
 ```
-cd /workspace/machine-learning-process/training/app-package
-VERSION="0.0.4"
+cd training/app-package
+VERSION=$(curl -s https://api.github.com/repos/eoap/machine-learning-process/releases/latest | jq -r '.tag_name')
 curl -L -o "tile-sat-training.cwl" \
   "https://github.com/eoap/machine-learning-process/releases/download/${VERSION}/tile-sat-training.${VERSION}.cwl"
 
