@@ -15,7 +15,7 @@ Before running the application with a CWL runner, make sure to download and use 
 
 ```bash
 cd inference/app-package
-VERSION="0.0.4"
+VERSION=$(curl -s https://api.github.com/repos/eoap/machine-learning-process/releases/latest | jq -r '.tag_name')
 curl -L -o "tile-sat-inference.cwl" \
   "https://github.com/eoap/machine-learning-process/releases/download/${VERSION}/tile-sat-inference.${VERSION}.cwl"
 ```
